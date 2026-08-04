@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://06ujuma48lj8"]
+
+[ext_resource type="PackedScene" uid="uid://lqir23ra1c8r" path="res://stage/mesh/pupil_watcher.blend" id="1_1cjcm"]
+[ext_resource type="Script" uid="uid://b0pd1iwmjx64q" path="res://gdscript/pupil_watcher.gd" id="1_63wh8"]
+[ext_resource type="AudioStream" uid="uid://qduo5pyqs7aw" path="res://audio/sfx/fleshy_0.ogg" id="2_plegw"]
+[ext_resource type="AudioStream" uid="uid://bmh8dl8ljdkbc" path="res://audio/sfx/fleshy_1.ogg" id="3_pnxos"]
+[ext_resource type="AudioStream" uid="uid://c4mwx83uxalqs" path="res://audio/sfx/fleshy_2.ogg" id="4_quupn"]
+[ext_resource type="Texture2D" uid="uid://b61nq02xoxvb3" path="res://texture/i_see.png" id="6_quupn"]
+[ext_resource type="Texture2D" uid="uid://bksjeihaetg3g" path="res://texture/i_see_em.png" id="7_kr2ap"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lcww"]
+resource_name = "i_see"
+cull_mode = 2
+albedo_texture = ExtResource("6_quupn")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = ExtResource("7_kr2ap")
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[node name="pupil_watcher" type="Node3D" unique_id=1120857915 node_paths=PackedStringArray("_pupil_timer")]
+script = ExtResource("1_63wh8")
+_sfx = Array[AudioStream]([ExtResource("2_plegw"), ExtResource("3_pnxos"), ExtResource("4_quupn")])
+_pupil_timer = NodePath("pupil_timer")
+
+[node name="mesh" parent="." unique_id=507982622 instance=ExtResource("1_1cjcm")]
+
+[node name="eye" parent="mesh" index="0" unique_id=1990349350 groups=["stage_lit"]]
+layers = 262144
+surface_material_override/0 = SubResource("StandardMaterial3D_7lcww")
+
+[node name="jitter_timer" type="Timer" parent="." unique_id=1873851327]
+one_shot = true
+autostart = true
+
+[node name="pupil_timer" type="Timer" parent="." unique_id=753310678]
+one_shot = true
+autostart = true
+
+[node name="screen_bounds" type="VisibleOnScreenNotifier3D" parent="." unique_id=585940944]
+layers = 262144
+
+[connection signal="timeout" from="jitter_timer" to="." method="_on_jitter_timer_timeout"]
+[connection signal="timeout" from="pupil_timer" to="." method="_on_pupil_timer_timeout"]
+[connection signal="screen_exited" from="screen_bounds" to="." method="_on_screen_bounds_screen_exited"]
+
+[editable path="mesh"]

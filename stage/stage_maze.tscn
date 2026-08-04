@@ -1,0 +1,313 @@
+[gd_scene format=3 uid="uid://hcknbgdqge1n"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_4kyxe"]
+[ext_resource type="AudioStream" uid="uid://vvrq3d4ivnur" path="res://audio/music/se_static.ogg" id="2_1x2rv"]
+[ext_resource type="LightmapGIData" uid="uid://beobwl70kinl" path="res://stage/lightmap/stage_maze.lmbake" id="2_fh5g8"]
+[ext_resource type="PackedScene" uid="uid://guxv88sxdyal" path="res://stage/mesh/maze.blend" id="2_fix7r"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_163bp"]
+[ext_resource type="Script" uid="uid://buyftmllcvaq5" path="res://gdscript/capybara.gd" id="3_an5n2"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="3_fh5g8"]
+[ext_resource type="Texture2D" uid="uid://bnto1pf4gpg8s" path="res://texture/capybara.png" id="4_abxbc"]
+[ext_resource type="Texture2D" uid="uid://v63fqmysvhxk" path="res://texture/maze_smile.png" id="6_65mrt"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="6_d5435"]
+[ext_resource type="Texture2D" uid="uid://cff18qq0bkjp1" path="res://texture/building_face_00.png" id="7_fh5g8"]
+[ext_resource type="Texture2D" uid="uid://1x720ajqeule" path="res://texture/building_face_01.png" id="8_34avv"]
+[ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="9_abmak"]
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="9_hl41o"]
+[ext_resource type="Texture2D" uid="uid://cyd4k2jqviyv1" path="res://texture/entity_shadow.png" id="10_1x2rv"]
+[ext_resource type="AudioStream" uid="uid://b6pjnhvpn5bw3" path="res://audio/amb/room_noise_a.ogg" id="10_d5435"]
+
+[sub_resource type="Gradient" id="Gradient_fh5g8"]
+offsets = PackedFloat32Array(0.045454547, 0.6, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.63, 0.5166, 0.5166, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_34avv"]
+gradient = SubResource("Gradient_fh5g8")
+
+[sub_resource type="Environment" id="Environment_4kyxe"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+tonemap_exposure = 0.8
+glow_enabled = true
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_curve = 0.43527535
+fog_depth_begin = 4.0
+fog_depth_end = 22.0
+adjustment_enabled = true
+adjustment_contrast = 0.9
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_34avv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d5435"]
+resource_name = "smile"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.588235)
+albedo_texture = ExtResource("6_65mrt")
+roughness = 0.5
+billboard_mode = 2
+distance_fade_mode = 2
+distance_fade_min_distance = 20.0
+distance_fade_max_distance = 8.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_34avv"]
+resource_name = "building"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("7_fh5g8")
+emission_enabled = true
+emission_texture = ExtResource("7_fh5g8")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 60.0
+distance_fade_max_distance = 28.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_abmak"]
+resource_name = "building"
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("8_34avv")
+emission_enabled = true
+emission_texture = ExtResource("8_34avv")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 60.0
+distance_fade_max_distance = 28.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kip58"]
+render_priority = 0
+shader = ExtResource("9_hl41o")
+shader_parameter/albedo = ExtResource("10_1x2rv")
+shader_parameter/modulate = Color(0, 0, 0, 1)
+shader_parameter/albedo_mix = 0.4
+shader_parameter/scale_mod = Vector3(1, 0.5, 1)
+shader_parameter/cube_half_size = Vector3(0.5, 1, 0.5)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_b6eot"]
+material = SubResource("ShaderMaterial_kip58")
+size = Vector3(1, 2, 1)
+
+[sub_resource type="Animation" id="Animation_34avv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("maze/brick_wall:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_fh5g8"]
+resource_name = "rise"
+length = 1.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("maze/brick_wall:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.18, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 0, 1), Vector3(1, 0, 1), Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("maze/building:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_34avv"]
+_data = {
+&"RESET": SubResource("Animation_34avv"),
+&"rise": SubResource("Animation_fh5g8")
+}
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_163bp"]
+
+[node name="stage_maze" type="Node3D" unique_id=1852260055 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_4kyxe")
+stage_name = "world_maze"
+_bloom = 0.5
+bgm = ExtResource("2_1x2rv")
+bgm_volume = 0.1
+_has_reverb = true
+_entrance = [NodePath("entrance")]
+weather = 3
+weather_height = 2
+gravity_override = 10.0
+_stage_light = Color(1, 0.8066667, 0.8, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=544225512]
+environment = SubResource("Environment_4kyxe")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=126440456 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("3_fh5g8")
+_bounds = NodePath("../maze/floor")
+_world = NodePath("../maze")
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="maze" parent="." unique_id=160568561 instance=ExtResource("2_fix7r")]
+
+[node name="smile" parent="maze" index="0" unique_id=986079292]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_d5435")
+
+[node name="interactable" parent="maze/smile" index="0" unique_id=793492082 instance=ExtResource("6_d5435")]
+
+[node name="floor" parent="maze" index="1" unique_id=751074879]
+gi_mode = 0
+
+[node name="wall" parent="maze" index="3" unique_id=863470895]
+gi_mode = 0
+
+[node name="brick_wall" parent="maze" index="4" unique_id=144688729]
+gi_mode = 0
+
+[node name="ceiling" parent="maze" index="5" unique_id=575393671]
+gi_mode = 0
+
+[node name="building" parent="maze" index="8" unique_id=225519853]
+surface_material_override/0 = SubResource("StandardMaterial3D_34avv")
+surface_material_override/1 = SubResource("StandardMaterial3D_abmak")
+
+[node name="cube" parent="maze" index="9" unique_id=14002207]
+transform = Transform3D(0.99603117, 0.007921938, 0.08865203, 1.3969839e-09, 0.99603117, -0.08900528, -0.08900528, 0.08865203, 0.99207807, -10.515652, 0.9822371, -4)
+
+[node name="interactable" parent="maze/cube" index="1" unique_id=1289209553 instance=ExtResource("6_d5435")]
+uninteractable = true
+
+[node name="AnimationPlayer" parent="maze" index="11" unique_id=1226334470]
+autoplay = &"cubeAction"
+
+[node name="lightmap_gi" type="LightmapGI" parent="maze" unique_id=783600091]
+transform = Transform3D(1, 9.313226e-10, 0, 9.313226e-10, 1, 0, 0, 0, 1, 9.536743e-07, 0, -2.3841858e-07)
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(1, 0.9, 0.9, 1)
+generate_probes_subdiv = 0
+light_data = ExtResource("2_fh5g8")
+
+[node name="cube_shadow" type="MeshInstance3D" parent="maze" unique_id=1896006653]
+transform = Transform3D(0.99603117, 0.007921939, 0.08865203, 2.3246103e-09, 0.99603117, -0.08900528, -0.08900528, 0.08865203, 0.99207807, -10.515652, -0.0177629, -3.9999998)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_b6eot")
+Skeleton = null
+skeleton = NodePath("../cube")
+script = ExtResource("9_abmak")
+size = Vector3(1, 2, 1)
+texture = ExtResource("10_1x2rv")
+modulate = Color(0, 0, 0, 1)
+albedo_mix = 0.4
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="smile_shadow" type="MeshInstance3D" parent="maze" unique_id=835456147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.95352, 0.3570977, -15.711875)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_b6eot")
+Skeleton = null
+skeleton = NodePath("../cube")
+script = ExtResource("9_abmak")
+texture = ExtResource("10_1x2rv")
+modulate = Color(0, 0, 0, 1)
+albedo_mix = 0.4
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="animation_player" type="AnimationPlayer" parent="." unique_id=1411850104]
+libraries/ = SubResource("AnimationLibrary_34avv")
+autoplay = &"rise"
+
+[node name="capybara" type="CharacterBody3D" parent="." unique_id=89011760]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6061, 1.29262, -22.27009)
+visible = false
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("3_an5n2")
+
+[node name="timer" type="Timer" parent="capybara" unique_id=157481837]
+one_shot = true
+
+[node name="agent" type="NavigationAgent3D" parent="capybara" unique_id=1319837048]
+target_desired_distance = 3.0
+path_max_distance = 15.01
+path_postprocessing = 1
+simplify_path = true
+avoidance_enabled = true
+radius = 2.0
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="capybara" unique_id=554141775]
+shape = SubResource("CapsuleShape3D_163bp")
+
+[node name="cococnut" type="Node3D" parent="capybara" unique_id=482148837]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.713601, 0)
+
+[node name="tex" type="Sprite3D" parent="capybara/cococnut" unique_id=1693977329]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.0210226, 0)
+flip_h = true
+pixel_size = 0.024
+texture = ExtResource("4_abxbc")
+
+[node name="sfx" type="AudioStreamPlayer3D" parent="capybara" unique_id=2141588129]
+attenuation_model = 2
+volume_db = -5.0
+unit_size = 3.0
+max_db = -5.0
+bus = &"snd"
+attenuation_filter_cutoff_hz = 6000.0
+
+[node name="entrance" type="Node3D" parent="." unique_id=687524373]
+transform = Transform3D(-4.371141e-08, 0, -1, 0, 1, 0, 1, 0, -4.371141e-08, -12.6804, 0, -22.3466)
+script = ExtResource("3_163bp")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=542113314]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 10, 2)
+stream = ExtResource("10_d5435")
+unit_size = 32.0
+autoplay = true
+panning_strength = 0.1
+bus = &"amb"
+
+[connection signal="timeout" from="capybara/timer" to="capybara" method="_find_path"]
+[connection signal="target_reached" from="capybara/agent" to="capybara" method="_on_agent_target_reached"]
+
+[editable path="maze"]

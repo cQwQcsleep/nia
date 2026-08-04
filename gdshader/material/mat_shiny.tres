@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://fqy8ijx8ba6b"]
+
+[ext_resource type="Shader" uid="uid://q72gari1ibe6" path="res://gdshader/3d.gdshader" id="1_0vur6"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_0vur6")
+shader_parameter/albedo_color = Color(1, 1, 1, 1)
+shader_parameter/specular_color = Color(0.666667, 0.584314, 0.776471, 1)
+shader_parameter/roughness = 0.0
+shader_parameter/metallic = 1.0
+shader_parameter/specular_strength = 2.0
+shader_parameter/fake_light_dir = Vector3(0.335, -0.085, 1)
+shader_parameter/ambient_boost = 1.0

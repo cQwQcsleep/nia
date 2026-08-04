@@ -1,0 +1,86 @@
+[gd_resource type="Theme" format=3 uid="uid://bsdgffnafxkqb"]
+
+[ext_resource type="Texture2D" uid="uid://buv217vyrxvqy" path="res://texture/phone_ui.png" id="1_c2vot"]
+[ext_resource type="FontFile" uid="uid://dho0yytyts0c3" path="res://resource/font/menu_large.ttf" id="1_x4uve"]
+[ext_resource type="FontFile" uid="uid://ckr11ujsuvxjv" path="res://resource/font/menu_maru.ttf" id="2_7bdao"]
+[ext_resource type="FontFile" uid="uid://c3fycecu16if8" path="res://resource/font/altar.ttf" id="4_rj1no"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rj1no"]
+texture = ExtResource("1_c2vot")
+expand_margin_left = 2.0
+expand_margin_top = 1.0
+expand_margin_right = 2.0
+expand_margin_bottom = 1.0
+region_rect = Rect2(2, 37, 129, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj1no"]
+atlas = ExtResource("1_c2vot")
+region = Rect2(56, 19, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ch4jd"]
+atlas = ExtResource("1_c2vot")
+region = Rect2(20, 19, 15, 15)
+
+[sub_resource type="FontVariation" id="FontVariation_dbgj1"]
+base_font = ExtResource("2_7bdao")
+spacing_glyph = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rj1no"]
+content_margin_left = 12.0
+content_margin_top = 2.0
+content_margin_right = 12.0
+content_margin_bottom = 2.0
+bg_color = Color(0, 0, 0, 0.98039216)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_blend = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ch4jd"]
+content_margin_left = 7.0
+texture = ExtResource("1_c2vot")
+texture_margin_left = 2.0
+texture_margin_top = 2.0
+texture_margin_right = 2.0
+texture_margin_bottom = 2.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(11, 120, 7, 8)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqh8u"]
+content_margin_left = 7.0
+texture = ExtResource("1_c2vot")
+texture_margin_left = 1.0
+texture_margin_top = 1.0
+texture_margin_right = 1.0
+texture_margin_bottom = 1.0
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+region_rect = Rect2(2, 120, 7, 12)
+
+[resource]
+default_font = ExtResource("4_rj1no")
+default_font_size = 22
+Button/styles/focus = SubResource("StyleBoxTexture_rj1no")
+CheckBox/icons/checked = SubResource("AtlasTexture_rj1no")
+CheckBox/icons/unchecked = SubResource("AtlasTexture_ch4jd")
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 2
+Label/font_sizes/font_size = 17
+Label/fonts/font = ExtResource("1_x4uve")
+Label_Small/base_type = &"Label"
+Label_Small/font_sizes/font_size = 12
+Label_Small/fonts/font = SubResource("FontVariation_dbgj1")
+RichTextLabel/colors/font_shadow_color = Color(0, 0, 0, 0.588235)
+RichTextLabel/constants/outline_size = 3
+RichTextLabel/constants/shadow_offset_x = 3
+RichTextLabel/constants/shadow_offset_y = 1
+RichTextLabel/constants/shadow_outline_size = 8
+TooltipLabel/font_sizes/font_size = 16
+TooltipLabel/fonts/font = ExtResource("1_x4uve")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_rj1no")
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_ch4jd")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_ch4jd")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_ch4jd")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_jqh8u")

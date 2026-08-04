@@ -1,0 +1,271 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://87kumjgakbq3"
+path="res://.godot/imported/snowy_street.blend-014c6e69be3915df3d1da9c287205e4b.scn"
+
+[deps]
+
+source_file="res://stage/mesh/snowy_street.blend"
+dest_files=["res://.godot/imported/snowy_street.blend-014c6e69be3915df3d1da9c287205e4b.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="snowy_street"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"meshes": {
+"snowy_street_Cube": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_008_036": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cube_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cylinder_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cylinder_002_029": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Cylinder_002_038": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_007": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_014": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"snowy_street_Plane_031": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:barrier": {
+"physics/shape_type": 1
+},
+"PATH:circle-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:circle-rigid/circle-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:circle-rigid/nya": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:metal_fence": {
+"physics/shape_type": 1
+},
+"PATH:metal_fence_001": {
+"physics/shape_type": 1
+},
+"PATH:metal_fence_002": {
+"physics/shape_type": 1
+},
+"PATH:playground_thing_001": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:sewers/sewers_entrance": {
+"physics/shape_type": 1
+},
+"PATH:snow_001": {
+"mesh_instance/layers": 0
+},
+"PATH:tire_half": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_001": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_002": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_003": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_004": {
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

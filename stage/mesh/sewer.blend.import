@@ -1,0 +1,450 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://clg4h40vn7d26"
+path="res://.godot/imported/sewer.blend-e6d2f5c069f5380837748842565bd9d2.scn"
+
+[deps]
+
+source_file="res://stage/mesh/sewer.blend"
+dest_files=["res://.godot/imported/sewer.blend-e6d2f5c069f5380837748842565bd9d2.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="sewer"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"meshes": {
+"sewer_Cube": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_018": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_018_050": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_020": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_022": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_025": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_026": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_027": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_028": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_029": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_030": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_031": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_032": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_033": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_033_051": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_034": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_034_049": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_037": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cube_0372": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_004_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_004_049": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_004_051": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Cylinder_004_055": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Plane_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Plane_009": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Plane_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"sewer_Plane_013": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"swampy_water_trigger": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:back_ladder": {
+"physics/shape_type": 1
+},
+"PATH:back_ladder_002": {
+"physics/shape_type": 1
+},
+"PATH:back_sewer": {
+"physics/shape_type": 1
+},
+"PATH:back_sewer_001": {
+"physics/shape_type": 1
+},
+"PATH:back_stone_structure": {
+"physics/shape_type": 1
+},
+"PATH:back_stone_structure_001": {
+"physics/shape_type": 1
+},
+"PATH:back_stone_structure_002": {
+"physics/shape_type": 1
+},
+"PATH:back_stone_structure_002_001": {
+"physics/shape_type": 1
+},
+"PATH:back_stone_structure_003": {
+"physics/shape_type": 1
+},
+"PATH:fence": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:fence_001": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:fence_002": {
+"physics/shape_type": 1
+},
+"PATH:fence_003": {
+"physics/shape_type": 1
+},
+"PATH:mattress-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:mattress-rigid/mattress-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:mattress_001-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:mattress_001-rigid/mattress_001-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence_001": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence_002": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence_003": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence_004": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:metal_bar_fence_005": {
+"physics/layer": 512,
+"physics/shape_type": 1
+},
+"PATH:oil_drum": {
+"physics/shape_type": 1
+},
+"PATH:oil_drum_001": {
+"physics/shape_type": 1
+},
+"PATH:oil_drum_001-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:oil_drum_001-rigid/oil_drum_001-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:oil_drum_002": {
+"physics/shape_type": 1
+},
+"PATH:oil_drum_003": {
+"physics/shape_type": 1
+},
+"PATH:tin_bridge": {
+"physics/shape_type": 1
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

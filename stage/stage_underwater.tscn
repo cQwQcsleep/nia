@@ -1,0 +1,675 @@
+[gd_scene format=3 uid="uid://dbal70fmj1e1b"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_fwkw6"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_j0ig6"]
+[ext_resource type="LightmapGIData" uid="uid://dgvq7mugj2lww" path="res://stage/lightmap/stage_underwater.lmbake" id="2_r63t6"]
+[ext_resource type="PackedScene" uid="uid://bdw7v2d4cvn02" path="res://stage/mesh/underwater.blend" id="2_u1y1q"]
+[ext_resource type="AudioStream" uid="uid://boiwdw31a0doo" path="res://audio/music/se_coral.ogg" id="2_ywiod"]
+[ext_resource type="Texture2D" uid="uid://b0et88udna2eb" path="res://texture/sky_underwater.png" id="3_kwbwx"]
+[ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="3_r63t6"]
+[ext_resource type="Shader" uid="uid://b6lbdj8eax77p" path="res://gdshader/caustics.gdshader" id="4_yt7ng"]
+[ext_resource type="Texture2D" uid="uid://bxxncgit7yygk" path="res://texture/bwr_caustic_01.png" id="5_xlxta"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="6_har4l"]
+[ext_resource type="Texture2D" uid="uid://clxpsf170o1jx" path="res://texture/corroded_metal_02.png" id="9_6tjws"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="9_kwbwx"]
+[ext_resource type="Texture2D" uid="uid://dga53ve1is14c" path="res://texture/corroded_metal_03.png" id="9_op0lm"]
+[ext_resource type="Texture2D" uid="uid://biofks72hdemh" path="res://texture/barnacles.png" id="10_hgorv"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="10_kj41i"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="10_t8br3"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="11_0ksol"]
+[ext_resource type="Shader" uid="uid://b6fh2e6ooslm8" path="res://gdshader/caustics_no_fog_fade.gdshader" id="13_t8br3"]
+[ext_resource type="Texture2D" uid="uid://ql2jjrpdror0" path="res://texture/decal_moss.png" id="15_gkd3m"]
+[ext_resource type="Shader" uid="uid://2mi7oo3shei6" path="res://gdshader/scroll.gdshader" id="16_b8shf"]
+[ext_resource type="Texture2D" uid="uid://btoeq3mwhy5o3" path="res://texture/oscillator_01_display.png" id="17_fsj3y"]
+[ext_resource type="Texture2D" uid="uid://dhosq40uuq4hi" path="res://texture/light_rays.png" id="17_i02ks"]
+[ext_resource type="PackedScene" uid="uid://coouf7gtcenmy" path="res://resource/water_bubbles.tscn" id="19_0svu4"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="19_gfufn"]
+[ext_resource type="Texture2D" uid="uid://bm24242g1ww8v" path="res://texture/sun_underwater.png" id="20_1cdpd"]
+[ext_resource type="Texture2D" uid="uid://dxx07xhek1quv" path="res://texture/seagrass.png" id="20_ds3a6"]
+[ext_resource type="AudioStream" uid="uid://bmisbyel6e81q" path="res://audio/amb/deep_sea.ogg" id="21_c7qoq"]
+[ext_resource type="Texture2D" uid="uid://27kymb4mi7xl" path="res://texture/corroded_metal_01.png" id="21_gfufn"]
+[ext_resource type="AudioStream" uid="uid://ckmkm3vdwjn4b" path="res://audio/amb/osc.ogg" id="27_ttcgu"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="28_eesfv"]
+[ext_resource type="Texture2D" uid="uid://5vvbldku6ci1" path="res://texture/particle_dust_02.png" id="28_g7w61"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="32_ds3a6"]
+[ext_resource type="AudioStream" uid="uid://cqe4dd1f6bjiw" path="res://audio/music/piano_02.ogg" id="33_rah6e"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="34_ywiod"]
+
+[sub_resource type="Gradient" id="Gradient_r63t6"]
+offsets = PackedFloat32Array(0.1, 0.17241152, 0.9, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.061199997, 0.067080006, 0.12, 1, 0.8825833, 0.80099994, 0.89, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vjw1l"]
+gradient = SubResource("Gradient_r63t6")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj41i"]
+shader = ExtResource("2_j0ig6")
+shader_parameter/source_panorama = ExtResource("3_kwbwx")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = 1.0
+
+[sub_resource type="Sky" id="Sky_ejbdu"]
+sky_material = SubResource("ShaderMaterial_kj41i")
+
+[sub_resource type="Environment" id="Environment_r63t6"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_ejbdu")
+reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.98
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 1.0
+fog_depth_curve = 0.6597539
+fog_depth_begin = 1.0
+fog_depth_end = 38.0
+adjustment_enabled = true
+adjustment_contrast = 0.8
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_vjw1l")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gkd3m"]
+fractal_type = 2
+fractal_lacunarity = 7.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_har4l"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_gkd3m")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7w61"]
+render_priority = -1
+shader = ExtResource("6_har4l")
+shader_parameter/texture_albedo = ExtResource("10_hgorv")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_har4l")
+shader_parameter/alpha = 0.4
+shader_parameter/uv1_blend_sharpness = 10.0
+shader_parameter/texture_scale = 0.2
+shader_parameter/mask_scale = 0.04
+shader_parameter/noise_threshold = 0.6000000285
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cx6ya"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_g7w61")
+shader = ExtResource("4_yt7ng")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(1.225, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("5_xlxta")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.1999999955296
+shader_parameter/tile_caust = 0.04
+shader_parameter/caustics_color = Color(0.00669999, 0.55945, 0.67, 1)
+shader_parameter/caustics_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8xjgk"]
+render_priority = 0
+shader = ExtResource("4_yt7ng")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(1.225, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("5_xlxta")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.2
+shader_parameter/tile_caust = 0.02
+shader_parameter/caustics_color = Color(0.00669999, 0.55945, 0.67, 1)
+shader_parameter/caustics_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_har4l"]
+render_priority = -1
+shader = ExtResource("6_har4l")
+shader_parameter/texture_albedo = ExtResource("10_hgorv")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_har4l")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 10.0
+shader_parameter/texture_scale = 0.4
+shader_parameter/mask_scale = 0.3
+shader_parameter/noise_threshold = 0.6
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8shf"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_har4l")
+shader = ExtResource("4_yt7ng")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(1.225, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("5_xlxta")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.2
+shader_parameter/tile_caust = 0.02
+shader_parameter/caustics_color = Color(0.00669999, 0.55945, 0.67, 1)
+shader_parameter/caustics_strength = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t8br3"]
+resource_name = "corroded_metal.003"
+cull_mode = 2
+albedo_texture = ExtResource("9_op0lm")
+proximity_fade_distance = 925.9
+distance_fade_mode = 2
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 90.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ksol"]
+resource_name = "corroded_metal.003"
+cull_mode = 2
+albedo_texture = ExtResource("9_op0lm")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 90.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vqj4g"]
+resource_name = "corroded_metal.002"
+cull_mode = 2
+albedo_texture = ExtResource("9_6tjws")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 128.0
+distance_fade_max_distance = 90.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="Shader" id="Shader_6tjws"]
+code = "shader_type spatial;
+render_mode depth_prepass_alpha, cull_back;
+
+uniform sampler2D texture_albedo : source_color, filter_linear_mipmap, repeat_enable;
+
+uniform float fade_radius = 0.7;
+uniform vec4 fade_color : source_color = vec4(0.0, 0.0, 0.0, 0.0);
+uniform float fade_power = 2.0;
+
+
+
+
+void fragment() {
+
+	ALBEDO = texture(texture_albedo, UV).rgb;
+	vec2 uv = UV;
+    vec2 center = vec2(0.5, 0.5);
+    float distance_from_center = distance(uv, center);
+    float fade_amount = smoothstep(fade_radius, fade_radius - (1.0 / fade_power), distance_from_center);
+    ALPHA = mix(fade_color.a, 1.0, fade_amount);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ksol"]
+render_priority = 0
+shader = SubResource("Shader_6tjws")
+shader_parameter/texture_albedo = ExtResource("10_hgorv")
+shader_parameter/fade_radius = 0.465
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_har4l"]
+resource_name = "moss"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.784314)
+albedo_texture = ExtResource("15_gkd3m")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsj3y"]
+render_priority = 0
+shader = ExtResource("16_b8shf")
+shader_parameter/scroll_texture = ExtResource("17_fsj3y")
+shader_parameter/scroll_speed = 0.4
+shader_parameter/scroll_speed_y = 0.0
+shader_parameter/emission_texture = ExtResource("17_fsj3y")
+shader_parameter/emission_strength = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttcgu"]
+render_priority = 0
+shader = ExtResource("16_b8shf")
+shader_parameter/scroll_texture = ExtResource("17_fsj3y")
+shader_parameter/scroll_speed = 0.4
+shader_parameter/scroll_speed_y = 0.0
+shader_parameter/emission_texture = ExtResource("17_fsj3y")
+shader_parameter/emission_strength = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eesfv"]
+render_priority = 0
+shader = ExtResource("16_b8shf")
+shader_parameter/scroll_texture = ExtResource("17_fsj3y")
+shader_parameter/scroll_speed = 0.4
+shader_parameter/scroll_speed_y = 0.0
+shader_parameter/emission_texture = ExtResource("17_fsj3y")
+shader_parameter/emission_strength = 0.7
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttcgu"]
+resource_name = "moss"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("15_gkd3m")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rah6e"]
+render_priority = 1
+shader = ExtResource("19_gfufn")
+shader_parameter/wind_strength = 0.030000001425
+shader_parameter/wind_speed = 1.0000000475
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.2
+shader_parameter/tex = ExtResource("20_ds3a6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ds3a6"]
+resource_name = "corroded_metal.001"
+albedo_texture = ExtResource("21_gfufn")
+proximity_fade_distance = 2.0
+distance_fade_mode = 2
+distance_fade_min_distance = 90.0
+distance_fade_max_distance = 48.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ejbdu"]
+size = Vector3(260, 85.48578, 260)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_op0lm"]
+flip_faces = true
+size = Vector2(360, 360)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sai82"]
+render_priority = 0
+shader = ExtResource("13_t8br3")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("5_xlxta")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.13
+shader_parameter/tile_caust = 0.008
+shader_parameter/caustics_color = Color(1, 1, 1, 1)
+shader_parameter/caustics_strength = 2.0
+shader_parameter/fade_radius = 0.4
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c7qoq"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.376471)
+albedo_texture = ExtResource("17_i02ks")
+texture_repeat = false
+billboard_keep_scale = true
+distance_fade_mode = 2
+distance_fade_min_distance = 32.0
+distance_fade_max_distance = 64.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_hgorv"]
+size = Vector2(150, 150)
+
+[sub_resource type="Gradient" id="Gradient_t8br3"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.784314, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_i02ks"]
+colors = PackedColorArray(1, 1, 1, 0.196078, 1, 1, 1, 0.588235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cdpd"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7275, 0.812375, 0.97, 0.482353)
+albedo_texture = ExtResource("20_1cdpd")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eesfv"]
+render_priority = 1
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("28_g7w61")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 6.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ttcgu"]
+
+[sub_resource type="Gradient" id="Gradient_g7w61"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_cx6ya"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0.0866667, 0.26, 1, 0, 0.26, 0.25566667, 1)
+
+[node name="stage_underwater" type="Node3D" unique_id=1201462912 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_fwkw6")
+stage_name = "world_underwater"
+_bloom = 1.0
+bgm = ExtResource("2_ywiod")
+bgm_volume = 0.2
+_has_reverb = true
+_entrance = [NodePath("entrance")]
+sit_override = true
+gravity_override = 8.0
+_stage_light = Color(0.375, 0.42499995, 0.75, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1562734343]
+environment = SubResource("Environment_r63t6")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1666155900 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("10_kj41i")
+_bounds = NodePath("../underwater/sand")
+_world = NodePath("../underwater")
+_fade_on_loop = true
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="underwater" parent="." unique_id=260553675 instance=ExtResource("2_u1y1q")]
+
+[node name="sand" parent="underwater" index="0" unique_id=1532758634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.933582, -0.018521309, -62.85727)
+material_overlay = SubResource("ShaderMaterial_cx6ya")
+
+[node name="structure_skeleton" parent="underwater" index="1" unique_id=2114991699]
+material_overlay = SubResource("ShaderMaterial_8xjgk")
+
+[node name="structure_globe_skeleton" parent="underwater" index="3" unique_id=819167113]
+material_overlay = SubResource("ShaderMaterial_8xjgk")
+
+[node name="structure_globe" parent="underwater" index="4" unique_id=832895377]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="structure_002" parent="underwater" index="5" unique_id=935668081]
+material_overlay = SubResource("ShaderMaterial_8xjgk")
+surface_material_override/0 = SubResource("StandardMaterial3D_t8br3")
+
+[node name="structure_003" parent="underwater" index="6" unique_id=857172762]
+material_overlay = SubResource("ShaderMaterial_8xjgk")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ksol")
+surface_material_override/1 = SubResource("StandardMaterial3D_vqj4g")
+
+[node name="barnacle" parent="underwater" index="7" unique_id=951119192]
+surface_material_override/0 = SubResource("ShaderMaterial_0ksol")
+
+[node name="metal" parent="underwater" index="8" unique_id=59833196]
+material_overlay = SubResource("ShaderMaterial_8xjgk")
+
+[node name="grand_piano" parent="underwater" index="9" unique_id=1777293750 groups=["skip"]]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="water_bubbles" parent="underwater/grand_piano" index="1" unique_id=2050073051 instance=ExtResource("19_0svu4")]
+transform = Transform3D(1, -0.000128121, 1.90975e-06, -8.44318e-05, 1.10811, 0.00697521, 9.64765e-05, -0.110892, 1.05517, 0.598999, 2.75188, 5.59933)
+amount = 12
+_max_particle = 12
+
+[node name="grand_piano_algae" parent="underwater" index="10" unique_id=69119028]
+surface_material_override/0 = SubResource("StandardMaterial3D_har4l")
+
+[node name="satelite" parent="underwater" index="11" unique_id=838640402]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="osc" parent="underwater" index="12" unique_id=630737890 groups=["skip"]]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+surface_material_override/1 = SubResource("ShaderMaterial_fsj3y")
+surface_material_override/2 = SubResource("ShaderMaterial_ttcgu")
+surface_material_override/3 = SubResource("ShaderMaterial_eesfv")
+
+[node name="water_bubbles" parent="underwater/osc" index="1" unique_id=480838896 instance=ExtResource("19_0svu4")]
+transform = Transform3D(1, -0.000128121, 1.90975e-06, -8.44318e-05, 1.10811, 0.00697521, 9.64765e-05, -0.110892, 1.05517, 0.817111, -1.39703, 0.718323)
+
+[node name="grand_piano_stool" parent="underwater" index="13" unique_id=1419119526 groups=["skip"]]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="wood_plank" parent="underwater" index="14" unique_id=984028071]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="structure_moss" parent="underwater" index="15" unique_id=227556689]
+material_override = SubResource("StandardMaterial3D_ttcgu")
+
+[node name="seagrass" parent="underwater" index="16" unique_id=1786461541]
+surface_material_override/0 = SubResource("ShaderMaterial_rah6e")
+
+[node name="acropora_001" parent="underwater" index="17" unique_id=1720239830]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="acropora" parent="underwater" index="18" unique_id=356750186]
+material_overlay = SubResource("ShaderMaterial_b8shf")
+
+[node name="water_bubbles" parent="underwater/acropora" index="1" unique_id=319840742 instance=ExtResource("19_0svu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60468674, 0.4221182, -0.89992523)
+
+[node name="chain_001" parent="underwater" index="19" unique_id=649504458]
+material_override = SubResource("StandardMaterial3D_ds3a6")
+
+[node name="chain_001_001" parent="underwater" index="20" unique_id=989168206]
+material_override = SubResource("StandardMaterial3D_ds3a6")
+
+[node name="chain_001_002" parent="underwater" index="21" unique_id=1700604203]
+material_override = SubResource("StandardMaterial3D_ds3a6")
+
+[node name="lightmap_gi" type="LightmapGI" parent="underwater" unique_id=969949255]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.011764706, 0.06666667, 0.56078434, 1)
+environment_custom_energy = 0.9
+generate_probes_subdiv = 0
+light_data = ExtResource("2_r63t6")
+
+[node name="spot_light_3d" type="SpotLight3D" parent="underwater/lightmap_gi" unique_id=584168992]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 56.6743, 7.21291, -76.7834)
+light_color = Color(0, 0.494118, 0.65098, 1)
+light_energy = 16.0
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 26.0
+spot_angle = 42.0
+
+[node name="omni_light_3d" type="OmniLight3D" parent="underwater/lightmap_gi" unique_id=1727182888]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.755172, 7.236804, -59.598156)
+light_color = Color(0.5933331, 0.39, 1, 1)
+light_energy = 0.9
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 78.0
+omni_attenuation = 1.2
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="underwater/lightmap_gi" unique_id=2094591927]
+transform = Transform3D(0.9659258, -0.066987306, 0.25, 0, 0.96592593, 0.2588191, -0.25881907, -0.25000006, 0.9330128, 0, 23, 0)
+light_color = Color(0.225, 0.25708336, 0.5, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="water" type="Area3D" parent="underwater" unique_id=142382217]
+script = ExtResource("3_r63t6")
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="underwater/water" unique_id=557121723]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.9118, 7.832218, -62.6187)
+shape = SubResource("BoxShape3D_ejbdu")
+debug_color = Color(0, 0.595, 0.7, 1)
+
+[node name="generic_door" parent="underwater" unique_id=1341957503 instance=ExtResource("34_ywiod")]
+transform = Transform3D(0.76010716, 0.037806794, 0.64869696, -0.06512182, 0.99771225, 0.018158298, -0.64652646, -0.05604659, 0.7608303, 61.09685, 3.1242554, -64.748665)
+
+[node name="door_frame" parent="underwater/generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="0" unique_id=185945896]
+material_overlay = SubResource("ShaderMaterial_cx6ya")
+
+[node name="door" parent="underwater/generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="1" unique_id=1252318643]
+material_overlay = SubResource("ShaderMaterial_cx6ya")
+
+[node name="interactable" parent="underwater/generic_door/door2/door" index="0" unique_id=731676892]
+_to_stage = "uid://col62rfhsro8a"
+
+[node name="attach_distant_light" type="Node3D" parent="." unique_id=301852866]
+
+[node name="distant_light" parent="attach_distant_light" unique_id=1197779262 instance=ExtResource("11_0ksol")]
+transform = Transform3D(1, 0, 0, 0, 0.997549, -0.0699654, 0, 0.0699654, 0.997549, 305.21814, 108.12406, 455.473)
+
+[node name="attach_player" type="Node3D" parent="attach_distant_light" unique_id=1282115747]
+script = ExtResource("10_t8br3")
+_ignore_y = true
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="entrance" type="Node3D" parent="." unique_id=1224837874]
+transform = Transform3D(0.86602545, 0, 0.5, 0, 1, 0, -0.5, 0, 0.86602545, -40, 0.8574619, -84)
+script = ExtResource("9_kwbwx")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="top_caustic" type="Node3D" parent="." unique_id=1479777747]
+
+[node name="attach_player" type="Node3D" parent="top_caustic" unique_id=125647986]
+script = ExtResource("10_t8br3")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="top_caustic_plane" type="MeshInstance3D" parent="top_caustic" unique_id=1923055860]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_op0lm")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_sai82")
+
+[node name="rays" type="CPUParticles3D" parent="top_caustic" unique_id=1107812492 groups=["loop_particle_restart"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 85.4042, 0)
+material_override = SubResource("StandardMaterial3D_c7qoq")
+amount = 32
+lifetime = 10.0
+preprocess = 10.0
+draw_order = 1
+mesh = SubResource("QuadMesh_hgorv")
+emission_shape = 6
+emission_ring_axis = Vector3(1, 90, 1)
+emission_ring_height = 10.0
+emission_ring_radius = 78.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 41.16
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -1.0
+angular_velocity_max = 1.0
+angle_max = 360.0
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+scale_curve_z = null
+color = Color(0.2208, 0.88608, 0.96, 1)
+color_ramp = SubResource("Gradient_t8br3")
+color_initial_ramp = SubResource("Gradient_i02ks")
+
+[node name="sun" type="Sprite3D" parent="top_caustic" unique_id=1623056044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 168, -37)
+material_override = SubResource("StandardMaterial3D_1cdpd")
+pixel_size = 3.0
+texture = ExtResource("20_1cdpd")
+
+[node name="water_bubble_attach" type="Node3D" parent="." unique_id=1591834291]
+
+[node name="water_bubbles" parent="water_bubble_attach" unique_id=543601342 instance=ExtResource("19_0svu4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+amount = 256
+preprocess = 5.0
+emission_shape = 3
+emission_box_extents = Vector3(6, 2, 6)
+_max_particle = 256
+
+[node name="attach_player" type="Node3D" parent="water_bubble_attach/water_bubbles" unique_id=713590040]
+script = ExtResource("10_t8br3")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1008025738]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65, 43, -57)
+stream = ExtResource("21_c7qoq")
+unit_size = 128.0
+max_db = -2.0
+autoplay = true
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="osc" type="AudioStreamPlayer3D" parent="." unique_id=1783140323]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.24608, 2.57071, -84.8383)
+stream = ExtResource("27_ttcgu")
+unit_size = 6.0
+max_db = -6.0
+autoplay = true
+max_distance = 42.0
+panning_strength = 1.2
+bus = &"amb"
+
+[node name="dust_specs" type="CPUParticles3D" parent="." unique_id=825260132]
+material_override = SubResource("StandardMaterial3D_eesfv")
+amount = 256
+lifetime = 5.0
+preprocess = 5.0
+mesh = SubResource("QuadMesh_ttcgu")
+emission_shape = 3
+emission_box_extents = Vector3(5, 5, 5)
+gravity = Vector3(0, 0.2, 0)
+tangential_accel_min = -1.0
+tangential_accel_max = 1.0
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.02
+scale_amount_max = 0.15
+color = Color(1, 1, 1, 0.5882353)
+color_ramp = SubResource("Gradient_g7w61")
+color_initial_ramp = SubResource("Gradient_cx6ya")
+script = ExtResource("28_eesfv")
+_max_particle = 256
+
+[node name="attach_player" type="Node3D" parent="dust_specs" unique_id=1841327165]
+script = ExtResource("10_t8br3")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("32_ds3a6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.296547, 1.3704085, -76.64478)
+
+[node name="piano_amb" type="AudioStreamPlayer3D" parent="." unique_id=1681389338]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 3.7404022, -77)
+stream = ExtResource("33_rah6e")
+pitch_scale = 0.5
+autoplay = true
+max_distance = 32.0
+bus = &"amb"
+
+[editable path="underwater"]
+[editable path="underwater/generic_door"]
+[editable path="underwater/generic_door/door2"]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://di5nr2k4w0y7h"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_4nto8"]
+[ext_resource type="Texture2D" uid="uid://jh8vnx7bcpi2" path="res://texture/wallpaper/wallpaper_35.png" id="2_dd2u2"]
+
+[resource]
+script = ExtResource("1_4nto8")
+name = "wallpaper_blossom"
+texture = ExtResource("2_dd2u2")
+accent_colour = Color(0.6393333, 0.63, 0.7, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

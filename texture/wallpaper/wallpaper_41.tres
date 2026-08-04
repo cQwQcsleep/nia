@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://boiiik34f4aur"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_2gbs6"]
+[ext_resource type="Texture2D" uid="uid://bm2j2olt8tels" path="res://texture/wallpaper/wallpaper_41.png" id="2_2gbs6"]
+
+[resource]
+script = ExtResource("1_2gbs6")
+name = "wallpaper_fish"
+texture = ExtResource("2_2gbs6")
+accent_colour = Color(0.3882353, 0.60784316, 0.8, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

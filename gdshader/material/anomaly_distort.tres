@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cxvfuga4yvqkc"]
+
+[ext_resource type="Shader" uid="uid://u4fvmncnf2qs" path="res://gdshader/distort_mesh.gdshader" id="1_24lbt"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_24lbt")
+shader_parameter/color = Color(0.93805844, 0.9380583, 0.93805826, 1)
+shader_parameter/distortion_amount = 2.0

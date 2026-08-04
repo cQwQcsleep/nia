@@ -1,0 +1,169 @@
+[gd_scene load_steps=24 format=3 uid="uid://bnd2abm6dio63"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_s5atl"]
+[ext_resource type="PackedScene" uid="uid://28vpmk8yebvh" path="res://stage/mesh/neighbourhood.blend" id="2_c1iuw"]
+[ext_resource type="LightmapGIData" uid="uid://yuly3gkmivav" path="res://stage/lightmap/stage_neighbourhood.lmbake" id="3_c1iuw"]
+[ext_resource type="Texture2D" uid="uid://42pkouje8v6j" path="res://texture/sky_clouds.png" id="3_tkp1d"]
+[ext_resource type="Texture2D" uid="uid://c2eqf0tdm1t7n" path="res://texture/sun.png" id="4_tuc8h"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_vt45b"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_txdm3"]
+[ext_resource type="Texture2D" uid="uid://uioichvrt0i6" path="res://texture/sun_glare.png" id="8_tkp1d"]
+[ext_resource type="Texture2D" uid="uid://b08le1ieckcn6" path="res://texture/red_planet.png" id="10_vt45b"]
+[ext_resource type="Shader" uid="uid://602kb6xwyhln" path="res://gdshader/clouds.gdshader" id="11_011su"]
+[ext_resource type="Texture2D" uid="uid://4u7ori112tqc" path="res://texture/water_tower_1.png" id="11_t16am"]
+[ext_resource type="AudioStream" uid="uid://c60cl8m5df1ou" path="res://audio/amb/the_hood.ogg" id="12_yii34"]
+
+[sub_resource type="Gradient" id="Gradient_cy88v"]
+offsets = PackedFloat32Array(0.027272727, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.880133, 0.8004, 0.92, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_011su"]
+gradient = SubResource("Gradient_cy88v")
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tkp1d"]
+panorama = ExtResource("3_tkp1d")
+
+[sub_resource type="Sky" id="Sky_tkp1d"]
+sky_material = SubResource("PanoramaSkyMaterial_tkp1d")
+
+[sub_resource type="Environment" id="Environment_s5atl"]
+background_mode = 2
+sky = SubResource("Sky_tkp1d")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.168627, 0.552941, 0.937255, 1)
+fog_density = 0.5
+fog_sky_affect = 0.1
+fog_depth_begin = 100.0
+fog_depth_end = 200.0
+adjustment_enabled = true
+adjustment_contrast = 0.9
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_011su")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_iq405"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yii34"]
+width = 64
+height = 64
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_iq405")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6oy6k"]
+render_priority = -1
+shader = ExtResource("11_011su")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_yii34")
+shader_parameter/scroll_speed = 0.050000002375
+shader_parameter/alpha_threshold = 0.3
+shader_parameter/alpha_strength = 0.30000001425
+shader_parameter/cloud_color = Color(0.1168, 0.16, 0.11895999, 1)
+shader_parameter/cloud_scale = 2.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8khsw"]
+resource_name = "water_tower"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("11_t16am")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuc8h"]
+transparency = 1
+disable_fog = true
+albedo_texture = ExtResource("4_tuc8h")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tkp1d"]
+transparency = 1
+blend_mode = 1
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.27451)
+albedo_texture = ExtResource("8_tkp1d")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[node name="neighbourhood" type="Node3D" node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_s5atl")
+stage_name = "world_neighbourhood"
+_extra_snd_bank = 1
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.7842386, 0.7124504, 0.8878062, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_s5atl")
+script = ExtResource("4_vt45b")
+_speed = -0.01
+
+[node name="lightmap_gi" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+quality = 2
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.2
+environment_mode = 3
+environment_custom_energy = 1.6
+light_data = ExtResource("3_c1iuw")
+
+[node name="neighbourhood" parent="." instance=ExtResource("2_c1iuw")]
+
+[node name="grass" parent="neighbourhood/Collection" index="1"]
+material_overlay = SubResource("ShaderMaterial_6oy6k")
+
+[node name="water_tower" parent="neighbourhood" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_8khsw")
+
+[node name="grass2" parent="neighbourhood/Collection_001" index="1"]
+material_overlay = SubResource("ShaderMaterial_6oy6k")
+
+[node name="grass3" parent="neighbourhood/Collection_002" index="1"]
+material_overlay = SubResource("ShaderMaterial_6oy6k")
+
+[node name="grass4" parent="neighbourhood/Collection_003" index="1"]
+material_overlay = SubResource("ShaderMaterial_6oy6k")
+
+[node name="grass5" parent="neighbourhood" index="8"]
+material_overlay = SubResource("ShaderMaterial_6oy6k")
+
+[node name="sun" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90, 84, -264)
+material_override = SubResource("StandardMaterial3D_tuc8h")
+pixel_size = 1.0
+billboard = 2
+texture = ExtResource("4_tuc8h")
+
+[node name="glare" type="Sprite3D" parent="sun"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11)
+material_override = SubResource("StandardMaterial3D_tkp1d")
+pixel_size = 2.0
+billboard = 2
+texture = ExtResource("8_tkp1d")
+
+[node name="entrance" type="Node3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 4, 0.24006844, 45)
+script = ExtResource("5_txdm3")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="mars" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -223, 59, 79)
+pixel_size = 1.0
+billboard = 2
+texture = ExtResource("10_vt45b")
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 29, -12)
+stream = ExtResource("12_yii34")
+unit_size = 64.0
+max_db = -2.0
+autoplay = true
+panning_strength = 0.3
+bus = &"amb"
+
+[editable path="neighbourhood"]

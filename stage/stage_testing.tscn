@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://j8tfa6d1vbay"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_qog8c"]
+
+[sub_resource type="Environment" id="Environment_qog8c"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_qog8c"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_2x04u"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="stage_containers" type="Node3D" unique_id=2101864358]
+script = ExtResource("1_qog8c")
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=700843656]
+environment = SubResource("Environment_qog8c")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=1249831573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+quality = 0
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+environment_mode = 3
+generate_probes_subdiv = 0
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="." unique_id=350744214]
+visible = false
+mesh = SubResource("PlaneMesh_qog8c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh_instance_3d" unique_id=374122075]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh_instance_3d/StaticBody3D" unique_id=1260243887]
+shape = SubResource("ConcavePolygonShape3D_2x04u")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://lscovc457uv4"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_r8ufe"]
+[ext_resource type="Texture2D" uid="uid://ddnu02g7nyss" path="res://texture/wallpaper/wallpaper_17.png" id="2_r8ufe"]
+
+[resource]
+script = ExtResource("1_r8ufe")
+name = "wallpaper_moonlit_ta"
+texture = ExtResource("2_r8ufe")
+accent_colour = Color(0.16078432, 0.16078432, 0.16078432, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

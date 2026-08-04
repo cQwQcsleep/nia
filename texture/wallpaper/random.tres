@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://c160xqrty8rtb"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_31txi"]
+
+[resource]
+script = ExtResource("1_31txi")
+name = "wallpaper_random"
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

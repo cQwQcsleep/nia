@@ -1,0 +1,165 @@
+[gd_scene format=3 uid="uid://bq3wg4nskcwfl"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_tl60h"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_t7w4x"]
+[ext_resource type="PackedScene" uid="uid://wukiujgnemhd" path="res://stage/mesh/tethered.blend" id="2_wlviv"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="3_pvk7o"]
+[ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="4_7nbm5"]
+[ext_resource type="Texture2D" uid="uid://byfgraxfx2tqg" path="res://texture/water_1.png" id="5_t7w4x"]
+[ext_resource type="LightmapGIData" uid="uid://b40ii21sxsdpt" path="res://stage/lightmap/stage_tethered.lmbake" id="7_tdal5"]
+[ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="7_ygxoc"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="8_klos7"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="8_p3i58"]
+[ext_resource type="Texture2D" uid="uid://wjy5t8du2wy3" path="res://texture/tree.png" id="9_lie11"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="9_m4dfc"]
+[ext_resource type="Shader" uid="uid://c7thqoc0mr748" path="res://gdshader/shore.gdshader" id="10_t5ptq"]
+[ext_resource type="Texture2D" uid="uid://bxjner41mc03n" path="res://texture/swash.png" id="11_r7nh6"]
+[ext_resource type="AudioStream" uid="uid://dqgvrxdn6qn7a" path="res://audio/amb/waters.ogg" id="11_u5phk"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="14_r7nh6"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="17_lie11"]
+
+[sub_resource type="Gradient" id="Gradient_t5ptq"]
+offsets = PackedFloat32Array(0, 0.3, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.21, 0.1785, 0.1785, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_r7nh6"]
+gradient = SubResource("Gradient_t5ptq")
+
+[sub_resource type="Environment" id="Environment_tdal5"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.513564, 0.601507, 0.716619, 1)
+fog_density = 1.0
+fog_height = -0.5
+fog_height_density = 0.1
+fog_depth_begin = 6.0
+fog_depth_end = 48.0
+adjustment_enabled = true
+adjustment_contrast = 0.7
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_r7nh6")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ygxoc"]
+data = PackedVector3Array(60, 0, 0, 0, 0, 0, 0, 0, -60, 60, 0, 0, 0, 0, -60, 60, 0, -60, 0, 0, 0, -60, 0, -60, 0, 0, -60, 60, 0, 60, 0, 0, 0, 60, 0, 0, 0, 0, 0, -60, 0, 0, -60, 0, -60, 60, 0, 60, 0, 0, 60, 0, 0, 0, 0, 0, 60, -60, 0, 0, 0, 0, 0, 0, 0, 60, -60, 0, 60, -60, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tdal5"]
+render_priority = 0
+shader = ExtResource("3_pvk7o")
+shader_parameter/albedo = Color(0.67, 0.813, 1, 1)
+shader_parameter/water_emission_strength = 0.0
+shader_parameter/water_texture1 = ExtResource("4_7nbm5")
+shader_parameter/water_texture2 = ExtResource("5_t7w4x")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.1
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.7
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfmni"]
+render_priority = 0
+shader = ExtResource("8_p3i58")
+shader_parameter/wind_strength = 0.6
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("9_lie11")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7cgi"]
+render_priority = 1
+shader = ExtResource("10_t5ptq")
+shader_parameter/swash_texture = ExtResource("11_r7nh6")
+shader_parameter/fade_duration = 2.0
+shader_parameter/move_duration = 4.0
+shader_parameter/wave_strength = 0.02
+shader_parameter/wave_speed = 2.0
+shader_parameter/wave_frequency = 10.0
+shader_parameter/opacity = 0.5
+
+[node name="stage_tethered" type="Node3D" unique_id=2133303645 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_tl60h")
+stage_name = "world_roots"
+_bloom = 0.5
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.780392, 0.807843, 1, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1918722783]
+environment = SubResource("Environment_tdal5")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1581629100 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("2_t7w4x")
+_bounds = NodePath("../tethered/collision")
+_world = NodePath("../tethered")
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="area_3d" type="Area3D" parent="." unique_id=865060574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.99396, 0)
+collision_mask = 5
+script = ExtResource("7_ygxoc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="area_3d" unique_id=651892047]
+shape = SubResource("ConcavePolygonShape3D_ygxoc")
+
+[node name="tethered" parent="." unique_id=614222047 instance=ExtResource("2_wlviv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
+
+[node name="water" parent="tethered" index="1" unique_id=1713297773]
+surface_material_override/0 = SubResource("ShaderMaterial_tdal5")
+
+[node name="trees" parent="tethered" index="8" unique_id=916828160]
+surface_material_override/0 = SubResource("ShaderMaterial_wfmni")
+
+[node name="interactable" parent="tethered/door" parent_id_path=PackedInt32Array(614222047, 1025082483) index="0" unique_id=2102118707 instance=ExtResource("8_klos7")]
+
+[node name="shore" parent="tethered" index="11" unique_id=290151930]
+surface_material_override/0 = SubResource("ShaderMaterial_w7cgi")
+
+[node name="lightmap_gi" type="LightmapGI" parent="tethered" unique_id=1192247856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+quality = 2
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+environment_custom_energy = 0.5
+light_data = ExtResource("7_tdal5")
+
+[node name="omni_light_3d" type="OmniLight3D" parent="tethered/lightmap_gi" unique_id=463631053]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -2)
+light_color = Color(0.881267, 0.750418, 0.464061, 1)
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 12.0
+
+[node name="entrance" type="Node3D" parent="." unique_id=920077868]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, -2.1965, -36)
+script = ExtResource("9_m4dfc")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="audio_stream_player_3d" type="AudioStreamPlayer3D" parent="." unique_id=41947694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 7)
+stream = ExtResource("11_u5phk")
+volume_db = 4.0
+unit_size = 32.0
+max_db = 4.0
+autoplay = true
+panning_strength = 0.3
+bus = &"amb"
+
+[node name="particle_wind" parent="." unique_id=1906888126 instance=ExtResource("14_r7nh6")]
+
+[node name="wind" parent="particle_wind" index="1"]
+color = Color(1, 1, 1, 0.588235)
+
+[node name="particle_bird" parent="." unique_id=1812593453 instance=ExtResource("17_lie11")]
+
+[editable path="tethered"]
+[editable path="particle_wind"]

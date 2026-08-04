@@ -1,0 +1,518 @@
+[gd_scene format=3 uid="uid://d0b8fbltmecon"]
+
+[ext_resource type="Script" uid="uid://bntxp414wghjk" path="res://gdscript/weather_rain.gd" id="1_e33kb"]
+[ext_resource type="Texture2D" uid="uid://b6r12ejo4b7pm" path="res://texture/particle_rain.png" id="1_yl6a4"]
+[ext_resource type="AudioStream" uid="uid://bnwnkw64g771e" path="res://audio/amb/rain_light.ogg" id="2_e33kb"]
+[ext_resource type="Texture2D" uid="uid://bo31e1rmqpwf4" path="res://texture/weather_rain/ripples_0000.png" id="3_iuyw7"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="3_nitda"]
+[ext_resource type="Texture2D" uid="uid://c2rn6u8tx5d5j" path="res://texture/weather_rain/ripples_0010.png" id="4_nitda"]
+[ext_resource type="Texture2D" uid="uid://bjqioahvfovsr" path="res://texture/weather_rain/ripples_0011.png" id="5_nbq5m"]
+[ext_resource type="Texture2D" uid="uid://dyc5tdx84wyqk" path="res://texture/weather_rain/ripples_0012.png" id="6_un8mb"]
+[ext_resource type="Texture2D" uid="uid://tfbnd8jjo0ka" path="res://texture/weather_rain/ripples_0013.png" id="7_qpff1"]
+[ext_resource type="Texture2D" uid="uid://ijbvfsuu6y1u" path="res://texture/weather_rain/ripples_0014.png" id="8_gbrui"]
+[ext_resource type="Texture2D" uid="uid://n2vewx4poapn" path="res://texture/weather_rain/ripples_0015.png" id="9_juqej"]
+[ext_resource type="Texture2D" uid="uid://bqyymt2ddfjgb" path="res://texture/weather_rain/ripples_0016.png" id="10_g4pii"]
+[ext_resource type="Texture2D" uid="uid://bgrcmtbk2txsy" path="res://texture/weather_rain/ripples_0017.png" id="11_8hh6w"]
+[ext_resource type="Texture2D" uid="uid://bua48x0ytvtc8" path="res://texture/weather_rain/ripples_0018.png" id="12_pximb"]
+[ext_resource type="Texture2D" uid="uid://dpu8s2robmjon" path="res://texture/weather_rain/ripples_0019.png" id="13_fsv4d"]
+[ext_resource type="Texture2D" uid="uid://fddyx73pyjvi" path="res://texture/weather_rain/ripples_0002.png" id="14_tmbvw"]
+[ext_resource type="Texture2D" uid="uid://tcj55mcewuae" path="res://texture/weather_rain/ripples_0020.png" id="15_aflri"]
+[ext_resource type="Texture2D" uid="uid://cpkkdvu78we0n" path="res://texture/weather_rain/ripples_0021.png" id="16_sx3bp"]
+[ext_resource type="Texture2D" uid="uid://bxq8y1dm0cmxk" path="res://texture/weather_rain/ripples_0022.png" id="17_q6ww7"]
+[ext_resource type="Texture2D" uid="uid://b0natx62jbhpj" path="res://texture/weather_rain/ripples_0023.png" id="18_ef78x"]
+[ext_resource type="Texture2D" uid="uid://xf0nqetoxc1g" path="res://texture/weather_rain/ripples_0024.png" id="19_hg6vv"]
+[ext_resource type="Texture2D" uid="uid://c22msnxaabqlg" path="res://texture/weather_rain/ripples_0025.png" id="20_cni00"]
+[ext_resource type="Texture2D" uid="uid://gbvc45utnv0w" path="res://texture/weather_rain/ripples_0026.png" id="21_bcqdt"]
+[ext_resource type="Texture2D" uid="uid://6vx8vmygnal6" path="res://texture/weather_rain/ripples_0027.png" id="22_llnb3"]
+[ext_resource type="Texture2D" uid="uid://ry7op3t68x4u" path="res://texture/weather_rain/ripples_0028.png" id="23_1ocr5"]
+[ext_resource type="Texture2D" uid="uid://c0pb2fuqr44vr" path="res://texture/weather_rain/ripples_0029.png" id="24_mmxu1"]
+[ext_resource type="Texture2D" uid="uid://cw0g1f0gj2gwo" path="res://texture/weather_rain/ripples_0003.png" id="25_4oe44"]
+[ext_resource type="Texture2D" uid="uid://c3hpakp1322cc" path="res://texture/weather_rain/ripples_0004.png" id="26_3atbr"]
+[ext_resource type="Texture2D" uid="uid://sljjc1yj8pvy" path="res://texture/weather_rain/ripples_0005.png" id="27_0pnjl"]
+[ext_resource type="Texture2D" uid="uid://5h24ws22cjkt" path="res://texture/weather_rain/ripples_0006.png" id="28_k8e33"]
+[ext_resource type="Texture2D" uid="uid://bchdnewyff0uy" path="res://texture/weather_rain/ripples_0007.png" id="29_1qc2e"]
+[ext_resource type="Texture2D" uid="uid://ba44aqmm1vt7x" path="res://texture/weather_rain/ripples_0008.png" id="30_7t8y7"]
+[ext_resource type="Texture2D" uid="uid://dyou1lhnf0d14" path="res://texture/weather_rain/ripples_0009.png" id="31_l1i5i"]
+[ext_resource type="Texture2D" uid="uid://dndiyj2vsnlfo" path="res://texture/water_droplet.png" id="34_un8mb"]
+[ext_resource type="Shader" uid="uid://dx37j0bcuns50" path="res://gdshader/invert.gdshader" id="35_nbq5m"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="35_un8mb"]
+[ext_resource type="Texture2D" uid="uid://dqe0mal5h0ht5" path="res://texture/weather_lightning.png" id="37_qpff1"]
+[ext_resource type="Texture2D" uid="uid://vo1n0m73s45x" path="res://texture/weather_storm_cloud.png" id="38_gbrui"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e35ka"]
+render_priority = 2
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+specular_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_yl6a4")
+texture_filter = 5
+billboard_mode = 2
+billboard_keep_scale = true
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_jlqvf"]
+
+[sub_resource type="Curve" id="Curve_gsphj"]
+_data = [Vector2(1, 0.0103806), 0.0, 0.0, 0, 0]
+point_count = 1
+
+[sub_resource type="Gradient" id="Gradient_gsphj"]
+offsets = PackedFloat32Array(0, 0.1, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_iuyw7"]
+offsets = PackedFloat32Array(0, 0.1, 0.2, 0.3, 1)
+colors = PackedColorArray(1, 1, 1, 0.196078, 0.94600004, 0.19, 1, 0.21568628, 0.6, 0.8, 1, 0.21960784, 1, 1, 1, 0.22260633, 1, 1, 1, 0.392157)
+
+[sub_resource type="Shader" id="Shader_nitda"]
+code = "shader_type spatial;
+render_mode world_vertex_coords, unshaded, blend_mix, depth_draw_never, cull_disabled, depth_prepass_alpha;
+
+/** The decal texture to project */
+uniform sampler2D texture_albedo : hint_default_white, repeat_disable, filter_linear_mipmap_anisotropic;
+
+/** The scene depth texture (used for projection) */
+uniform sampler2D DEPTH_TEXTURE : hint_depth_texture, filter_linear_mipmap;
+
+/** Half the height of the cube volume for the decal projection */
+uniform float cube_half_size_y = 0.5;
+
+/** Where the Y fade starts, as a fraction of half the cube height (0.0-1.0) */
+uniform float fade_start = 0.3;
+
+/** Where the Y fade ends, as a fraction of half the cube height (0.0-1.0) */
+uniform float fade_end = 0.45;
+
+/** The scale of the decal texture in X (width) and Z (depth) axes */
+uniform vec2 texture_scale = vec2(1.0, 1.0);
+
+/** The offset of the decal projection in X and Z (local space) */
+uniform vec2 decal_offset = vec2(0.0, 0.0);
+uniform float alpha_strength : hint_range(0.0, 1.0) = 1.0;
+varying mat4 INV_MODEL_MATRIX;
+
+void vertex() {
+    INV_MODEL_MATRIX = inverse(MODEL_MATRIX);
+}
+
+vec3 world_pos_from_depth(float depth, vec2 screen_uv, mat4 inverse_proj, mat4 inverse_view) {
+    float z = depth * 2.0 - 1.0;
+    vec4 clipSpacePosition = vec4(screen_uv * 2.0 - 1.0, z, 1.0);
+    vec4 viewSpacePosition = inverse_proj * clipSpacePosition;
+    viewSpacePosition /= viewSpacePosition.w;
+    vec4 worldSpacePosition = inverse_view * viewSpacePosition;
+    return worldSpacePosition.xyz;
+}
+
+void fragment() {
+    float depth = texture(DEPTH_TEXTURE, SCREEN_UV).x;
+    vec3 world_pos = world_pos_from_depth(depth, SCREEN_UV, INV_PROJECTION_MATRIX, INV_VIEW_MATRIX);
+    vec4 local_pos = INV_MODEL_MATRIX * vec4(world_pos, 1.0);
+
+    local_pos.xz -= decal_offset;
+
+    if (abs(local_pos.y) > cube_half_size_y || abs(local_pos.x) > 0.5 || abs(local_pos.z) > 0.5) {
+        discard;
+    }
+
+    vec2 uv = (local_pos.xz / texture_scale) + 0.5;
+
+    if (uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0 || uv.y > 1.0) {
+        discard;
+    }
+
+    float dist_to_top = cube_half_size_y - local_pos.y;
+    float dist_to_bottom = cube_half_size_y + local_pos.y;
+    float fade_top = 1.0 - smoothstep(fade_start * cube_half_size_y, fade_end * cube_half_size_y, dist_to_top);
+    float fade_bottom = 1.0 - smoothstep(fade_start * cube_half_size_y, fade_end * cube_half_size_y, dist_to_bottom);
+    float y_fade = min(fade_top, fade_bottom);
+
+    vec4 tex_color = texture(texture_albedo, uv);
+
+    ALBEDO = tex_color.rgb;
+    ALPHA = tex_color.a * y_fade * alpha_strength;
+}"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_en4ti"]
+frames = 30
+speed_scale = 32.0
+frame_0/texture = ExtResource("3_iuyw7")
+frame_1/texture = ExtResource("3_iuyw7")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("14_tmbvw")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("25_4oe44")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("26_3atbr")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("27_0pnjl")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("28_k8e33")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("29_1qc2e")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("30_7t8y7")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("31_l1i5i")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("4_nitda")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("5_nbq5m")
+frame_11/duration = 1.0
+frame_12/texture = ExtResource("6_un8mb")
+frame_12/duration = 1.0
+frame_13/texture = ExtResource("7_qpff1")
+frame_13/duration = 1.0
+frame_14/texture = ExtResource("8_gbrui")
+frame_14/duration = 1.0
+frame_15/texture = ExtResource("9_juqej")
+frame_15/duration = 1.0
+frame_16/texture = ExtResource("10_g4pii")
+frame_16/duration = 1.0
+frame_17/texture = ExtResource("11_8hh6w")
+frame_17/duration = 1.0
+frame_18/texture = ExtResource("12_pximb")
+frame_18/duration = 1.0
+frame_19/texture = ExtResource("13_fsv4d")
+frame_19/duration = 1.0
+frame_20/texture = ExtResource("15_aflri")
+frame_20/duration = 1.0
+frame_21/texture = ExtResource("16_sx3bp")
+frame_21/duration = 1.0
+frame_22/texture = ExtResource("17_q6ww7")
+frame_22/duration = 1.0
+frame_23/texture = ExtResource("18_ef78x")
+frame_23/duration = 1.0
+frame_24/texture = ExtResource("19_hg6vv")
+frame_24/duration = 1.0
+frame_25/texture = ExtResource("20_cni00")
+frame_25/duration = 1.0
+frame_26/texture = ExtResource("21_bcqdt")
+frame_26/duration = 1.0
+frame_27/texture = ExtResource("22_llnb3")
+frame_27/duration = 1.0
+frame_28/texture = ExtResource("23_1ocr5")
+frame_28/duration = 1.0
+frame_29/texture = ExtResource("24_mmxu1")
+frame_29/duration = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nbq5m"]
+render_priority = 1
+shader = SubResource("Shader_nitda")
+shader_parameter/texture_albedo = SubResource("AnimatedTexture_en4ti")
+shader_parameter/cube_half_size_y = 0.5
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.2
+shader_parameter/texture_scale = Vector2(1, 1)
+shader_parameter/decal_offset = Vector2(0, 0)
+shader_parameter/alpha_strength = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_un8mb"]
+size = Vector3(2, 1, 2)
+
+[sub_resource type="Gradient" id="Gradient_e33kb"]
+offsets = PackedFloat32Array(0, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_nitda"]
+colors = PackedColorArray(1, 1, 1, 0.392157, 1, 1, 1, 0.784314)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6trig"]
+transparency = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = SubResource("AnimatedTexture_en4ti")
+
+[sub_resource type="QuadMesh" id="QuadMesh_po7mk"]
+center_offset = Vector3(0, 0.01, 0)
+orientation = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nbq5m"]
+render_priority = 1
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("34_un8mb")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_un8mb"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="Curve" id="Curve_nbq5m"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(0.90000004, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_qpff1"]
+offsets = PackedFloat32Array(0, 0.3, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_gbrui"]
+colors = PackedColorArray(1, 1, 1, 0.39215687, 1, 1, 1, 0.39215687)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_un8mb"]
+shader = ExtResource("35_nbq5m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbrui"]
+render_priority = -10
+transparency = 1
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("37_qpff1")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 4
+particles_anim_v_frames = 1
+particles_anim_loop = true
+fixed_size = true
+point_size = 128.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_juqej"]
+size = Vector2(0.6, 1)
+center_offset = Vector3(0, 0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_juqej"]
+offsets = PackedFloat32Array(0, 0.1, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_g4pii"]
+offsets = PackedFloat32Array(0, 0.99609596)
+colors = PackedColorArray(1, 1, 1, 0.039215688, 1, 1, 1, 0.39215687)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_juqej"]
+render_priority = -12
+transparency = 1
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("38_gbrui")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+fixed_size = true
+point_size = 128.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_gbrui"]
+size = Vector2(2.5, 1)
+center_offset = Vector3(0, 0.5, 0)
+
+[node name="weather_rain" type="Node3D" unique_id=160301397 groups=["weather"]]
+script = ExtResource("1_e33kb")
+
+[node name="particle" type="CPUParticles3D" parent="." unique_id=782538743]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+material_override = SubResource("StandardMaterial3D_e35ka")
+gi_mode = 0
+amount = 400
+lifetime = 0.3
+fixed_fps = 24
+mesh = SubResource("QuadMesh_jlqvf")
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 10)
+gravity = Vector3(0, -256, 0)
+angle_min = -2.0
+angle_max = 2.0
+scale_amount_min = 0.5
+scale_amount_max = 5.0
+split_scale = true
+scale_curve_x = SubResource("Curve_gsphj")
+scale_curve_y = null
+scale_curve_z = null
+color_ramp = SubResource("Gradient_gsphj")
+color_initial_ramp = SubResource("Gradient_iuyw7")
+script = ExtResource("3_nitda")
+_max_particle = 400
+
+[node name="rain_outside" type="AudioStreamPlayer3D" parent="particle" unique_id=635697296]
+unique_name_in_owner = true
+stream = ExtResource("2_e33kb")
+attenuation_model = 2
+unit_size = 20.0
+max_db = -4.0
+autoplay = true
+panning_strength = 0.4
+bus = &"ceiling_fade"
+attenuation_filter_db = -12.0
+
+[node name="rain_ripple" type="CPUParticles3D" parent="." unique_id=666656511]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35112, 0)
+material_override = SubResource("ShaderMaterial_nbq5m")
+gi_mode = 0
+amount = 12
+lifetime = 1.2
+mesh = SubResource("BoxMesh_un8mb")
+emission_shape = 3
+emission_box_extents = Vector3(5, 0, 5)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 5.0
+scale_amount_max = 6.0
+color_ramp = SubResource("Gradient_e33kb")
+color_initial_ramp = SubResource("Gradient_nitda")
+
+[node name="spring_arm_3d" type="SpringArm3D" parent="." unique_id=878143970]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 5, 0)
+spring_length = 6.0
+margin = 0.05
+
+[node name="rain_ripple2" type="CPUParticles3D" parent="spring_arm_3d" unique_id=1345340215]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+visible = false
+material_override = SubResource("StandardMaterial3D_6trig")
+gi_mode = 0
+lifetime = 2.0
+randomness = 0.5
+draw_order = 2
+mesh = SubResource("QuadMesh_po7mk")
+emission_shape = 3
+emission_box_extents = Vector3(6, 0, 6)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 5.0
+scale_amount_max = 10.0
+color_ramp = SubResource("Gradient_e33kb")
+color_initial_ramp = SubResource("Gradient_nitda")
+
+[node name="rain_feedback" type="CPUParticles3D" parent="spring_arm_3d" unique_id=1210497362]
+unique_name_in_owner = true
+material_override = SubResource("StandardMaterial3D_nbq5m")
+amount = 180
+lifetime = 0.7
+speed_scale = 1.5
+lifetime_randomness = 0.4
+mesh = SubResource("QuadMesh_un8mb")
+emission_shape = 3
+emission_box_extents = Vector3(6, 6, 0)
+direction = Vector3(0, 0, -1)
+spread = 0.0
+gravity = Vector3(0, -5, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 1.0
+scale_amount_min = 0.01
+scale_amount_max = 0.06
+scale_amount_curve = SubResource("Curve_nbq5m")
+color = Color(1, 1, 1, 0.78431374)
+color_ramp = SubResource("Gradient_qpff1")
+color_initial_ramp = SubResource("Gradient_gbrui")
+script = ExtResource("3_nitda")
+_max_particle = 180
+
+[node name="thunder_timer" type="Timer" parent="." unique_id=571417318]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="thunder_effect" type="CanvasLayer" parent="." unique_id=745805717]
+
+[node name="thunder" type="ColorRect" parent="thunder_effect" unique_id=1855963441]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_un8mb")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="color_rect" type="ColorRect" parent="thunder_effect/thunder" unique_id=1141560901]
+modulate = Color(1, 1, 1, 0.019607844)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 117.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.33999997, 0.5489999, 1)
+
+[node name="color_rect2" type="ColorRect" parent="thunder_effect/thunder" unique_id=1795646214]
+modulate = Color(1, 1, 1, 0.019607844)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 95.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0.33999997, 0.791, 1)
+
+[node name="color_rect3" type="ColorRect" parent="thunder_effect/thunder" unique_id=165585324]
+modulate = Color(1, 1, 1, 0.019607844)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -189.0
+offset_bottom = -103.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8239999, 0.33999997, 1, 1)
+
+[node name="lightning" type="Sprite3D" parent="." unique_id=1037724561]
+
+[node name="attach_player" type="Node3D" parent="." unique_id=758574524]
+script = ExtResource("35_un8mb")
+_update_rotation = false
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="node_3d" type="Node3D" parent="." unique_id=1722166344]
+
+[node name="lightning_particle" type="CPUParticles3D" parent="node_3d" unique_id=1798903045]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -1000)
+material_override = SubResource("StandardMaterial3D_gbrui")
+emitting = false
+amount = 1
+lifetime = 0.2
+one_shot = true
+mesh = SubResource("QuadMesh_juqej")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_juqej")
+color_initial_ramp = SubResource("Gradient_g4pii")
+anim_speed_min = 0.2
+anim_speed_max = 0.2
+anim_offset_max = 1.0
+
+[node name="storm_cloud_particle" type="CPUParticles3D" parent="node_3d" unique_id=89802090]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 300, -1100)
+material_override = SubResource("StandardMaterial3D_juqej")
+emitting = false
+amount = 1
+lifetime = 0.3
+one_shot = true
+lifetime_randomness = 0.5
+mesh = SubResource("QuadMesh_gbrui")
+gravity = Vector3(0, 0, 0)
+scale_amount_min = 0.4
+scale_amount_max = 0.6
+color = Color(1, 1, 1, 0.19607843)
+color_ramp = SubResource("Gradient_juqej")
+color_initial_ramp = SubResource("Gradient_g4pii")
+
+[node name="attach_player" type="Node3D" parent="node_3d" unique_id=1171001813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 6, 0)
+script = ExtResource("35_un8mb")
+_ignore_y = true
+_attach_to_cam = true
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[connection signal="timeout" from="thunder_timer" to="." method="_on_thunder_timer_timeout"]

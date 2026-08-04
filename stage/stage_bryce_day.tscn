@@ -1,0 +1,621 @@
+[gd_scene format=3 uid="uid://dedroxhuq3be"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_lcyod"]
+[ext_resource type="AudioStream" uid="uid://cd6aeo82vnkbr" path="res://audio/music/se_seq.ogg" id="2_1bhfl"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_e2jml"]
+[ext_resource type="Texture2D" uid="uid://cnnb6l25ejmyj" path="res://texture/sky_3d_day.png" id="2_ohgpj"]
+[ext_resource type="PackedScene" uid="uid://bx4aprv7b6hmq" path="res://stage/mesh/bryce_day.blend" id="3_oy5wb"]
+[ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="4_axrm5"]
+[ext_resource type="Shader" uid="uid://b6lbdj8eax77p" path="res://gdshader/caustics.gdshader" id="6_8soy3"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="6_t2s26"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="7_vdc8l"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="8_ugm77"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="9_1bhfl"]
+[ext_resource type="Texture2D" uid="uid://clib08h1s2h3r" path="res://texture/frozen_planet_diorama_subspace.png" id="11_3kgf1"]
+[ext_resource type="AudioStream" uid="uid://cmpaqu0tu3pgh" path="res://audio/amb/metal_rotate.ogg" id="12_kqdvf"]
+[ext_resource type="Texture2D" uid="uid://ba58tnsp2wyhe" path="res://texture/3d_door.png" id="12_ugm77"]
+[ext_resource type="Shader" uid="uid://chsiexedrsqhy" path="res://gdshader/3d_matcap_no_fog.gdshader" id="13_eoaxs"]
+[ext_resource type="AudioStream" uid="uid://b3aeoar4wilic" path="res://audio/amb/waters_neo.ogg" id="13_ny6cq"]
+[ext_resource type="Shader" uid="uid://ded8pk2114pja" path="res://gdshader/3d_matcap.gdshader" id="14_8soy3"]
+[ext_resource type="Shader" uid="uid://b608t0d4owqs1" path="res://gdshader/clouds_blocks.gdshader" id="20_1bhfl"]
+[ext_resource type="Texture2D" uid="uid://duk7obii3iy4o" path="res://texture/3d_matcap.png" id="21_1bhfl"]
+[ext_resource type="LightmapGIData" uid="uid://0bcdexd4pmcx" path="res://stage/lightmap/stage_bryce_day.lmbake" id="23_ugm77"]
+
+[sub_resource type="Gradient" id="Gradient_e2jml"]
+offsets = PackedFloat32Array(0, 0.5, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.3825, 0.390375, 0.45, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_auo1p"]
+gradient = SubResource("Gradient_e2jml")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_usm3t"]
+shader = ExtResource("2_e2jml")
+shader_parameter/source_panorama = ExtResource("2_ohgpj")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(55, -0.01)
+shader_parameter/uv_scale = 1.0
+
+[sub_resource type="Sky" id="Sky_6q7yr"]
+sky_material = SubResource("ShaderMaterial_usm3t")
+
+[sub_resource type="Environment" id="Environment_oy5wb"]
+background_mode = 2
+background_color = Color(0.211765, 0.372549, 0.858824, 1)
+background_energy_multiplier = 1.2
+sky = SubResource("Sky_6q7yr")
+reflected_light_source = 1
+tonemap_exposure = 0.6
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(1, 0.95, 0.97, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = -1.0
+fog_height_density = 0.3
+fog_depth_begin = 32.0
+fog_depth_end = 128.0
+adjustment_enabled = true
+adjustment_contrast = 0.9
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_auo1p")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w3oab"]
+render_priority = -1
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/tex = ExtResource("12_ugm77")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/matcap_boost = 1.4
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q7yr"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 0.39999998, 0.43000007, 1)
+shader_parameter/matcap_boost = 1.2
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.50000002375
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_6q7yr"]
+colors = PackedColorArray(0.4117647, 1, 0.4, 1, 0.8375, 1, 0.25, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1bhfl"]
+gradient = SubResource("Gradient_6q7yr")
+width = 16
+height = 16
+fill = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8soy3"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/tex = SubResource("GradientTexture2D_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/matcap_boost = 1.4
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.50000002375
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bhfl"]
+render_priority = -1
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(0.6906667, 1, 0.36, 1)
+shader_parameter/matcap_boost = 1.2
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.50000002375
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_8soy3"]
+offsets = PackedFloat32Array(0.0031545742, 0.50473183, 1)
+colors = PackedColorArray(0.4648, 0.81174004, 0.83, 1, 0.81573343, 0.60719997, 0.92, 1, 0.46666667, 0.8117647, 0.83137256, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_eoaxs"]
+gradient = SubResource("Gradient_8soy3")
+width = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h3cwm"]
+render_priority = -1
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/tex = SubResource("GradientTexture1D_eoaxs")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/matcap_boost = 1.6
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.2000000095
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_eoaxs"]
+offsets = PackedFloat32Array(0.18611987, 0.50473183, 0.8)
+colors = PackedColorArray(0.51386666, 0.246, 0.82, 1, 0.85744, 0.92, 0.60719997, 1, 0.83, 0.4648, 0.47088656, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ugm77"]
+gradient = SubResource("Gradient_eoaxs")
+width = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3yp10"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/tex = SubResource("GradientTexture1D_ugm77")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/matcap_boost = 1.6
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r22gx"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(1, 0.39999998, 0.43000007, 1)
+shader_parameter/matcap_boost = 1.2
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xver5"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(0.71, 1, 0.39999998, 1)
+shader_parameter/matcap_boost = 1.2
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0jlus"]
+render_priority = 0
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 1.0
+shader_parameter/color = Color(0.39999998, 0.52, 1, 1)
+shader_parameter/matcap_boost = 1.2
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="Gradient" id="Gradient_ugm77"]
+offsets = PackedFloat32Array(0.30283913, 0.362776, 0.4384858, 0.5772871, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5176471, 0.8117647, 0.4392157, 1, 0.5176471, 0.8117647, 0.81960785, 1, 0.59607846, 0.39215687, 0.6117647, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_crwej"]
+gradient = SubResource("Gradient_ugm77")
+width = 16
+height = 16
+fill_from = Vector2(1, 0.73504275)
+fill_to = Vector2(1, 0.34615386)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mkh0k"]
+render_priority = 0
+shader = ExtResource("13_eoaxs")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/tex = SubResource("GradientTexture2D_crwej")
+shader_parameter/color = Color(0.8333333, 0.8, 1, 1)
+shader_parameter/matcap_boost = 1.8
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jfwtw"]
+render_priority = 1
+shader = ExtResource("14_8soy3")
+shader_parameter/matcap = ExtResource("21_1bhfl")
+shader_parameter/transparency = 0.4
+shader_parameter/color = Color(0.86, 0.874, 1, 1)
+shader_parameter/matcap_boost = 2.0
+shader_parameter/roughness = 0.2
+shader_parameter/flip_horizontal = false
+shader_parameter/spec_color = Color(1, 1, 1, 1)
+shader_parameter/spec_boost = 0.0
+shader_parameter/spec_direction = Vector3(0, 0, 1)
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = Vector2(1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8soy3"]
+noise_type = 0
+frequency = 0.02
+fractal_octaves = 3
+fractal_lacunarity = 1.4
+fractal_gain = 8.0
+fractal_weighted_strength = 0.54
+domain_warp_amplitude = 10.0
+domain_warp_fractal_gain = 0.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eoaxs"]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_8soy3")
+seamless = true
+as_normal_map = true
+seamless_blend_skirt = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbgy4"]
+render_priority = 1
+shader = ExtResource("6_8soy3")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(2, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = SubResource("NoiseTexture2D_eoaxs")
+shader_parameter/slowdown = 10.0
+shader_parameter/time_caust = 0.13
+shader_parameter/tile_caust = 0.1
+shader_parameter/caustics_color = Color(0.5, 0.60833335, 1, 1)
+shader_parameter/caustics_strength = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cqwhw"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_rbgy4")
+shader = ExtResource("8_ugm77")
+shader_parameter/albedo = Color(0, 0.27899995, 0.93, 1)
+shader_parameter/water_emission_strength = 0.0
+shader_parameter/water_texture1 = SubResource("NoiseTexture2D_eoaxs")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.5
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.2
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_87fp5"]
+data = PackedVector3Array(-200, 0, 200, 200, 0, -200, 200, 0, 200, -200, 0, 200, -200, 0, -200, 200, 0, -200)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t2s26"]
+transparency = 1
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.313726)
+albedo_texture = ExtResource("11_3kgf1")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_auo1p"]
+size = Vector2(5000, 5000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4qf3x"]
+offset = Vector3(0, 130, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tmnk"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_4qf3x")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wmfey"]
+render_priority = -2
+shader = ExtResource("20_1bhfl")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.008
+shader_parameter/alpha_threshold = 0.3
+shader_parameter/alpha_strength = 1.0
+shader_parameter/cloud_color = Color(0.98, 0.818627, 0.7938, 1)
+shader_parameter/cloud_scale = 2.0
+shader_parameter/fade_radius = 0.6
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxnvu"]
+render_priority = -2
+shader = ExtResource("20_1bhfl")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.010000000475
+shader_parameter/alpha_threshold = 0.6000000285
+shader_parameter/alpha_strength = 1.0
+shader_parameter/cloud_color = Color(1, 0.83547556, 0.5342439, 1)
+shader_parameter/cloud_scale = 2.40000010748023
+shader_parameter/fade_radius = 0.6
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 2.0
+
+[node name="stage_bryce_day" type="Node3D" unique_id=1825052057 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_lcyod")
+stage_name = "world_bryce_3d"
+_bloom = 1.0
+bgm = ExtResource("2_1bhfl")
+bgm_pitch = 0.9
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.891, 0.95699996, 0.99, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=945165700]
+environment = SubResource("Environment_oy5wb")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=278424769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+environment_mode = 3
+generate_probes_subdiv = 0
+light_data = ExtResource("23_ugm77")
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="lightmap_gi" unique_id=268738028]
+transform = Transform3D(1, 0, 0, 0, 0.6170359, 0.78693503, 0, -0.78693503, 0.6170359, 0.00288963, 0.00699162, 0.00671387)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+sky_mode = 1
+
+[node name="bryce_day" parent="." unique_id=922170399 instance=ExtResource("3_oy5wb")]
+
+[node name="door" parent="bryce_day" index="0" unique_id=1185771552]
+surface_material_override/0 = SubResource("ShaderMaterial_w3oab")
+
+[node name="interactable" parent="bryce_day/door" index="0" unique_id=1368313016 instance=ExtResource("6_t2s26")]
+
+[node name="low_sphere" parent="bryce_day" index="1" unique_id=1750372600]
+surface_material_override/0 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="low_sphere_001" parent="bryce_day" index="2" unique_id=1304521572]
+surface_material_override/0 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="bounds" parent="bryce_day" index="3" unique_id=1128914231]
+collision_layer = 512
+
+[node name="lilypad-rigid" parent="bryce_day/lilypad-rigid" parent_id_path=PackedInt32Array(922170399, 118956854) index="0" unique_id=2025078900]
+cast_shadow = 0
+surface_material_override/0 = SubResource("ShaderMaterial_8soy3")
+
+[node name="flower" parent="bryce_day" index="5" unique_id=971437042]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_001" parent="bryce_day" index="6" unique_id=655686580]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_002" parent="bryce_day" index="7" unique_id=1819889310]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_003" parent="bryce_day" index="8" unique_id=297843320]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_004" parent="bryce_day" index="9" unique_id=867340301]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_005" parent="bryce_day" index="10" unique_id=845030270]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="low_sphere_002" parent="bryce_day" index="11" unique_id=224556757]
+surface_material_override/0 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="flower_multi" parent="bryce_day" index="12" unique_id=54981183]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_3yp10")
+
+[node name="gizmo" parent="bryce_day" index="13" unique_id=719157815]
+transform = Transform3D(0.99922866, 0.00080922095, 0.03925832, 0.00073324295, 0.99922866, -0.03925981, -0.039259814, 0.039258316, 0.99845743, -8.966667, 5.8605328, -15.966667)
+surface_material_override/0 = SubResource("ShaderMaterial_r22gx")
+surface_material_override/1 = SubResource("ShaderMaterial_xver5")
+surface_material_override/2 = SubResource("ShaderMaterial_0jlus")
+
+[node name="Plane" parent="bryce_day" index="14" unique_id=1185535937]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_mkh0k")
+
+[node name="flower_008" parent="bryce_day" index="15" unique_id=773847777]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_006" parent="bryce_day" index="16" unique_id=1128234003]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="flower_007" parent="bryce_day" index="17" unique_id=1910173366]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="gymbal_sphere" parent="bryce_day" index="18" unique_id=2098697321]
+material_override = SubResource("ShaderMaterial_h3cwm")
+
+[node name="gymbal_sphere_balls" parent="bryce_day" index="19" unique_id=1558739344]
+material_override = SubResource("ShaderMaterial_h3cwm")
+
+[node name="low_sphere-convcol_001" parent="bryce_day" index="20" unique_id=1280629332]
+surface_material_override/0 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="lilypad_001-rigid" parent="bryce_day/lilypad_001-rigid" parent_id_path=PackedInt32Array(922170399, 1703971900) index="0" unique_id=1946399893]
+cast_shadow = 0
+surface_material_override/0 = SubResource("ShaderMaterial_8soy3")
+
+[node name="lilypad_002-rigid" parent="bryce_day/lilypad_002-rigid" parent_id_path=PackedInt32Array(922170399, 850930639) index="0" unique_id=1217149103]
+cast_shadow = 0
+surface_material_override/0 = SubResource("ShaderMaterial_8soy3")
+
+[node name="trans_cube" parent="bryce_day" index="23" unique_id=832074432]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="trans_prism" parent="bryce_day" index="24" unique_id=1138093841]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="trans_cube_001" parent="bryce_day" index="25" unique_id=1681423453]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="Cylinder" parent="bryce_day" index="26" unique_id=68985413]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="trans_cube_002" parent="bryce_day" index="27" unique_id=2033576973]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="flower-col_001" parent="bryce_day" index="28" unique_id=450842109]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower-col_002" parent="bryce_day" index="29" unique_id=908529885]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="flower_multi_001" parent="bryce_day" index="30" unique_id=1448487100]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="low_sphere_003" parent="bryce_day" index="31" unique_id=2089093750]
+surface_material_override/0 = SubResource("ShaderMaterial_6q7yr")
+
+[node name="Cylinder_001" parent="bryce_day" index="32" unique_id=670185718]
+surface_material_override/0 = SubResource("ShaderMaterial_jfwtw")
+
+[node name="water" parent="bryce_day" index="33" unique_id=94400088]
+layers = 2
+material_override = SubResource("ShaderMaterial_cqwhw")
+
+[node name="area_3d" type="Area3D" parent="bryce_day/water" index="0" unique_id=2043316593]
+transform = Transform3D(0.00666667, 0, 0, 0, 0.00666667, 0, 0, 0, 0.00666667, 0, 0, 0)
+collision_mask = 5
+script = ExtResource("4_axrm5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="bryce_day/water/area_3d" unique_id=1031594205]
+transform = Transform3D(150, 0, 0, 0, 150, 0, 0, 0, 150, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_87fp5")
+
+[node name="attach_player" type="Node3D" parent="bryce_day/water" index="1" unique_id=410498657]
+script = ExtResource("9_1bhfl")
+_ignore_y = true
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="StaticBody3D" parent="bryce_day/water" index="2" unique_id=146149160]
+collision_layer = 16
+
+[node name="flower_009" parent="bryce_day" index="34" unique_id=830242931]
+surface_material_override/0 = SubResource("ShaderMaterial_1bhfl")
+surface_material_override/1 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="gymbal_sphere_001" parent="bryce_day" index="35" unique_id=1739509805]
+surface_material_override/0 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="gymbal_sphere_balls_001" parent="bryce_day" index="36" unique_id=1600387541]
+surface_material_override/0 = SubResource("ShaderMaterial_h3cwm")
+
+[node name="AnimationPlayer" parent="bryce_day" index="37" unique_id=453964120]
+autoplay = &"Animation"
+speed_scale = 0.2
+
+[node name="entrance" type="Node3D" parent="." unique_id=988821117]
+transform = Transform3D(-0.7071069, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.7071069, -27, 0, 12)
+script = ExtResource("7_vdc8l")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="planet" type="Sprite3D" parent="." unique_id=982585905]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, -535.892, 190, 624.1379)
+material_override = SubResource("StandardMaterial3D_t2s26")
+pixel_size = 3.0
+texture = ExtResource("11_3kgf1")
+
+[node name="planet_reflection" type="Sprite3D" parent="planet" unique_id=837296956]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -526.667, 0)
+material_override = SubResource("StandardMaterial3D_t2s26")
+pixel_size = 3.0
+texture = ExtResource("11_3kgf1")
+
+[node name="rotating" type="AudioStreamPlayer3D" parent="." unique_id=1438931983]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.784, 11.0211, 25.516201)
+stream = ExtResource("12_kqdvf")
+attenuation_model = 2
+volume_db = -8.0
+unit_size = 16.0
+max_db = -4.0
+pitch_scale = 0.8
+autoplay = true
+max_distance = 128.0
+panning_strength = 1.2
+bus = &"amb"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=368156623]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 0)
+stream = ExtResource("13_ny6cq")
+volume_db = -6.0
+unit_size = 128.0
+max_db = -4.0
+autoplay = true
+panning_strength = 0.1
+bus = &"amb"
+
+[node name="cloud_dome" type="MeshInstance3D" parent="." unique_id=1303022559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_auo1p")
+surface_material_override/0 = SubResource("ShaderMaterial_wmfey")
+
+[node name="cloud_dome_yellow" type="MeshInstance3D" parent="." unique_id=2064548616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 200, 0)
+mesh = SubResource("PlaneMesh_auo1p")
+surface_material_override/0 = SubResource("ShaderMaterial_nxnvu")
+
+[node name="cloud_dome_bottom" type="MeshInstance3D" parent="." unique_id=164545779]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, -500, 0)
+mesh = SubResource("PlaneMesh_auo1p")
+surface_material_override/0 = SubResource("ShaderMaterial_wmfey")
+
+[editable path="bryce_day"]

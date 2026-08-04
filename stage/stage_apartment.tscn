@@ -1,0 +1,753 @@
+[gd_scene format=3 uid="uid://dikb65wkfyuun"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_ev5ce"]
+[ext_resource type="PackedScene" uid="uid://dxljb52k3p0d8" path="res://stage/mesh/apartment.blend" id="1_qy62q"]
+[ext_resource type="AudioStream" uid="uid://bogf3x1lqionj" path="res://audio/music/se_seasons_end.ogg" id="2_axcem"]
+[ext_resource type="LightmapGIData" uid="uid://bwpkbv4nmo34f" path="res://stage/lightmap/stage_apartment.lmbake" id="2_b5gfh"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_hvb6y"]
+[ext_resource type="Shader" uid="uid://bp6sw1dxh0phf" path="res://gdshader/curtain_sway.gdshader" id="4_qkejg"]
+[ext_resource type="Texture2D" uid="uid://b5mfd2r2t5nqb" path="res://texture/bug_net.png" id="5_o645g"]
+[ext_resource type="Texture2D" uid="uid://biunqlseoja86" path="res://texture/utility_pole_02.png" id="6_3glgr"]
+[ext_resource type="Texture2D" uid="uid://d0jgqbsy5cnxi" path="res://texture/flowers.png" id="6_glkb8"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="6_o645g"]
+[ext_resource type="Texture2D" uid="uid://8kp4gd4axldo" path="res://texture/utility_pole_02_em.png" id="7_vcoyc"]
+[ext_resource type="Texture2D" uid="uid://cpx81ddedr7jg" path="res://texture/treeline_08.png" id="8_gk5wa"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="8_i0648"]
+[ext_resource type="Texture2D" uid="uid://c1nlvv60nte0e" path="res://texture/tree_15.png" id="8_wehar"]
+[ext_resource type="Texture2D" uid="uid://56t02gn46j1b" path="res://texture/balloon_00.png" id="9_0wt5h"]
+[ext_resource type="Texture2D" uid="uid://cia3gxuj7wlsm" path="res://texture/wire_04.png" id="9_385kh"]
+[ext_resource type="PackedScene" uid="uid://cxv3msarmgfpa" path="res://resource/particle_moth.tscn" id="9_ckju3"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="10_hvb6y"]
+[ext_resource type="Texture2D" uid="uid://daokirg5lde4n" path="res://texture/light_03.png" id="11_km1gk"]
+[ext_resource type="Texture2D" uid="uid://dqwvfabwo4a85" path="res://texture/caution_tape.png" id="12_385kh"]
+[ext_resource type="Texture2D" uid="uid://csg52rh8h66ju" path="res://texture/garbage.png" id="13_48qrj"]
+[ext_resource type="Texture2D" uid="uid://vye5jge8mj1x" path="res://texture/hedge_04.png" id="14_87kr5"]
+[ext_resource type="Texture2D" uid="uid://pptpa6y76s1h" path="res://texture/tarp.png" id="15_f24t2"]
+[ext_resource type="Texture2D" uid="uid://c3uboqsn1mcjs" path="res://texture/ivy_03.png" id="16_1p5d6"]
+[ext_resource type="Texture2D" uid="uid://bs1ah2sw7e2dj" path="res://texture/wire_03.png" id="16_bhgj3"]
+[ext_resource type="Texture2D" uid="uid://dtcokuknbb6es" path="res://texture/fence_06.png" id="18_ldjct"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="19_rl6u8"]
+[ext_resource type="Texture2D" uid="uid://6oirv25p3jry" path="res://texture/bush_02.png" id="25_wjw3s"]
+[ext_resource type="Texture2D" uid="uid://bdw6dunkuh4g1" path="res://texture/ivy_04.png" id="26_t0q8q"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="26_ujpdp"]
+[ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="27_cb1gf"]
+[ext_resource type="Texture2D" uid="uid://cqlcahum3lvvh" path="res://texture/water_02.png" id="28_hxqbp"]
+[ext_resource type="Texture2D" uid="uid://dsixjp1j4vcge" path="res://texture/light_1.png" id="31_3pirb"]
+[ext_resource type="PackedScene" uid="uid://be5lx238lrqka" path="res://resource/particle_flies.tscn" id="31_hxqbp"]
+[ext_resource type="Texture2D" uid="uid://dd6singu3kyi2" path="res://texture/lilypad_01.png" id="31_v0l1g"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="34_t0q8q"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="35_ed64f"]
+[ext_resource type="Shader" uid="uid://b608t0d4owqs1" path="res://gdshader/clouds_blocks.gdshader" id="37_axcem"]
+[ext_resource type="AudioStream" uid="uid://bfntsndbdpy3j" path="res://audio/amb/residence.ogg" id="38_opwrb"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="38_qjirj"]
+[ext_resource type="AudioStream" uid="uid://f7um6n35gtcr" path="res://audio/amb/transmission.ogg" id="39_208kx"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="39_opwrb"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="42_c6evo"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="44_cyx6v"]
+
+[sub_resource type="Gradient" id="Gradient_ghkrq"]
+offsets = PackedFloat32Array(0.032499865, 0.5, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.5, 0.33125, 0.275, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b5gfh"]
+gradient = SubResource("Gradient_ghkrq")
+width = 64
+
+[sub_resource type="Environment" id="Environment_ev5ce"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.7
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.48235294, 0.7294118, 0.5764706, 1)
+fog_density = 0.3
+fog_depth_begin = 64.0
+fog_depth_end = 200.0
+adjustment_enabled = true
+adjustment_brightness = 1.3
+adjustment_contrast = 0.9
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_b5gfh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vofp0"]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.19607843)
+albedo_texture = ExtResource("11_km1gk")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_km1gk"]
+fractal_lacunarity = 3.0
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vofp0"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_km1gk")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_km1gk"]
+render_priority = 1
+shader = ExtResource("4_hvb6y")
+shader_parameter/texture_albedo = ExtResource("6_glkb8")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_vofp0")
+shader_parameter/alpha = 0.5
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.2
+shader_parameter/mask_scale = 0.03
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldjct"]
+render_priority = -1
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, -1, 1)
+shader_parameter/emissive = 0.2
+shader_parameter/tex = ExtResource("8_wehar")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0wt5h"]
+resource_name = "treeline"
+render_priority = -2
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("8_gk5wa")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjw3s"]
+resource_name = "balloon"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("9_0wt5h")
+billboard_mode = 2
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwwqx"]
+render_priority = 1
+shader = ExtResource("4_qkejg")
+shader_parameter/tex = ExtResource("5_o645g")
+shader_parameter/alpha = 0.0
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.01
+shader_parameter/sway_strength_z = 0.02
+shader_parameter/sway_speed_x = 1.5
+shader_parameter/sway_speed_z = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_48qrj"]
+render_priority = 2
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0.1, -0.4)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("9_385kh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n53s8"]
+resource_name = "utlity_poie"
+cull_mode = 2
+albedo_texture = ExtResource("6_3glgr")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("7_vcoyc")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gk5wa"]
+render_priority = 0
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("16_bhgj3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g514b"]
+render_priority = 1
+shader = ExtResource("4_qkejg")
+shader_parameter/tex = ExtResource("12_385kh")
+shader_parameter/alpha = 0.3
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.07
+shader_parameter/sway_strength_z = 0.1
+shader_parameter/sway_speed_x = 1.0
+shader_parameter/sway_speed_z = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pirb"]
+resource_name = "fence.001"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("18_ldjct")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_48qrj"]
+offset = Vector3(55.05, 0, 0)
+fractal_lacunarity = 2.1
+fractal_gain = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g514b"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_48qrj")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_385kh"]
+render_priority = 0
+shader = ExtResource("4_hvb6y")
+shader_parameter/texture_albedo = ExtResource("13_48qrj")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_g514b")
+shader_parameter/alpha = 0.9
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.12
+shader_parameter/mask_scale = 0.2
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f24t2"]
+resource_name = "hedge"
+transparency = 4
+cull_mode = 2
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0.9019608)
+albedo_texture = ExtResource("14_87kr5")
+texture_filter = 5
+proximity_fade_enabled = true
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1p5d6"]
+resource_name = "tarp"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+depth_draw_mode = 1
+albedo_color = Color(1, 1, 1, 0.9)
+albedo_texture = ExtResource("15_f24t2")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_glkb8"]
+render_priority = 0
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.030000001425
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("16_1p5d6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wehar"]
+resource_name = "fence.001"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("18_ldjct")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujpdp"]
+render_priority = 0
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("25_wjw3s")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjw3s"]
+render_priority = 1
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, -1, 1)
+shader_parameter/emissive = 0.2
+shader_parameter/tex = ExtResource("8_wehar")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ed64f"]
+resource_name = "ivy.001"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("26_t0q8q")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cb1gf"]
+render_priority = 1
+shader = ExtResource("26_ujpdp")
+shader_parameter/albedo = Color(0.2925, 0.45, 0.30299997, 1)
+shader_parameter/water_emission_strength = 0.2
+shader_parameter/water_texture1 = ExtResource("27_cb1gf")
+shader_parameter/water_texture2 = ExtResource("28_hxqbp")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.0
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.3
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.2
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6evo"]
+render_priority = 1
+shader = ExtResource("8_i0648")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("31_v0l1g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjirj"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("31_3pirb")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3pirb"]
+data = PackedVector3Array(-0.6340647, -0.45591164, 0.39683533, -0.629838, 0.33831406, 0.0071372986, -0.64715433, 0.33228207, 0.4057846, -0.6340647, -0.45591164, 0.39683533, -0.64690924, -0.46875668, 0.0071372986, -0.629838, 0.33831406, 0.0071372986, -0.64690924, -0.46875668, 0.0071372986, 0.63438797, -0.45591164, 0.39683533, 0.6330905, -0.4546137, 0.0071372986, -0.64690924, -0.46875668, 0.0071372986, -0.6340647, -0.45591164, 0.39683533, 0.63438797, -0.45591164, 0.39683533, 0.63438797, -0.45591164, 0.39683533, -0.64715433, 0.33228207, 0.4057846, 0.6474776, 0.33228207, 0.4057846, 0.63438797, -0.45591164, 0.39683533, -0.6340647, -0.45591164, 0.39683533, -0.64715433, 0.33228207, 0.4057846, 0.6330905, -0.4546137, 0.0071372986, 0.6474776, 0.33228207, 0.4057846, 0.6301613, 0.33831406, 0.0071372986, 0.6330905, -0.4546137, 0.0071372986, 0.63438797, -0.45591164, 0.39683533, 0.6474776, 0.33228207, 0.4057846, 0.64593506, -0.46745872, -0.40316772, 0.6301613, 0.33831406, 0.0071372986, 0.6464586, 0.3321991, -0.40218735, 0.64593506, -0.46745872, -0.40316772, 0.6330905, -0.4546137, 0.0071372986, 0.6301613, 0.33831406, 0.0071372986, -0.6340647, -0.45591164, -0.39162445, 0.6330905, -0.4546137, 0.0071372986, 0.64593506, -0.46745872, -0.40316772, -0.6340647, -0.45591164, -0.39162445, -0.64690924, -0.46875668, 0.0071372986, 0.6330905, -0.4546137, 0.0071372986, 0.6464586, 0.3321991, -0.40218735, -0.6398382, 0.26254177, -0.74683, -0.64613533, 0.3321991, -0.40218735, 0.6464586, 0.3321991, -0.40218735, 0.6401615, 0.26254177, -0.74683, -0.6398382, 0.26254177, -0.74683, -0.6340647, -0.45591164, -0.39162445, 0.6464586, 0.3321991, -0.40218735, -0.64613533, 0.3321991, -0.40218735, -0.6340647, -0.45591164, -0.39162445, 0.64593506, -0.46745872, -0.40316772, 0.6464586, 0.3321991, -0.40218735, -0.64690924, -0.46875668, 0.0071372986, -0.64613533, 0.3321991, -0.40218735, -0.629838, 0.33831406, 0.0071372986, -0.64690924, -0.46875668, 0.0071372986, -0.6340647, -0.45591164, -0.39162445, -0.64613533, 0.3321991, -0.40218735, 0.6401615, 0.10569668, 0.72387314, -0.64715433, 0.33228207, 0.4057846, -0.6398382, 0.12218666, 0.73518753, 0.6401615, 0.10569668, 0.72387314, 0.6474776, 0.33228207, 0.4057846, -0.64715433, 0.33228207, 0.4057846)
+backface_collision = true
+
+[sub_resource type="Gradient" id="Gradient_t0q8q"]
+offsets = PackedFloat32Array(0.1, 0.3, 0.5, 0.7, 0.9)
+colors = PackedColorArray(0.496219, 0.654137, 0.367093, 1, 0.49, 0.473667, 0.245, 1, 0.59, 0.42873332, 0.1062, 1, 0.47, 0.1175, 0.1175, 1, 0.280025, 0.33776, 0.133307, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3pirb"]
+size = Vector2(5000, 5000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qjirj"]
+offset = Vector3(0, 130, 0)
+fractal_lacunarity = 1.4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tmnk"]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_qjirj")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opwrb"]
+render_priority = -10
+shader = ExtResource("37_axcem")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.008
+shader_parameter/alpha_threshold = 0.2000000095
+shader_parameter/alpha_strength = 0.30000001425
+shader_parameter/cloud_color = Color(1, 0.100000024, 0.2500003, 1)
+shader_parameter/cloud_scale = 10.0
+shader_parameter/fade_radius = 0.3
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 3.0
+
+[node name="stage_apartment" type="Node3D" unique_id=2087462082 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_ev5ce")
+stage_name = "world_homeside"
+_bloom = 0.7
+_extra_snd_bank = 1
+bgm = ExtResource("2_axcem")
+bgm_pitch = 0.6
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.61, 0.5210417, 0.4575, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=29216108]
+environment = SubResource("Environment_ev5ce")
+
+[node name="distant_light2" parent="." unique_id=1852471923 instance=ExtResource("10_hvb6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9881744, 6.8729515, 1.416172)
+material_override = SubResource("StandardMaterial3D_vofp0")
+modulate = Color(1, 0.81, 0.81, 1)
+pixel_size = 0.01
+texture = ExtResource("11_km1gk")
+
+[node name="distant_light3" parent="." unique_id=1855112846 instance=ExtResource("10_hvb6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.12619, 6.0805936, 2.3619204)
+material_override = SubResource("StandardMaterial3D_vofp0")
+modulate = Color(1, 0.81, 0.81, 1)
+pixel_size = 0.01
+texture = ExtResource("11_km1gk")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=1309103466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.764, 0.96, 0.62399995, 1)
+environment_custom_energy = 0.5
+generate_probes_subdiv = 0
+light_data = ExtResource("2_b5gfh")
+
+[node name="powerline_light" type="OmniLight3D" parent="lightmap_gi" unique_id=1076300261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 6.230838, 1.4383414)
+light_color = Color(1, 0.7776667, 0.71000004, 1)
+light_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="powerline_light2" type="OmniLight3D" parent="lightmap_gi" unique_id=1389139619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.16284, 5.4045086, 2.299)
+light_color = Color(1, 0.7776667, 0.71000004, 1)
+light_energy = 2.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="tunnel_light" type="OmniLight3D" parent="lightmap_gi" unique_id=1599142364]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.00001, 2, -45)
+light_color = Color(0.9295, 1, 0.53, 1)
+light_energy = 0.6
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 14.0
+
+[node name="sat_light" type="OmniLight3D" parent="lightmap_gi" unique_id=542426371]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.00001, 42, 46)
+light_color = Color(1, 0.56916666, 0.53, 1)
+light_energy = 0.6
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="lightmap_gi" unique_id=863826311]
+transform = Transform3D(0.8195784, -0.40514892, 0.40514892, 0, 0.7071068, 0.7071068, -0.5729672, -0.5795295, 0.5795295, 0, 0, 0)
+light_color = Color(0.8, 0.71999997, 0.56, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="apartment2" parent="." unique_id=671733515 instance=ExtResource("1_qy62q")]
+
+[node name="traffic_cone" parent="apartment2" index="0" unique_id=671974138]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_001" parent="apartment2" index="1" unique_id=2125149462]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_002" parent="apartment2" index="2" unique_id=393487999]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="trees" parent="apartment2" index="3" unique_id=387636346]
+surface_material_override/1 = SubResource("ShaderMaterial_ldjct")
+
+[node name="treeline" parent="apartment2" index="4" unique_id=1690155514]
+surface_material_override/0 = SubResource("StandardMaterial3D_0wt5h")
+
+[node name="balloon" parent="apartment2" index="5" unique_id=1492603591]
+surface_material_override/0 = SubResource("StandardMaterial3D_wjw3s")
+
+[node name="traffic_cone_003" parent="apartment2" index="6" unique_id=1718778255]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_004" parent="apartment2" index="7" unique_id=989678706]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_005" parent="apartment2" index="8" unique_id=1392817435]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_006" parent="apartment2" index="9" unique_id=2136061728]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_007" parent="apartment2" index="10" unique_id=1918820427]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_008" parent="apartment2" index="11" unique_id=882430322]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_009" parent="apartment2" index="12" unique_id=1226311852]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="traffic_cone_010" parent="apartment2" index="13" unique_id=1994091520]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="ground" parent="apartment2" index="17" unique_id=1543079852]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="apartment" parent="apartment2" index="18" unique_id=207160425]
+surface_material_override/3 = SubResource("ShaderMaterial_lwwqx")
+
+[node name="garbage_wall" parent="apartment2" index="19" unique_id=1262551375]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="powerline_apartment_wire" parent="apartment2" index="27" unique_id=1231064691]
+surface_material_override/0 = SubResource("ShaderMaterial_48qrj")
+
+[node name="meat" parent="apartment2" index="28" unique_id=914627854]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="powerline_light" parent="apartment2" index="31" unique_id=1660078969]
+surface_material_override/0 = SubResource("StandardMaterial3D_n53s8")
+
+[node name="powerline_wire" parent="apartment2" index="34" unique_id=319963206]
+surface_material_override/0 = SubResource("ShaderMaterial_gk5wa")
+
+[node name="tape" parent="apartment2" index="40" unique_id=1781222296]
+gi_lightmap_texel_scale = 3.0
+surface_material_override/0 = SubResource("ShaderMaterial_g514b")
+
+[node name="tape_001" parent="apartment2" index="41" unique_id=1628430467]
+gi_lightmap_texel_scale = 3.0
+surface_material_override/0 = SubResource("ShaderMaterial_g514b")
+
+[node name="fence" parent="apartment2" index="43" unique_id=727905578]
+surface_material_override/0 = SubResource("StandardMaterial3D_3pirb")
+
+[node name="ground_trash" parent="apartment2" index="46" unique_id=160729888]
+material_override = SubResource("ShaderMaterial_385kh")
+
+[node name="toilet" parent="apartment2" index="48" unique_id=2080299193]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="interactable" parent="apartment2/toilet" index="1" unique_id=1944274287 instance=ExtResource("19_rl6u8")]
+
+[node name="hedge" parent="apartment2" index="49" unique_id=1004013240]
+surface_material_override/0 = SubResource("StandardMaterial3D_f24t2")
+
+[node name="tarp_002" parent="apartment2" index="51" unique_id=804760172]
+surface_material_override/0 = SubResource("StandardMaterial3D_1p5d6")
+
+[node name="ivy" parent="apartment2" index="59" unique_id=1547923275]
+surface_material_override/0 = SubResource("ShaderMaterial_glkb8")
+
+[node name="concrete_block" parent="apartment2" index="60" unique_id=1637375674]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="fence_001" parent="apartment2" index="63" unique_id=1823987807]
+surface_material_override/0 = SubResource("StandardMaterial3D_wehar")
+
+[node name="road_bush" parent="apartment2" index="65" unique_id=173542825]
+surface_material_override/0 = SubResource("ShaderMaterial_ujpdp")
+
+[node name="powerline_light_001" parent="apartment2" index="66" unique_id=1916454329]
+surface_material_override/0 = SubResource("StandardMaterial3D_n53s8")
+
+[node name="garbage_machinedrum" parent="apartment2" index="68" unique_id=1415802131]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="cherry_tree" parent="apartment2" index="74" unique_id=1684130427]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="cherry_tree_001" parent="apartment2" index="75" unique_id=504677699]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="cherry_tree_002" parent="apartment2" index="76" unique_id=1728412727]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="cherry_tree_003" parent="apartment2" index="77" unique_id=1108028701]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="cherry_tree_004" parent="apartment2" index="78" unique_id=1328929028]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="cherry_tree_005" parent="apartment2" index="79" unique_id=1237960306]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="tunnel_ivy" parent="apartment2" index="80" unique_id=1289740703]
+surface_material_override/0 = SubResource("StandardMaterial3D_ed64f")
+
+[node name="water" parent="apartment2" index="81" unique_id=1198835777]
+surface_material_override/0 = SubResource("ShaderMaterial_cb1gf")
+
+[node name="StaticBody3D" parent="apartment2/water" index="0" unique_id=1994923326]
+collision_layer = 16
+
+[node name="lilypad" parent="apartment2" index="83" unique_id=257479763]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_001" parent="apartment2" index="84" unique_id=513774287]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_002" parent="apartment2" index="85" unique_id=1340854102]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_003" parent="apartment2" index="86" unique_id=75152991]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_004" parent="apartment2" index="87" unique_id=500476841]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_005" parent="apartment2" index="88" unique_id=1440086999]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_006" parent="apartment2" index="89" unique_id=343968268]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_007" parent="apartment2" index="90" unique_id=50256435]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_008" parent="apartment2" index="91" unique_id=1776800801]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_009" parent="apartment2" index="92" unique_id=104872191]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="cherry_tree_006" parent="apartment2" index="94" unique_id=1448735109]
+surface_material_override/1 = SubResource("ShaderMaterial_wjw3s")
+
+[node name="tire_full" parent="apartment2" index="96" unique_id=1959392759]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half" parent="apartment2" index="97" unique_id=959677163]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half_001" parent="apartment2" index="98" unique_id=1437243937]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half_002" parent="apartment2" index="99" unique_id=1332882318]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half_003" parent="apartment2" index="100" unique_id=498254236]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half_004" parent="apartment2" index="101" unique_id=461125372]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="tire_half_005" parent="apartment2" index="102" unique_id=454812505]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="lilypad_010" parent="apartment2" index="110" unique_id=675769352]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="lilypad_011" parent="apartment2" index="111" unique_id=1007962710]
+surface_material_override/0 = SubResource("ShaderMaterial_c6evo")
+
+[node name="distant_light" parent="apartment2/broadcast" parent_id_path=PackedInt32Array(671733515, 1162609801) index="0" unique_id=1844756271 instance=ExtResource("10_hvb6y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0364456, 7.2405586, -15.133011)
+material_override = SubResource("StandardMaterial3D_qjirj")
+_flicker = true
+
+[node name="cardboard" parent="apartment2" index="113" unique_id=683009142]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="cardboard_001" parent="apartment2" index="114" unique_id=716899583]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="CollisionShape3D" parent="apartment2/cardboard_001/StaticBody3D" parent_id_path=PackedInt32Array(671733515, 1859379604) index="0" unique_id=1896927546]
+shape = SubResource("ConcavePolygonShape3D_3pirb")
+
+[node name="cardboard_002" parent="apartment2" index="115" unique_id=1749296567]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="cardboard_003" parent="apartment2" index="116" unique_id=156798857]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="cardboard_004" parent="apartment2" index="117" unique_id=2045384040]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="bicycle_shelter" parent="apartment2" index="119" unique_id=2091527798]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="barrier_003" parent="apartment2" index="123" unique_id=887552555]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="barrier_004" parent="apartment2" index="124" unique_id=1375883710]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="barrier_005" parent="apartment2" index="125" unique_id=238542333]
+material_overlay = SubResource("ShaderMaterial_km1gk")
+
+[node name="entrance" type="Node3D" parent="." unique_id=2098558652]
+transform = Transform3D(-0.7332553, 0, 0.6799534, 0, 1, 0, -0.6799534, 0, -0.7332553, -14.309081, 0, -14.101317)
+script = ExtResource("6_o645g")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="particle_moth2" parent="." unique_id=1053353072 instance=ExtResource("9_ckju3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.13657, 6.896281, 1.3298721)
+
+[node name="particle_moth3" parent="." unique_id=1398744383 instance=ExtResource("9_ckju3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.15211, 6.2246284, 2.257122)
+
+[node name="particle_flies" parent="." unique_id=933564124 instance=ExtResource("31_hxqbp")]
+transform = Transform3D(0.75576204, 0, -0.6548464, 0, 1, 0, 0.6548464, 0, 0.75576204, -16.560476, 2, -14.909554)
+
+[node name="particle_flies2" parent="." unique_id=1338585423 instance=ExtResource("31_hxqbp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.971336, -0.42056745, -39.909554)
+
+[node name="node_3d" type="Node3D" parent="." unique_id=186065313]
+
+[node name="attach_player" type="Node3D" parent="node_3d" unique_id=945910628]
+script = ExtResource("34_t0q8q")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="particle_leaf" parent="node_3d" unique_id=681252544 instance=ExtResource("35_ed64f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+amount = 32
+speed_scale = 0.5
+color = Color(0.556953, 0.556953, 0.556953, 0.9411765)
+color_initial_ramp = SubResource("Gradient_t0q8q")
+_max_particle = 32
+
+[node name="cloud_dome" type="MeshInstance3D" parent="." unique_id=1427261190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_3pirb")
+surface_material_override/0 = SubResource("ShaderMaterial_opwrb")
+
+[node name="particle_bird" parent="." unique_id=1713691905 instance=ExtResource("38_qjirj")]
+
+[node name="amb" type="AudioStreamPlayer3D" parent="." unique_id=1366836102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 34, 6)
+stream = ExtResource("38_opwrb")
+unit_size = 48.0
+max_db = 0.0
+autoplay = true
+panning_strength = 0.4
+bus = &"amb"
+
+[node name="amb_transmission" type="AudioStreamPlayer3D" parent="." unique_id=183704523]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 125, 43, 47)
+stream = ExtResource("39_208kx")
+attenuation_model = 2
+unit_size = 20.0
+autoplay = true
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="particle_wind" parent="." unique_id=70731752 instance=ExtResource("39_opwrb")]
+
+[node name="eye_watcher" parent="." unique_id=1889624478 instance=ExtResource("42_c6evo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.419994, -1, 104)
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("44_cyx6v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.598686, -0.58036906, 2.765141)
+
+[editable path="apartment2"]

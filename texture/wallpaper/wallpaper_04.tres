@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://li7dera0d4j"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_uykt0"]
+[ext_resource type="Texture2D" uid="uid://dxm1tbropqscn" path="res://texture/wallpaper/wallpaper_04.png" id="2_uykt0"]
+
+[resource]
+script = ExtResource("1_uykt0")
+name = "wallpaper_jellyfish"
+texture = ExtResource("2_uykt0")
+accent_colour = Color(0.019607844, 0.23921569, 0.85490197, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

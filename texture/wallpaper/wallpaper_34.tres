@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://b88jc5rggoj8e"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_p4qjq"]
+[ext_resource type="Texture2D" uid="uid://cggl2taaugypf" path="res://texture/wallpaper/wallpaper_34.png" id="2_r8cve"]
+
+[resource]
+script = ExtResource("1_p4qjq")
+name = "wallpaper_sunflowers"
+texture = ExtResource("2_r8cve")
+accent_colour = Color(0.96, 0.51199996, 0.19199999, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

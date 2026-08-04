@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://ccmqsnj5xhghm"]
+
+[ext_resource type="Texture2D" uid="uid://cskervkb38ywu" path="res://texture/snowflake.png" id="1_ghir4"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_tl6ll"]
+[ext_resource type="AudioStream" uid="uid://dk0gg81cfiioj" path="res://audio/amb/snowing.ogg" id="2_va13p"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="4_1sk76"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e0og"]
+render_priority = 1
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ghir4")
+texture_filter = 5
+point_size = 5.0
+distance_fade_mode = 2
+distance_fade_max_distance = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_t5ptq"]
+
+[sub_resource type="Curve" id="Curve_7e0og"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -200), 0.0, 0.0, 0, 0, Vector2(0.1, 200), 0.0, 0.0, 0, 0, Vector2(0.2, -200), 0.0, 0.0, 0, 0, Vector2(0.3, 200), 0.0, 0.0, 0, 0, Vector2(0.4, -200), 0.0, 0.0, 0, 0, Vector2(0.5, 200), 0.0, 0.0, 0, 0, Vector2(0.6, -200), 0.0, 0.0, 0, 0, Vector2(0.7, 200), 0.0, 0.0, 0, 0, Vector2(0.8, -200), 0.0, 0.0, 0, 0, Vector2(0.9, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_4nt3r"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.85928, 0), 0.0, 0.0, 0, 0, Vector2(0.9201319, 100), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_1sk76"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.4, 0.90000004), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="Gradient" id="Gradient_7e0og"]
+interpolation_color_space = 1
+offsets = PackedFloat32Array(0, 0.1, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_u5phk"]
+colors = PackedColorArray(1, 1, 1, 0.313726, 1, 1, 1, 0.78431374)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1sk76"]
+render_priority = 1
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_ghir4")
+texture_filter = 5
+fixed_size = true
+use_point_size = true
+point_size = 4.0
+fov_override = 123.8
+distance_fade_mode = 2
+distance_fade_min_distance = 4.0
+distance_fade_max_distance = 8.0
+
+[node name="weather_snow" type="Node3D" unique_id=1320898774]
+
+[node name="snow" type="CPUParticles3D" parent="." unique_id=1062472198 groups=["loop_particle_restart", "stage_lit_particle_color"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+material_override = SubResource("StandardMaterial3D_7e0og")
+amount = 512
+lifetime = 6.0
+preprocess = 5.0
+draw_order = 2
+mesh = SubResource("QuadMesh_t5ptq")
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 10)
+particle_flag_rotate_y = true
+gravity = Vector3(0, -0.3, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+linear_accel_max = 0.1
+radial_accel_min = 0.01
+radial_accel_max = 0.03
+radial_accel_curve = SubResource("Curve_7e0og")
+tangential_accel_min = -0.5
+tangential_accel_max = 0.5
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("Curve_4nt3r")
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_1sk76")
+color_ramp = SubResource("Gradient_7e0og")
+color_initial_ramp = SubResource("Gradient_u5phk")
+script = ExtResource("2_tl6ll")
+_max_particle = 512
+
+[node name="snow_outside" type="AudioStreamPlayer3D" parent="snow" unique_id=8467697]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 4)
+stream = ExtResource("2_va13p")
+attenuation_model = 2
+volume_db = -8.0
+unit_size = 20.0
+max_db = -2.0
+autoplay = true
+panning_strength = 0.4
+bus = &"ceiling_fade"
+
+[node name="snow_distant" type="CPUParticles3D" parent="." unique_id=1525728054 groups=["loop_particle_restart", "stage_lit_particle_color"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+material_override = SubResource("StandardMaterial3D_1sk76")
+amount = 128
+lifetime = 7.0
+preprocess = 5.0
+draw_order = 2
+mesh = SubResource("QuadMesh_t5ptq")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 90, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 16.0
+emission_ring_inner_radius = 10.0
+emission_ring_cone_angle = 90.0
+particle_flag_rotate_y = true
+gravity = Vector3(0, -0.3, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+linear_accel_max = 0.1
+radial_accel_min = 0.01
+radial_accel_max = 0.03
+radial_accel_curve = SubResource("Curve_7e0og")
+tangential_accel_min = -0.5
+tangential_accel_max = 0.5
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("Curve_4nt3r")
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.05
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_1sk76")
+color_ramp = SubResource("Gradient_7e0og")
+color_initial_ramp = SubResource("Gradient_u5phk")
+script = ExtResource("2_tl6ll")
+_max_particle = 128
+
+[node name="attach_player" type="Node3D" parent="." unique_id=1782293504]
+script = ExtResource("4_1sk76")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"

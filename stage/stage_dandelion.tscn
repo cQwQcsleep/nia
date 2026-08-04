@@ -1,0 +1,205 @@
+[gd_scene format=4 uid="uid://d12coxdvfpncy"]
+
+[ext_resource type="PackedScene" uid="uid://nh4j108dp8pv" path="res://stage/mesh/dandelion.blend" id="1_leuyn"]
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_ls5f2"]
+[ext_resource type="AudioStream" uid="uid://bopbky5uehx8n" path="res://audio/music/se_burnt.ogg" id="2_wqglc"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="3_wpf3c"]
+[ext_resource type="Texture2D" uid="uid://dwspijakgxi72" path="res://texture/dandelion.png" id="4_hxk17"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="5_3hv8n"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="6_e1a84"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="7_asydv"]
+
+[sub_resource type="Gradient" id="Gradient_wqglc"]
+offsets = PackedFloat32Array(0, 0.09103044, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.09, 0.072000004, 0.083100006, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_asydv"]
+gradient = SubResource("Gradient_wqglc")
+
+[sub_resource type="Environment" id="Environment_ls5f2"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_depth_end = 32.0
+adjustment_enabled = true
+adjustment_brightness = 1.4
+adjustment_saturation = 0.3
+adjustment_color_correction = SubResource("GradientTexture1D_asydv")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dx5nn"]
+resource_name = "dandelion"
+transparency = 1
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("4_hxk17")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 3.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dx5nn"]
+_surfaces = [{
+"aabb": AABB(-3, 0, -3, 6, 1e-05, 6),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AABAwAAAAAAAAEBAAABAQAAAAAAAAEDAAABAQAAAAAAAAEBAAABAwAAAAAAAAEDA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t6re7"]
+resource_name = "dandelion_Plane"
+lightmap_size_hint = Vector2i(34, 34)
+_surfaces = [{
+"aabb": AABB(-0.1792704, -0.005660295, -0.17458361, 0.3664223, 0.47795168, 0.33624297),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACAAKAAwACAANAAsACAAMAA4ACAAPAA0ACAAOABAACAAQAA8A"),
+"name": "dandelion",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 17,
+"vertex_data": PackedByteArray("8onRvOTmyT4AAACAPOTRPP95ubsAAACAPOTRPOTmyT4AAACA8onRvP95ubsAAACA/4+0N+TmyT4Xt9E8/4+0N+Z5ubsXt9G8/4+0N+TmyT4Xt9G8/4+0N+Z5ubsXt9E8oSg2O0QQxz7c62K5j7nCO2TQ6z4MxjK+2Sf4vVHP6j7fev29fJ8EPg147D6uJM29qZI3vsS74j5AhUa7v6Q/PkpC6D5wBkc8VSAHvi3Q8T47TwM+ZBvnPW2b6T7Bidk94xIqvEoA5j4HiiU+")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_dx5nn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3hv8n"]
+resource_name = "dandelion_Plane_001"
+lightmap_size_hint = Vector2i(10, 10)
+_surfaces = [{
+"aabb": AABB(-0.1792704, -0.005660295, -0.17458361, 0.3664223, 0.47795168, 0.33624297),
+"attribute_data": PackedByteArray("1xdPPyguij0zM3M/zcwMPxANcj+TjXI/mplZP83MTD0QDXI/KC6KPZqZWT/NzAw/1xdPP5ONcj8zM3M/zcxMPdcXTz8oLoo9zcwMPzMzcz8QDXI/k41yP83MTD2amVk/EA1yPyguij3NzAw/mplZP9cXTz+TjXI/zcxMPTMzcz9sT68+vvClPhbTlD6t0aI+bE+vPqBzaL2wHjk+KulzPdMUYz0gdGA90/LDPs3MTD0hHiE/IHRgPYPPcz0uwoE+luSBvb7wpT44uwg/a7xDPv+LPz++8KU+zcxMPeBW6z7TFGM9eOkXP83MDD+WMtY+IR4hP3jpFz9qCFQ+zcwMP2xPrz72dzQ/yijQPs3MDD8="),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkACAAKAAwACAANAAsACAAMAA4ACAAPAA0ACAAOABAACAAQAA8A"),
+"material": SubResource("StandardMaterial3D_dx5nn"),
+"name": "dandelion",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 17,
+"vertex_data": PackedByteArray("8onRvOTmyT4AAACAPOTRPP95ubsAAACAPOTRPOTmyT4AAACA8onRvP95ubsAAACA/4+0N+TmyT4Xt9E8/4+0N+Z5ubsXt9G8/4+0N+TmyT4Xt9G8/4+0N+Z5ubsXt9E8oSg2O0QQxz7c62K5j7nCO2TQ6z4MxjK+2Sf4vVHP6j7fev29fJ8EPg147D6uJM29qZI3vsS74j5AhUa7v6Q/PkpC6D5wBkc8VSAHvi3Q8T47TwM+ZBvnPW2b6T7Bidk94xIqvEoA5j4HiiU+/////////z//////////P/////////8//////////z8AAP9///8AAAAA/3///wAAAAD/f///AAAAAP9///8AABKDkgKx+r0+46ewA+z0tD/RUTQSyOevS0Cyhhhm24AziGNNIIfhek4ooZ4hONoiMPVovTG74r1QsZYuMfLirjGTemom2/XvSQ==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_t6re7")
+
+[sub_resource type="Gradient" id="Gradient_3hv8n"]
+offsets = PackedFloat32Array(0, 0.1, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_wqglc"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.1, -80), 0.0, 0.0, 0, 0, Vector2(0.2, -40), 0.0, 0.0, 0, 0, Vector2(0.3, -120), 0.0, 0.0, 0, 0, Vector2(0.4, 40), 0.0, 0.0, 0, 0, Vector2(0.5, -40), 0.0, 0.0, 0, 0, Vector2(0.6, 160), 0.0, 0.0, 0, 0, Vector2(0.7, 80), 0.0, 0.0, 0, 0, Vector2(0.8, 120), 0.0, 0.0, 0, 0, Vector2(0.90000004, -80), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_3hv8n"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1.4901161e-08), 0.0, 0.0, 0, 0, Vector2(0.2, -1), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, -1), 0.0, 0.0, 0, 0, Vector2(0.7, 0.6), 0.0, 0.0, 0, 0, Vector2(0.8, -0.39999998), 0.0, 0.0, 0, 0, Vector2(0.90000004, 1), 0.0, 0.0, 0, 0, Vector2(1, -0.8), 0.0, 0.0, 0, 0]
+point_count = 10
+
+[node name="stage_dandelion" type="Node3D" unique_id=1530882958 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_ls5f2")
+stage_name = "world_dandelion"
+bgm = ExtResource("2_wqglc")
+bgm_pitch = 0.2
+bgm_volume = 0.3
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.31564245, 0.31564227, 0.31564227, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=323933490]
+environment = SubResource("Environment_ls5f2")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=443463106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+quality = 0
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+environment_mode = 3
+generate_probes_subdiv = 0
+
+[node name="dandelion2" parent="." unique_id=533299001 instance=ExtResource("1_leuyn")]
+
+[node name="ground" parent="dandelion2" index="0" unique_id=289913048]
+visible = false
+
+[node name="dandelion" parent="dandelion2" index="1" unique_id=1327625213]
+visible = false
+
+[node name="dandelion_field" parent="dandelion2" index="2" unique_id=1273113257]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_dx5nn")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1089554146 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("3_wpf3c")
+_bounds = NodePath("../dandelion2/ground")
+_world = NodePath("../dandelion2")
+_door_probability = 3
+_fade_on_loop = true
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="interactable" parent="dream_looper" unique_id=731676892 instance=ExtResource("6_e1a84")]
+voices = false
+
+[node name="dandelion_nia" type="Node3D" parent="." unique_id=1198822227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="dandelion_rot" type="CPUParticles3D" parent="dandelion_nia" unique_id=1312422171 groups=["loop_particle_restart"]]
+amount = 300
+lifetime = 15.0
+preprocess = 5.0
+speed_scale = 0.4
+mesh = SubResource("ArrayMesh_3hv8n")
+emission_shape = 3
+emission_box_extents = Vector3(10, 0, 10)
+particle_flag_align_y = true
+gravity = Vector3(0, 0.1, 0)
+angular_velocity_min = -90.0
+angular_velocity_max = 90.0
+tangential_accel_min = -0.04
+tangential_accel_max = 0.04
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_3hv8n")
+
+[node name="dandelion_up" type="CPUParticles3D" parent="dandelion_nia" unique_id=1435764528 groups=["loop_particle_restart"]]
+amount = 200
+lifetime = 15.0
+preprocess = 5.0
+speed_scale = 0.4
+mesh = SubResource("ArrayMesh_3hv8n")
+emission_shape = 3
+emission_box_extents = Vector3(15, 0, 15)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0.2, 0)
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+radial_accel_min = -0.01
+radial_accel_max = 0.01
+radial_accel_curve = SubResource("Curve_wqglc")
+tangential_accel_min = -0.6
+tangential_accel_max = 0.6
+tangential_accel_curve = SubResource("Curve_3hv8n")
+scale_amount_min = 0.5
+color_ramp = SubResource("Gradient_3hv8n")
+
+[node name="attach_player" type="Node3D" parent="dandelion_nia" unique_id=910742712]
+script = ExtResource("5_3hv8n")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="entrance" type="Node3D" parent="." unique_id=651045665]
+script = ExtResource("7_asydv")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[editable path="dandelion2"]

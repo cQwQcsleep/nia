@@ -1,0 +1,254 @@
+[gd_scene format=3 uid="uid://iukpcw4e4bhk"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_x7fvs"]
+[ext_resource type="AudioStream" uid="uid://c7dt5dqvjara1" path="res://audio/music/se_nap.ogg" id="2_6lsru"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_txxgj"]
+[ext_resource type="Texture2D" uid="uid://ctfec1ou3gqai" path="res://texture/sky_canyon.png" id="3_aqng3"]
+[ext_resource type="LightmapGIData" uid="uid://cdx2krt65jvp0" path="res://stage/lightmap/stage_canyon.lmbake" id="3_cgc30"]
+[ext_resource type="PackedScene" uid="uid://b6vxuws437ngj" path="res://stage/mesh/canyon.blend" id="3_wonh7"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_aqng3"]
+[ext_resource type="Texture2D" uid="uid://bf4o73gjdksxq" path="res://texture/canyon_caution.png" id="4_pqj8n"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_pqj8n"]
+[ext_resource type="Texture2D" uid="uid://lequdo12yecl" path="res://texture/canyon_grass_1.png" id="7_b4sd3"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="7_krikx"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="7_m2b1v"]
+[ext_resource type="Texture2D" uid="uid://c5tqq4ikcv1gg" path="res://texture/canyon_sand.png" id="8_5itep"]
+[ext_resource type="Texture2D" uid="uid://svmmgrlgdlu3" path="res://texture/canyon_sun.png" id="9_ubo27"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="10_nf7em"]
+[ext_resource type="AudioStream" uid="uid://d2qgyhg84jsb0" path="res://audio/amb/deserted.ogg" id="11_ieq0o"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="13_7bt5h"]
+[ext_resource type="Texture2D" uid="uid://dom8u4cyx05kq" path="res://texture/particle_dust.png" id="13_krikx"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="14_krikx"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="19_ec3xg"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="20_hmfov"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="21_38cju"]
+
+[sub_resource type="Gradient" id="Gradient_7bt5h"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.909292, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.952619, 0.850121, 0.849646, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_krikx"]
+gradient = SubResource("Gradient_7bt5h")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ubo27"]
+shader = ExtResource("2_txxgj")
+shader_parameter/source_panorama = ExtResource("3_aqng3")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0.4)
+shader_parameter/uv_scale = 0.3
+
+[sub_resource type="Sky" id="Sky_nf7em"]
+sky_material = SubResource("ShaderMaterial_ubo27")
+
+[sub_resource type="Environment" id="Environment_x7fvs"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_nf7em")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.676058, 0.713447, 0.709692, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 0.03
+fog_depth_begin = 340.0
+fog_depth_end = 600.0
+adjustment_enabled = true
+adjustment_contrast = 0.8
+adjustment_color_correction = SubResource("GradientTexture1D_krikx")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5itep"]
+noise_type = 2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ec3xg"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_5itep")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hmfov"]
+render_priority = 0
+shader = ExtResource("7_m2b1v")
+shader_parameter/texture_albedo = ExtResource("8_5itep")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_ec3xg")
+shader_parameter/alpha = 0.5
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.02
+shader_parameter/mask_scale = 0.05
+shader_parameter/noise_threshold = 0.70000003325
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y2qh3"]
+resource_name = "caution_sign"
+transparency = 2
+alpha_scissor_threshold = 0.2
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_pqj8n")
+billboard_mode = 2
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyhhr"]
+render_priority = 1
+shader = ExtResource("7_krikx")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("7_b4sd3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nf7em"]
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.98, 0.9114, 0.9114, 0.588235)
+albedo_texture = ExtResource("9_ubo27")
+billboard_mode = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ra8a3"]
+render_priority = 2
+transparency = 4
+albedo_color = Color(0.98, 0.6664, 0.5096, 0.196078)
+albedo_texture = ExtResource("13_krikx")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 2.0
+distance_fade_mode = 2
+distance_fade_min_distance = 8.0
+distance_fade_max_distance = 16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_qyhhr"]
+
+[sub_resource type="Curve" id="Curve_m2b1v"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.9), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[node name="stage_canyon" type="Node3D" unique_id=1680026505 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_x7fvs")
+stage_name = "world_desert"
+_bloom = 0.5
+bgm = ExtResource("2_6lsru")
+bgm_pitch = 0.9
+bgm_volume = 0.2
+_entrance = [NodePath("entrance")]
+weather = 3
+respawn_y = -3
+_stage_light = Color(0.92, 0.6716, 0.6716, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1304693987]
+environment = SubResource("Environment_x7fvs")
+script = ExtResource("4_aqng3")
+_speed = 0.006
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=1718429163]
+visible = false
+supersampling = true
+supersampling_factor = 3.0
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(1, 0.85846, 0.970831, 1)
+generate_probes_subdiv = 0
+light_data = ExtResource("3_cgc30")
+
+[node name="canyon" parent="." unique_id=1547256255 instance=ExtResource("3_wonh7")]
+
+[node name="road" parent="canyon" index="0" unique_id=1140240928]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="sidewalks" parent="canyon" index="1" unique_id=573537306]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="cliffs" parent="canyon" index="3" unique_id=898189339]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="desserts" parent="canyon" index="6" unique_id=1982171311]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="caution_sign" parent="canyon" index="9" unique_id=1247194934]
+surface_material_override/0 = SubResource("StandardMaterial3D_y2qh3")
+
+[node name="caution_sign_001" parent="canyon" index="10" unique_id=1912518168]
+surface_material_override/0 = SubResource("StandardMaterial3D_y2qh3")
+
+[node name="bush" parent="canyon" index="12" unique_id=901085373]
+material_override = SubResource("ShaderMaterial_qyhhr")
+
+[node name="entrance" type="Node3D" parent="." unique_id=2109186242]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 49.8298, 0.0306197, -2)
+script = ExtResource("5_pqj8n")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="sun" type="Sprite3D" parent="." unique_id=1564302058]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -422, 154, -8.64392)
+material_override = SubResource("StandardMaterial3D_nf7em")
+extra_cull_margin = 32.0
+pixel_size = 8.0
+texture = ExtResource("9_ubo27")
+
+[node name="eye_watcher" parent="." unique_id=1209706114 instance=ExtResource("10_nf7em")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 18, -26)
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=848822507]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 20, -8)
+stream = ExtResource("11_ieq0o")
+attenuation_model = 2
+unit_size = 128.0
+max_db = 0.0
+autoplay = true
+panning_strength = 0.1
+bus = &"amb"
+
+[node name="particle_wind" parent="." unique_id=2097782534 instance=ExtResource("13_7bt5h")]
+
+[node name="dust" type="CPUParticles3D" parent="." unique_id=1417483811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4992, 30)
+material_override = SubResource("StandardMaterial3D_ra8a3")
+amount = 64
+lifetime = 20.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_qyhhr")
+emission_shape = 3
+emission_box_extents = Vector3(15, 1, 15)
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_m2b1v")
+
+[node name="attach_player" type="Node3D" parent="dust" unique_id=1111132312]
+script = ExtResource("14_krikx")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="particle_bird" parent="." unique_id=2133021719 instance=ExtResource("19_ec3xg")]
+
+[node name="generic_door" parent="." unique_id=1341957503 instance=ExtResource("20_hmfov")]
+transform = Transform3D(-4.371139e-08, 0, 1, -0.1293148, 0.99160355, -5.6525304e-09, -0.99160355, -0.1293148, -4.3344368e-08, 1.3997334, 0.9601685, -9.328082)
+
+[node name="door_frame" parent="generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="0" unique_id=185945896]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="door" parent="generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="1" unique_id=1252318643]
+material_overlay = SubResource("ShaderMaterial_hmfov")
+
+[node name="interactable" parent="generic_door/door2/door" index="0" unique_id=731676892]
+_to_stage = "uid://km16fe3wx45d"
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("21_38cju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.022808, 1.009945, -22.329777)
+
+[editable path="canyon"]
+[editable path="generic_door"]
+[editable path="generic_door/door2"]

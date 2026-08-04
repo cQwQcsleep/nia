@@ -1,0 +1,36 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dtm64pdb3j4jw"]
+
+[ext_resource type="Shader" uid="uid://qj6iny0745nj" path="res://gdshader/mat_rotten_00.gdshader" id="1_1wmg4"]
+[ext_resource type="Texture2D" uid="uid://c74hdl77sbc3q" path="res://texture/flesh_00.png" id="2_clwmw"]
+[ext_resource type="Texture2D" uid="uid://d1q5m6ysq7vcd" path="res://texture/meat_fat.png" id="3_clwmw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a1dlm"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_46ten"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_a1dlm")
+seamless = true
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1wmg4")
+shader_parameter/tex_a = ExtResource("2_clwmw")
+shader_parameter/tex_b = ExtResource("3_clwmw")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_46ten")
+shader_parameter/tint_a = Color(0.91, 0.38220003, 0.38220003, 1)
+shader_parameter/tint_b = Color(1, 1, 1, 1)
+shader_parameter/overlay_strength = 0.8
+shader_parameter/tri_scale = 0.1
+shader_parameter/tri_sharpness = 2.0
+shader_parameter/wave_amp_a = 0.15
+shader_parameter/wave_amp_b = 0.1
+shader_parameter/wave_freq_a = 2.0
+shader_parameter/wave_freq_b = 1.1
+shader_parameter/wave_speed_a = 0.8
+shader_parameter/wave_speed_b = 0.5
+shader_parameter/pulse_amp = 0.1
+shader_parameter/pulse_freq = 2.4
+shader_parameter/pulse_speed = 0.5
+shader_parameter/wet_spec = 0.9
+shader_parameter/wet_rough = 0.15

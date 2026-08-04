@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ynal2d24tbbr"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_xpfra"]
+
+[sub_resource type="Environment" id="Environment_w85p2"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+
+[node name="stage_backrooms" type="Node3D" unique_id=495341072]
+script = ExtResource("1_xpfra")
+stage_name = "world_backrooms"
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1561590192]
+environment = SubResource("Environment_w85p2")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=232945802]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+quality = 0
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+environment_mode = 3
+generate_probes_subdiv = 0

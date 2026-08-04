@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://gwfpgrfuob5m"]
+
+[ext_resource type="Shader" uid="uid://b2ct2xo0fpno4" path="res://gdshader/flocking.gdshader" id="1_ybw2v"]
+[ext_resource type="Texture2D" uid="uid://68f1ij05j865" path="res://texture/butterfly.png" id="2_2uj62"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="3_2uj62"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kstrw"]
+render_priority = 0
+shader = ExtResource("1_ybw2v")
+shader_parameter/tex = ExtResource("2_2uj62")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(1, 1, 1, 1)
+shader_parameter/displ_amnt = 0.8
+shader_parameter/displ_speed = 18.0
+shader_parameter/pi = 3.14159
+
+[sub_resource type="QuadMesh" id="QuadMesh_xy64d"]
+lightmap_size_hint = Vector2i(7, 5)
+size = Vector2(1, 0.6)
+subdivide_width = 1
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_47xrf"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(0.2, -1), 0.0, 0.0, 0, 0, Vector2(0.3, 1), 0.0, 0.0, 0, 0, Vector2(0.4, -1), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, -1), 0.0, 0.0, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0, Vector2(0.8, -1), 0.0, 0.0, 0, 0, Vector2(0.9, 1), 0.0, 0.0, 0, 0, Vector2(1, -1), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_7xmni"]
+_data = [Vector2(0, 0.9234439), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.3, 0.90000004), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0.90000004), 0.0, 0.0, 0, 0, Vector2(0.99999, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 7
+
+[sub_resource type="Gradient" id="Gradient_ybw2v"]
+offsets = PackedFloat32Array(0, 0.2, 0.81591576, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="particle_butterfly" type="CPUParticles3D" unique_id=438170123 groups=["stage_lit", "stage_lit_particle_color"]]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_kstrw")
+visibility_range_end = 32.0
+amount = 12
+lifetime = 16.0
+preprocess = 5.0
+lifetime_randomness = 0.5
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+mesh = SubResource("QuadMesh_xy64d")
+emission_shape = 3
+emission_box_extents = Vector3(2, 2, 0.5)
+particle_flag_align_y = true
+spread = 180.0
+flatness = 0.9
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.1
+initial_velocity_max = 0.5
+radial_accel_min = -5.0
+radial_accel_max = 5.0
+radial_accel_curve = SubResource("Curve_47xrf")
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_7xmni")
+color_ramp = SubResource("Gradient_ybw2v")
+script = ExtResource("3_2uj62")
+_max_particle = 12

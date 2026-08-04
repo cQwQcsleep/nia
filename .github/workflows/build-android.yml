@@ -1,0 +1,84 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  build-android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          lfs: false
+
+      - name: Setup Godot 4.7
+        uses: chickensoft-games/setup-godot@v2
+        with:
+          version: "4.7.0"
+          use-dotnet: false
+          export-templates: true
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Verify toolchain
+        run: |
+          godot --version
+          java -version
+          keytool -help >/dev/null && echo "keytool ok"
+
+      - name: Create Android keystore
+        run: |
+          mkdir -p "$HOME/.android"
+          keytool -genkeypair -v -keystore "$HOME/.android/debug.keystore" \
+            -storepass android -alias androiddebugkey -keypass android \
+            -keyalg RSA -keysize 2048 -validity 10000 \
+            -dname "CN=Android Debug,O=Android,C=US"
+          cp "$HOME/.android/debug.keystore" "$HOME/.android/release.keystore"
+
+      - name: Configure signing in export presets
+        run: |
+          sed -i 's|keystore/debug=""|keystore/debug='"$HOME"'/.android/debug.keystore|' export_presets.cfg
+          sed -i 's|keystore/debug_user=""|keystore/debug_user="androiddebugkey"|' export_presets.cfg
+          sed -i 's|keystore/debug_password=""|keystore/debug_password="android"|' export_presets.cfg
+          sed -i 's|keystore/release=""|keystore/release='"$HOME"'/.android/release.keystore|' export_presets.cfg
+          sed -i 's|keystore/release_user=""|keystore/release_user="androiddebugkey"|' export_presets.cfg
+          sed -i 's|keystore/release_password=""|keystore/release_password="android"|' export_presets.cfg
+          echo "--- presets after configure ---"
+          grep -E "keystore/" export_presets.cfg
+
+      - name: Import project resources
+        run: godot --headless --path . --import
+
+      - name: Export debug APK
+        run: godot --headless --path . --export-debug "Android" build/nophenia-android-debug.apk
+
+      - name: Export release APK
+        run: godot --headless --path . --export-release "Android" build/nophenia-android.apk
+
+      - name: List build output
+        run: ls -lh build/
+
+      - name: Upload APK artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nophenia-android
+          path: |
+            build/nophenia-android.apk
+            build/nophenia-android-debug.apk
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v') || github.event_name == 'workflow_dispatch'
+        uses: softprops/action-gh-release@v2
+        with:
+          name: nophenia-android-${{ github.ref_name }}
+          files: |
+            build/nophenia-android.apk
+            build/nophenia-android-debug.apk
+          generate_release_notes: true

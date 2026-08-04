@@ -1,0 +1,663 @@
+[gd_scene format=3 uid="uid://bwwlhhf1xogyq"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_hhnc6"]
+[ext_resource type="PackedScene" uid="uid://cbdvxyc725wcd" path="res://stage/mesh/bedroom.blend" id="2_l1t6k"]
+[ext_resource type="LightmapGIData" uid="uid://boknydjk1u0xp" path="res://stage/lightmap/stage_bedroom.lmbake" id="2_rdtx0"]
+[ext_resource type="AudioStream" uid="uid://bvgachsb6dhjw" path="res://audio/music/piano_01.ogg" id="2_ypw1u"]
+[ext_resource type="Texture2D" uid="uid://c60dkc2ewiplq" path="res://texture/sky_bedroom.png" id="3_ajld3"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_4iuvw"]
+[ext_resource type="Shader" uid="uid://bp6sw1dxh0phf" path="res://gdshader/curtain_sway.gdshader" id="4_5sm13"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="4_s54n7"]
+[ext_resource type="Texture2D" uid="uid://bv7hhg7b4qog0" path="res://texture/curtain_02.png" id="5_3lhcd"]
+[ext_resource type="Texture2D" uid="uid://4j0tmtcuagr0" path="res://texture/wall_flaky.png" id="5_7chm5"]
+[ext_resource type="Texture2D" uid="uid://b6i12lspc3nkd" path="res://texture/curtain_03.png" id="6_3lhcd"]
+[ext_resource type="Texture2D" uid="uid://bc8nfcxewdkdq" path="res://texture/window_09.png" id="7_4iuvw"]
+[ext_resource type="AudioStream" uid="uid://8el7rjcx8heb" path="res://audio/sfx/chair_squeak.ogg" id="7_m3vwm"]
+[ext_resource type="Texture2D" uid="uid://bqyriqxnd7x6n" path="res://texture/window_blind.png" id="10_5qgki"]
+[ext_resource type="Texture2D" uid="uid://c84vo1ommjpm8" path="res://texture/moldy.png" id="12_m7h5a"]
+[ext_resource type="Script" uid="uid://t3r3vagasemb" path="res://gdscript/moveable_motion.gd" id="12_s54n7"]
+[ext_resource type="Shader" uid="uid://bbwpp10sqkmwr" path="res://gdshader/screen.gdshader" id="13_calyo"]
+[ext_resource type="Texture2D" uid="uid://dss2qdup3ptyq" path="res://texture/paint_splatter_02.png" id="14_7lxvf"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="14_hxrfa"]
+[ext_resource type="Texture2D" uid="uid://bnfwnj27k3t4e" path="res://texture/monitor_screen_00.png" id="14_nrybk"]
+[ext_resource type="Texture2D" uid="uid://bs5jtn8i88vr1" path="res://texture/tree_17.png" id="14_xc6if"]
+[ext_resource type="Texture2D" uid="uid://dcaqsci72i4gd" path="res://texture/radio_tower_01.png" id="16_6waiq"]
+[ext_resource type="PackedScene" uid="uid://be5lx238lrqka" path="res://resource/particle_flies.tscn" id="16_7chm5"]
+[ext_resource type="Shader" uid="uid://bdbso3iuonqsb" path="res://gdshader/vertex_scroll.gdshader" id="18_uc4m3"]
+[ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="19_nrybk"]
+[ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="19_w5u3h"]
+[ext_resource type="Texture2D" uid="uid://b1626h4ccfnsp" path="res://texture/bug_rollie_pollie.png" id="20_e06l4"]
+[ext_resource type="AudioStream" uid="uid://mcyb0gip77bs" path="res://audio/amb/computer_internal.ogg" id="21_ca6gj"]
+[ext_resource type="Texture2D" uid="uid://b2nvxkgjo430r" path="res://texture/building_25.png" id="21_k4dmd"]
+[ext_resource type="AudioStream" uid="uid://twaeuisoif7" path="res://audio/amb/bedroom.ogg" id="22_yi1rb"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="23_e06l4"]
+[ext_resource type="Texture2D" uid="uid://60lmh8jbmpf" path="res://texture/window_lit_01.png" id="24_83a8v"]
+[ext_resource type="Texture2D" uid="uid://5chfwdpmv36g" path="res://texture/bed_00.png" id="24_nnvwe"]
+[ext_resource type="Texture2D" uid="uid://paynejr4nit" path="res://texture/moon.png" id="25_ojec2"]
+[ext_resource type="Texture2D" uid="uid://bb1l36oxolmv" path="res://texture/moon_bloomy.png" id="26_k4dmd"]
+[ext_resource type="Texture2D" uid="uid://cia3gxuj7wlsm" path="res://texture/wire_04.png" id="26_sm0tl"]
+[ext_resource type="Texture2D" uid="uid://dbodlk0psoda3" path="res://texture/antenna_05.png" id="27_krk1t"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="31_8y1wm"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="36_a848u"]
+[ext_resource type="Texture2D" uid="uid://bewc820u84uxn" path="res://texture/light_02.png" id="39_w5u3h"]
+
+[sub_resource type="Gradient" id="Gradient_rdtx0"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.1, 0.49537745, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.2625, 0.24499999, 0.35, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_l65tt"]
+gradient = SubResource("Gradient_rdtx0")
+width = 64
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_xc6if"]
+panorama = ExtResource("3_ajld3")
+
+[sub_resource type="Sky" id="Sky_ojec2"]
+sky_material = SubResource("PanoramaSkyMaterial_xc6if")
+
+[sub_resource type="Environment" id="Environment_qog8c"]
+background_mode = 2
+sky = SubResource("Sky_ojec2")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.3
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 3.0
+ssao_intensity = 3.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.5
+fog_sky_affect = 0.0
+fog_height = -20.0
+fog_height_density = 0.1
+fog_depth_begin = 16.0
+fog_depth_end = 256.0
+adjustment_enabled = true
+adjustment_brightness = 1.4
+adjustment_contrast = 0.7
+adjustment_saturation = 0.5
+adjustment_color_correction = SubResource("GradientTexture1D_l65tt")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ndriq"]
+noise_type = 3
+fractal_lacunarity = 2.8
+fractal_gain = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s54n7"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_ndriq")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5qgki"]
+render_priority = 0
+shader = ExtResource("4_4iuvw")
+shader_parameter/texture_albedo = ExtResource("5_7chm5")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_s54n7")
+shader_parameter/alpha = 0.5
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.3
+shader_parameter/mask_scale = 0.08
+shader_parameter/noise_threshold = 0.70000003325
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7chm5"]
+resource_name = "window"
+render_priority = -3
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("7_4iuvw")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5sm13"]
+render_priority = 0
+shader = ExtResource("4_5sm13")
+shader_parameter/tex = ExtResource("5_3lhcd")
+shader_parameter/alpha = 0.3
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.02
+shader_parameter/sway_strength_z = -0.01
+shader_parameter/sway_speed_x = 0.9
+shader_parameter/sway_speed_z = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3lhcd"]
+render_priority = 1
+shader = ExtResource("4_5sm13")
+shader_parameter/tex = ExtResource("6_3lhcd")
+shader_parameter/alpha = 0.2
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.02
+shader_parameter/sway_strength_z = 0.01
+shader_parameter/sway_speed_x = 1.0
+shader_parameter/sway_speed_z = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ypw1u"]
+resource_name = "blind_trans"
+render_priority = -2
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("10_5qgki")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_472n1"]
+fractal_lacunarity = 3.0
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_calyo"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_472n1")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnvwe"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_4iuvw")
+shader_parameter/texture_albedo = ExtResource("12_m7h5a")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_calyo")
+shader_parameter/alpha = 0.6
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.5
+shader_parameter/mask_scale = 0.5
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a848u"]
+resource_name = "paint"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("14_7lxvf")
+texture_repeat = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_83a8v"]
+render_priority = -6
+shader = ExtResource("14_hxrfa")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 1, -1)
+shader_parameter/emissive = 0.1
+shader_parameter/tex = ExtResource("14_xc6if")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sm0tl"]
+resource_name = "radio"
+render_priority = -5
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("16_6waiq")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uc4m3"]
+render_priority = 2
+shader = ExtResource("18_uc4m3")
+shader_parameter/tex = ExtResource("19_w5u3h")
+shader_parameter/emission = 0.0
+shader_parameter/color = Color(1, 0.85, 0.85, 0.15686275)
+shader_parameter/scroll_speed_primary = -0.05
+shader_parameter/scroll_speed_secondary = 0.1
+shader_parameter/use_alpha = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ca6gj"]
+render_priority = 0
+shader = ExtResource("13_calyo")
+shader_parameter/_texture = ExtResource("14_nrybk")
+shader_parameter/_emission = 0.8
+shader_parameter/_flicker_strength = 32.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xkg0b"]
+size = Vector3(0.83180237, 0.062316895, 0.87273407)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4qtc"]
+resource_name = "bed_trans"
+render_priority = 2
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("24_nnvwe")
+texture_filter = 5
+texture_repeat = false
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hxrfa"]
+resource_name = "building"
+cull_mode = 2
+albedo_texture = ExtResource("21_k4dmd")
+emission_enabled = true
+emission = Color(0.5568628, 0.34117648, 0.7019608, 1)
+emission_energy_multiplier = 0.05
+emission_texture = ExtResource("21_k4dmd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8y1wm"]
+resource_name = "lit"
+render_priority = -4
+blend_mode = 1
+cull_mode = 2
+albedo_texture = ExtResource("24_83a8v")
+emission_enabled = true
+emission_energy_multiplier = 0.7
+emission_texture = ExtResource("24_83a8v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krk1t"]
+render_priority = -3
+shader = ExtResource("14_hxrfa")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 1, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("26_sm0tl")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7lxvf"]
+resource_name = "antenna"
+render_priority = -3
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("27_krk1t")
+texture_repeat = false
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajld3"]
+render_priority = 1
+transparency = 4
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("20_e06l4")
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_xc6if"]
+size = Vector2(0.5, 1)
+
+[sub_resource type="Curve" id="Curve_ojec2"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 999.99994, 0, 1, Vector2(0.2, 200), 141.05287, -31.539772, 0, 0, Vector2(0.4, -200), 0.0, 0.0, 0, 0, Vector2(0.6, 200), 0.0, 0.0, 0, 0, Vector2(0.7, 120), 0.0, 0.0, 0, 0, Vector2(0.8, 200), 0.0, 0.0, 0, 0, Vector2(0.90000004, -200), 0.0, 0.0, 0, 0, Vector2(1, 0), 2000.0007, 0.0, 1, 0]
+point_count = 8
+
+[sub_resource type="Gradient" id="Gradient_k4dmd"]
+offsets = PackedFloat32Array(0, 0.1, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq27d"]
+render_priority = -5
+transparency = 4
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.8627451)
+albedo_texture = ExtResource("25_ojec2")
+emission_enabled = true
+emission_texture = ExtResource("25_ojec2")
+texture_repeat = false
+billboard_mode = 2
+billboard_keep_scale = true
+fixed_size = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k66h7"]
+render_priority = -10
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("39_w5u3h")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_l4qtc"]
+
+[sub_resource type="Gradient" id="Gradient_3t1nn"]
+offsets = PackedFloat32Array(0, 0.3, 0.551282, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.392157, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_5b8rq"]
+offsets = PackedFloat32Array(0.4, 0.6)
+colors = PackedColorArray(1, 0.425787, 0.357085, 1, 1, 1, 1, 1)
+
+[node name="stage_bedroom" type="Node3D" unique_id=402288639 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_hhnc6")
+stage_name = "world_bedroom"
+stage_name_alt = "world_bedroom_alt"
+has_anomaly = false
+_bloom = 0.6
+bgm = ExtResource("2_ypw1u")
+bgm_pitch = 0.6
+_entrance = [NodePath("entrance")]
+weather = 3
+weather_height = 10
+allow_run = false
+_stage_light = Color(0.48639998, 0.53199995, 0.76, 1)
+sequence = 1
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=293225029]
+environment = SubResource("Environment_qog8c")
+
+[node name="bedroom" parent="." unique_id=423342676 instance=ExtResource("2_l1t6k")]
+
+[node name="interactable" parent="bedroom/door" parent_id_path=PackedInt32Array(423342676, 486386416) index="0" unique_id=423868453 instance=ExtResource("4_s54n7")]
+_to_stage = "uid://dp688x5eip4bo"
+_id = 2
+voices = false
+
+[node name="room_layout" parent="bedroom" index="1" unique_id=1053694302]
+material_overlay = SubResource("ShaderMaterial_5qgki")
+
+[node name="CollisionShape3D" parent="bedroom/room_layout/StaticBody3D" parent_id_path=PackedInt32Array(423342676, 494355494) index="0" unique_id=2023752720]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00078725815, 0.005090475, 0.00066643953)
+
+[node name="window" parent="bedroom" index="5" unique_id=1936123447]
+surface_material_override/0 = SubResource("StandardMaterial3D_7chm5")
+
+[node name="curtain" parent="bedroom" index="6" unique_id=1346698853]
+material_override = SubResource("ShaderMaterial_5sm13")
+
+[node name="curtain_001" parent="bedroom" index="8" unique_id=1108473587]
+material_override = SubResource("ShaderMaterial_3lhcd")
+
+[node name="window_blind" parent="bedroom" index="9" unique_id=1768754804]
+surface_material_override/1 = SubResource("StandardMaterial3D_ypw1u")
+
+[node name="fishie_004" parent="bedroom" index="31" unique_id=44262260]
+material_overlay = SubResource("ShaderMaterial_nnvwe")
+
+[node name="paint" parent="bedroom" index="33" unique_id=1197210424]
+surface_material_override/0 = SubResource("StandardMaterial3D_a848u")
+
+[node name="view_buildings" parent="bedroom" index="40" unique_id=1789797246]
+surface_material_override/0 = SubResource("ShaderMaterial_83a8v")
+
+[node name="radio" parent="bedroom" index="43" unique_id=1382924399]
+material_override = SubResource("StandardMaterial3D_sm0tl")
+
+[node name="radio_001" parent="bedroom" index="44" unique_id=473285266]
+surface_material_override/0 = SubResource("StandardMaterial3D_sm0tl")
+
+[node name="light_volume" parent="bedroom" index="45" unique_id=1741692290]
+material_override = SubResource("ShaderMaterial_uc4m3")
+gi_mode = 0
+
+[node name="monitor" parent="bedroom" index="53" unique_id=596125360]
+surface_material_override/1 = SubResource("ShaderMaterial_ca6gj")
+
+[node name="chair_top-rigid" parent="bedroom" index="85" unique_id=544782103]
+collision_layer = 512
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+mass = 4.0
+center_of_mass_mode = 1
+type = 1
+_can_move = true
+_col_sfx = ExtResource("7_m3vwm")
+
+[node name="bedroom_chair_top-rigid_chair_top-rigid#moveable_motion" type="CPUParticles3D" parent="bedroom/chair_top-rigid/chair_top-rigid" parent_id_path=PackedInt32Array(423342676, 1242493234) index="0" unique_id=797535815]
+script = ExtResource("12_s54n7")
+metadata/_custom_type_script = "uid://t3r3vagasemb"
+
+[node name="CollisionShape3D" parent="bedroom/chair_top-rigid" index="1" unique_id=2022820606]
+disabled = true
+
+[node name="bedroom_chair_top-rigid#collision_shape_3d" type="CollisionShape3D" parent="bedroom/chair_top-rigid" index="2" unique_id=704326075]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.026839256, -0.35649556, 0.012077391)
+shape = SubResource("BoxShape3D_xkg0b")
+metadata/extras = {
+"mattress": false
+}
+
+[node name="bedroom_chair_top-rigid#collision_shape_3d2" type="CollisionShape3D" parent="bedroom/chair_top-rigid" index="3" unique_id=1051481048]
+transform = Transform3D(1, 0, 0, 0, -0.11146892, -0.9937679, 0, 0.99376804, -0.11146894, 0.009325385, 0.23747647, 0.5425211)
+shape = SubResource("BoxShape3D_xkg0b")
+metadata/extras = {
+"mattress": false
+}
+
+[node name="bed" parent="bedroom" index="93" unique_id=328596322]
+surface_material_override/1 = SubResource("StandardMaterial3D_l4qtc")
+
+[node name="meat_001_003" parent="bedroom" index="191" unique_id=488190404]
+material_overlay = SubResource("ShaderMaterial_nnvwe")
+
+[node name="meat_001_005" parent="bedroom" index="193" unique_id=1652629905]
+material_overlay = SubResource("ShaderMaterial_nnvwe")
+
+[node name="building_001" parent="bedroom" index="198" unique_id=1606906410]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_002" parent="bedroom" index="199" unique_id=100770760]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_003" parent="bedroom" index="200" unique_id=707038824]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+surface_material_override/0 = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_004" parent="bedroom" index="201" unique_id=1701831722]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_005" parent="bedroom" index="202" unique_id=96416580]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_006" parent="bedroom" index="203" unique_id=362203290]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_007" parent="bedroom" index="204" unique_id=2027503220]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_008" parent="bedroom" index="205" unique_id=1038095474]
+material_override = SubResource("StandardMaterial3D_hxrfa")
+
+[node name="building_lit" parent="bedroom" index="208" unique_id=745987636]
+surface_material_override/0 = SubResource("StandardMaterial3D_8y1wm")
+
+[node name="building_wire" parent="bedroom" index="210" unique_id=1780313882]
+material_override = SubResource("ShaderMaterial_krk1t")
+
+[node name="connection" parent="bedroom" index="211" unique_id=1340931291]
+surface_material_override/0 = SubResource("StandardMaterial3D_7lxvf")
+
+[node name="lightmap_gi" type="LightmapGI" parent="bedroom" unique_id=939495563]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.5
+environment_mode = 3
+environment_custom_energy = 0.0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_rdtx0")
+
+[node name="room_light" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=1496289110]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43594933, 3.431438, -0.5216049)
+light_color = Color(0.060000017, 0.40200007, 0.6, 1)
+light_energy = 4.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 48.0
+
+[node name="room_light_white" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=302581294]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4359493, 3, 1.5333827)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 64.0
+
+[node name="omni_light_3d2" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=1040556463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.381798, 3, 1.2017503)
+light_color = Color(0.55719995, 0.343, 0.7, 1)
+light_energy = 4.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 64.0
+
+[node name="omni_light_3d3" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=886799823]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.618202, 6, 21.20175)
+light_color = Color(0.55719995, 0.343, 0.7, 1)
+light_energy = 4.0
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 64.0
+
+[node name="room_door_light" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=112954237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6182017, 1.4573154, 3.2345085)
+light_color = Color(0.55719995, 0.343, 0.7, 1)
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="nightstand_light" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=1326898382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3312523, 1.8154277, -0.9602977)
+light_color = Color(1, 0.825, 0.65, 1)
+light_energy = 0.4
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+omni_attenuation = 0.9
+
+[node name="monitor_light" type="OmniLight3D" parent="bedroom/lightmap_gi" unique_id=1706339740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7958951, 1.7652743, 0.777187)
+light_color = Color(1, 0.77, 0.77, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 8.0
+
+[node name="water_droplets" parent="bedroom" unique_id=409214936 instance=ExtResource("19_nrybk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.2346377, 3.4772055, 2.8921633)
+amount = 1
+emission_shape = 0
+color = Color(0.32, 0.092800006, 0.092800006, 1)
+_max_particle = 1
+
+[node name="particle_flies" parent="bedroom" unique_id=1557450142 instance=ExtResource("16_7chm5")]
+transform = Transform3D(0.75576204, 0, -0.6548464, 0, 1, 0, 0.6548464, 0, 0.75576204, 3.421331, 1.5014378, 1.389409)
+amount = 6
+_max_particle = 6
+
+[node name="bugs" type="CPUParticles3D" parent="." unique_id=217688587 groups=["stage_lit"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -0.67871016, 0.011085093, -2.3681805)
+material_override = SubResource("StandardMaterial3D_ajld3")
+amount = 16
+lifetime = 2.0
+preprocess = 5.0
+speed_scale = 0.1
+mesh = SubResource("QuadMesh_xc6if")
+emission_shape = 3
+emission_box_extents = Vector3(1, 0, 1)
+particle_flag_align_y = true
+direction = Vector3(0, 0, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+radial_accel_max = 0.1
+radial_accel_curve = SubResource("Curve_ojec2")
+damping_max = 5.0
+angle_min = -533.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_k4dmd")
+
+[node name="bugs2" type="CPUParticles3D" parent="." unique_id=233800699 groups=["stage_lit"]]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 2.9802322e-08, -0.9999999, 0, 1, 1.4901161e-08, 1.0615315, 2.3608437, -3.9340403)
+material_override = SubResource("StandardMaterial3D_ajld3")
+amount = 16
+lifetime = 2.0
+preprocess = 5.0
+speed_scale = 0.1
+mesh = SubResource("QuadMesh_xc6if")
+emission_shape = 3
+emission_box_extents = Vector3(3.92, 0, 2.225)
+particle_flag_align_y = true
+direction = Vector3(0, 0, 1)
+spread = 180.0
+flatness = 1.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 1.0
+initial_velocity_max = 3.0
+radial_accel_max = 0.1
+radial_accel_curve = SubResource("Curve_ojec2")
+damping_max = 5.0
+angle_min = -533.0
+scale_amount_min = 0.05
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_k4dmd")
+
+[node name="ambience_computer" type="AudioStreamPlayer3D" parent="." unique_id=1839265329]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -0.13480389)
+stream = ExtResource("21_ca6gj")
+attenuation_model = 2
+max_db = 2.0
+autoplay = true
+max_distance = 12.0
+panning_strength = 1.6
+bus = &"amb"
+
+[node name="entrance" type="Node3D" parent="." unique_id=576612039]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0.024060547, -1.3030753)
+script = ExtResource("23_e06l4")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1408011868]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, 4)
+stream = ExtResource("22_yi1rb")
+attenuation_model = 2
+unit_size = 16.0
+max_db = 1.0
+pitch_scale = 0.97
+autoplay = true
+panning_strength = 0.8
+bus = &"amb"
+
+[node name="moon" type="Sprite3D" parent="." unique_id=1888031384]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1794.3463, 1242.5112, 2324.5662)
+material_override = SubResource("StandardMaterial3D_vq27d")
+extra_cull_margin = 48.0
+flip_v = true
+pixel_size = 0.0012
+texture = ExtResource("26_k4dmd")
+
+[node name="particle_bird" parent="." unique_id=7399878 instance=ExtResource("31_8y1wm")]
+
+[node name="eye_watcher" parent="." unique_id=564601939 instance=ExtResource("36_a848u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 5.788576, 17.53667)
+
+[node name="eye_watcher2" parent="." unique_id=1170012562 instance=ExtResource("36_a848u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.391441, 8.956499, -20.602137)
+
+[node name="ground_cars" type="CPUParticles3D" parent="." unique_id=705927875]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42, -25, 28)
+material_override = SubResource("StandardMaterial3D_k66h7")
+amount = 2
+lifetime = 15.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_l4qtc")
+emission_shape = 3
+emission_box_extents = Vector3(3, 3, 3)
+particle_flag_rotate_y = true
+gravity = Vector3(-0.1, 0, 0)
+linear_accel_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_3t1nn")
+color_initial_ramp = SubResource("Gradient_5b8rq")
+
+[editable path="bedroom"]

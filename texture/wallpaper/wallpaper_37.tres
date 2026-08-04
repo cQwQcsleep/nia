@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://bu3u82o5fo0tx"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_nupvu"]
+[ext_resource type="Texture2D" uid="uid://b1exkuyx4l3lg" path="res://texture/wallpaper/wallpaper_37.png" id="2_nupvu"]
+
+[resource]
+script = ExtResource("1_nupvu")
+name = "wallpaper_cliff"
+texture = ExtResource("2_nupvu")
+accent_colour = Color(0.63692504, 0.6205, 0.73, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

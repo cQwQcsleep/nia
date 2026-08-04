@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdqfhj5ka147e"]
+
+[ext_resource type="Texture2D" uid="uid://dxou7u36uqyqt" path="res://texture/pawprint.png" id="1_0mlhs"]
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="1_miisy"]
+[ext_resource type="Script" uid="uid://5xck2heo85lj" path="res://gdscript/pawprint.gd" id="1_tkx1y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2b2ce"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("1_miisy")
+shader_parameter/albedo = ExtResource("1_0mlhs")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 0.3
+shader_parameter/scale_mod = Vector3(8, 8, 8)
+shader_parameter/cube_half_size = Vector3(0.05, 0.3, 0.05)
+shader_parameter/enable_y_fade = false
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_miisy"]
+size = Vector3(0.1, 0.6, 0.1)
+
+[node name="pawprint" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_2b2ce")
+mesh = SubResource("BoxMesh_miisy")
+script = ExtResource("1_tkx1y")

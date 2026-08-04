@@ -1,0 +1,398 @@
+[gd_scene format=4 uid="uid://biqcb0pysqtic"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_mjgjk"]
+[ext_resource type="AudioStream" uid="uid://bpqva3kymq3er" path="res://audio/music/se_pencilz.ogg" id="2_gvs7v"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_lo47f"]
+[ext_resource type="PackedScene" uid="uid://doswui7semht5" path="res://stage/mesh/clocks.blend" id="2_sla4l"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="3_kid5b"]
+[ext_resource type="Texture2D" uid="uid://brdil03emadde" path="res://texture/sky_clouds_1.png" id="3_mqyyf"]
+[ext_resource type="LightmapGIData" uid="uid://drikyu0eyswkt" path="res://stage/lightmap/stage_clocks.lmbake" id="4_h5j13"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_mqyyf"]
+[ext_resource type="Texture2D" uid="uid://cktr84f0nl8bo" path="res://texture/clock.png" id="5_lamjy"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="8_t0ktt"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="10_0fle8"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="10_o5cqh"]
+[ext_resource type="AudioStream" uid="uid://bo8xh6y1uvf50" path="res://audio/amb/clock_0.ogg" id="11_m74nq"]
+[ext_resource type="AudioStream" uid="uid://cy0egcb3w8xlx" path="res://audio/amb/clock_1.ogg" id="12_qdgy4"]
+[ext_resource type="AudioStream" uid="uid://cxfkbp83dlxum" path="res://audio/amb/clock_2.ogg" id="13_7ngt1"]
+[ext_resource type="AudioStream" uid="uid://cys0dunjw1o8n" path="res://audio/amb/windy_sky.ogg" id="14_msj57"]
+
+[sub_resource type="Gradient" id="Gradient_msj57"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.29483283, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.29, 0.24069999, 0.25713333, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_o5cqh"]
+gradient = SubResource("Gradient_msj57")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0ktt"]
+shader = ExtResource("2_lo47f")
+shader_parameter/source_panorama = ExtResource("3_mqyyf")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0.12)
+shader_parameter/uv_scale = 1.0
+
+[sub_resource type="Sky" id="Sky_0fle8"]
+sky_material = SubResource("ShaderMaterial_t0ktt")
+
+[sub_resource type="Environment" id="Environment_d8f36"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.6
+sky = SubResource("Sky_0fle8")
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.174233, 0.215633, 0.392772, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height_density = 0.05
+fog_depth_begin = 2.0
+fog_depth_end = 42.0
+adjustment_enabled = true
+adjustment_contrast = 0.8
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_o5cqh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqyyf"]
+resource_name = "clock"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_lamjy")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 64.0
+distance_fade_max_distance = 16.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="MultiMesh" id="MultiMesh_lamjy"]
+instance_count = 400
+buffer = PackedFloat32Array(nan, nan, 0, 0, 0, 0, 0, 0, 0, 0, 9.99175e-38, 0, 158899000000000, 0, 0, 0, 0, 0, 0, 0, 1.41429e-38, 0, 158907000000000, 0, 6.24505e-38, 0, 158910000000000, 0, 158921000000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.41429e-38, 0, 158917000000000, 0, 0, 0, 158920000000000, 0, 0, 0, 158921000000000, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0751953, 0.845754, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0361328, 0.78668, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.785156, 0.0848498, 0, 0, 0, 0, 0, 0, 0, 0, 0.0825195, -0.0445161, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9.36042e+19, 1.03404e+20, 1.03404e+20, 1.61559e-27, 0, 43181500000000, 0, -1.29895e+38, 0, 9.53336e+19, 1.05134e+20, 1.05133e+20, 9.59101e+19, 1.0571e+20, 1.0571e+20, 9.64866e+19, 1.06287e+20)
+
+[sub_resource type="GDScript" id="GDScript_v048b"]
+script/source = "# ClockSpawner.gd
+extends Node3D
+
+@export var clock_mesh: Mesh         # Your clock hand mesh (e.g., a PlaneMesh)
+@export var clock_material: Material # The material with your shader
+
+const _width = 20
+const _height = 20
+const _spacing = 3.92
+
+func _ready():
+	var multimesh_instance = MultiMeshInstance3D.new()
+	var multimesh = MultiMesh.new()
+	multimesh.mesh = clock_mesh
+	multimesh.transform_format = MultiMesh.TRANSFORM_3D
+	multimesh.use_custom_data = true
+	multimesh.instance_count = _width * _height
+
+	multimesh_instance.multimesh = multimesh
+	multimesh_instance.material_override = clock_material
+	add_child(multimesh_instance)
+
+	for x in _width:
+		for y in _height:
+			var idx = x * _height + y
+			var transform = Transform3D.IDENTITY
+			transform.origin = Vector3(x * _spacing, 0, y * _spacing)
+			multimesh.set_instance_transform(idx, transform)
+			multimesh.set_instance_custom_data(idx, Color(randf_range(0.2,0.9), 0, 0))
+"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2s3yr"]
+resource_name = "clock"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_lamjy")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_85aem"]
+_surfaces = [{
+"aabb": AABB(-0.0620338, 2.38419e-07, -0.516766, 0.124579, 1e-05, 1.03353),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "clock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Lhd+vQAAgDTGSgQ/yxeAPQAAgDTGSgS/yxeAPQAAgDTGSgQ/Lhd+vQAAgDTGSgS/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v048b"]
+resource_name = "clocks_Cylinder_001"
+lightmap_size_hint = Vector2i(2, 10)
+_surfaces = [{
+"aabb": AABB(-0.0620338, 2.38419e-07, -0.516766, 0.124579, 1e-05, 1.03353),
+"attribute_data": PackedByteArray("MPRcPzz8dD8AAIA+MzNzP/5xdD8AAAAAAABAP83MTD39cXQ/PPx0PwAAQD8zM3M/MfRcPwAAAAAAAIA+zcxMPQ=="),
+"format": 34359742519,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_2s3yr"),
+"name": "clock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("Lhd+vQAAgDTGSgQ/yxeAPQAAgDTGSgS/yxeAPQAAgDTGSgQ/Lhd+vQAAgDTGSgS//3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_85aem")
+
+[sub_resource type="Shader" id="Shader_lo47f"]
+code = "shader_type spatial;
+
+uniform sampler2D albedo_texture : filter_nearest_mipmap_anisotropic;
+uniform float time;
+uniform float rotation_speed = 1.0;
+uniform vec3 pivot = vec3(0.0, 0.0, 0.0);
+
+
+float hash(vec2 p) {
+    return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453);
+}
+void vertex() {
+
+	//float speed = mix(0.5, 2.0, INSTANCE_CUSTOM.r); // Speed from custom value
+float speed =INSTANCE_CUSTOM.r; // float(INSTANCE_ID);//INSTANCE_CUSTOM.r;
+float angle = radians(TIME * rotation_speed * speed);
+  //  float angle = radians(TIME * rotation_speed + NODE_POSITION_WORLD.x);
+    vec3 pos = VERTEX - pivot;
+
+    mat3 rot = mat3(
+        vec3(cos(angle), 0.0, -sin(angle)),
+        vec3(0.0,       1.0,  0.0),
+        vec3(sin(angle), 0.0, cos(angle))
+    );
+
+    VERTEX = rot * pos + pivot;
+}
+
+
+void fragment() {
+    vec2 uv = UV;
+    vec4 tex_color = texture(albedo_texture, uv);
+
+    ALBEDO = tex_color.rgb;
+    ALPHA = tex_color.a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqyyf"]
+render_priority = 1
+shader = SubResource("Shader_lo47f")
+shader_parameter/albedo_texture = ExtResource("5_lamjy")
+shader_parameter/time = 0.0
+shader_parameter/rotation_speed = 1.0
+shader_parameter/pivot = Vector3(0, 0, 0.46)
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cb6gj"]
+_surfaces = [{
+"aabb": AABB(-0.0593246, 2.38419e-07, -0.516766, 0.118138, 1e-05, 1.03353),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"name": "clock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("WP5yvQAAgDTGSgQ/8OVwPQAAgDTGSgS/8OVwPQAAgDTGSgQ/WP5yvQAAgDTGSgS/")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lamjy"]
+resource_name = "clocks_Cylinder_002"
+lightmap_size_hint = Vector2i(10, 2)
+_surfaces = [{
+"aabb": AABB(-0.0593246, 2.38419e-07, -0.516766, 0.118138, 1e-05, 1.03353),
+"attribute_data": PackedByteArray("WvBDPzz8dD8zM3M/AABAPzQ3Wj8AAAAAzcxMPQAAgD4yN1o/PPx0PzMzcz8AAIA+XPBDPwAAAADNzEw9AABAPw=="),
+"format": 34359742519,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAADAAEA"),
+"material": SubResource("StandardMaterial3D_2s3yr"),
+"name": "clock",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("WP5yvQAAgDTGSgQ/8OVwPQAAgDTGSgS/8OVwPQAAgDTGSgQ/WP5yvQAAgDTGSgS//3///////7//f///////v/9///////+//3///////78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_cb6gj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lamjy"]
+render_priority = 1
+shader = SubResource("Shader_lo47f")
+shader_parameter/albedo_texture = ExtResource("5_lamjy")
+shader_parameter/time = 0.0
+shader_parameter/rotation_speed = 16.0
+shader_parameter/pivot = Vector3(0, 0, 0.46)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_v048b"]
+
+[node name="stage_clocks" type="Node3D" unique_id=1525514197 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_mjgjk")
+stage_name = "world_clocks"
+_bloom = 1.0
+bgm = ExtResource("2_gvs7v")
+bgm_pitch = 0.9
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+respawn_y = -300
+respawn_random = true
+gravity_override = 12.0
+_stage_light = Color(0.8911836, 0.8082775, 0.80780864, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=404272493]
+environment = SubResource("Environment_d8f36")
+script = ExtResource("4_mqyyf")
+_speed = 0.002
+
+[node name="clocks" parent="." unique_id=1351371786 instance=ExtResource("2_sla4l")]
+
+[node name="reference_player" parent="clocks" index="0" unique_id=411063706]
+visible = false
+
+[node name="clock" parent="clocks" index="2" unique_id=249042340]
+surface_material_override/0 = SubResource("StandardMaterial3D_mqyyf")
+
+[node name="gock_hand_short" parent="clocks" index="3" unique_id=1345912902]
+visible = false
+
+[node name="gock_hand_long" parent="clocks" index="4" unique_id=924913263]
+visible = false
+
+[node name="multi_hand_short_bottom" type="MultiMeshInstance3D" parent="clocks" unique_id=287040892]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00861, 0.126504, -70.9649)
+multimesh = SubResource("MultiMesh_lamjy")
+script = SubResource("GDScript_v048b")
+clock_mesh = SubResource("ArrayMesh_v048b")
+clock_material = SubResource("ShaderMaterial_mqyyf")
+
+[node name="multi_hand_long_bottom" type="MultiMeshInstance3D" parent="clocks" unique_id=174418244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00861, 0.126504, -70.9649)
+multimesh = SubResource("MultiMesh_lamjy")
+script = SubResource("GDScript_v048b")
+clock_mesh = SubResource("ArrayMesh_lamjy")
+clock_material = SubResource("ShaderMaterial_lamjy")
+
+[node name="multi_hand_short_top" type="MultiMeshInstance3D" parent="clocks" unique_id=536692301]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -4.03509, 4.76746, -70.9815)
+multimesh = SubResource("MultiMesh_lamjy")
+script = SubResource("GDScript_v048b")
+clock_mesh = SubResource("ArrayMesh_v048b")
+clock_material = SubResource("ShaderMaterial_mqyyf")
+
+[node name="multi_hand_long_top" type="MultiMeshInstance3D" parent="clocks" unique_id=1796645022]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, 1, -4.03509, 4.76746, -70.9815)
+multimesh = SubResource("MultiMesh_lamjy")
+script = SubResource("GDScript_v048b")
+clock_mesh = SubResource("ArrayMesh_lamjy")
+clock_material = SubResource("ShaderMaterial_lamjy")
+
+[node name="lightmap_gi" type="LightmapGI" parent="clocks" unique_id=115553242]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000684738, 2.01388, -0.000366718)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.2
+environment_mode = 3
+environment_custom_color = Color(0.8625, 0.85, 1, 1)
+generate_probes_subdiv = 0
+light_data = ExtResource("4_h5j13")
+
+[node name="clock_0" type="AudioStreamPlayer3D" parent="clocks" unique_id=1966736442]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 0)
+stream = ExtResource("11_m74nq")
+volume_db = -8.0
+unit_size = 6.0
+max_db = -4.0
+autoplay = true
+max_distance = 64.0
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="clock_0_1" type="AudioStreamPlayer3D" parent="clocks" unique_id=1606630219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 8, -42.0021)
+stream = ExtResource("11_m74nq")
+volume_db = -8.0
+unit_size = 6.0
+max_db = -4.0
+pitch_scale = 0.7
+autoplay = true
+max_distance = 64.0
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="clock_1" type="AudioStreamPlayer3D" parent="clocks" unique_id=293186636]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 8, -56.0021)
+stream = ExtResource("12_qdgy4")
+volume_db = -8.0
+unit_size = 6.0
+max_db = -4.0
+autoplay = true
+max_distance = 64.0
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="clock_1_1" type="AudioStreamPlayer3D" parent="clocks" unique_id=736833763]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 8, -38.0021)
+stream = ExtResource("12_qdgy4")
+volume_db = -8.0
+max_db = -4.0
+pitch_scale = 0.8
+autoplay = true
+max_distance = 128.0
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="clock_2" type="AudioStreamPlayer3D" parent="clocks" unique_id=1530808434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 59, 8, -14.0021)
+stream = ExtResource("13_7ngt1")
+volume_db = -8.0
+unit_size = 6.0
+max_db = -4.0
+autoplay = true
+max_distance = 64.0
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="eye_watcher" parent="." unique_id=1457780115 instance=ExtResource("8_t0ktt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.5581, 5.75064, -0.00631332)
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1761963111 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("3_kid5b")
+_bounds = NodePath("../clocks/floor")
+_world = NodePath("../clocks")
+_door_probability = 2
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="interactable" parent="dream_looper" unique_id=731676892 instance=ExtResource("10_o5cqh")]
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="." unique_id=1379652604]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
+mesh = SubResource("PlaneMesh_v048b")
+surface_material_override/0 = SubResource("ShaderMaterial_mqyyf")
+
+[node name="entrance" type="Node3D" parent="." unique_id=958183184]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5912, 0.129991, -19.4796)
+script = ExtResource("10_0fle8")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="ambient" type="AudioStreamPlayer3D" parent="." unique_id=1015007624]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33, 20, -34)
+stream = ExtResource("14_msj57")
+unit_size = 16.0
+autoplay = true
+panning_strength = 0.1
+bus = &"amb"
+
+[editable path="clocks"]

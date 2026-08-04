@@ -1,0 +1,32 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://ux58bmhyupdw"]
+
+[ext_resource type="Texture2D" uid="uid://clllylvr1p6ve" path="res://texture/player.png" id="1_w38v7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w38v7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w38v7"]
+render_priority = -1
+transparency = 4
+depth_draw_mode = 1
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_w38v7")
+refraction_texture = SubResource("CompressedTexture2D_w38v7")
+texture_filter = 0
+distance_fade_min_distance = 0.2
+distance_fade_max_distance = 1.0
+stencil_flags = 2
+
+[resource]
+resource_name = "Tex_LOPO_Dorothy"
+render_priority = -2
+next_pass = SubResource("StandardMaterial3D_w38v7")
+no_depth_test = true
+shading_mode = 0
+specular_mode = 2
+disable_fog = true
+albedo_color = Color(0, 0, 0, 1)
+proximity_fade_distance = 1229.8
+distance_fade_mode = 2
+distance_fade_min_distance = 3.0
+stencil_flags = 2

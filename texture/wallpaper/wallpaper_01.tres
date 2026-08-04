@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://d1072cuio0uny"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_a0l2r"]
+[ext_resource type="Texture2D" uid="uid://kyo5q27fm3lq" path="res://texture/wallpaper/wallpaper_01.png" id="2_a0l2r"]
+
+[resource]
+script = ExtResource("1_a0l2r")
+name = "wallpaper_architecture"
+texture = ExtResource("2_a0l2r")
+accent_colour = Color(0.221875, 0.25, 0.2125, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

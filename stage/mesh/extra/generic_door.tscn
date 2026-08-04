@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cq1woe70nvr7q"]
+
+[ext_resource type="PackedScene" uid="uid://g8pe38j3cuyi" path="res://stage/mesh/extra/door.blend" id="1_cx3yg"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="2_ql7cr"]
+[ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="3_ql7cr"]
+[ext_resource type="Texture2D" uid="uid://chewiklmenhev" path="res://texture/chain.png" id="3_sf0ba"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wbppt"]
+resource_name = "chain"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("3_sf0ba")
+
+[node name="generic_door" type="Node3D" unique_id=1341957503]
+
+[node name="door2" parent="." unique_id=921329222 instance=ExtResource("1_cx3yg")]
+
+[node name="interactable" parent="door2/door" parent_id_path=PackedInt32Array(921329222, 980220451) index="0" unique_id=731676892 instance=ExtResource("2_ql7cr")]
+
+[node name="chain" parent="door2" index="2" unique_id=1703494674]
+surface_material_override/0 = SubResource("StandardMaterial3D_wbppt")
+
+[node name="particle_butterfly" parent="." unique_id=438170123 instance=ExtResource("3_ql7cr")]
+
+[editable path="door2"]

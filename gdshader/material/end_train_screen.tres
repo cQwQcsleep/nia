@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://d0n64hkui3l2x"]
+
+[ext_resource type="Shader" uid="uid://bbwpp10sqkmwr" path="res://gdshader/screen.gdshader" id="1_hcer3"]
+
+[sub_resource type="Gradient" id="Gradient_hcer3"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0.14509805, 0.3254902, 0.63529414, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_oa3fo"]
+gradient = SubResource("Gradient_hcer3")
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hcer3")
+shader_parameter/_texture = SubResource("GradientTexture1D_oa3fo")
+shader_parameter/_emission = 1.5
+shader_parameter/_flicker_strength = 32.0

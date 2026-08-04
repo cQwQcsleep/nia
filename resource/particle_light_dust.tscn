@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bvbhulqabbok6"]
+
+[ext_resource type="Texture2D" uid="uid://dom8u4cyx05kq" path="res://texture/particle_dust.png" id="1_m2cn1"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_lkn11"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrobw"]
+render_priority = 1
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_m2cn1")
+distance_fade_mode = 2
+distance_fade_max_distance = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_xs2gf"]
+
+[sub_resource type="Gradient" id="Gradient_nrobw"]
+offsets = PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.19607843, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="particle_light_dust" type="CPUParticles3D" unique_id=658620432 groups=["stage_lit_particle_color"]]
+material_override = SubResource("StandardMaterial3D_nrobw")
+visibility_range_end = 12.0
+amount = 64
+lifetime = 3.0
+preprocess = 3.0
+speed_scale = 0.5
+visibility_aabb = AABB(-1.2628984, -1.2059821, -3.3448317, 2.4111145, 2.1937556, 6.920757)
+mesh = SubResource("QuadMesh_xs2gf")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 3.4)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+angle_min = -360.0
+angle_max = 360.0
+scale_amount_min = 0.01
+scale_amount_max = 0.05
+color_ramp = SubResource("Gradient_nrobw")
+script = ExtResource("2_lkn11")
+_max_particle = 64

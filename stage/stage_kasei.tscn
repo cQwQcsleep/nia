@@ -1,0 +1,442 @@
+[gd_scene format=3 uid="uid://dxvetk8m73qsd"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_8o274"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_4buil"]
+[ext_resource type="PackedScene" uid="uid://g5r4jthvobew" path="res://stage/mesh/mars.blend" id="2_b4bax"]
+[ext_resource type="AudioStream" uid="uid://dy6tio01b6bok" path="res://audio/music/se_woozy_glass.ogg" id="2_ejl4k"]
+[ext_resource type="LightmapGIData" uid="uid://cvu7gajrs78wo" path="res://stage/lightmap/stage_kasei.lmbake" id="2_enohv"]
+[ext_resource type="Texture2D" uid="uid://5jxfysdbujqd" path="res://texture/sky_mars.png" id="3_awdli"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_vh6bp"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_wojbr"]
+[ext_resource type="Texture2D" uid="uid://biy1gjphrdovd" path="res://texture/mars_1.png" id="5_0e1w0"]
+[ext_resource type="Texture2D" uid="uid://dom8u4cyx05kq" path="res://texture/particle_dust.png" id="5_c7rvm"]
+[ext_resource type="Texture2D" uid="uid://kuupgljqmcve" path="res://texture/mars_planet.png" id="6_bqpwg"]
+[ext_resource type="Texture2D" uid="uid://bfsr0enyxgh1f" path="res://texture/mars_02.png" id="6_tb664"]
+[ext_resource type="Texture2D" uid="uid://dgebxgibhunxw" path="res://texture/mars_planet_glerm.png" id="7_ad8jv"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="8_1fhms"]
+[ext_resource type="Shader" uid="uid://602kb6xwyhln" path="res://gdshader/clouds.gdshader" id="8_4tmnk"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="9_qs4no"]
+[ext_resource type="AudioStream" uid="uid://6nyd12ujoyyc" path="res://audio/amb/mars.ogg" id="9_u7ptv"]
+[ext_resource type="Texture2D" uid="uid://dypexiehk1x24" path="res://texture/water_03.png" id="10_ekkev"]
+[ext_resource type="PackedScene" uid="uid://06ujuma48lj8" path="res://resource/pupil_watcher.tscn" id="10_fyvk5"]
+[ext_resource type="Texture2D" uid="uid://cqlcahum3lvvh" path="res://texture/water_02.png" id="11_na1li"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="11_uku4i"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="13_0e1w0"]
+[ext_resource type="Texture2D" uid="uid://svmmgrlgdlu3" path="res://texture/canyon_sun.png" id="14_awdli"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="23_na1li"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="25_6vc1x"]
+
+[sub_resource type="Gradient" id="Gradient_wojbr"]
+offsets = PackedFloat32Array(0.03471292, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.85, 0.663, 0.663, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0e1w0"]
+gradient = SubResource("Gradient_wojbr")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tb664"]
+shader = ExtResource("2_4buil")
+shader_parameter/source_panorama = ExtResource("3_awdli")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = 1.0
+
+[sub_resource type="Sky" id="Sky_qs4no"]
+sky_material = SubResource("ShaderMaterial_tb664")
+
+[sub_resource type="Environment" id="Environment_8o274"]
+background_mode = 2
+background_color = Color(0.847059, 0.639216, 0.501961, 1)
+sky = SubResource("Sky_qs4no")
+tonemap_exposure = 1.3
+tonemap_white = 10.55
+glow_enabled = true
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.937759, 0.565012, 0.404411, 1)
+fog_density = 1.0
+fog_sky_affect = 0.8
+fog_height_density = 0.2
+fog_depth_begin = 8.0
+fog_depth_end = 90.0
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 1.1
+adjustment_saturation = 0.9
+adjustment_color_correction = SubResource("GradientTexture1D_0e1w0")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qs4no"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_onmnj"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_qs4no")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekkev"]
+render_priority = 0
+shader = ExtResource("4_wojbr")
+shader_parameter/texture_albedo = ExtResource("6_tb664")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_onmnj")
+shader_parameter/alpha = 0.3
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.02
+shader_parameter/noise_threshold = 0.70000003325
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uku4i"]
+offset = Vector3(0, 144.74, 0)
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1fhms"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_uku4i")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1ysg4"]
+render_priority = 0
+shader = ExtResource("4_wojbr")
+shader_parameter/texture_albedo = ExtResource("5_0e1w0")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_1fhms")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.2
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_wojbr"]
+data = PackedVector3Array(-5.70186, -0.705003, -2.0344, -5.56044, -1.405, -2.17582, -5.56044, -0.705003, -2.17582, -5.70186, -0.705003, -2.0344, -5.70186, -1.405, -2.0344, -5.56044, -1.405, -2.17582, -5.56044, -0.705003, -2.17582, -3.01485, 1.095, -4.7214, -3.01485, 1.795, -4.7214, -5.56044, -0.705003, -2.17582, -5.56044, -1.405, -2.17582, -3.01485, 1.095, -4.7214, -3.01485, 1.795, -4.7214, -2.73201, 1.095, -5.00424, -2.73201, 1.795, -5.00424, -3.01485, 1.795, -4.7214, -3.01485, 1.095, -4.7214, -2.73201, 1.095, -5.00424, -5.77257, -0.840187, -0.40805, -4.92404, -1.405, -1.25658, -5.77257, -1.405, -0.40805, -4.92404, -1.405, -1.25658, -5.67698, -0.705003, -0.503639, -4.92404, -0.705003, -1.25658, -4.92404, -1.405, -1.25658, -5.77257, -0.840187, -0.40805, -5.67698, -0.705003, -0.503639, -4.92404, -1.405, -1.25658, -4.78262, -0.705003, -1.398, -4.78262, -1.405, -1.398, -4.92404, -1.405, -1.25658, -4.92404, -0.705003, -1.25658, -4.78262, -0.705003, -1.398, -4.78262, -1.405, -1.398, -2.23703, 1.795, -3.94358, -2.23703, 1.095, -3.94358, -4.78262, -1.405, -1.398, -4.78262, -0.705003, -1.398, -2.23703, 1.795, -3.94358, -2.23703, 1.095, -3.94358, -1.95419, 1.795, -4.22643, -1.95419, 1.095, -4.22643, -2.23703, 1.095, -3.94358, -2.23703, 1.795, -3.94358, -1.95419, 1.795, -4.22643, -6.40896, -1.205, -1.32729, -5.63115, -1.405, -0.549471, -6.40896, -1.405, -1.32729, -6.40896, -1.205, -1.32729, -5.63115, -1.205, -0.549471, -5.63115, -1.405, -0.549471, -1.95419, 1.295, -4.22643, -3.01485, 1.295, -4.7214, -2.73201, 1.295, -5.00424, -1.95419, 1.295, -4.22643, -2.23703, 1.295, -3.94358, -3.01485, 1.295, -4.7214, -2.23703, 1.295, -3.94358, -5.56044, -1.205, -2.17582, -3.01485, 1.295, -4.7214, -2.23703, 1.295, -3.94358, -4.78262, -1.205, -1.398, -5.56044, -1.205, -2.17582, -4.78262, -1.205, -1.398, -5.70186, -1.205, -2.0344, -5.56044, -1.205, -2.17582, -4.78262, -1.205, -1.398, -4.92404, -1.205, -1.25658, -5.70186, -1.205, -2.0344, -4.92404, -1.205, -1.25658, -6.40896, -1.205, -1.32729, -5.70186, -1.205, -2.0344, -4.92404, -1.205, -1.25658, -5.63115, -1.205, -0.549471, -6.40896, -1.205, -1.32729, -5.70186, -0.705003, -2.0344, -6.55039, -1.405, -1.18587, -5.70186, -1.405, -2.0344, -6.55039, -1.405, -1.18587, -6.4548, -0.705003, -1.28146, -6.55039, -0.840187, -1.18587, -6.55039, -1.405, -1.18587, -5.70186, -0.705003, -2.0344, -6.4548, -0.705003, -1.28146, -1.82298, -2.58786, -4.0245, -1.94398, 3.46214, -4.02451, -1.82298, 3.46214, -4.0245, -1.82298, -2.58786, -4.0245, -1.94398, -2.58786, -4.02451, -1.94398, 3.46214, -4.02451, -1.94398, -2.58786, -4.02451, -1.94398, 3.46214, -4.1455, -1.94398, 3.46214, -4.02451, -1.94398, -2.58786, -4.02451, -1.94398, -2.58786, -4.1455, -1.94398, 3.46214, -4.1455, -1.94398, -2.58786, -4.1455, -1.82298, 3.46214, -4.1455, -1.94398, 3.46214, -4.1455, -1.94398, -2.58786, -4.1455, -1.82298, -2.58786, -4.1455, -1.82298, 3.46214, -4.1455, -1.82298, -2.58786, -4.1455, -1.82298, 3.46214, -4.0245, -1.82298, 3.46214, -4.1455, -1.82298, -2.58786, -4.1455, -1.82298, -2.58786, -4.0245, -1.82298, 3.46214, -4.0245, -1.94398, 3.46214, -4.1455, -1.82298, 3.46214, -4.0245, -1.94398, 3.46214, -4.02451, -1.94398, 3.46214, -4.1455, -1.82298, 3.46214, -4.1455, -1.82298, 3.46214, -4.0245, -2.81293, -2.58786, -5.01445, -2.93393, 3.46214, -5.01445, -2.81293, 3.46214, -5.01445, -2.81293, -2.58786, -5.01445, -2.93393, -2.58786, -5.01445, -2.93393, 3.46214, -5.01445, -2.93393, -2.58786, -5.01445, -2.93393, 3.46214, -5.13545, -2.93393, 3.46214, -5.01445, -2.93393, -2.58786, -5.01445, -2.93393, -2.58786, -5.13545, -2.93393, 3.46214, -5.13545, -2.93393, -2.58786, -5.13545, -2.81293, 3.46214, -5.13545, -2.93393, 3.46214, -5.13545, -2.93393, -2.58786, -5.13545, -2.81293, -2.58786, -5.13545, -2.81293, 3.46214, -5.13545, -2.81293, -2.58786, -5.13545, -2.81293, 3.46214, -5.01445, -2.81293, 3.46214, -5.13545, -2.81293, -2.58786, -5.13545, -2.81293, -2.58786, -5.01445, -2.81293, 3.46214, -5.01445, -2.93393, 3.46214, -5.13545, -2.81293, 3.46214, -5.01445, -2.93393, 3.46214, -5.01445, -2.93393, 3.46214, -5.13545, -2.81293, 3.46214, -5.13545, -2.81293, 3.46214, -5.01445, -0.408767, -2.58786, -2.61029, -0.529767, 3.46214, -2.61029, -0.408767, 3.46214, -2.61029, -0.408767, -2.58786, -2.61029, -0.529767, -2.58786, -2.61029, -0.529767, 3.46214, -2.61029, -0.529767, -2.58786, -2.61029, -0.529767, 3.46214, -2.73129, -0.529767, 3.46214, -2.61029, -0.529767, -2.58786, -2.61029, -0.529767, -2.58786, -2.73129, -0.529767, 3.46214, -2.73129, -0.529767, -2.58786, -2.73129, -0.408767, 3.46214, -2.73129, -0.529767, 3.46214, -2.73129, -0.529767, -2.58786, -2.73129, -0.408767, -2.58786, -2.73129, -0.408767, 3.46214, -2.73129, -0.408767, -2.58786, -2.73129, -0.408767, 3.46214, -2.61029, -0.408767, 3.46214, -2.73129, -0.408767, -2.58786, -2.73129, -0.408767, -2.58786, -2.61029, -0.408767, 3.46214, -2.61029, -0.529767, 3.46214, -2.73129, -0.408767, 3.46214, -2.61029, -0.529767, 3.46214, -2.61029, -0.529767, 3.46214, -2.73129, -0.408767, 3.46214, -2.73129, -0.408767, 3.46214, -2.61029, -0.408766, -2.58786, -5.43872, -0.529766, 3.46214, -5.43872, -0.408766, 3.46214, -5.43872, -0.408766, -2.58786, -5.43872, -0.529766, -2.58786, -5.43872, -0.529766, 3.46214, -5.43872, -0.529766, -2.58786, -5.43872, -0.529766, 3.46214, -5.55972, -0.529766, 3.46214, -5.43872, -0.529766, -2.58786, -5.43872, -0.529766, -2.58786, -5.55972, -0.529766, 3.46214, -5.55972, -0.529766, -2.58786, -5.55972, -0.408766, 3.46214, -5.55972, -0.529766, 3.46214, -5.55972, -0.529766, -2.58786, -5.55972, -0.408766, -2.58786, -5.55972, -0.408766, 3.46214, -5.55972, -0.408766, -2.58786, -5.55972, -0.408766, 3.46214, -5.43872, -0.408766, 3.46214, -5.55972, -0.408766, -2.58786, -5.55972, -0.408766, -2.58786, -5.43872, -0.408766, 3.46214, -5.43872, -0.529766, 3.46214, -5.55972, -0.408766, 3.46214, -5.43872, -0.529766, 3.46214, -5.43872, -0.529766, 3.46214, -5.55972, -0.408766, 3.46214, -5.55972, -0.408766, 3.46214, -5.43872, -1.39872, -2.58786, -6.42867, -1.51972, 3.46214, -6.42867, -1.39872, 3.46214, -6.42867, -1.39872, -2.58786, -6.42867, -1.51972, -2.58786, -6.42867, -1.51972, 3.46214, -6.42867, -1.51972, -2.58786, -6.42867, -1.51972, 3.46214, -6.54967, -1.51972, 3.46214, -6.42867, -1.51972, -2.58786, -6.42867, -1.51972, -2.58786, -6.54967, -1.51972, 3.46214, -6.54967, -1.51972, -2.58786, -6.54967, -1.39872, 3.46214, -6.54967, -1.51972, 3.46214, -6.54967, -1.51972, -2.58786, -6.54967, -1.39872, -2.58786, -6.54967, -1.39872, 3.46214, -6.54967, -1.39872, -2.58786, -6.54967, -1.39872, 3.46214, -6.42867, -1.39872, 3.46214, -6.54967, -1.39872, -2.58786, -6.54967, -1.39872, -2.58786, -6.42867, -1.39872, 3.46214, -6.42867, -1.51972, 3.46214, -6.54967, -1.39872, 3.46214, -6.42867, -1.51972, 3.46214, -6.42867, -1.51972, 3.46214, -6.54967, -1.39872, 3.46214, -6.54967, -1.39872, 3.46214, -6.42867, 1.00545, -2.58786, -4.0245, 0.884447, 3.46214, -4.02451, 1.00545, 3.46214, -4.0245, 1.00545, -2.58786, -4.0245, 0.884447, -2.58786, -4.02451, 0.884447, 3.46214, -4.02451, 0.884447, -2.58786, -4.02451, 0.884447, 3.46214, -4.1455, 0.884447, 3.46214, -4.02451, 0.884447, -2.58786, -4.02451, 0.884447, -2.58786, -4.1455, 0.884447, 3.46214, -4.1455, 0.884447, -2.58786, -4.1455, 1.00545, 3.46214, -4.1455, 0.884447, 3.46214, -4.1455, 0.884447, -2.58786, -4.1455, 1.00545, -2.58786, -4.1455, 1.00545, 3.46214, -4.1455, 1.00545, -2.58786, -4.1455, 1.00545, 3.46214, -4.0245, 1.00545, 3.46214, -4.1455, 1.00545, -2.58786, -4.1455, 1.00545, -2.58786, -4.0245, 1.00545, 3.46214, -4.0245, 0.884447, 3.46214, -4.1455, 1.00545, 3.46214, -4.0245, 0.884447, 3.46214, -4.02451, 0.884447, 3.46214, -4.1455, 1.00545, 3.46214, -4.1455, 1.00545, 3.46214, -4.0245, 0.944947, 1.295, -4.01429, -2.87343, 1.295, -5.14567, -1.52993, 1.295, -6.48917, 0.944947, 1.295, -4.01429, -0.398556, 1.295, -2.67079, -2.87343, 1.295, -5.14567, -2.87343, 1.295, -5.14567, -0.398556, 0.894997, -2.67079, -2.87343, 0.894997, -5.14567, -2.87343, 1.295, -5.14567, -0.398556, 1.295, -2.67079, -0.398556, 0.894997, -2.67079, 0.944947, 1.295, -4.01429, -1.52993, 0.894997, -6.48917, 0.944947, 0.894997, -4.01429, 0.944947, 1.295, -4.01429, -1.52993, 1.295, -6.48917, -1.52993, 0.894997, -6.48917, -1.52993, 1.295, -6.48917, -2.87343, 0.894997, -5.14567, -1.52993, 0.894997, -6.48917, -1.52993, 1.295, -6.48917, -2.87343, 1.295, -5.14567, -2.87343, 0.894997, -5.14567, -0.398556, 1.295, -2.67079, 2.35916, -1.705, -2.60008, 1.01566, -1.705, -1.25658, -0.398556, 1.295, -2.67079, 0.944947, 1.295, -4.01429, 2.35916, -1.705, -2.60008, 2.35916, -1.705, -2.60008, 0.944947, 1.695, -4.01429, 0.944947, 1.295, -4.01429, 2.35916, -1.705, -2.60008, 2.35916, -1.305, -2.60008, 0.944947, 1.695, -4.01429, -0.398556, 1.295, -2.67079, 1.01566, -1.305, -1.25658, 1.01566, -1.705, -1.25658, -0.398556, 1.295, -2.67079, -0.398556, 1.695, -2.67079, 1.01566, -1.305, -1.25658, -2.87343, 2.695, -5.14567, -0.398556, 2.295, -2.67079, -2.87343, 2.295, -5.14567, -2.87343, 2.695, -5.14567, -0.398556, 2.695, -2.67079, -0.398556, 2.295, -2.67079, 0.944947, 2.695, -4.01429, -1.52993, 2.295, -6.48917, 0.944947, 2.295, -4.01429, 0.944947, 2.695, -4.01429, -1.52993, 2.695, -6.48917, -1.52993, 2.295, -6.48917, -1.52993, 2.695, -6.48917, -2.87343, 2.295, -5.14567, -1.52993, 2.295, -6.48917, -1.52993, 2.695, -6.48917, -2.87343, 2.695, -5.14567, -2.87343, 2.295, -5.14567)
+backface_collision = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onmnj"]
+render_priority = 0
+shader = ExtResource("9_qs4no")
+shader_parameter/albedo = Color(1, 0.33999997, 0.33999997, 1)
+shader_parameter/water_emission_strength = 0.5
+shader_parameter/water_texture1 = ExtResource("10_ekkev")
+shader_parameter/water_texture2 = ExtResource("11_na1li")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.03
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.3
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bqpwg"]
+render_priority = 2
+transparency = 1
+albedo_color = Color(0.98, 0.6664, 0.5096, 0.196078)
+albedo_texture = ExtResource("5_c7rvm")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+proximity_fade_enabled = true
+proximity_fade_distance = 2.0
+distance_fade_mode = 2
+distance_fade_min_distance = 8.0
+distance_fade_max_distance = 16.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_ad8jv"]
+
+[sub_resource type="Curve" id="Curve_c7rvm"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.9), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ad8jv"]
+transparency = 1
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.588235)
+albedo_texture = ExtResource("6_bqpwg")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5gae2"]
+transparency = 1
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.196078)
+albedo_texture = ExtResource("7_ad8jv")
+billboard_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tb664"]
+render_priority = -1
+transparency = 4
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("14_awdli")
+billboard_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_u7ptv"]
+radius = 140.0
+height = 100.0
+radial_segments = 16
+rings = 8
+is_hemisphere = true
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fyvk5"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fyvk5"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_fyvk5")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wojbr"]
+render_priority = 0
+shader = ExtResource("8_4tmnk")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_fyvk5")
+shader_parameter/scroll_speed = 0.02
+shader_parameter/alpha_threshold = 0.3
+shader_parameter/alpha_strength = 0.70000003325
+shader_parameter/cloud_color = Color(1, 1, 1, 1)
+shader_parameter/cloud_scale = 2.0
+
+[node name="stage_kasei" type="Node3D" unique_id=1451945107 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_8o274")
+stage_name = "world_mars"
+_bloom = 0.8
+bgm = ExtResource("2_ejl4k")
+bgm_pitch = 0.8
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+gravity_override = 3.0
+_stage_light = Color(0.87, 0.554915, 0.4089, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=97838075]
+environment = SubResource("Environment_8o274")
+
+[node name="mars" parent="." unique_id=2124067781 instance=ExtResource("2_b4bax")]
+
+[node name="surface" parent="mars" index="0" unique_id=588402139]
+material_overlay = SubResource("ShaderMaterial_ekkev")
+
+[node name="slide" parent="mars" index="1" unique_id=1304032339]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="StaticBody3D" parent="mars/slide" index="0" unique_id=1626223691]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape3D" parent="mars/slide/StaticBody3D" index="0" unique_id=1361787589]
+shape = SubResource("ConcavePolygonShape3D_wojbr")
+
+[node name="rocks" parent="mars" index="2" unique_id=696979269]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="water" parent="mars" index="3" unique_id=1629075861]
+material_override = SubResource("ShaderMaterial_onmnj")
+
+[node name="steel_beam" parent="mars" index="6" unique_id=1779078037]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="steel_beam_bend" parent="mars" index="7" unique_id=2008614040]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="plants" parent="mars" index="8" unique_id=1413414280]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="lightmap_gi" type="LightmapGI" parent="mars" unique_id=1699509974]
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+generate_probes_subdiv = 0
+light_data = ExtResource("2_enohv")
+
+[node name="mars_light" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=1705402696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.0022, 9.86046, 116.4567)
+light_color = Color(0.524487, 0.623581, 0.34919, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+
+[node name="mars_light2" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=625622348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00225067, 5.86046, 86.0302)
+light_color = Color(0.994161, 0.285927, 0.294028, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.5
+
+[node name="mars_light4" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=344652059]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.99775, 6.88559, 71.0302)
+light_color = Color(0.994161, 0.285927, 0.294028, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.5
+
+[node name="mars_light5" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=590182478]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.09373, 6.88559, 35.0302)
+light_color = Color(0.958994, 0.266888, 0.607378, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.5
+
+[node name="mars_light7" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=1537680249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0937, 8.39611, 101.0302)
+light_color = Color(0.958994, 0.266888, 0.607378, 1)
+light_energy = 5.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.5
+
+[node name="mars_light3" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=134187667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00225067, 9.44748, 58.656998)
+light_color = Color(0.794194, 0.510169, 0, 1)
+light_energy = 8.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 20.0
+
+[node name="mars_light8" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=1584223657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9977, 10.5594, 24.8731)
+light_color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
+light_energy = 12.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 2.0
+
+[node name="mars_light9" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=1197498290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0023, 8.35032, 22.8731)
+light_color = Color(0.82881, 2.71939e-06, 5.77569e-07, 1)
+light_energy = 12.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 2.0
+
+[node name="mars_light6" type="OmniLight3D" parent="mars/lightmap_gi" unique_id=1048135462]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0045, 8.89496, 38.314)
+light_color = Color(0.458824, 0.666667, 0.756863, 1)
+light_energy = 8.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+
+[node name="entrance" type="Node3D" parent="." unique_id=131413500]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.6519394, 0.6735898, 98)
+script = ExtResource("3_vh6bp")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="dust" type="CPUParticles3D" parent="." unique_id=1597083417]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4992, 30)
+material_override = SubResource("StandardMaterial3D_bqpwg")
+amount = 64
+lifetime = 20.0
+preprocess = 5.0
+mesh = SubResource("QuadMesh_ad8jv")
+emission_shape = 3
+emission_box_extents = Vector3(10, 1, 32)
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -10.0
+angular_velocity_max = 10.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+scale_amount_curve = SubResource("Curve_c7rvm")
+script = ExtResource("8_1fhms")
+_max_particle = 64
+
+[node name="attach_player" type="Node3D" parent="dust" unique_id=1645374738]
+script = ExtResource("11_uku4i")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="solar" type="Node3D" parent="." unique_id=1487218650]
+
+[node name="planet_glorp" type="Sprite3D" parent="solar" unique_id=911290416]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -134, 78, -167)
+material_override = SubResource("StandardMaterial3D_ad8jv")
+pixel_size = 1.6
+billboard = 2
+texture = ExtResource("6_bqpwg")
+
+[node name="planet_glerm" type="Sprite3D" parent="solar" unique_id=1949567578]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 213.88, 104.659, 103.635)
+material_override = SubResource("StandardMaterial3D_5gae2")
+pixel_size = 2.0
+billboard = 2
+texture = ExtResource("7_ad8jv")
+
+[node name="attach_player" type="Node3D" parent="solar" unique_id=824631445]
+script = ExtResource("11_uku4i")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="sun" type="Sprite3D" parent="solar" unique_id=1725769545]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 167, 73, -135)
+material_override = SubResource("StandardMaterial3D_tb664")
+modulate = Color(1, 0.72, 0.72, 0.19607843)
+pixel_size = 2.0
+texture = ExtResource("14_awdli")
+
+[node name="clouds" type="Node3D" parent="." unique_id=1616686478]
+
+[node name="cloud_dome" type="MeshInstance3D" parent="clouds" unique_id=17959756]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
+mesh = SubResource("SphereMesh_u7ptv")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_wojbr")
+
+[node name="attach_player" type="Node3D" parent="clouds" unique_id=2060618986]
+script = ExtResource("11_uku4i")
+_ignore_y = true
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="pupil_watcher" parent="." unique_id=243271106 instance=ExtResource("10_fyvk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.4828, 6.31374, -25.2522)
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1277363137]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 13, -31)
+stream = ExtResource("9_u7ptv")
+unit_size = 80.0
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=2144517011 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("13_0e1w0")
+_bounds = NodePath("../mars/surface")
+_world = NodePath("../mars")
+_fade_on_loop = true
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="generic_door" parent="." unique_id=1341957503 instance=ExtResource("23_na1li")]
+transform = Transform3D(0.9670651, 0.25447237, 0.005390797, -0.2543885, 0.96560776, 0.053742457, 0.008470585, -0.0533438, 0.9985404, 3.6684477, 5.3232594, 0.8363497)
+
+[node name="door_frame" parent="generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="0" unique_id=185945896]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="door" parent="generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="1" unique_id=1252318643]
+material_overlay = SubResource("ShaderMaterial_1ysg4")
+
+[node name="interactable" parent="generic_door/door2/door" index="0" unique_id=731676892]
+_to_stage = "uid://cjrisygqo51on"
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("25_6vc1x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.688779, 1.6060112, 43)
+
+[editable path="mars"]
+[editable path="generic_door"]
+[editable path="generic_door/door2"]

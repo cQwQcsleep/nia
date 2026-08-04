@@ -1,0 +1,3035 @@
+[gd_scene format=3 uid="uid://hcvxfdddoeq1"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_hbjkr"]
+[ext_resource type="LightmapGIData" uid="uid://d03bsaqn5nhm0" path="res://stage/lightmap/stage_parking_lot.lmbake" id="2_aciau"]
+[ext_resource type="AudioStream" uid="uid://dsvqn4tfa0b5i" path="res://audio/music/se_scuttling.ogg" id="2_kv5dx"]
+[ext_resource type="PackedScene" uid="uid://876pvs5hpeem" path="res://stage/mesh/parking_lot.blend" id="2_nvkq5"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="2_xsub5"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="3_5hbwo"]
+[ext_resource type="LightmapGIData" uid="uid://crxenjy1st1nt" path="res://stage/lightmap/stage_parking_lot_roof.lmbake" id="4_1o3ai"]
+[ext_resource type="Texture2D" uid="uid://dnn4p3ci5gwt2" path="res://texture/sky_park_roof.png" id="4_8igw3"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="4_o7jgm"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="4_wdt7f"]
+[ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="5_e6b35"]
+[ext_resource type="Texture2D" uid="uid://cqlcahum3lvvh" path="res://texture/water_02.png" id="6_jsk1i"]
+[ext_resource type="Texture2D" uid="uid://c4boa8n756y4" path="res://texture/fire_alarm.png" id="7_km48l"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="7_rrsrv"]
+[ext_resource type="Texture2D" uid="uid://cuchormqc2jv1" path="res://texture/red_duckweed.png" id="8_1v071"]
+[ext_resource type="Texture2D" uid="uid://daokirg5lde4n" path="res://texture/light_03.png" id="8_4bgo2"]
+[ext_resource type="Texture2D" uid="uid://do4nl7ax43c8t" path="res://texture/fire_alarm_em.png" id="8_gub0k"]
+[ext_resource type="Texture2D" uid="uid://cgir1bw46tewy" path="res://texture/wet_asphalt.png" id="8_ou3ko"]
+[ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="10_4bgo2"]
+[ext_resource type="Texture2D" uid="uid://8efdia03e4hl" path="res://texture/asphalt_leaves.png" id="11_8sslb"]
+[ext_resource type="Script" uid="uid://d3irasd3tcx8b" path="res://gdscript/follower.gd" id="11_gub0k"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="12_icb1g"]
+[ext_resource type="Texture2D" uid="uid://bfhdmxpp3y6fv" path="res://texture/grime.png" id="13_1v071"]
+[ext_resource type="Texture2D" uid="uid://cilkk1nrcu432" path="res://texture/light_05.png" id="13_5qpjy"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="15_5hs8w"]
+[ext_resource type="Shader" uid="uid://bdbso3iuonqsb" path="res://gdshader/vertex_scroll.gdshader" id="16_18c3u"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="17_2vado"]
+[ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="17_o0bnp"]
+[ext_resource type="Texture2D" uid="uid://dv8a1u7onftye" path="res://texture/particle_sparkle.png" id="18_g1tox"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="18_lejp4"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="19_b3w2u"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="19_kewuf"]
+[ext_resource type="Texture2D" uid="uid://djcu1panmnqsj" path="res://texture/dead_tree_08.png" id="19_ome3g"]
+[ext_resource type="Texture2D" uid="uid://3l15v7cp0jmc" path="res://texture/fence_04.png" id="19_v5oyf"]
+[ext_resource type="Texture2D" uid="uid://e3f7uo4wbiqy" path="res://texture/tree_07.png" id="19_ybu63"]
+[ext_resource type="Texture2D" uid="uid://cca5bnnwl1msk" path="res://texture/carpark_roadmarking_00.png" id="21_cyj2d"]
+[ext_resource type="Texture2D" uid="uid://cy4y6jcv7waal" path="res://texture/carpark_roadmarking_01.png" id="22_apcho"]
+[ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="23_apcho"]
+[ext_resource type="Texture2D" uid="uid://dv6i7jnvyfdpa" path="res://texture/treeline_05.png" id="23_d0nw6"]
+[ext_resource type="Texture2D" uid="uid://cnssq05a71uew" path="res://texture/light_04.png" id="23_p7trt"]
+[ext_resource type="Texture2D" uid="uid://5b0yqtuski71" path="res://texture/building_19.png" id="23_ytwee"]
+[ext_resource type="Texture2D" uid="uid://dh6m8xaweoneo" path="res://texture/building_20.png" id="24_c5f1r"]
+[ext_resource type="AudioStream" uid="uid://buvgiyafwhisa" path="res://audio/amb/waterpark_stream.ogg" id="24_o0bnp"]
+[ext_resource type="Texture2D" uid="uid://bewc820u84uxn" path="res://texture/light_02.png" id="24_thy7d"]
+[ext_resource type="AudioStream" uid="uid://38mxjojbylv8" path="res://audio/amb/city_skyline.ogg" id="25_5iwqj"]
+[ext_resource type="Texture2D" uid="uid://bfffgqyroal36" path="res://texture/moon_crest.png" id="26_5iwqj"]
+[ext_resource type="Texture2D" uid="uid://sm7rn2t42gje" path="res://texture/transmission_02.png" id="26_hy2df"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="27_ome3g"]
+[ext_resource type="Texture2D" uid="uid://drhr13lubtvg4" path="res://texture/building_21.png" id="27_y7rmh"]
+[ext_resource type="PackedScene" uid="uid://cxv3msarmgfpa" path="res://resource/particle_moth.tscn" id="28_qphsj"]
+[ext_resource type="AudioStream" uid="uid://b7c3qnhpuo6ap" path="res://audio/amb/parking_lot_underground.ogg" id="29_o6omm"]
+[ext_resource type="ArrayOccluder3D" uid="uid://unixldgplpj8" path="res://stage/occlusion/stage_parking_lot.occ" id="29_wi6nl"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="30_g2vei"]
+[ext_resource type="Texture2D" uid="uid://bvfeu3wgp46is" path="res://texture/distant_lights_02.png" id="33_xxmw7"]
+[ext_resource type="AudioStream" uid="uid://cvjesa3wn4esv" path="res://audio/amb/metro_stationary_engine.ogg" id="33_xyc8r"]
+[ext_resource type="Texture2D" uid="uid://dsixjp1j4vcge" path="res://texture/light_1.png" id="35_23wes"]
+[ext_resource type="Shader" uid="uid://b6fh2e6ooslm8" path="res://gdshader/caustics_no_fog_fade.gdshader" id="37_3daa5"]
+[ext_resource type="Texture2D" uid="uid://df3ewni2cu1cx" path="res://icon.svg" id="38_5qpjy"]
+[ext_resource type="Texture2D" uid="uid://bxxncgit7yygk" path="res://texture/bwr_caustic_01.png" id="38_avbsd"]
+[ext_resource type="Texture2D" uid="uid://dhosq40uuq4hi" path="res://texture/light_rays.png" id="39_y7rmh"]
+[ext_resource type="Texture2D" uid="uid://bm24242g1ww8v" path="res://texture/sun_underwater.png" id="40_pnqd5"]
+[ext_resource type="Texture2D" uid="uid://bm8nrt37rhs2d" path="res://texture/grass_11.png" id="41_avbsd"]
+[ext_resource type="AudioStream" uid="uid://2uaoowla2yu5" path="res://audio/amb/park_lot_roof.ogg" id="45_pnqd5"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="48_pyo6x"]
+[ext_resource type="Texture2D" uid="uid://boe2eefk6ic26" path="res://texture/soil.png" id="54_726e5"]
+[ext_resource type="PackedScene" uid="uid://cs20jg06xcndg" path="res://resource/void_noise.tscn" id="57_xyc8r"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="67_jb7w7"]
+
+[sub_resource type="Gradient" id="Gradient_5hbwo"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.6698481, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.93, 0.80910003, 0.80910003, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8igw3"]
+gradient = SubResource("Gradient_5hbwo")
+width = 64
+
+[sub_resource type="Environment" id="Environment_nvkq5"]
+background_mode = 1
+background_color = Color(0.36078432, 0.34509805, 0.4, 1)
+reflected_light_source = 1
+tonemap_mode = 3
+tonemap_exposure = 2.0
+tonemap_white = 0.4
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.9
+fog_depth_begin = 28.0
+fog_depth_end = 64.0
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.9
+adjustment_saturation = 0.9
+adjustment_color_correction = SubResource("GradientTexture1D_8igw3")
+
+[sub_resource type="Gradient" id="Gradient_1o3ai"]
+offsets = PackedFloat32Array(0.015197569, 0.2, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.25500003, 0.24000001, 0.3, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4bgo2"]
+gradient = SubResource("Gradient_1o3ai")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8igw3"]
+shader = ExtResource("3_5hbwo")
+shader_parameter/source_panorama = ExtResource("4_8igw3")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = 0.50000002305148
+
+[sub_resource type="Sky" id="Sky_b5w06"]
+sky_material = SubResource("ShaderMaterial_8igw3")
+
+[sub_resource type="Environment" id="Environment_cvqdm"]
+background_mode = 2
+background_color = Color(0, 0.14117648, 0.34509805, 1)
+background_energy_multiplier = 0.9
+sky = SubResource("Sky_b5w06")
+tonemap_exposure = 0.6
+tonemap_white = 0.5
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.1925, 0.231875, 0.35, 1)
+fog_light_energy = 0.15
+fog_density = 0.9
+fog_sky_affect = 0.0
+fog_height = 36.0
+fog_height_density = 1.0
+fog_depth_curve = 0.2332583
+fog_depth_begin = 2.0
+fog_depth_end = 64.0
+adjustment_enabled = true
+adjustment_contrast = 0.98
+adjustment_saturation = 0.6
+adjustment_color_correction = SubResource("GradientTexture1D_4bgo2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7trt"]
+resource_name = "marking"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.9, 0.5922, 0.216, 0.5882353)
+albedo_texture = ExtResource("21_cyj2d")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5qpjy"]
+resource_name = "marking.001"
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.5882353)
+albedo_texture = ExtResource("22_apcho")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ybu63"]
+resource_name = "marking"
+render_priority = 1
+transparency = 1
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.5882353)
+albedo_texture = ExtResource("21_cyj2d")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pyo6x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_kv5dx"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_pyo6x")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_726e5"]
+render_priority = 2
+shader = ExtResource("12_icb1g")
+shader_parameter/texture_albedo = ExtResource("11_8sslb")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_kv5dx")
+shader_parameter/alpha = 0.6
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.01
+shader_parameter/noise_threshold = 0.70000003325
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ou3ko"]
+resource_name = "asphalt"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.74419045, 0.76320755, 0.8449847, 0.78431374)
+albedo_texture = ExtResource("8_ou3ko")
+stencil_flags = 2
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ugmld"]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.27451)
+albedo_texture = ExtResource("8_4bgo2")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1o3ai"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("23_p7trt")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsub5"]
+render_priority = 2
+transparency = 4
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.83, 0.8866667, 1, 0.1254902)
+albedo_texture = ExtResource("13_5qpjy")
+billboard_mode = 2
+billboard_keep_scale = true
+distance_fade_mode = 1
+distance_fade_min_distance = 16.0
+distance_fade_max_distance = 48.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apcho"]
+render_priority = 2
+shader = ExtResource("4_o7jgm")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/water_emission_strength = 0.0
+shader_parameter/water_texture1 = ExtResource("5_e6b35")
+shader_parameter/water_texture2 = ExtResource("6_jsk1i")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.2
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_icb1g"]
+fractal_lacunarity = 2.315
+fractal_gain = 0.985
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_1v071"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_icb1g")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vado"]
+render_priority = 0
+shader = ExtResource("12_icb1g")
+shader_parameter/texture_albedo = ExtResource("13_1v071")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_1v071")
+shader_parameter/alpha = 0.2
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.3
+shader_parameter/mask_scale = 0.08
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0nw6"]
+resource_name = "door.001"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("19_v5oyf")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xsub5"]
+render_priority = 0
+shader = ExtResource("18_lejp4")
+shader_parameter/wind_strength = 0.6000000285
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.2
+shader_parameter/tex = ExtResource("19_ybu63")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dk783"]
+resource_name = "treeline"
+render_priority = -4
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("23_d0nw6")
+emission_enabled = true
+emission = Color(0.15686275, 0.20392157, 0.34901962, 1)
+emission_energy_multiplier = 0.4
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2vei"]
+resource_name = "building"
+render_priority = -5
+albedo_texture = ExtResource("23_ytwee")
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("23_ytwee")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xxmw7"]
+resource_name = "building.001"
+render_priority = -5
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("24_c5f1r")
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("24_c5f1r")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnqd5"]
+resource_name = "building.002"
+render_priority = -5
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("27_y7rmh")
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("27_y7rmh")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hy2df"]
+resource_name = "city"
+render_priority = -6
+blend_mode = 1
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+albedo_texture = ExtResource("33_xxmw7")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23wes"]
+resource_name = "trans_tower"
+render_priority = -7
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.5882353)
+albedo_texture = ExtResource("26_hy2df")
+emission_enabled = true
+emission_energy_multiplier = 0.2
+emission_texture = ExtResource("26_hy2df")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7rmh"]
+render_priority = 1
+shader = ExtResource("18_lejp4")
+shader_parameter/wind_strength = 0.010000000475
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("41_avbsd")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytwee"]
+render_priority = -4
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("24_thy7d")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qphsj"]
+
+[sub_resource type="Gradient" id="Gradient_g2vei"]
+offsets = PackedFloat32Array(0, 0.3, 0.551282, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.392157, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_c5f1r"]
+offsets = PackedFloat32Array(0.4, 0.6)
+colors = PackedColorArray(1, 0.425787, 0.357085, 1, 1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qphsj"]
+render_priority = -5
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 0.96500003, 0.79, 0.78431374)
+albedo_texture = ExtResource("26_5iwqj")
+texture_repeat = false
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2giob"]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.9999834, 0.22537026, 0.39041203, 1)
+albedo_texture = ExtResource("35_23wes")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_3fl6w"]
+flip_faces = true
+size = Vector2(360, 360)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sslb"]
+render_priority = 0
+shader = ExtResource("37_3daa5")
+shader_parameter/albedo = Color(0, 0, 0, 1)
+shader_parameter/point_size = 0.0
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("38_avbsd")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.13
+shader_parameter/tile_caust = 0.008
+shader_parameter/caustics_color = Color(1, 1, 1, 1)
+shader_parameter/caustics_strength = 2.0
+shader_parameter/fade_radius = 0.4
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pyo6x"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.376471)
+albedo_texture = ExtResource("39_y7rmh")
+texture_repeat = false
+billboard_keep_scale = true
+distance_fade_mode = 2
+distance_fade_min_distance = 32.0
+distance_fade_max_distance = 64.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_kv5dx"]
+size = Vector2(150, 150)
+
+[sub_resource type="Gradient" id="Gradient_726e5"]
+offsets = PackedFloat32Array(0, 0.2, 0.5, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.784314, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_xyc8r"]
+colors = PackedColorArray(1, 1, 1, 0.196078, 1, 1, 1, 0.588235)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jb7w7"]
+render_priority = -1
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(0.7275, 0.812375, 0.97, 0.482353)
+albedo_texture = ExtResource("40_pnqd5")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6b35"]
+render_priority = 1
+shader = ExtResource("4_o7jgm")
+shader_parameter/albedo = Color(0.43739998, 0.81, 0.66717005, 1)
+shader_parameter/water_emission_strength = 0.3
+shader_parameter/water_texture1 = ExtResource("5_e6b35")
+shader_parameter/water_texture2 = ExtResource("6_jsk1i")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.3
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1v071"]
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2vado"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_1v071")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icb1g"]
+render_priority = 2
+shader = ExtResource("12_icb1g")
+shader_parameter/texture_albedo = ExtResource("8_1v071")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_2vado")
+shader_parameter/alpha = 0.8
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.2
+shader_parameter/mask_scale = 0.02
+shader_parameter/noise_threshold = 0.70000003325
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwfjr"]
+resource_name = "alarm.001"
+cull_mode = 2
+albedo_texture = ExtResource("7_km48l")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.3
+emission_operator = 1
+emission_texture = ExtResource("8_gub0k")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xyc8r"]
+resource_name = "soil"
+render_priority = 3
+albedo_texture = ExtResource("54_726e5")
+texture_filter = 5
+proximity_fade_enabled = true
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ub23e"]
+render_priority = 1
+shader = ExtResource("16_18c3u")
+shader_parameter/tex = ExtResource("17_o0bnp")
+shader_parameter/emission = 0.1
+shader_parameter/color = Color(0.43739998, 0.81, 0.66717005, 0.3529412)
+shader_parameter/scroll_speed_primary = -0.7
+shader_parameter/scroll_speed_secondary = -1.3
+shader_parameter/use_alpha = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cvqdm"]
+render_priority = 0
+shader = ExtResource("18_lejp4")
+shader_parameter/wind_strength = 0.30000001425
+shader_parameter/wind_speed = 1.30000006175
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.1
+shader_parameter/tex = ExtResource("19_ome3g")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cyj2d"]
+resource_name = "marking.001"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("22_apcho")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3w2u"]
+transparency = 4
+shading_mode = 0
+disable_ambient_light = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("18_g1tox")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_kewuf"]
+size = Vector2(0.7, 1)
+
+[sub_resource type="Gradient" id="Gradient_b3w2u"]
+offsets = PackedFloat32Array(0, 0.1, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_kewuf"]
+colors = PackedColorArray(1, 1, 1, 0.019607844, 1, 1, 1, 0.078431375)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8igw3"]
+render_priority = 1
+transparency = 1
+albedo_texture = ExtResource("38_5qpjy")
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 2
+stencil_color = Color(1, 1, 1, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_b5w06"]
+
+[node name="stage_parking_lot" type="Node3D" unique_id=1721330112 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_hbjkr")
+stage_name = "world_parking_lot"
+_bloom = 0.4
+_extra_snd_bank = 1
+bgm = ExtResource("2_kv5dx")
+bgm_pitch = 0.5
+bgm_volume = 0.2
+_entrance = [NodePath("entrance"), NodePath("entrance_rooftop"), NodePath("entrance_to_rooftop")]
+weather = 1
+weather_height = 5
+_stage_light = Color(0.1794, 0.23, 0.21566333, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1099259595]
+environment = SubResource("Environment_nvkq5")
+script = ExtResource("2_xsub5")
+_speed = 0.01
+
+[node name="entrance_rooftop" type="Node3D" parent="." unique_id=1325774908 node_paths=PackedStringArray("ignore")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -241, 37.424366, 0.48483962)
+script = ExtResource("4_wdt7f")
+environment = SubResource("Environment_cvqdm")
+stage_light = Color(0.3023167, 0.221, 0.34, 1)
+ignore = NodePath("../parking_lot")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="entrance_to_rooftop" type="Node3D" parent="." unique_id=20841393 node_paths=PackedStringArray("ignore")]
+transform = Transform3D(1, 0, 2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -101.11664, -0.17620659, -12.515949)
+visible = false
+script = ExtResource("4_wdt7f")
+ignore = NodePath("../parking_lot_roof")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="entrance" type="Node3D" parent="." unique_id=1760501830 node_paths=PackedStringArray("ignore")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1971234, -1)
+script = ExtResource("4_wdt7f")
+ignore = NodePath("../parking_lot_roof")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="parking_lot_roof" parent="." unique_id=1880804507 instance=ExtResource("2_nvkq5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -242, 0, 0)
+
+[node name="plane" parent="parking_lot_roof" index="0" unique_id=295092174]
+visible = false
+
+[node name="entrance_gate" parent="parking_lot_roof" index="1" unique_id=846553667]
+visible = false
+
+[node name="fire_alarm" parent="parking_lot_roof" index="2" unique_id=157517929]
+visible = false
+
+[node name="entrance_door" parent="parking_lot_roof" index="3" unique_id=1729530479]
+visible = false
+
+[node name="water" parent="parking_lot_roof" index="4" unique_id=1822732999]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/water/water_trigger" parent_id_path=PackedInt32Array(1880804507, 872033644) index="0" unique_id=1059821213]
+visible = false
+
+[node name="markings_other" parent="parking_lot_roof" index="5" unique_id=1537175134]
+visible = false
+
+[node name="window" parent="parking_lot_roof" index="6" unique_id=704324680]
+visible = false
+
+[node name="alarm" parent="parking_lot_roof" index="7" unique_id=440590973]
+visible = false
+
+[node name="ac" parent="parking_lot_roof" index="9" unique_id=419515932]
+visible = false
+
+[node name="cctv_holder" parent="parking_lot_roof" index="10" unique_id=1289840541]
+visible = false
+
+[node name="cctv_holder_001" parent="parking_lot_roof" index="11" unique_id=1625832029]
+visible = false
+
+[node name="exit_barrier" parent="parking_lot_roof" index="12" unique_id=1983382586]
+visible = false
+
+[node name="cables" parent="parking_lot_roof" index="13" unique_id=916540614]
+visible = false
+
+[node name="vehicle_a" parent="parking_lot_roof" index="14" unique_id=1369220316]
+visible = false
+
+[node name="vehicle_b" parent="parking_lot_roof" index="15" unique_id=1495197389]
+visible = false
+
+[node name="vehicle_b_001" parent="parking_lot_roof" index="16" unique_id=1988747821]
+visible = false
+
+[node name="vehicle_b_002" parent="parking_lot_roof" index="17" unique_id=1756430932]
+visible = false
+
+[node name="drainage" parent="parking_lot_roof" index="18" unique_id=333409837]
+visible = false
+
+[node name="rubble" parent="parking_lot_roof" index="19" unique_id=1347529170]
+visible = false
+
+[node name="dirt" parent="parking_lot_roof" index="20" unique_id=1244685848]
+visible = false
+
+[node name="metal_rod" parent="parking_lot_roof" index="21" unique_id=1191848592]
+visible = false
+
+[node name="elevator_door" parent="parking_lot_roof" index="22" unique_id=1777007140]
+visible = false
+
+[node name="Plane_001" parent="parking_lot_roof" index="23" unique_id=1792802632]
+visible = false
+
+[node name="water_elevator" parent="parking_lot_roof" index="24" unique_id=1259479591]
+visible = false
+
+[node name="elevator_shaft" parent="parking_lot_roof" index="25" unique_id=3092618]
+visible = false
+
+[node name="tree" parent="parking_lot_roof" index="26" unique_id=1605105448]
+visible = false
+
+[node name="gate" parent="parking_lot_roof" index="27" unique_id=651237546]
+visible = false
+
+[node name="next_floor_door" parent="parking_lot_roof" index="28" unique_id=989461933]
+visible = false
+
+[node name="tree_leaves" parent="parking_lot_roof" index="29" unique_id=1940618833]
+visible = false
+
+[node name="gate_001" parent="parking_lot_roof" index="30" unique_id=550946615]
+visible = false
+
+[node name="light_fix" parent="parking_lot_roof" index="31" unique_id=243098585]
+visible = false
+
+[node name="decay_handheld_b-rigid" parent="parking_lot_roof/decay_handheld_b-rigid" parent_id_path=PackedInt32Array(1880804507, 1836861293) index="0" unique_id=362850990]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/decay_handheld_b-rigid" parent_id_path=PackedInt32Array(1880804507, 1836861293) index="1" unique_id=1542196774]
+visible = false
+
+[node name="decay_handheld_a-rigid" parent="parking_lot_roof/decay_handheld_a-rigid" parent_id_path=PackedInt32Array(1880804507, 1326438418) index="0" unique_id=509830123]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/decay_handheld_a-rigid" parent_id_path=PackedInt32Array(1880804507, 1326438418) index="1" unique_id=755606943]
+visible = false
+
+[node name="decay_handheld_a_001-rigid" parent="parking_lot_roof/decay_handheld_a_001-rigid" parent_id_path=PackedInt32Array(1880804507, 1411169885) index="0" unique_id=1723307321]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/decay_handheld_a_001-rigid" parent_id_path=PackedInt32Array(1880804507, 1411169885) index="1" unique_id=1623636740]
+visible = false
+
+[node name="decay_handheld_a_002-rigid" parent="parking_lot_roof/decay_handheld_a_002-rigid" parent_id_path=PackedInt32Array(1880804507, 2144160324) index="0" unique_id=40845321]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/decay_handheld_a_002-rigid" parent_id_path=PackedInt32Array(1880804507, 2144160324) index="1" unique_id=1811151596]
+visible = false
+
+[node name="decay_handheld_b_001-rigid" parent="parking_lot_roof/decay_handheld_b_001-rigid" parent_id_path=PackedInt32Array(1880804507, 349715021) index="0" unique_id=1940626766]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/decay_handheld_b_001-rigid" parent_id_path=PackedInt32Array(1880804507, 349715021) index="1" unique_id=1843091981]
+visible = false
+
+[node name="tire_a-rigid" parent="parking_lot_roof/tire_a-rigid" parent_id_path=PackedInt32Array(1880804507, 1282601239) index="0" unique_id=1409748164]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_a-rigid" parent_id_path=PackedInt32Array(1880804507, 1282601239) index="1" unique_id=389201102]
+visible = false
+
+[node name="tire_c-rigid" parent="parking_lot_roof/tire_c-rigid" parent_id_path=PackedInt32Array(1880804507, 829103962) index="0" unique_id=903615140]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_c-rigid" parent_id_path=PackedInt32Array(1880804507, 829103962) index="1" unique_id=588798610]
+visible = false
+
+[node name="tire_b-rigid" parent="parking_lot_roof/tire_b-rigid" parent_id_path=PackedInt32Array(1880804507, 24661082) index="0" unique_id=1595335093]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_b-rigid" parent_id_path=PackedInt32Array(1880804507, 24661082) index="1" unique_id=144278102]
+visible = false
+
+[node name="tire_a_001-rigid" parent="parking_lot_roof/tire_a_001-rigid" parent_id_path=PackedInt32Array(1880804507, 1728371770) index="0" unique_id=922766671]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_a_001-rigid" parent_id_path=PackedInt32Array(1880804507, 1728371770) index="1" unique_id=817319881]
+visible = false
+
+[node name="tire_c_001-rigid" parent="parking_lot_roof/tire_c_001-rigid" parent_id_path=PackedInt32Array(1880804507, 427893568) index="0" unique_id=134860883]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_c_001-rigid" parent_id_path=PackedInt32Array(1880804507, 427893568) index="1" unique_id=759882824]
+visible = false
+
+[node name="tire_b_001-rigid" parent="parking_lot_roof/tire_b_001-rigid" parent_id_path=PackedInt32Array(1880804507, 133024045) index="0" unique_id=2020236695]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_b_001-rigid" parent_id_path=PackedInt32Array(1880804507, 133024045) index="1" unique_id=971112017]
+visible = false
+
+[node name="tire_a_002-rigid" parent="parking_lot_roof/tire_a_002-rigid" parent_id_path=PackedInt32Array(1880804507, 1633977697) index="0" unique_id=1215545064]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_a_002-rigid" parent_id_path=PackedInt32Array(1880804507, 1633977697) index="1" unique_id=13034003]
+visible = false
+
+[node name="tire_b_002-rigid" parent="parking_lot_roof/tire_b_002-rigid" parent_id_path=PackedInt32Array(1880804507, 2084327619) index="0" unique_id=1903471349]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_b_002-rigid" parent_id_path=PackedInt32Array(1880804507, 2084327619) index="1" unique_id=567356197]
+visible = false
+
+[node name="tire_a_003-rigid" parent="parking_lot_roof/tire_a_003-rigid" parent_id_path=PackedInt32Array(1880804507, 1615444468) index="0" unique_id=368006402]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_a_003-rigid" parent_id_path=PackedInt32Array(1880804507, 1615444468) index="1" unique_id=348926679]
+visible = false
+
+[node name="tire_c_002-rigid" parent="parking_lot_roof/tire_c_002-rigid" parent_id_path=PackedInt32Array(1880804507, 218474219) index="0" unique_id=514502461]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/tire_c_002-rigid" parent_id_path=PackedInt32Array(1880804507, 218474219) index="1" unique_id=1353427958]
+visible = false
+
+[node name="bread_a" parent="parking_lot_roof" index="47" unique_id=639344882]
+visible = false
+
+[node name="bread_d" parent="parking_lot_roof" index="48" unique_id=904751406]
+visible = false
+
+[node name="bread_c" parent="parking_lot_roof" index="49" unique_id=1515380071]
+visible = false
+
+[node name="bread_b" parent="parking_lot_roof" index="50" unique_id=1196313259]
+visible = false
+
+[node name="bread_b_001" parent="parking_lot_roof" index="51" unique_id=708463926]
+visible = false
+
+[node name="bread_d_001" parent="parking_lot_roof" index="52" unique_id=1127582473]
+visible = false
+
+[node name="bread_c_001" parent="parking_lot_roof" index="53" unique_id=1817877819]
+visible = false
+
+[node name="traffic_pole" parent="parking_lot_roof" index="54" unique_id=1505849488]
+visible = false
+
+[node name="traffic_cone" parent="parking_lot_roof" index="55" unique_id=886394819]
+visible = false
+
+[node name="traffic_pole_001" parent="parking_lot_roof" index="56" unique_id=139942277]
+visible = false
+
+[node name="traffic_pole_002" parent="parking_lot_roof" index="57" unique_id=509175011]
+visible = false
+
+[node name="traffic_pole_003" parent="parking_lot_roof" index="58" unique_id=1489073137]
+visible = false
+
+[node name="traffic_pole_004" parent="parking_lot_roof" index="59" unique_id=1651726658]
+visible = false
+
+[node name="traffic_cone_stacked" parent="parking_lot_roof" index="60" unique_id=2012005086]
+visible = false
+
+[node name="traffic_pole_005" parent="parking_lot_roof" index="61" unique_id=379527980]
+visible = false
+
+[node name="traffic_pole_006" parent="parking_lot_roof" index="62" unique_id=1290537237]
+visible = false
+
+[node name="traffic_pole_007" parent="parking_lot_roof" index="63" unique_id=247979584]
+visible = false
+
+[node name="traffic_pole_008" parent="parking_lot_roof" index="64" unique_id=189871344]
+visible = false
+
+[node name="traffic_pole_009" parent="parking_lot_roof" index="65" unique_id=11763230]
+visible = false
+
+[node name="traffic_pole_010" parent="parking_lot_roof" index="66" unique_id=887365063]
+visible = false
+
+[node name="traffic_pole_011" parent="parking_lot_roof" index="67" unique_id=1092197222]
+visible = false
+
+[node name="traffic_pole_012" parent="parking_lot_roof" index="68" unique_id=346512467]
+visible = false
+
+[node name="traffic_pole_013" parent="parking_lot_roof" index="69" unique_id=1710030961]
+visible = false
+
+[node name="traffic_cone_stacked_001" parent="parking_lot_roof" index="70" unique_id=832743393]
+visible = false
+
+[node name="traffic_cone_001" parent="parking_lot_roof" index="71" unique_id=1940495582]
+visible = false
+
+[node name="traffic_pole_014" parent="parking_lot_roof" index="72" unique_id=1135979673]
+visible = false
+
+[node name="traffic_pole_015" parent="parking_lot_roof" index="73" unique_id=1704617755]
+visible = false
+
+[node name="traffic_pole_016" parent="parking_lot_roof" index="74" unique_id=84053522]
+visible = false
+
+[node name="traffic_pole_017" parent="parking_lot_roof" index="75" unique_id=83885280]
+visible = false
+
+[node name="traffic_pole_018" parent="parking_lot_roof" index="76" unique_id=1604634360]
+visible = false
+
+[node name="traffic_pole_019" parent="parking_lot_roof" index="77" unique_id=418571326]
+visible = false
+
+[node name="traffic_pole_020" parent="parking_lot_roof" index="78" unique_id=66997499]
+visible = false
+
+[node name="traffic_pole_021" parent="parking_lot_roof" index="79" unique_id=604796017]
+visible = false
+
+[node name="traffic_pole_022" parent="parking_lot_roof" index="80" unique_id=417071655]
+visible = false
+
+[node name="traffic_cone_002" parent="parking_lot_roof" index="81" unique_id=482751267]
+visible = false
+
+[node name="traffic_cone_003" parent="parking_lot_roof" index="82" unique_id=1590552970]
+visible = false
+
+[node name="traffic_cone_004" parent="parking_lot_roof" index="83" unique_id=23569095]
+visible = false
+
+[node name="traffic_cone_005" parent="parking_lot_roof" index="84" unique_id=149315393]
+visible = false
+
+[node name="traffic_cone_006" parent="parking_lot_roof" index="85" unique_id=1160837501]
+visible = false
+
+[node name="traffic_cone_007" parent="parking_lot_roof" index="86" unique_id=194238238]
+visible = false
+
+[node name="traffic_cone_008" parent="parking_lot_roof" index="87" unique_id=1797246280]
+visible = false
+
+[node name="traffic_cone_009" parent="parking_lot_roof" index="88" unique_id=951484086]
+visible = false
+
+[node name="traffic_cone_010" parent="parking_lot_roof" index="89" unique_id=1017681234]
+visible = false
+
+[node name="traffic_cone_011" parent="parking_lot_roof" index="90" unique_id=1770607979]
+visible = false
+
+[node name="traffic_cone_012" parent="parking_lot_roof" index="91" unique_id=1536161537]
+visible = false
+
+[node name="traffic_cone_013" parent="parking_lot_roof" index="92" unique_id=1511436867]
+visible = false
+
+[node name="traffic_cone_014" parent="parking_lot_roof" index="93" unique_id=1994077938]
+visible = false
+
+[node name="traffic_cone_015" parent="parking_lot_roof" index="94" unique_id=1207349634]
+visible = false
+
+[node name="traffic_cone_stacked_002" parent="parking_lot_roof" index="95" unique_id=1755802448]
+visible = false
+
+[node name="traffic_cone_016" parent="parking_lot_roof" index="96" unique_id=148442819]
+visible = false
+
+[node name="marking" parent="parking_lot_roof" index="97" unique_id=201056676]
+visible = false
+
+[node name="pillar_b" parent="parking_lot_roof" index="98" unique_id=1000501159]
+visible = false
+
+[node name="pillar" parent="parking_lot_roof" index="99" unique_id=1143903959]
+visible = false
+
+[node name="pillar_002" parent="parking_lot_roof" index="100" unique_id=911250343]
+visible = false
+
+[node name="pillar_b_001" parent="parking_lot_roof" index="101" unique_id=977945061]
+visible = false
+
+[node name="pillar_004" parent="parking_lot_roof" index="102" unique_id=331035131]
+visible = false
+
+[node name="pillar_005" parent="parking_lot_roof" index="103" unique_id=1293650740]
+visible = false
+
+[node name="pillar_ceiling-convcol" parent="parking_lot_roof" index="104" unique_id=1476088214]
+visible = false
+
+[node name="pillar_ceiling" parent="parking_lot_roof" index="105" unique_id=467845635]
+visible = false
+
+[node name="park_spot_barrier_001" parent="parking_lot_roof" index="106" unique_id=439066518]
+visible = false
+
+[node name="pillar_006" parent="parking_lot_roof" index="107" unique_id=699943201]
+visible = false
+
+[node name="pillar_007" parent="parking_lot_roof" index="108" unique_id=222987856]
+visible = false
+
+[node name="pillar_008" parent="parking_lot_roof" index="109" unique_id=910413950]
+visible = false
+
+[node name="pillar_009" parent="parking_lot_roof" index="110" unique_id=1375976419]
+visible = false
+
+[node name="dead_light_002" parent="parking_lot_roof" index="111" unique_id=1917108772]
+visible = false
+
+[node name="dead_light_003" parent="parking_lot_roof" index="112" unique_id=1030708460]
+visible = false
+
+[node name="light_002" parent="parking_lot_roof" index="113" unique_id=1038630942]
+visible = false
+
+[node name="light_005" parent="parking_lot_roof" index="114" unique_id=1454220048]
+visible = false
+
+[node name="light_003" parent="parking_lot_roof" index="115" unique_id=192045601]
+visible = false
+
+[node name="light_004" parent="parking_lot_roof" index="116" unique_id=2084728161]
+visible = false
+
+[node name="pillar_ceiling-convcol_001" parent="parking_lot_roof" index="117" unique_id=1240920845]
+visible = false
+
+[node name="pillar_b_002" parent="parking_lot_roof" index="118" unique_id=410587034]
+visible = false
+
+[node name="light_006" parent="parking_lot_roof" index="119" unique_id=1758716725]
+visible = false
+
+[node name="dead_light_009" parent="parking_lot_roof" index="120" unique_id=789472713]
+visible = false
+
+[node name="dead_light_010" parent="parking_lot_roof" index="121" unique_id=1059147017]
+visible = false
+
+[node name="light_001" parent="parking_lot_roof" index="122" unique_id=657779193]
+visible = false
+
+[node name="light_007" parent="parking_lot_roof" index="123" unique_id=179214302]
+visible = false
+
+[node name="light_011" parent="parking_lot_roof" index="124" unique_id=790959153]
+visible = false
+
+[node name="light_013" parent="parking_lot_roof" index="125" unique_id=211094223]
+visible = false
+
+[node name="light_014" parent="parking_lot_roof" index="126" unique_id=1800978492]
+visible = false
+
+[node name="marking_003" parent="parking_lot_roof" index="127" unique_id=1871952751]
+visible = false
+
+[node name="park_spot_barrier_003" parent="parking_lot_roof" index="128" unique_id=1064545645]
+visible = false
+
+[node name="pillar_024" parent="parking_lot_roof" index="129" unique_id=1872328168]
+visible = false
+
+[node name="pillar_025" parent="parking_lot_roof" index="130" unique_id=1372661876]
+visible = false
+
+[node name="pillar_026" parent="parking_lot_roof" index="131" unique_id=1880382385]
+visible = false
+
+[node name="pillar_027" parent="parking_lot_roof" index="132" unique_id=1253288723]
+visible = false
+
+[node name="pillar_028" parent="parking_lot_roof" index="133" unique_id=1460812402]
+visible = false
+
+[node name="pillar_029" parent="parking_lot_roof" index="134" unique_id=1015957633]
+visible = false
+
+[node name="pillar_030" parent="parking_lot_roof" index="135" unique_id=913071481]
+visible = false
+
+[node name="pillar-convcol_001" parent="parking_lot_roof" index="136" unique_id=340960965]
+visible = false
+
+[node name="pillar_b_010" parent="parking_lot_roof" index="137" unique_id=1105798240]
+visible = false
+
+[node name="pillar_b_011" parent="parking_lot_roof" index="138" unique_id=111316570]
+visible = false
+
+[node name="pillar_b_012" parent="parking_lot_roof" index="139" unique_id=2018041102]
+visible = false
+
+[node name="pillar_ceiling_003" parent="parking_lot_roof" index="140" unique_id=1091159576]
+visible = false
+
+[node name="pillar_ceiling_006" parent="parking_lot_roof" index="141" unique_id=1094461498]
+visible = false
+
+[node name="pillar_ceiling_007" parent="parking_lot_roof" index="142" unique_id=304684068]
+visible = false
+
+[node name="dead_light_001" parent="parking_lot_roof" index="143" unique_id=883279747]
+visible = false
+
+[node name="light_008" parent="parking_lot_roof" index="144" unique_id=231334270]
+visible = false
+
+[node name="light_009" parent="parking_lot_roof" index="145" unique_id=426762483]
+visible = false
+
+[node name="light_010" parent="parking_lot_roof" index="146" unique_id=225492166]
+visible = false
+
+[node name="dead_light" parent="parking_lot_roof" index="147" unique_id=864301544]
+visible = false
+
+[node name="light_012" parent="parking_lot_roof" index="148" unique_id=484346732]
+visible = false
+
+[node name="dead_light_004" parent="parking_lot_roof" index="149" unique_id=399332228]
+visible = false
+
+[node name="marking_001" parent="parking_lot_roof" index="150" unique_id=2004851152]
+visible = false
+
+[node name="park_spot_barrier" parent="parking_lot_roof" index="151" unique_id=750702844]
+visible = false
+
+[node name="pillar_001" parent="parking_lot_roof" index="152" unique_id=1460051113]
+visible = false
+
+[node name="pillar_003" parent="parking_lot_roof" index="153" unique_id=952163252]
+visible = false
+
+[node name="pillar_010" parent="parking_lot_roof" index="154" unique_id=1253283139]
+visible = false
+
+[node name="pillar_011" parent="parking_lot_roof" index="155" unique_id=840484574]
+visible = false
+
+[node name="pillar_012" parent="parking_lot_roof" index="156" unique_id=1439861343]
+visible = false
+
+[node name="pillar_013" parent="parking_lot_roof" index="157" unique_id=49753195]
+visible = false
+
+[node name="pillar_014" parent="parking_lot_roof" index="158" unique_id=63889514]
+visible = false
+
+[node name="pillar_023" parent="parking_lot_roof" index="159" unique_id=996951625]
+visible = false
+
+[node name="pillar_b_003" parent="parking_lot_roof" index="160" unique_id=422280320]
+visible = false
+
+[node name="pillar_b_004" parent="parking_lot_roof" index="161" unique_id=2061163781]
+visible = false
+
+[node name="pillar_b_007" parent="parking_lot_roof" index="162" unique_id=979265504]
+visible = false
+
+[node name="pillar_ceiling_001" parent="parking_lot_roof" index="163" unique_id=2145368570]
+visible = false
+
+[node name="pillar_ceiling-convcol_002" parent="parking_lot_roof" index="164" unique_id=1636368411]
+visible = false
+
+[node name="pillar_ceiling-convcol_003" parent="parking_lot_roof" index="165" unique_id=877075726]
+visible = false
+
+[node name="tunnel_light" parent="parking_lot_roof" index="166" unique_id=132840009]
+visible = false
+
+[node name="tunnel_light_001" parent="parking_lot_roof" index="167" unique_id=620533742]
+visible = false
+
+[node name="tunnel_light_002" parent="parking_lot_roof" index="168" unique_id=861711552]
+visible = false
+
+[node name="dead_light_005" parent="parking_lot_roof" index="169" unique_id=388516724]
+visible = false
+
+[node name="light_015" parent="parking_lot_roof" index="170" unique_id=1245173849]
+visible = false
+
+[node name="dead_light_006" parent="parking_lot_roof" index="171" unique_id=643316210]
+visible = false
+
+[node name="light_017" parent="parking_lot_roof" index="172" unique_id=981043063]
+visible = false
+
+[node name="dead_light_007" parent="parking_lot_roof" index="173" unique_id=178266473]
+visible = false
+
+[node name="dead_light_008" parent="parking_lot_roof" index="174" unique_id=28489465]
+visible = false
+
+[node name="light_020" parent="parking_lot_roof" index="175" unique_id=1831694853]
+visible = false
+
+[node name="marking_002" parent="parking_lot_roof" index="176" unique_id=511591944]
+visible = false
+
+[node name="park_spot_barrier_002" parent="parking_lot_roof" index="177" unique_id=2139824513]
+visible = false
+
+[node name="pillar_015" parent="parking_lot_roof" index="178" unique_id=959038411]
+visible = false
+
+[node name="pillar_016" parent="parking_lot_roof" index="179" unique_id=1838225983]
+visible = false
+
+[node name="pillar_017" parent="parking_lot_roof" index="180" unique_id=1672570182]
+visible = false
+
+[node name="pillar_018" parent="parking_lot_roof" index="181" unique_id=291654264]
+visible = false
+
+[node name="pillar_019" parent="parking_lot_roof" index="182" unique_id=1862526421]
+visible = false
+
+[node name="pillar_020" parent="parking_lot_roof" index="183" unique_id=119366727]
+visible = false
+
+[node name="pillar_021" parent="parking_lot_roof" index="184" unique_id=2102601193]
+visible = false
+
+[node name="pillar_022" parent="parking_lot_roof" index="185" unique_id=2023765356]
+visible = false
+
+[node name="pillar_b_005" parent="parking_lot_roof" index="186" unique_id=751771131]
+visible = false
+
+[node name="pillar_b_006" parent="parking_lot_roof" index="187" unique_id=852451616]
+visible = false
+
+[node name="pillar_b_008" parent="parking_lot_roof" index="188" unique_id=610706565]
+visible = false
+
+[node name="pillar_ceiling_002" parent="parking_lot_roof" index="189" unique_id=959209190]
+visible = false
+
+[node name="pillar_ceiling_004" parent="parking_lot_roof" index="190" unique_id=223517972]
+visible = false
+
+[node name="pillar_ceiling_005" parent="parking_lot_roof" index="191" unique_id=184606767]
+visible = false
+
+[node name="pillar_b_009" parent="parking_lot_roof" index="192" unique_id=1508066264]
+visible = false
+
+[node name="wood_palette-rigid" parent="parking_lot_roof/wood_palette-rigid" parent_id_path=PackedInt32Array(1880804507, 1679037038) index="0" unique_id=1114245606]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/wood_palette-rigid" parent_id_path=PackedInt32Array(1880804507, 1679037038) index="1" unique_id=1729586983]
+visible = false
+
+[node name="wood_palette_001-rigid" parent="parking_lot_roof/wood_palette_001-rigid" parent_id_path=PackedInt32Array(1880804507, 482806940) index="0" unique_id=2116136553]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/wood_palette_001-rigid" parent_id_path=PackedInt32Array(1880804507, 482806940) index="1" unique_id=652319389]
+visible = false
+
+[node name="wood_palette_002-rigid" parent="parking_lot_roof/wood_palette_002-rigid" parent_id_path=PackedInt32Array(1880804507, 796562955) index="0" unique_id=1715334592]
+visible = false
+
+[node name="CollisionShape3D" parent="parking_lot_roof/wood_palette_002-rigid" parent_id_path=PackedInt32Array(1880804507, 796562955) index="1" unique_id=48442812]
+visible = false
+
+[node name="wood_palette_003" parent="parking_lot_roof" index="196" unique_id=354637216]
+visible = false
+
+[node name="wood_palette_004" parent="parking_lot_roof" index="197" unique_id=473727936]
+visible = false
+
+[node name="wood_palette_005" parent="parking_lot_roof" index="198" unique_id=2071237859]
+visible = false
+
+[node name="wood_palette_006" parent="parking_lot_roof" index="199" unique_id=990587440]
+visible = false
+
+[node name="wood_palette_007" parent="parking_lot_roof" index="200" unique_id=478913393]
+visible = false
+
+[node name="interactable" parent="parking_lot_roof/lower_floor_door" parent_id_path=PackedInt32Array(1880804507, 604524723) index="1" unique_id=268388436 instance=ExtResource("15_5hs8w")]
+_to_stage = "uid://hcvxfdddoeq1"
+_to_entrance = 2
+
+[node name="marking_004" parent="parking_lot_roof" index="203" unique_id=1613291397]
+surface_material_override/0 = SubResource("StandardMaterial3D_p7trt")
+surface_material_override/1 = SubResource("StandardMaterial3D_5qpjy")
+surface_material_override/2 = SubResource("StandardMaterial3D_ybu63")
+
+[node name="asphalt" parent="parking_lot_roof" index="204" unique_id=1426211597]
+material_overlay = SubResource("ShaderMaterial_726e5")
+surface_material_override/0 = SubResource("StandardMaterial3D_ou3ko")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="1" unique_id=689765044]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="2" unique_id=596449377 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="3" unique_id=1849103649 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="4" unique_id=183649630 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="5" unique_id=1083053931 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="6" unique_id=1714873238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light" parent_id_path=PackedInt32Array(1880804507, 1074272581) index="7" unique_id=555161065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_water" parent="parking_lot_roof" index="210" unique_id=936538312]
+surface_material_override/0 = SubResource("ShaderMaterial_apcho")
+
+[node name="roof_trigger" parent="parking_lot_roof/roof_water" index="0" unique_id=837340701]
+script = ExtResource("23_apcho")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="1" unique_id=1659255801]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="2" unique_id=1948416923 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="3" unique_id=1286191616 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="4" unique_id=1188609521 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="5" unique_id=1152443607 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="6" unique_id=379969316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_001" parent_id_path=PackedInt32Array(1880804507, 1834969418) index="7" unique_id=1051343597]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="1" unique_id=1204167880]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="2" unique_id=669717193 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="3" unique_id=1217708777 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="4" unique_id=873229746 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="5" unique_id=1633313669 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="6" unique_id=2101009946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_002" parent_id_path=PackedInt32Array(1880804507, 1098806518) index="7" unique_id=1930484493]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="1" unique_id=567143238]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="2" unique_id=679184270 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="3" unique_id=921362039 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="4" unique_id=1093382485 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="5" unique_id=623391579 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="6" unique_id=1421432139]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_003" parent_id_path=PackedInt32Array(1880804507, 1482983002) index="7" unique_id=344389582]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="1" unique_id=1193468856]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="2" unique_id=571247238 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="3" unique_id=1375052736 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="4" unique_id=2060742371 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="5" unique_id=396342337 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="6" unique_id=157854542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_004" parent_id_path=PackedInt32Array(1880804507, 692799630) index="7" unique_id=2043531700]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="1" unique_id=751462959]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="2" unique_id=485175807 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="3" unique_id=326333253 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="4" unique_id=1264827005 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="5" unique_id=1619823145 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="6" unique_id=134250526]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_005" parent_id_path=PackedInt32Array(1880804507, 939637942) index="7" unique_id=1855916103]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="1" unique_id=1364263264]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="2" unique_id=1148395619 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="3" unique_id=1189372897 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="4" unique_id=1967352462 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="5" unique_id=377978852 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="6" unique_id=344076772]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_006" parent_id_path=PackedInt32Array(1880804507, 2139573093) index="7" unique_id=1682549930]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="1" unique_id=394367455]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="2" unique_id=2016496100 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="3" unique_id=53665234 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="4" unique_id=2001713807 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="5" unique_id=1069021516 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="6" unique_id=492281821]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_007" parent_id_path=PackedInt32Array(1880804507, 1253719876) index="7" unique_id=768047669]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="1" unique_id=1125745120]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="2" unique_id=2055407315 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="3" unique_id=1722511421 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="4" unique_id=1606640813 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="5" unique_id=1174887126 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="6" unique_id=374719560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_008" parent_id_path=PackedInt32Array(1880804507, 1287851281) index="7" unique_id=316182238]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_009" parent_id_path=PackedInt32Array(1880804507, 1311859695) index="1" unique_id=1458213202]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_009" parent_id_path=PackedInt32Array(1880804507, 1311859695) index="2" unique_id=303146762 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_009" parent_id_path=PackedInt32Array(1880804507, 1311859695) index="3" unique_id=1112931807 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_009" parent_id_path=PackedInt32Array(1880804507, 1311859695) index="4" unique_id=346158994 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_009" parent_id_path=PackedInt32Array(1880804507, 1311859695) index="5" unique_id=683759965 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light" type="OmniLight3D" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="1" unique_id=1913795082]
+visible = false
+light_color = Color(0.95, 0.8873, 0.74099994, 1)
+light_energy = 3.5
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 34.0
+omni_attenuation = 0.9
+
+[node name="roof_light_afterglow2" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="2" unique_id=506323040 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="3" unique_id=514081537 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08609009, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="roof_light_afterglow" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="4" unique_id=1933467644 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(1, 0.8016667, 0.65, 0.078431375)
+pixel_size = 0.01
+texture = ExtResource("8_4bgo2")
+
+[node name="roof_light_glare2" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="5" unique_id=1542935566 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.661728, 1, 0)
+material_override = SubResource("StandardMaterial3D_1o3ai")
+modulate = Color(1, 0.89, 0.98899996, 0.11764706)
+pixel_size = 0.003
+texture = ExtResource("23_p7trt")
+
+[node name="reflective_light" type="Sprite3D" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="6" unique_id=1044379121]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="reflective_light2" type="Sprite3D" parent="parking_lot_roof/roof_light_010" parent_id_path=PackedInt32Array(1880804507, 1874851758) index="7" unique_id=1042528362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, -19, 0)
+material_override = SubResource("StandardMaterial3D_xsub5")
+pixel_size = 0.2
+billboard = 2
+render_priority = -1
+texture = ExtResource("13_5qpjy")
+
+[node name="roof_light_011" parent="parking_lot_roof" index="221" unique_id=1724503713]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="pot" parent="parking_lot_roof" index="224" unique_id=1789569820]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="pot_soil" parent="parking_lot_roof" index="225" unique_id=1959730007]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="outerwall" parent="parking_lot_roof" index="226" unique_id=100027583]
+surface_material_override/1 = SubResource("StandardMaterial3D_d0nw6")
+
+[node name="roof_light_base" parent="parking_lot_roof" index="230" unique_id=1113978044]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="roof_tree" parent="parking_lot_roof" index="263" unique_id=337054179]
+surface_material_override/0 = SubResource("ShaderMaterial_xsub5")
+
+[node name="treeline" parent="parking_lot_roof" index="264" unique_id=36882847]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_dk783")
+
+[node name="building" parent="parking_lot_roof" index="265" unique_id=477496343]
+surface_material_override/0 = SubResource("StandardMaterial3D_g2vei")
+surface_material_override/1 = SubResource("StandardMaterial3D_xxmw7")
+surface_material_override/2 = SubResource("StandardMaterial3D_pnqd5")
+
+[node name="city_skyline" parent="parking_lot_roof" index="266" unique_id=1442785686]
+gi_mode = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_hy2df")
+
+[node name="trans_tower" parent="parking_lot_roof" index="267" unique_id=1262929099]
+surface_material_override/0 = SubResource("StandardMaterial3D_23wes")
+
+[node name="ac_vents" parent="parking_lot_roof" index="268" unique_id=892977033]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="pot_grass" parent="parking_lot_roof" index="270" unique_id=1411194980]
+surface_material_override/0 = SubResource("ShaderMaterial_y7rmh")
+
+[node name="tin" parent="parking_lot_roof" index="275" unique_id=1429046368]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="tin_001" parent="parking_lot_roof" index="276" unique_id=961633074]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="tin_002" parent="parking_lot_roof" index="277" unique_id=1262696160]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="tin_003" parent="parking_lot_roof" index="278" unique_id=521118473]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="tin_004" parent="parking_lot_roof" index="279" unique_id=2116536367]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="vehicle_bus" parent="parking_lot_roof" index="280" unique_id=374954749]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="stationary_engine" type="AudioStreamPlayer3D" parent="parking_lot_roof/vehicle_bus" index="1" unique_id=977219728]
+transform = Transform3D(0.99999994, -3.7252903e-09, 2.9802322e-08, 1.8626451e-09, 1.0000001, -7.450581e-09, -1.4901161e-08, 3.7252903e-08, 1, 5.0334015, 3.8078537, -0.14336395)
+stream = ExtResource("33_xyc8r")
+attenuation_model = 2
+max_db = 0.0
+autoplay = true
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="vehicle_bus_wheels" parent="parking_lot_roof" index="281" unique_id=1884613022]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="interactable" parent="parking_lot_roof/vehicle_bus_door" parent_id_path=PackedInt32Array(1880804507, 2023372595) index="1" unique_id=827517851 instance=ExtResource("15_5hs8w")]
+
+[node name="traffic_cone_027" parent="parking_lot_roof" index="287" unique_id=530933125]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="traffic_cone_028" parent="parking_lot_roof" index="288" unique_id=744954986]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="nebel" parent="parking_lot_roof" unique_id=1037867904 instance=ExtResource("67_jb7w7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.52597, 38.052708, 110.82367)
+
+[node name="lightmap_gi" type="LightmapGI" parent="parking_lot_roof" unique_id=371883064]
+visible = false
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_energy = 0.02
+generate_probes_subdiv = 0
+light_data = ExtResource("4_1o3ai")
+
+[node name="omni_light_3d" type="OmniLight3D" parent="parking_lot_roof/lightmap_gi" unique_id=1039757740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 40, 3)
+light_color = Color(1, 0.35000002, 0.35000002, 1)
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+
+[node name="omni_light_3d2" type="OmniLight3D" parent="parking_lot_roof/lightmap_gi" unique_id=857315090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 115)
+light_color = Color(1, 0.23000002, 0.24283314, 1)
+light_energy = 0.7
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+
+[node name="omni_light_3d3" type="OmniLight3D" parent="parking_lot_roof/lightmap_gi" unique_id=1501627745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34, 41, 114)
+light_color = Color(1, 0.23000002, 0.3711667, 1)
+light_energy = 0.7
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="parking_lot_roof/lightmap_gi" unique_id=320024134]
+transform = Transform3D(-0.4237742, -0.44868875, -0.7868253, -0.8720616, -0.032658618, 0.48830515, -0.24479362, 0.89309126, -0.37744427, 0, 45, 0)
+light_color = Color(0.05249999, 0.14670838, 0.35, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="cars" type="CPUParticles3D" parent="parking_lot_roof" unique_id=120495779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 183.55647, 48.229652, -103.083984)
+material_override = SubResource("StandardMaterial3D_ytwee")
+amount = 12
+lifetime = 15.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_qphsj")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 0.1)
+linear_accel_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 1, 1, 0.39215687)
+color_ramp = SubResource("Gradient_g2vei")
+color_initial_ramp = SubResource("Gradient_c5f1r")
+
+[node name="cars3" type="CPUParticles3D" parent="parking_lot_roof" unique_id=595478781]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -127.44354, 45.767616, -92.083984)
+material_override = SubResource("StandardMaterial3D_ytwee")
+amount = 12
+lifetime = 15.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_qphsj")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0, 0, 0.1)
+linear_accel_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 1, 1, 0.39215687)
+color_ramp = SubResource("Gradient_g2vei")
+color_initial_ramp = SubResource("Gradient_c5f1r")
+
+[node name="cars2" type="CPUParticles3D" parent="parking_lot_roof" unique_id=492399191]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106, 51.465736, 296.37527)
+material_override = SubResource("StandardMaterial3D_ytwee")
+amount = 12
+lifetime = 15.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_qphsj")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 90.0
+gravity = Vector3(0.1, 0, 0)
+linear_accel_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color = Color(1, 1, 1, 0.39215687)
+color_ramp = SubResource("Gradient_g2vei")
+color_initial_ramp = SubResource("Gradient_c5f1r")
+
+[node name="city_ambience" type="AudioStreamPlayer3D" parent="parking_lot_roof" unique_id=1161591357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 65, 203)
+stream = ExtResource("25_5iwqj")
+unit_size = 42.0
+autoplay = true
+max_distance = 512.0
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="moon_crest" type="Sprite3D" parent="parking_lot_roof" unique_id=971953524]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 576.9313, 232.91383, 412.98334)
+material_override = SubResource("StandardMaterial3D_qphsj")
+flip_v = true
+pixel_size = 1.0
+texture = ExtResource("26_5iwqj")
+
+[node name="particle_moth" parent="parking_lot_roof" unique_id=681449900 instance=ExtResource("28_qphsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6519165, 49.645363, 14.895217)
+
+[node name="particle_moth2" parent="parking_lot_roof" unique_id=1250156293 instance=ExtResource("28_qphsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.438385, 49.645363, 59.03853)
+
+[node name="particle_moth3" parent="parking_lot_roof" unique_id=1251375344 instance=ExtResource("28_qphsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.674835, 49.645363, 88.81782)
+
+[node name="particle_leaf" parent="parking_lot_roof" unique_id=860967335 instance=ExtResource("27_ome3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 46, -1.8183942)
+amount = 32
+emission_box_extents = Vector3(26, 2, 4)
+color = Color(0.1425, 0.263625, 0.57, 0.78431374)
+
+[node name="particle_wind" parent="parking_lot_roof" unique_id=2051303643 instance=ExtResource("30_g2vei")]
+
+[node name="wind" parent="parking_lot_roof/particle_wind" index="1"]
+color = Color(1, 1, 1, 0.39215687)
+
+[node name="water_droplets" parent="parking_lot_roof" unique_id=472123978 instance=ExtResource("10_4bgo2")]
+transform = Transform3D(0.8937319, 0, 0.44860163, 0, 1, 0, -0.44860163, 0, 0.8937319, 46, 50.629803, 112)
+visibility_aabb = AABB(-3.7163308, -16.95542, -0.15579244, 6.3929033, 16.95542, 2.7558146)
+emission_box_extents = Vector3(4, 0, 3)
+
+[node name="transmission_light" parent="parking_lot_roof" unique_id=561485218 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.826935, 179.04509, 380.0015)
+material_override = SubResource("StandardMaterial3D_2giob")
+
+[node name="transmission_light2" parent="parking_lot_roof" unique_id=665757932 instance=ExtResource("7_rrsrv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.95798, 141.37556, 388.86642)
+material_override = SubResource("StandardMaterial3D_2giob")
+pixel_size = 0.003
+_flicker = true
+
+[node name="top_caustic" type="Node3D" parent="parking_lot_roof" unique_id=283415800]
+
+[node name="attach_player" type="Node3D" parent="parking_lot_roof/top_caustic" unique_id=577770727]
+script = ExtResource("19_b3w2u")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="top_caustic_plane" type="MeshInstance3D" parent="parking_lot_roof/top_caustic" unique_id=422137790]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_3fl6w")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_8sslb")
+
+[node name="rays" type="CPUParticles3D" parent="parking_lot_roof/top_caustic" unique_id=555151506]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 85.4042, 0)
+material_override = SubResource("StandardMaterial3D_pyo6x")
+amount = 32
+lifetime = 10.0
+draw_order = 1
+mesh = SubResource("QuadMesh_kv5dx")
+emission_shape = 6
+emission_ring_axis = Vector3(1, 90, 1)
+emission_ring_height = 10.0
+emission_ring_radius = 78.0
+emission_ring_inner_radius = 0.0
+emission_ring_cone_angle = 41.16
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -1.0
+angular_velocity_max = 1.0
+angle_max = 360.0
+scale_amount_min = 0.9
+scale_amount_max = 1.1
+split_scale = true
+scale_curve_x = null
+scale_curve_y = null
+scale_curve_z = null
+color = Color(0.2208, 0.88608, 0.96, 1)
+color_ramp = SubResource("Gradient_726e5")
+color_initial_ramp = SubResource("Gradient_xyc8r")
+
+[node name="sun" type="Sprite3D" parent="parking_lot_roof/top_caustic" unique_id=181039650]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 168, -37)
+material_override = SubResource("StandardMaterial3D_jb7w7")
+pixel_size = 3.0
+texture = ExtResource("40_pnqd5")
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="parking_lot_roof" unique_id=1134749161]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 98, 65)
+stream = ExtResource("45_pnqd5")
+unit_size = 64.0
+max_db = -4.0
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="particle_bird" parent="parking_lot_roof" unique_id=1007616535 instance=ExtResource("48_pyo6x")]
+
+[node name="parking_lot" parent="." unique_id=1220567335 instance=ExtResource("2_nvkq5")]
+
+[node name="StaticBody3D" parent="parking_lot/entrance_gate" parent_id_path=PackedInt32Array(1220567335, 846553667) index="0" unique_id=463828732]
+collision_layer = 512
+
+[node name="water" parent="parking_lot" index="4" unique_id=1822732999]
+material_override = SubResource("ShaderMaterial_e6b35")
+material_overlay = SubResource("ShaderMaterial_icb1g")
+
+[node name="StaticBody3D" parent="parking_lot/water" index="1" unique_id=1164673110]
+collision_layer = 16
+
+[node name="alarm" parent="parking_lot" index="7" unique_id=440590973]
+surface_material_override/0 = SubResource("StandardMaterial3D_pwfjr")
+
+[node name="cctv_holder" parent="parking_lot" index="10" unique_id=1289840541]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="cctv" parent="parking_lot/cctv_holder" index="0" unique_id=1708540582]
+material_overlay = SubResource("ShaderMaterial_2vado")
+script = ExtResource("11_gub0k")
+
+[node name="cctv_holder_001" parent="parking_lot" index="11" unique_id=1625832029]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="cctv_001" parent="parking_lot/cctv_holder_001" index="0" unique_id=925332752]
+material_overlay = SubResource("ShaderMaterial_2vado")
+script = ExtResource("11_gub0k")
+
+[node name="exit_barrier" parent="parking_lot" index="12" unique_id=1983382586]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="vehicle_a" parent="parking_lot" index="14" unique_id=1369220316]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="vehicle_b" parent="parking_lot" index="15" unique_id=1495197389]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="vehicle_b_001" parent="parking_lot" index="16" unique_id=1988747821]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="vehicle_b_002" parent="parking_lot" index="17" unique_id=1756430932]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="rubble" parent="parking_lot" index="19" unique_id=1347529170]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="dirt" parent="parking_lot" index="20" unique_id=1244685848]
+surface_material_override/0 = SubResource("StandardMaterial3D_xyc8r")
+
+[node name="interactable" parent="parking_lot/elevator_door" parent_id_path=PackedInt32Array(1220567335, 1777007140) index="1" unique_id=220236097 instance=ExtResource("15_5hs8w")]
+uninteractable = true
+
+[node name="water_elevator" parent="parking_lot" index="24" unique_id=1259479591]
+material_overlay = SubResource("ShaderMaterial_icb1g")
+surface_material_override/0 = SubResource("ShaderMaterial_ub23e")
+
+[node name="elevator_shaft" parent="parking_lot" index="25" unique_id=3092618]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="void_noise" parent="parking_lot/elevator_shaft" index="1" unique_id=962599694 instance=ExtResource("57_xyc8r")]
+
+[node name="next_floor_door" parent="parking_lot" index="28" unique_id=989461933]
+material_overlay = SubResource("ShaderMaterial_2vado")
+
+[node name="interactable" parent="parking_lot/next_floor_door" index="1" unique_id=613601147 instance=ExtResource("15_5hs8w")]
+_to_stage = "uid://hcvxfdddoeq1"
+_to_entrance = 1
+
+[node name="tree_leaves" parent="parking_lot" index="29" unique_id=1940618833]
+surface_material_override/0 = SubResource("ShaderMaterial_cvqdm")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_002" parent_id_path=PackedInt32Array(1220567335, 1038630942) index="0" unique_id=1648590284]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_002" parent_id_path=PackedInt32Array(1220567335, 1038630942) index="1" unique_id=873897834 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_005" parent_id_path=PackedInt32Array(1220567335, 1454220048) index="0" unique_id=1724252669]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_005" parent_id_path=PackedInt32Array(1220567335, 1454220048) index="1" unique_id=1880441052 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_003" parent_id_path=PackedInt32Array(1220567335, 192045601) index="0" unique_id=9720849]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_003" parent_id_path=PackedInt32Array(1220567335, 192045601) index="1" unique_id=1232908094 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_004" parent_id_path=PackedInt32Array(1220567335, 2084728161) index="0" unique_id=1445858635]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_004" parent_id_path=PackedInt32Array(1220567335, 2084728161) index="1" unique_id=934675876 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_006" parent_id_path=PackedInt32Array(1220567335, 1758716725) index="0" unique_id=930457046]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_006" parent_id_path=PackedInt32Array(1220567335, 1758716725) index="1" unique_id=8611931 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_001" parent_id_path=PackedInt32Array(1220567335, 657779193) index="0" unique_id=813305976]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_001" parent_id_path=PackedInt32Array(1220567335, 657779193) index="1" unique_id=113979926 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_007" parent_id_path=PackedInt32Array(1220567335, 179214302) index="0" unique_id=468311950]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_007" parent_id_path=PackedInt32Array(1220567335, 179214302) index="1" unique_id=1429176897 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_011" parent_id_path=PackedInt32Array(1220567335, 790959153) index="0" unique_id=573401655]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_011" parent_id_path=PackedInt32Array(1220567335, 790959153) index="1" unique_id=703518483 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_013" parent_id_path=PackedInt32Array(1220567335, 211094223) index="0" unique_id=2097861948]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_013" parent_id_path=PackedInt32Array(1220567335, 211094223) index="1" unique_id=943585685 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_014" parent_id_path=PackedInt32Array(1220567335, 1800978492) index="0" unique_id=130256081]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_014" parent_id_path=PackedInt32Array(1220567335, 1800978492) index="1" unique_id=1014044116 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_008" parent_id_path=PackedInt32Array(1220567335, 231334270) index="0" unique_id=2051010522]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_008" parent_id_path=PackedInt32Array(1220567335, 231334270) index="1" unique_id=2073126310 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_009" parent_id_path=PackedInt32Array(1220567335, 426762483) index="0" unique_id=175419876]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_009" parent_id_path=PackedInt32Array(1220567335, 426762483) index="1" unique_id=1075423190 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_010" parent_id_path=PackedInt32Array(1220567335, 225492166) index="0" unique_id=409699017]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_010" parent_id_path=PackedInt32Array(1220567335, 225492166) index="1" unique_id=1716697529 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_012" parent_id_path=PackedInt32Array(1220567335, 484346732) index="0" unique_id=1830350072]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_012" parent_id_path=PackedInt32Array(1220567335, 484346732) index="1" unique_id=79559125 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/tunnel_light" parent_id_path=PackedInt32Array(1220567335, 132840009) index="0" unique_id=299558083]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/tunnel_light_001" parent_id_path=PackedInt32Array(1220567335, 620533742) index="0" unique_id=1701585490]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/tunnel_light_002" parent_id_path=PackedInt32Array(1220567335, 861711552) index="0" unique_id=80700670]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_015" parent_id_path=PackedInt32Array(1220567335, 1245173849) index="0" unique_id=1613460574]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_015" parent_id_path=PackedInt32Array(1220567335, 1245173849) index="1" unique_id=251679432 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_017" parent_id_path=PackedInt32Array(1220567335, 981043063) index="0" unique_id=1200649152]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_017" parent_id_path=PackedInt32Array(1220567335, 981043063) index="1" unique_id=836905974 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="ceiling_light" type="OmniLight3D" parent="parking_lot/light_020" parent_id_path=PackedInt32Array(1220567335, 1831694853) index="0" unique_id=697186032]
+visible = false
+light_color = Color(0.395, 0.7175833, 0.79, 1)
+light_energy = 0.01
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 0.1
+
+[node name="light_glare" parent="parking_lot/light_020" parent_id_path=PackedInt32Array(1220567335, 1831694853) index="1" unique_id=2071646342 instance=ExtResource("7_rrsrv")]
+material_override = SubResource("StandardMaterial3D_ugmld")
+modulate = Color(0.8, 0.9966667, 1, 0.039215688)
+pixel_size = 0.014
+texture = ExtResource("8_4bgo2")
+
+[node name="lower_floor_door" parent="parking_lot" index="201" unique_id=604524723]
+visible = false
+
+[node name="entrance" parent="parking_lot" index="202" unique_id=1392037831]
+visible = false
+
+[node name="marking_004" parent="parking_lot" index="203" unique_id=1613291397]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_p7trt")
+surface_material_override/1 = SubResource("StandardMaterial3D_cyj2d")
+
+[node name="asphalt" parent="parking_lot" index="204" unique_id=1426211597]
+visible = false
+
+[node name="ac_001" parent="parking_lot" index="205" unique_id=1985538472]
+visible = false
+
+[node name="grime" parent="parking_lot" index="206" unique_id=1055143572]
+visible = false
+
+[node name="park_spot_barrier_004" parent="parking_lot" index="207" unique_id=259439044]
+visible = false
+
+[node name="sign" parent="parking_lot" index="208" unique_id=768779539]
+visible = false
+
+[node name="StaticBody3D" parent="parking_lot/sign" index="0" unique_id=1980979760]
+collision_layer = 512
+
+[node name="roof_light" parent="parking_lot" index="209" unique_id=1074272581]
+visible = false
+
+[node name="roof_water" parent="parking_lot" index="210" unique_id=936538312]
+visible = false
+surface_material_override/0 = SubResource("ShaderMaterial_apcho")
+
+[node name="roof_trigger" parent="parking_lot/roof_water" index="0" unique_id=837340701]
+script = ExtResource("23_apcho")
+
+[node name="roof_light_001" parent="parking_lot" index="211" unique_id=1834969418]
+visible = false
+
+[node name="roof_light_002" parent="parking_lot" index="212" unique_id=1098806518]
+visible = false
+
+[node name="roof_light_003" parent="parking_lot" index="213" unique_id=1482983002]
+visible = false
+
+[node name="roof_light_004" parent="parking_lot" index="214" unique_id=692799630]
+visible = false
+
+[node name="roof_light_005" parent="parking_lot" index="215" unique_id=939637942]
+visible = false
+
+[node name="roof_light_006" parent="parking_lot" index="216" unique_id=2139573093]
+visible = false
+
+[node name="roof_light_007" parent="parking_lot" index="217" unique_id=1253719876]
+visible = false
+
+[node name="roof_light_008" parent="parking_lot" index="218" unique_id=1287851281]
+visible = false
+
+[node name="roof_light_009" parent="parking_lot" index="219" unique_id=1311859695]
+visible = false
+
+[node name="roof_light_010" parent="parking_lot" index="220" unique_id=1874851758]
+visible = false
+
+[node name="roof_light_011" parent="parking_lot" index="221" unique_id=1724503713]
+visible = false
+
+[node name="traffic_pole_023" parent="parking_lot" index="222" unique_id=885021937]
+visible = false
+
+[node name="park_spot_barrier_004_001" parent="parking_lot" index="223" unique_id=1045253898]
+visible = false
+
+[node name="pot" parent="parking_lot" index="224" unique_id=1789569820]
+visible = false
+
+[node name="pot_soil" parent="parking_lot" index="225" unique_id=1959730007]
+visible = false
+
+[node name="outerwall" parent="parking_lot" index="226" unique_id=100027583]
+visible = false
+
+[node name="traffic_pole_024" parent="parking_lot" index="227" unique_id=2146084399]
+visible = false
+
+[node name="traffic_pole_025" parent="parking_lot" index="228" unique_id=1418511939]
+visible = false
+
+[node name="traffic_pole_026" parent="parking_lot" index="229" unique_id=279188317]
+visible = false
+
+[node name="roof_light_base" parent="parking_lot" index="230" unique_id=1113978044]
+visible = false
+
+[node name="park_spot_barrier_004_002" parent="parking_lot" index="231" unique_id=1248678727]
+visible = false
+
+[node name="traffic_pole_027" parent="parking_lot" index="232" unique_id=132346612]
+visible = false
+
+[node name="traffic_pole_028" parent="parking_lot" index="233" unique_id=267491184]
+visible = false
+
+[node name="traffic_pole_029" parent="parking_lot" index="234" unique_id=1486062365]
+visible = false
+
+[node name="traffic_pole_030" parent="parking_lot" index="235" unique_id=174518681]
+visible = false
+
+[node name="traffic_pole_031" parent="parking_lot" index="236" unique_id=433771717]
+visible = false
+
+[node name="traffic_pole_032" parent="parking_lot" index="237" unique_id=334290564]
+visible = false
+
+[node name="traffic_pole_033" parent="parking_lot" index="238" unique_id=1440354131]
+visible = false
+
+[node name="traffic_pole_034" parent="parking_lot" index="239" unique_id=334111939]
+visible = false
+
+[node name="traffic_pole_035" parent="parking_lot" index="240" unique_id=1128558875]
+visible = false
+
+[node name="traffic_pole_036" parent="parking_lot" index="241" unique_id=1859474609]
+visible = false
+
+[node name="traffic_pole_037" parent="parking_lot" index="242" unique_id=4349540]
+visible = false
+
+[node name="traffic_cone_018" parent="parking_lot" index="245" unique_id=842690385]
+visible = false
+
+[node name="traffic_cone_019" parent="parking_lot" index="246" unique_id=151725752]
+visible = false
+
+[node name="traffic_cone_020" parent="parking_lot" index="247" unique_id=1853326316]
+visible = false
+
+[node name="traffic_cone_021" parent="parking_lot" index="248" unique_id=2107411677]
+visible = false
+
+[node name="traffic_cone_022" parent="parking_lot" index="249" unique_id=313858496]
+visible = false
+
+[node name="traffic_cone_023" parent="parking_lot" index="250" unique_id=884229272]
+visible = false
+
+[node name="traffic_cone_024" parent="parking_lot" index="251" unique_id=961609961]
+visible = false
+
+[node name="traffic_cone_025" parent="parking_lot" index="252" unique_id=2102134663]
+visible = false
+
+[node name="door_reflect" parent="parking_lot" index="253" unique_id=1064283257]
+visible = false
+
+[node name="sign_001" parent="parking_lot" index="254" unique_id=949888090]
+visible = false
+
+[node name="StaticBody3D" parent="parking_lot/sign_001" index="0" unique_id=1513518098]
+collision_layer = 512
+
+[node name="CollisionShape3D" parent="parking_lot/sign_001/StaticBody3D" index="0" unique_id=41567376]
+visible = false
+
+[node name="jersey_barrier" parent="parking_lot" index="255" unique_id=312490589]
+visible = false
+
+[node name="jersey_barrier_001" parent="parking_lot" index="256" unique_id=1266386284]
+visible = false
+
+[node name="jersey_barrier_002" parent="parking_lot" index="257" unique_id=1671299880]
+visible = false
+
+[node name="jersey_barrier_003" parent="parking_lot" index="258" unique_id=1093850482]
+visible = false
+
+[node name="jersey_barrier_004" parent="parking_lot" index="259" unique_id=1340177413]
+visible = false
+
+[node name="jersey_barrier_005" parent="parking_lot" index="260" unique_id=1266531288]
+visible = false
+
+[node name="jersey_barrier_006" parent="parking_lot" index="261" unique_id=1869761048]
+visible = false
+
+[node name="jersey_barrier_007" parent="parking_lot" index="262" unique_id=946548379]
+visible = false
+
+[node name="roof_tree" parent="parking_lot" index="263" unique_id=337054179]
+visible = false
+
+[node name="treeline" parent="parking_lot" index="264" unique_id=36882847]
+visible = false
+
+[node name="building" parent="parking_lot" index="265" unique_id=477496343]
+visible = false
+
+[node name="city_skyline" parent="parking_lot" index="266" unique_id=1442785686]
+visible = false
+
+[node name="trans_tower" parent="parking_lot" index="267" unique_id=1262929099]
+visible = false
+
+[node name="ac_vents" parent="parking_lot" index="268" unique_id=892977033]
+visible = false
+
+[node name="bounds" parent="parking_lot" index="269" unique_id=692901730]
+visible = false
+
+[node name="pot_grass" parent="parking_lot" index="270" unique_id=1411194980]
+visible = false
+
+[node name="bread_c_002" parent="parking_lot" index="272" unique_id=231182552]
+visible = false
+
+[node name="tin" parent="parking_lot" index="275" unique_id=1429046368]
+visible = false
+
+[node name="tin_001" parent="parking_lot" index="276" unique_id=961633074]
+visible = false
+
+[node name="tin_002" parent="parking_lot" index="277" unique_id=1262696160]
+visible = false
+
+[node name="tin_003" parent="parking_lot" index="278" unique_id=521118473]
+visible = false
+
+[node name="tin_004" parent="parking_lot" index="279" unique_id=2116536367]
+visible = false
+
+[node name="vehicle_bus" parent="parking_lot" index="280" unique_id=374954749]
+visible = false
+
+[node name="vehicle_bus_wheels" parent="parking_lot" index="281" unique_id=1884613022]
+visible = false
+
+[node name="vehicle_bus_door" parent="parking_lot" index="282" unique_id=2023372595]
+visible = false
+
+[node name="traffic_pole_039" parent="parking_lot" index="283" unique_id=1978940939]
+visible = false
+
+[node name="traffic_pole_040" parent="parking_lot" index="284" unique_id=572095835]
+visible = false
+
+[node name="traffic_pole_041" parent="parking_lot" index="285" unique_id=989637794]
+visible = false
+
+[node name="traffic_cone_026" parent="parking_lot" index="286" unique_id=245123726]
+visible = false
+
+[node name="traffic_cone_027" parent="parking_lot" index="287" unique_id=530933125]
+visible = false
+
+[node name="traffic_cone_028" parent="parking_lot" index="288" unique_id=744954986]
+visible = false
+
+[node name="traffic_cone_029" parent="parking_lot" index="289" unique_id=1858738421]
+visible = false
+
+[node name="traffic_cone_030" parent="parking_lot" index="290" unique_id=1356067606]
+visible = false
+
+[node name="traffic_cone_031" parent="parking_lot" index="291" unique_id=2116694232]
+visible = false
+
+[node name="traffic_cone_032" parent="parking_lot" index="292" unique_id=1434607814]
+visible = false
+
+[node name="traffic_cone_033" parent="parking_lot" index="293" unique_id=52224207]
+visible = false
+
+[node name="jersey_barrier_008" parent="parking_lot" index="297" unique_id=838275876]
+visible = false
+
+[node name="jersey_barrier_009" parent="parking_lot" index="298" unique_id=1406603280]
+visible = false
+
+[node name="lightmap_gi" type="LightmapGI" parent="parking_lot" unique_id=2047025721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+supersampling_factor = 4.0
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.78849995, 0.8203167, 0.83, 1)
+environment_custom_energy = 0.0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_aciau")
+
+[node name="entrance_light" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=838954158]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4190693, 1.2494564, 11)
+light_color = Color(0.73, 0.25550002, 0.25550002, 1)
+light_energy = 0.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 16.0
+omni_attenuation = 0.7
+
+[node name="next_level_light" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=1650026465]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.580925, 1.2494564, -17)
+light_color = Color(0.73, 0.29930001, 0.29930001, 1)
+light_energy = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 26.0
+omni_attenuation = 0.7
+
+[node name="elevator_light" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=26537794]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.580925, 3.7300043, -14.062955)
+light_color = Color(0.98, 0.84035003, 0.83300006, 1)
+light_energy = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 24.0
+omni_attenuation = 0.5
+
+[node name="tree_light" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=1803498090]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.5798, 8.730004, -31.534054)
+light_color = Color(0.7425, 0.82087505, 0.99, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 18.0
+omni_attenuation = 0.5
+
+[node name="tree_light2" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=1863815240]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.5798, 9.730004, -25.534054)
+light_color = Color(0.7425, 0.82087505, 0.99, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 18.0
+omni_attenuation = 0.5
+
+[node name="tree_light3" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=184469267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.5798, 6.204144, -28.894361)
+light_color = Color(0.7425, 0.82087505, 0.99, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 18.0
+omni_attenuation = 0.5
+
+[node name="entrance_light2" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=2122007024]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.4159172, 3.5043244)
+light_color = Color(0.55300003, 0.5688, 0.79, 1)
+light_energy = 0.02
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 0.5
+
+[node name="level_light" type="OmniLight3D" parent="parking_lot/lightmap_gi" unique_id=1721815431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.979313, 2, -29.646345)
+light_color = Color(0.2925, 0.45, 0.39224997, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 148.0
+omni_attenuation = 0.5
+
+[node name="particle_moth" parent="parking_lot" unique_id=1802410263 instance=ExtResource("28_qphsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.646286, 3.7253053, -5.378961)
+
+[node name="particle_moth2" parent="parking_lot" unique_id=112392007 instance=ExtResource("28_qphsj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -106.83089, 3.7253053, -20.843838)
+
+[node name="particle_moth3" parent="parking_lot" unique_id=598567354 instance=ExtResource("28_qphsj")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.4607791, 3.7253053, -47.79281)
+
+[node name="water_droplets" parent="." unique_id=318154597 instance=ExtResource("10_4bgo2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.40638, 4.912371, -23.836124)
+amount = 128
+visibility_aabb = AABB(-60.01565, -17.394735, -19.99992, 120.03607, 17.394735, 39.987617)
+emission_box_extents = Vector3(60, 0, 20)
+_max_particle = 128
+
+[node name="eye_watcher" parent="." unique_id=604707322 instance=ExtResource("17_2vado")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.324894, 7.1357045, -28.986277)
+
+[node name="node_3d" type="Node3D" parent="." unique_id=1173143160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 0, -7)
+visible = false
+
+[node name="cpu_particles_3d" type="CPUParticles3D" parent="node_3d" unique_id=726443583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_b3w2u")
+amount = 16
+lifetime = 5.0
+preprocess = 5.0
+speed_scale = 0.5
+mesh = SubResource("QuadMesh_kewuf")
+emission_shape = 3
+emission_box_extents = Vector3(5, 2, 5)
+gravity = Vector3(0, 0.02, 0)
+radial_accel_min = -0.01
+radial_accel_max = 0.01
+tangential_accel_min = -0.1
+tangential_accel_max = 0.1
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+color = Color(1, 0.68333334, 0, 1)
+color_ramp = SubResource("Gradient_b3w2u")
+color_initial_ramp = SubResource("Gradient_kewuf")
+script = ExtResource("19_kewuf")
+_max_particle = 16
+
+[node name="attach_player" type="Node3D" parent="node_3d" unique_id=992244839]
+script = ExtResource("19_b3w2u")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="ambience_water_stream" type="AudioStreamPlayer3D" parent="." unique_id=1574284297]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.75669, -0.59478104, -14.581966)
+stream = ExtResource("24_o0bnp")
+attenuation_model = 2
+unit_size = 12.0
+max_db = 0.0
+autoplay = true
+max_distance = 38.0
+panning_strength = 1.4
+bus = &"amb"
+
+[node name="particle_leaf" parent="." unique_id=256929265 instance=ExtResource("27_ome3g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 4, -31)
+amount = 4
+color = Color(0.13319641, 0.13319641, 0.13319635, 0.9411765)
+_max_particle = 4
+
+[node name="underground" type="AudioStreamPlayer3D" parent="." unique_id=1362194379]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 10, -30)
+stream = ExtResource("29_o6omm")
+unit_size = 64.0
+autoplay = true
+max_distance = 256.0
+panning_strength = 0.3
+bus = &"amb"
+
+[node name="occluder_instance_3d" type="OccluderInstance3D" parent="." unique_id=1641551890]
+visible = false
+occluder = ExtResource("29_wi6nl")
+bake_simplification_distance = 0.5
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="." unique_id=923346783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -205.09549, 37.41178, 15.362038)
+visible = false
+material_override = SubResource("StandardMaterial3D_8igw3")
+mesh = SubResource("QuadMesh_b5w06")
+
+[editable path="parking_lot_roof"]
+[editable path="parking_lot_roof/particle_wind"]
+[editable path="parking_lot"]

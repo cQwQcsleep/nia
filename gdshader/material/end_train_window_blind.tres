@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://caqh30cqun0uy"]
+
+[ext_resource type="Texture2D" uid="uid://k6klnkoenvnm" path="res://texture/epilogue/window_blind.png" id="1_nu0f3"]
+
+[resource]
+resource_name = "window_blind"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.9)
+albedo_texture = ExtResource("1_nu0f3")
+texture_filter = 5

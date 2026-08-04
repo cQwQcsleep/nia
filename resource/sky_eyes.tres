@@ -1,0 +1,14 @@
+[gd_resource type="Sky" format=3 uid="uid://bga5qdtglwmxg"]
+
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="1_pjkay"]
+[ext_resource type="Texture2D" uid="uid://bg4l0fiarypde" path="res://texture/sky_eyes.png" id="1_upvys"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ed8t"]
+shader = ExtResource("1_pjkay")
+shader_parameter/source_panorama = ExtResource("1_upvys")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0.2)
+shader_parameter/uv_scale = 0.5
+
+[resource]
+sky_material = SubResource("ShaderMaterial_8ed8t")

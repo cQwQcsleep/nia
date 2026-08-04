@@ -1,0 +1,22 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://dr4vn6nqsqo2l"]
+
+[ext_resource type="Shader" uid="uid://b6lbdj8eax77p" path="res://gdshader/caustics.gdshader" id="1_rw0em"]
+[ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="2_rw0em"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_rw0em")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/texture_albedo = ExtResource("2_rw0em")
+shader_parameter/point_size = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/uv1_blend_sharpness = 0.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/caustics_bw = ExtResource("2_rw0em")
+shader_parameter/slowdown = 5.0
+shader_parameter/time_caust = 0.13
+shader_parameter/tile_caust = 0.2
+shader_parameter/caustics_color = Color(0.137255, 0.721569, 0.176471, 1)
+shader_parameter/caustics_strength = 0.0

@@ -1,0 +1,692 @@
+[gd_scene format=3 uid="uid://bpn3x3o40r71"]
+
+[ext_resource type="Script" uid="uid://dbggbdjy32viy" path="res://gdscript/ui/title.gd" id="1_i6vey"]
+[ext_resource type="PackedScene" uid="uid://du33dfqernhk1" path="res://stage/mesh/extra/logo.blend" id="1_u1mkc"]
+[ext_resource type="Texture2D" uid="uid://t8tc3sx5i8e4" path="res://texture/3d_logo.png" id="2_85qat"]
+[ext_resource type="Texture2D" uid="uid://c3lyygarmovke" path="res://texture/logo.png" id="4_ji07q"]
+[ext_resource type="Shader" uid="uid://bp4i2aerabjlp" path="res://gdshader/ui_squiggly.gdshader" id="4_q51fs"]
+[ext_resource type="Texture2D" uid="uid://dky1vv8eo0dp2" path="res://texture/logo_blur.png" id="5_5r28w"]
+[ext_resource type="Shader" uid="uid://dx37j0bcuns50" path="res://gdshader/invert.gdshader" id="5_74rjg"]
+[ext_resource type="PackedScene" uid="uid://d0b8fbltmecon" path="res://resource/weather_rain.tscn" id="9_i6vey"]
+[ext_resource type="Texture2D" uid="uid://c4eagvwvn2x52" path="res://texture/ui_light.png" id="9_ihm8e"]
+[ext_resource type="PackedScene" uid="uid://dlpvqgg0uxlni" path="res://stage/stage_overlook.tscn" id="10_i6vey"]
+[ext_resource type="AudioStream" uid="uid://dnypp27ouqs5n" path="res://audio/music/se_roku.ogg" id="11_ihm8e"]
+[ext_resource type="Shader" uid="uid://d0hi6igrqnxya" path="res://gdshader/trans_vignette.gdshader" id="12_ihm8e"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4q5j3"]
+resource_name = "logo"
+cull_mode = 2
+albedo_texture = ExtResource("2_85qat")
+roughness = 0.21
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_erxxa"]
+shader = ExtResource("12_ihm8e")
+shader_parameter/radius = 1.50000011875
+shader_parameter/alpha = 0.56400002679
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="Shader_yw2t7"]
+code = "shader_type canvas_item;
+
+render_mode blend_add;
+
+uniform vec4 glow_color : source_color = vec4(1.0, 0.9, 0.5, 1.0);
+uniform float intensity : hint_range(0.0, 10.0) = 1.5;
+uniform float spread : hint_range(0.1, 10.0) = 1.0;
+uniform float pulse_speed : hint_range(0.0, 100.0) = 1.0;
+
+void fragment() {
+  vec4 main_texture = texture(TEXTURE, UV); // Get existing texture
+  vec2 centered_uv = UV - vec2(0.5);
+  float dist = length(centered_uv) * spread;
+  float alpha = max(0.0, 1.0 - dist);
+  alpha *= (1.0 + 0.2 * sin(TIME * pulse_speed));
+  alpha = clamp(alpha * intensity, 0.0, 1.0);
+  COLOR = main_texture * glow_color * alpha; // Apply pulse with original texture
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgslo"]
+shader = SubResource("Shader_yw2t7")
+shader_parameter/glow_color = Color(0.525, 0.7, 0.525, 1)
+shader_parameter/intensity = 1.0000000475
+shader_parameter/spread = 2.0
+shader_parameter/pulse_speed = 2.000000095
+
+[sub_resource type="Gradient" id="Gradient_qx5vw"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_cuxww"]
+gradient = SubResource("Gradient_qx5vw")
+width = 16
+height = 16
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.1, 0.1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_5r28w"]
+blend_mode = 3
+
+[sub_resource type="Gradient" id="Gradient_erxxa"]
+colors = PackedColorArray(0.8235294, 0.10980392, 0.2784314, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ggdc6"]
+gradient = SubResource("Gradient_erxxa")
+width = 16
+height = 16
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.491453)
+
+[sub_resource type="Gradient" id="Gradient_ihm8e"]
+offsets = PackedFloat32Array(0.0029069767, 1)
+colors = PackedColorArray(0.078431375, 0.68235296, 0.42352942, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ihm8e"]
+gradient = SubResource("Gradient_ihm8e")
+width = 16
+height = 16
+fill_from = Vector2(1, 1)
+fill_to = Vector2(1, 0.491453)
+
+[sub_resource type="Gradient" id="Gradient_of1q8"]
+colors = PackedColorArray(0, 0, 0, 0.627451, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rdw1i"]
+gradient = SubResource("Gradient_of1q8")
+width = 16
+height = 16
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0.1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ggdc6"]
+shader = SubResource("Shader_yw2t7")
+shader_parameter/glow_color = Color(1, 1, 1, 1)
+shader_parameter/intensity = 0.50000002375
+shader_parameter/spread = 2.0
+shader_parameter/pulse_speed = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5r28w"]
+shader = ExtResource("4_q51fs")
+shader_parameter/interval = 0.2
+shader_parameter/timeDelay = 2.0
+shader_parameter/intensityX = 0.2
+shader_parameter/intensityY = 0.3
+shader_parameter/seed = 6.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ihm8e"]
+load_path = "res://.godot/imported/logo.png-08695f2a348a980e33e2f9bfb2541842.ctex"
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ihm8e"]
+diffuse_texture = ExtResource("4_ji07q")
+normal_texture = SubResource("CompressedTexture2D_ihm8e")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41gds"]
+atlas = ExtResource("2_85qat")
+region = Rect2(585, 0, 132, 284)
+
+[sub_resource type="Curve" id="Curve_i6vey"]
+_data = [Vector2(0, 0.7), 0.0, 0.0, 0, 0, Vector2(0.489071, 0.83351123), -0.36270753, -0.36270753, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_ggdc6"]
+offsets = PackedFloat32Array(0, 0.2, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxhvu"]
+shader = ExtResource("5_74rjg")
+
+[sub_resource type="Animation" id="Animation_ji07q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../canvas_layer/logo/logo_shift/color_rect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_74rjg"]
+resource_name = "camera_a"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 20),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -6.2831855, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../canvas_layer/logo/logo_shift/color_rect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 10, 19, 20),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5r28w"]
+_data = {
+&"RESET": SubResource("Animation_ji07q"),
+&"camera_a": SubResource("Animation_74rjg")
+}
+
+[sub_resource type="Shader" id="Shader_ibali"]
+code = "shader_type canvas_item;
+uniform sampler2D SCREEN_TEXTURE:hint_screen_texture,filter_linear;
+// 鱼眼效果强度控制
+uniform float fish_intensity : hint_range(0.0, 2.0) = 1.0;
+void fragment() {
+    vec2 iResolution = vec2(textureSize(SCREEN_TEXTURE, 0));
+    vec2 uv = UV;
+    uv.y = 1.0 - uv.y; // 翻转Y轴
+
+    float aspectRatio = iResolution.x / iResolution.y;
+
+    float strength = fish_intensity * 0.03;
+    vec2 intensity = vec2(
+        strength * aspectRatio,
+        strength * aspectRatio
+    );
+    vec2 coords = uv;
+    coords = (coords - 0.5) * 2.0;
+
+	vec2 realCoordOffs;
+    realCoordOffs.x = (1.0 - coords.y * coords.y) * intensity.y * coords.x;
+    realCoordOffs.y = (1.0 - coords.x * coords.x) * intensity.x * coords.y;
+
+    vec2 fuv = uv - realCoordOffs;
+    if(fuv.x < 0.0 || fuv.x > 1.0 || fuv.y < 0.0 || fuv.y > 1.0) {
+        COLOR = vec4(0.0); // 超出范围显示黑
+		vec4 color = texture(SCREEN_TEXTURE,fuv);
+		COLOR.rgb=mix(color.rgb,color.bgr,length(fuv-0.5));
+    } else {
+        fuv.y = 1.0 - fuv.y;
+        COLOR = texture(SCREEN_TEXTURE, fuv);
+		vec4 color = texture(SCREEN_TEXTURE,fuv);
+		COLOR.rgb=mix(color.rgb,color.bgr,length(fuv-0.8));
+    }
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74rjg"]
+shader = SubResource("Shader_ibali")
+shader_parameter/fish_intensity = 0.50000002375
+
+[node name="stage_title" type="Node3D" unique_id=769823552]
+script = ExtResource("1_i6vey")
+
+[node name="logo2" parent="." unique_id=279183141 instance=ExtResource("1_u1mkc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, -2, -9)
+visible = false
+
+[node name="logo" parent="logo2" index="0" unique_id=1568521820]
+surface_material_override/0 = SubResource("StandardMaterial3D_4q5j3")
+
+[node name="canvas_layer" type="CanvasLayer" parent="." unique_id=854205889]
+
+[node name="vignette" type="ColorRect" parent="canvas_layer" unique_id=266231775]
+material = SubResource("ShaderMaterial_erxxa")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="start_game_glow" type="TextureRect" parent="canvas_layer" unique_id=1668729396]
+show_behind_parent = true
+material = SubResource("ShaderMaterial_lgslo")
+custom_minimum_size = Vector2(340, 85)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -163.0
+offset_right = 200.0
+offset_bottom = -73.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(200, 45)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_cuxww")
+expand_mode = 1
+
+[node name="info_start" type="HBoxContainer" parent="canvas_layer" unique_id=1558844192]
+unique_name_in_owner = true
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = -148.5
+offset_right = -154.0
+offset_bottom = -90.5
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.8, 1.1)
+mouse_filter = 2
+alignment = 1
+
+[node name="info_start_press" type="RichTextLabel" parent="canvas_layer/info_start" unique_id=1005437920]
+unique_name_in_owner = true
+clip_children = 2
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "<gd>"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gradient" type="TextureRect" parent="canvas_layer/info_start/info_start_press" unique_id=1819387581]
+material = SubResource("CanvasItemMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ggdc6")
+
+[node name="info_start_start" type="RichTextLabel" parent="canvas_layer/info_start" unique_id=18496716]
+unique_name_in_owner = true
+clip_children = 2
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.627451)
+theme_override_colors/font_shadow_color = Color(1, 1, 1, 0.5882353)
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "<gd>"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gradient" type="TextureRect" parent="canvas_layer/info_start/info_start_start" unique_id=705209758]
+material = SubResource("CanvasItemMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ihm8e")
+
+[node name="info_start_continue" type="RichTextLabel" parent="canvas_layer/info_start" unique_id=1321507848]
+unique_name_in_owner = true
+clip_children = 2
+clip_contents = false
+layout_mode = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "<gd>"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="gradient" type="TextureRect" parent="canvas_layer/info_start/info_start_continue" unique_id=1030548857]
+material = SubResource("CanvasItemMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ggdc6")
+
+[node name="rich_text_label" type="RichTextLabel" parent="canvas_layer" unique_id=1262921025]
+visible = false
+modulate = Color(1, 1, 1, 0.039215688)
+offset_left = 47.0
+offset_top = -12.399951
+offset_right = 1068.2014
+offset_bottom = 91.60005
+rotation = 1.5707941
+scale = Vector2(0.5, 1)
+theme_override_font_sizes/normal_font_size = 48
+bbcode_enabled = true
+text = "[center]NOPHENIA NOPHENIA NOPHENIA NOPHENIA NOPHENIA NOPHENIA"
+fit_content = true
+scroll_active = false
+autowrap_mode = 1
+
+[node name="bottom_gradient" type="TextureRect" parent="canvas_layer" unique_id=798399092]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -152.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = SubResource("GradientTexture2D_rdw1i")
+
+[node name="info_copyright" type="RichTextLabel" parent="canvas_layer" unique_id=154634697]
+unique_name_in_owner = true
+clip_children = 2
+clip_contents = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -24.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.93, 1)
+theme_override_colors/font_shadow_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "© %date %author   %rights"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="info_copyright_glow" type="TextureRect" parent="canvas_layer/info_copyright" unique_id=1485347688]
+unique_name_in_owner = true
+show_behind_parent = true
+z_index = 1
+material = SubResource("ShaderMaterial_ggdc6")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 178.0
+offset_top = -7.0
+offset_right = -178.0
+offset_bottom = 7.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 45)
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_cuxww")
+expand_mode = 1
+
+[node name="ntsc_bar" type="ColorRect" parent="canvas_layer/info_copyright" unique_id=2066319981]
+visible = false
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.612907
+offset_top = -22.0
+offset_right = 48.17206
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="gradient" type="TextureRect" parent="canvas_layer/info_copyright" unique_id=1947075068]
+material = SubResource("CanvasItemMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -7.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ihm8e")
+
+[node name="info_version" type="RichTextLabel" parent="canvas_layer" unique_id=323169058]
+unique_name_in_owner = true
+clip_children = 2
+clip_contents = false
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 553.0
+offset_top = -23.99997
+offset_right = -2.6757202
+offset_bottom = -3.9999695
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(0.925, 1)
+theme_override_colors/font_shadow_color = Color(0.038397167, 0.038397167, 0.03839716, 1)
+theme_override_font_sizes/normal_font_size = 18
+text = "<gd>"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="gradient" type="TextureRect" parent="canvas_layer/info_version" unique_id=108063402]
+material = SubResource("CanvasItemMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 9.729736
+offset_bottom = 3.9999695
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ihm8e")
+
+[node name="logo" type="TextureRect" parent="canvas_layer" unique_id=1639517564]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.8627451)
+light_mask = 3
+texture_filter = 1
+material = SubResource("ShaderMaterial_5r28w")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -111.0
+offset_right = 106.75
+offset_bottom = 27.5
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.2)
+pivot_offset = Vector2(106.5, 64.5)
+mouse_filter = 2
+mouse_default_cursor_shape = 3
+texture = SubResource("CanvasTexture_ihm8e")
+expand_mode = 1
+
+[node name="nia" type="TextureRect" parent="canvas_layer/logo" unique_id=883653141]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_5r28w")
+layout_mode = 0
+offset_left = 5.0334625
+offset_top = -23.338005
+offset_right = 67.865654
+offset_bottom = 111.84641
+rotation = 0.0325297
+scale = Vector2(1.39, 1.39)
+texture = SubResource("AtlasTexture_41gds")
+expand_mode = 1
+
+[node name="logo_shift" type="CPUParticles2D" parent="canvas_layer/logo" unique_id=947858345]
+show_behind_parent = true
+clip_children = 2
+position = Vector2(105.875, 70.25)
+amount = 5
+texture = ExtResource("5_5r28w")
+lifetime = 3.0
+fixed_fps = 24
+gravity = Vector2(0, 0)
+angle_min = -1.0
+angle_max = 1.0
+scale_amount_min = 0.2
+scale_amount_max = 0.3
+scale_amount_curve = SubResource("Curve_i6vey")
+color_ramp = SubResource("Gradient_ggdc6")
+
+[node name="color_rect" type="ColorRect" parent="canvas_layer/logo/logo_shift" unique_id=1571082873]
+material = SubResource("ShaderMaterial_bxhvu")
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -142.0
+offset_top = -142.0
+offset_right = 142.0
+offset_bottom = 142.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="logo_shadow" type="TextureRect" parent="canvas_layer/logo" unique_id=1782625623]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.039215688)
+show_behind_parent = true
+material = SubResource("ShaderMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.875
+offset_top = -71.0
+offset_right = 106.875
+offset_bottom = 98.01517
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.1)
+mouse_filter = 2
+mouse_default_cursor_shape = 3
+texture = ExtResource("4_ji07q")
+expand_mode = 1
+
+[node name="logo_shadow2" type="TextureRect" parent="canvas_layer/logo" unique_id=2109764088]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0.019607844)
+show_behind_parent = true
+material = SubResource("ShaderMaterial_5r28w")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -115.125
+offset_top = -96.25
+offset_right = 115.125
+offset_bottom = 42.25
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.1)
+mouse_filter = 2
+mouse_default_cursor_shape = 3
+texture = ExtResource("4_ji07q")
+expand_mode = 1
+
+[node name="logo_light" type="PointLight2D" parent="canvas_layer" unique_id=1486183986]
+unique_name_in_owner = true
+position = Vector2(366, 181)
+color = Color(0.8235294, 0.10980392, 0.2784314, 1)
+energy = 2.0
+range_layer_min = -1
+range_layer_max = 1
+range_item_cull_mask = 2
+texture = ExtResource("9_ihm8e")
+
+[node name="trans_fade_black" type="ColorRect" parent="canvas_layer" unique_id=257025342]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="trans_fade_invert" type="ColorRect" parent="canvas_layer" unique_id=982815569]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_bxhvu")
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="animation_player" type="AnimationPlayer" parent="." unique_id=1825181018]
+root_node = NodePath("../scene_cam_bound/scene_cam")
+libraries/ = SubResource("AnimationLibrary_5r28w")
+autoplay = &"camera_a"
+speed_scale = 0.1
+
+[node name="weather_rain" parent="." unique_id=160301397 instance=ExtResource("9_i6vey")]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -6, 1.1067405, -5)
+
+[node name="rain_outside" parent="weather_rain/particle" parent_id_path=PackedInt32Array(160301397, 782538743) index="0" unique_id=635697296]
+max_db = -11.0
+
+[node name="scene_cam_bound" type="Node3D" parent="." unique_id=994810356]
+transform = Transform3D(0.8660252, 0, 0.4999999, 0, 1, 0, -0.4999999, 0, 0.8660252, -6, 3, -5)
+
+[node name="scene_cam" type="Camera3D" parent="scene_cam_bound" unique_id=494146590]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0, 0, 0)
+fov = 90.0
+
+[node name="filter_layer" type="CanvasLayer" parent="scene_cam_bound/scene_cam" unique_id=937783427]
+layer = -1
+
+[node name="fitler" type="ColorRect" parent="scene_cam_bound/scene_cam/filter_layer" unique_id=512472611]
+material = SubResource("ShaderMaterial_74rjg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="stage_overlook" parent="." unique_id=1440825876 instance=ExtResource("10_i6vey")]
+unique_name_in_owner = true
+is_static = true
+bgm = ExtResource("11_ihm8e")
+bgm_pitch = 1.0
+bgm_volume = 0.3
+
+[editable path="logo2"]
+[editable path="weather_rain"]

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://c4v1x4f5t7wyw"]
+
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="1_o3rtm"]
+[ext_resource type="Texture2D" uid="uid://c13q8g5amdc4o" path="res://texture/snowflake_storm.png" id="2_qp15n"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="3_fuf3r"]
+[ext_resource type="AudioStream" uid="uid://kph50x7b44wl" path="res://audio/amb/snowing_storm.ogg" id="4_tx1ab"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3rtm"]
+render_priority = 1
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("2_qp15n")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_o3rtm"]
+size = Vector2(0.4, 1.2)
+
+[sub_resource type="Gradient" id="Gradient_o3rtm"]
+offsets = PackedFloat32Array(0, 0.1, 0.3, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_qp15n"]
+colors = PackedColorArray(1, 1, 1, 0.078431375, 1, 1, 1, 0.39215687)
+
+[node name="weather_storm_snow" type="Node3D" unique_id=309689584]
+
+[node name="attach_player" type="Node3D" parent="." unique_id=186967110]
+script = ExtResource("1_o3rtm")
+_attach_to_cam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="bitrate_killer" type="CPUParticles3D" parent="." unique_id=681930011 groups=["loop_particle_restart", "stage_lit_particle_color"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 3, -5)
+material_override = SubResource("StandardMaterial3D_o3rtm")
+amount = 500
+lifetime = 0.4
+preprocess = 5.0
+speed_scale = 0.7
+draw_order = 2
+mesh = SubResource("QuadMesh_o3rtm")
+emission_shape = 3
+emission_box_extents = Vector3(6, 1, 6)
+particle_flag_align_y = true
+direction = Vector3(-1, -1.5, 0)
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 16.0
+initial_velocity_max = 16.0
+angle_min = 20.0
+angle_max = 30.0
+scale_amount_min = 0.1
+scale_amount_max = 0.3
+color_ramp = SubResource("Gradient_o3rtm")
+color_initial_ramp = SubResource("Gradient_qp15n")
+script = ExtResource("3_fuf3r")
+_max_particle = 500
+
+[node name="snow_outside" type="AudioStreamPlayer3D" parent="bitrate_killer" unique_id=264186452]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7, 4)
+stream = ExtResource("4_tx1ab")
+attenuation_model = 2
+volume_db = -8.0
+unit_size = 20.0
+autoplay = true
+panning_strength = 0.4
+bus = &"ceiling_fade"

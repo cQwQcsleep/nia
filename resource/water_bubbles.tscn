@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://coouf7gtcenmy"]
+
+[ext_resource type="Texture2D" uid="uid://b5yb8ay5nyv1s" path="res://texture/bubble_00.png" id="1_engfg"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_gmntu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hs7vl"]
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.588235)
+albedo_texture = ExtResource("1_engfg")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_max_distance = 2.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_hs7vl"]
+
+[sub_resource type="Curve" id="Curve_en57k"]
+_limits = [0.0, 1.1, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.1, 1.1), 0.0, 0.0, 0, 0, Vector2(0.4, 0.44), 0.0, 0.0, 0, 0, Vector2(0.5, 1.1), 0.0, 0.0, 0, 0, Vector2(0.7, 0.55), 0.0, 0.0, 0, 0, Vector2(0.8, 1.1), 0.0, 0.0, 0, 0, Vector2(0.9794118, 0.40913856), 0.0, 0.0, 0, 0, Vector2(1, 1.1), 0.0, 0.0, 0, 0]
+point_count = 8
+
+[sub_resource type="Gradient" id="Gradient_en57k"]
+offsets = PackedFloat32Array(0, 0.0491453, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_gmntu"]
+offsets = PackedFloat32Array(0, 0.3, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0.3137255, 0.83706, 0.7812, 0.84, 0.47058824, 0.73, 0.6351, 0.6509167, 0.654902, 0.3647059, 0.5058824, 0.5294118, 1)
+
+[node name="water_bubbles" type="CPUParticles3D" unique_id=319840742]
+material_override = SubResource("StandardMaterial3D_hs7vl")
+lifetime = 10.0
+mesh = SubResource("QuadMesh_hs7vl")
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0.08, 0)
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+radial_accel_min = -0.01
+radial_accel_max = 0.01
+tangential_accel_min = -0.1
+tangential_accel_max = 0.1
+angle_min = -90.0
+angle_max = 90.0
+scale_amount_min = 0.01
+scale_amount_max = 0.15
+scale_amount_curve = SubResource("Curve_en57k")
+color_ramp = SubResource("Gradient_en57k")
+color_initial_ramp = SubResource("Gradient_gmntu")
+script = ExtResource("2_gmntu")
+_max_particle = 8

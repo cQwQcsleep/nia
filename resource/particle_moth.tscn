@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://cxv3msarmgfpa"]
+
+[ext_resource type="Shader" uid="uid://b2ct2xo0fpno4" path="res://gdshader/flocking.gdshader" id="1_d7q8m"]
+[ext_resource type="Texture2D" uid="uid://diuk0v8ajv06p" path="res://texture/particle_moth.png" id="1_f6khk"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7q8m"]
+render_priority = 0
+shader = ExtResource("1_d7q8m")
+shader_parameter/tex = ExtResource("1_f6khk")
+shader_parameter/color1 = Color(1, 1, 1, 1)
+shader_parameter/color2 = Color(1, 1, 1, 1)
+shader_parameter/displ_amnt = 0.8
+shader_parameter/displ_speed = 20.0
+shader_parameter/pi = 3.14159
+
+[sub_resource type="QuadMesh" id="QuadMesh_e35ka"]
+subdivide_width = 1
+orientation = 1
+
+[sub_resource type="Curve" id="Curve_gsphj"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 0.0553634), 0.0, 0.0, 0, 0, Vector2(0.0865604, 0.65744), 0.0, 0.0, 0, 0, Vector2(0.14123, -0.608131), 2.27855, 2.27855, 0, 0, Vector2(0.241458, 0.0891004), 0.0, 0.0, 0, 0, Vector2(0.271071, -0.147059), 0.0, 0.0, 0, 0, Vector2(0.323462, 0.257786), 0.0, 0.0, 0, 0, Vector2(0.334852, 0.0328721), 0.0, 0.0, 0, 0, Vector2(0.387244, 0.527682), 13.0681, 13.0681, 0, 0, Vector2(0.494305, -1), 0.0, 0.0, 0, 0, Vector2(0.542141, -0.000864983), 0.0, 0.0, 0, 0, Vector2(0.660592, -0.0908304), 2.7427, 2.7427, 0, 0, Vector2(0.769932, 0.156574), 0.0, 0.0, 0, 0, Vector2(0.824601, -0.135813), 0.0, 0.0, 0, 0, Vector2(0.863326, 0.302768), 0.0, 0.0, 0, 0, Vector2(0.924829, -0.371972), 0.0, 0.0, 0, 0, Vector2(0.958998, 0.145329), 3.91543, 3.91543, 0, 0, Vector2(1, 0.482699), 0.0, 0.0, 0, 0]
+point_count = 17
+
+[sub_resource type="Curve" id="Curve_hxj0g"]
+_data = [Vector2(0, 0), 0.0, 5.0, 0, 1, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.64179, 0.64179, 0, 0, Vector2(1, 0), -5.0, 0.0, 1, 0]
+point_count = 4
+
+[node name="particle_moth" type="CPUParticles3D" unique_id=1882366214]
+material_override = SubResource("ShaderMaterial_d7q8m")
+visibility_range_end = 32.0
+amount = 16
+lifetime = 40.0
+speed_scale = 4.0
+randomness = 0.4
+visibility_aabb = AABB(-10, -10, -10, 20, 20, 20)
+mesh = SubResource("QuadMesh_e35ka")
+emission_shape = 3
+emission_box_extents = Vector3(1, 0.2, 0.5)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+initial_velocity_max = 0.1
+angular_velocity_min = -30.0
+angular_velocity_max = 30.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+radial_accel_curve = SubResource("Curve_gsphj")
+tangential_accel_min = -16.0
+tangential_accel_max = -16.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.02
+scale_amount_max = 0.05
+scale_amount_curve = SubResource("Curve_hxj0g")

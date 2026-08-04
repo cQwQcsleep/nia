@@ -1,0 +1,73 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://mbukm6rwp84d"]
+
+[ext_resource type="Texture2D" uid="uid://cvtcnmiulaxni" path="res://texture/epilogue/handle.png" id="1_v8ckp"]
+
+[sub_resource type="Shader" id="Shader_6xa0r"]
+code = "shader_type spatial;
+render_mode depth_prepass_alpha, cull_disabled;
+uniform vec3 pivot_point = vec3(0.0, 1.0, 0.0);
+global uniform float end_train_handle_vibration_mult;
+uniform float swing_amp_y = 0.2;
+uniform float swing_amp_z = 0.06;
+
+uniform float freq_y = 1.0;
+uniform float freq_z = 1.0;
+
+uniform float global_speed = 1.0;
+
+uniform sampler2D tex : source_color, filter_linear_mipmap_anisotropic, repeat_disable;
+
+// Godot 4 requires mat3(vec3, vec3, vec3) constructors
+mat3 rotation_y(float a) {
+    float c = cos(a);
+    float s = sin(a);
+
+    return mat3(
+        vec3( c, 0.0, s),
+        vec3( 0.0, 1.0, 0.0),
+        vec3(-s, 0.0, c)
+    );
+}
+
+mat3 rotation_z(float a) {
+    float c = cos(a);
+    float s = sin(a);
+
+    return mat3(
+        vec3(c, s, 0.0),
+        vec3(-s, c, 0.0),
+        vec3(0.0, 0.0, 1.0)
+    );
+}
+
+void vertex() {
+    float t = (TIME + NODE_POSITION_WORLD.z) * global_speed;
+
+    float angle_y = sin(t * freq_y) * swing_amp_y;
+    float angle_z = sin(t * freq_z) * (swing_amp_z + end_train_handle_vibration_mult);
+
+    vec3 pos = VERTEX - pivot_point;
+
+    pos = rotation_y(angle_y) * pos;
+    pos = rotation_z(angle_z) * pos;
+
+    VERTEX = pos + pivot_point;
+}
+
+void fragment() {
+    ALBEDO = texture(tex, UV).rgb;
+	EMISSION = ALBEDO * 0.2;
+	ALPHA = texture(tex,UV).a;
+}
+"
+
+[resource]
+render_priority = 2
+shader = SubResource("Shader_6xa0r")
+shader_parameter/pivot_point = Vector3(0, 0, 0)
+shader_parameter/swing_amp_y = 0.2
+shader_parameter/swing_amp_z = 0.06
+shader_parameter/freq_y = 1.0
+shader_parameter/freq_z = 1.0
+shader_parameter/global_speed = 1.0
+shader_parameter/tex = ExtResource("1_v8ckp")

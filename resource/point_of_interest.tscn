@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfug71fo8bnao"]
+
+[ext_resource type="Script" uid="uid://hg056njvg0c4" path="res://gdscript/point_of_interest.gd" id="1_cx6aa"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_bte02"]
+size = Vector3(3, 3, 3)
+
+[node name="point_of_interest" type="Area3D"]
+transform = Transform3D(-1, 8.74228e-08, 3.82137e-15, 0, -4.37114e-08, 1, 8.74228e-08, 1, 4.37114e-08, 0, 0, 0)
+collision_mask = 5
+script = ExtResource("1_cx6aa")
+
+[node name="collision_shape_3d" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_bte02")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

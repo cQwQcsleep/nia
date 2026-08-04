@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://ctdhg1mmyogud"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_3eeos"]
+[ext_resource type="Texture2D" uid="uid://bww0aee2jtrbi" path="res://texture/wallpaper/wallpaper_11.png" id="2_3eeos"]
+
+[resource]
+script = ExtResource("1_3eeos")
+name = "wallpaper_foam"
+texture = ExtResource("2_3eeos")
+accent_colour = Color(0.5411765, 0.7764706, 0.8627451, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

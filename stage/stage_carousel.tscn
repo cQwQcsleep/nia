@@ -1,0 +1,109 @@
+[gd_scene load_steps=15 format=3 uid="uid://mnly4mm2ut2y"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_duhdd"]
+[ext_resource type="LightmapGIData" uid="uid://dua6ku2pkxrba" path="res://stage/lightmap/stage_carousel.lmbake" id="2_83cbj"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_bgxyk"]
+[ext_resource type="PackedScene" uid="uid://cje57wsocou7s" path="res://stage/mesh/carousel.blend" id="2_trssn"]
+[ext_resource type="Texture2D" uid="uid://cnjmg18utleid" path="res://texture/carousel.png" id="3_wp8g0"]
+[ext_resource type="Script" uid="uid://uew7vyq2lb02" path="res://gdscript/get_rotated.gd" id="4_v0b10"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_wp8g0"]
+[ext_resource type="Material" uid="uid://bovgeieer1y8a" path="res://gdshader/material/doors.tres" id="8_rdlos"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="8_v8cly"]
+[ext_resource type="AudioStream" uid="uid://eivg2wecc237" path="res://audio/amb/carousel_spin.ogg" id="9_mfavw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8cly"]
+shader = ExtResource("2_bgxyk")
+shader_parameter/source_panorama = ExtResource("3_wp8g0")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0.25)
+shader_parameter/uv_scale = 0.3
+
+[sub_resource type="Sky" id="Sky_mfavw"]
+sky_material = SubResource("ShaderMaterial_v8cly")
+
+[sub_resource type="Environment" id="Environment_trssn"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_mfavw")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_sky_contribution = 0.8
+tonemap_mode = 4
+tonemap_exposure = 2.0
+glow_enabled = true
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.0745098, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 2.0
+fog_height_density = 0.1
+fog_depth_begin = 0.0
+fog_depth_end = 32.0
+adjustment_enabled = true
+adjustment_brightness = 1.28
+adjustment_contrast = 1.21
+adjustment_saturation = 0.65
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_mfavw"]
+data = PackedVector3Array(0.0099, 1.9172, -0.0032, 0, 1.9172, -0.0104, 0.0061, 1.9172, -0.0084, 0.0099, 1.9172, -0.0032, -0.0099, 1.9172, -0.0032, 0, 1.9172, -0.0104, 0, 1.9172, -0.0104, -0.0099, 1.9172, -0.0032, -0.0061, 1.9172, -0.0084, -0.0099, 1.9172, -0.0032, 0.0099, 1.9172, -0.0032, 0.0061, 1.9172, 0.0084, 0.0061, 1.9172, 0.0084, 0.0099, 1.9172, -0.0032, 0.0099, 1.9172, 0.0032, -0.0099, 1.9172, -0.0032, 0.0061, 1.9172, 0.0084, -0.0061, 1.9172, 0.0084, -0.0061, 1.9172, 0.0084, 0.0061, 1.9172, 0.0084, 0, 1.9172, 0.0104, -0.0099, 1.9172, -0.0032, -0.0061, 1.9172, 0.0084, -0.0099, 1.9172, 0.0032, 0, 0, 3.5, -2.0572, 1.5251, 2.8316, -2.0572, 0, 2.8316, 0, 0, 3.5, 0, 1.5251, 3.5, -2.0572, 1.5251, 2.8316, -2.0572, 0, 2.8316, -2.0572, 1.5251, 2.8316, -3.3287, 1.5251, 1.0816, -2.0572, 0, 2.8316, -3.3287, 1.5251, 1.0816, -3.3287, 0, 1.0816, -3.3287, 0, 1.0816, -3.3287, 1.5251, 1.0816, -3.3287, 1.5251, -1.0816, -3.3287, 0, 1.0816, -3.3287, 1.5251, -1.0816, -3.3287, 0, -1.0816, -2.0572, 0, -2.8316, 0, 1.5251, -3.5, 0, 0, -3.5, -2.0572, 0, -2.8316, -2.0572, 1.5251, -2.8316, 0, 1.5251, -3.5, -3.3287, 0, -1.0816, -2.0572, 1.5251, -2.8316, -2.0572, 0, -2.8316, -3.3287, 0, -1.0816, -3.3287, 1.5251, -1.0816, -2.0572, 1.5251, -2.8316, 0, 0, -3.5, 2.0572, 1.5251, -2.8316, 2.0572, 0, -2.8316, 0, 0, -3.5, 0, 1.5251, -3.5, 2.0572, 1.5251, -2.8316, 2.0572, 0, -2.8316, 2.0572, 1.5251, -2.8316, 3.3287, 1.5251, -1.0816, 2.0572, 0, -2.8316, 3.3287, 1.5251, -1.0816, 3.3287, 0, -1.0816, 3.3287, 0, -1.0816, 3.3287, 1.5251, 1.0816, 3.3287, 0, 1.0816, 3.3287, 0, -1.0816, 3.3287, 1.5251, -1.0816, 3.3287, 1.5251, 1.0816, 3.3287, 0, 1.0816, 3.3287, 1.5251, 1.0816, 2.0572, 1.5251, 2.8316, 3.3287, 0, 1.0816, 2.0572, 1.5251, 2.8316, 2.0572, 0, 2.8316, 2.0572, 0, 2.8316, 2.0572, 1.5251, 2.8316, 0, 1.5251, 3.5, 2.0572, 0, 2.8316, 0, 1.5251, 3.5, 0, 0, 3.5, 0.4538, 0, -0.6246, 0, 0, -3.5, 2.0572, 0, -2.8316, 0.4538, 0, -0.6246, 0, 0, -0.7721, 0, 0, -3.5, 0.7343, 0, -0.2386, 0.4538, 0, -0.6246, 2.0572, 0, -2.8316, 0, 0, -0.7721, -2.0572, 0, -2.8316, 0, 0, -3.5, 0.7343, 0, -0.2386, 2.0572, 0, -2.8316, 3.3287, 0, -1.0816, 0, 0, -0.7721, -0.4538, 0, -0.6246, -2.0572, 0, -2.8316, 0.7343, 0, 0.2386, 0.7343, 0, -0.2386, 3.3287, 0, -1.0816, -0.4538, 0, -0.6246, -3.3287, 0, -1.0816, -2.0572, 0, -2.8316, 0.7343, 0, 0.2386, 3.3287, 0, -1.0816, 3.3287, 0, 1.0816, -0.4538, 0, -0.6246, -0.7343, 0, -0.2386, -3.3287, 0, -1.0816, 0.4538, 0, 0.6246, 0.7343, 0, 0.2386, 3.3287, 0, 1.0816, -0.7343, 0, -0.2386, -3.3287, 0, 1.0816, -3.3287, 0, -1.0816, 0.4538, 0, 0.6246, 3.3287, 0, 1.0816, 2.0572, 0, 2.8316, -0.7343, 0, -0.2386, -0.7343, 0, 0.2386, -3.3287, 0, 1.0816, 0, 0, 0.7721, 0.4538, 0, 0.6246, 2.0572, 0, 2.8316, -0.7343, 0, 0.2386, -2.0572, 0, 2.8316, -3.3287, 0, 1.0816, 0, 0, 0.7721, 2.0572, 0, 2.8316, 0, 0, 3.5, -0.7343, 0, 0.2386, -0.4538, 0, 0.6246, -2.0572, 0, 2.8316, -0.4538, 0, 0.6246, 0, 0, 0.7721, 0, 0, 3.5, -0.4538, 0, 0.6246, 0, 0, 3.5, -2.0572, 0, 2.8316, 0.0061, 1.9172, -0.0084, 0, 0, -0.7721, 0.4538, 0, -0.6246, 0.0061, 1.9172, -0.0084, 0, 1.9172, -0.0104, 0, 0, -0.7721, 0.0099, 1.9172, -0.0032, 0.0061, 1.9172, -0.0084, 0.4538, 0, -0.6246, 0.0099, 1.9172, -0.0032, 0.4538, 0, -0.6246, 0.7343, 0, -0.2386, 0.0099, 1.9172, 0.0032, 0.7343, 0, -0.2386, 0.7343, 0, 0.2386, 0.0099, 1.9172, 0.0032, 0.0099, 1.9172, -0.0032, 0.7343, 0, -0.2386, 0.0061, 1.9172, 0.0084, 0.0099, 1.9172, 0.0032, 0.7343, 0, 0.2386, 0.0061, 1.9172, 0.0084, 0.7343, 0, 0.2386, 0.4538, 0, 0.6246, 0, 1.9172, 0.0104, 0.0061, 1.9172, 0.0084, 0.4538, 0, 0.6246, 0, 1.9172, 0.0104, 0.4538, 0, 0.6246, 0, 0, 0.7721, -0.0061, 1.9172, 0.0084, 0, 0, 0.7721, -0.4538, 0, 0.6246, -0.0061, 1.9172, 0.0084, 0, 1.9172, 0.0104, 0, 0, 0.7721, -0.0099, 1.9172, 0.0032, -0.0061, 1.9172, 0.0084, -0.4538, 0, 0.6246, -0.0099, 1.9172, 0.0032, -0.4538, 0, 0.6246, -0.7343, 0, 0.2386, -0.0099, 1.9172, -0.0032, -0.7343, 0, 0.2386, -0.7343, 0, -0.2386, -0.0099, 1.9172, -0.0032, -0.0099, 1.9172, 0.0032, -0.7343, 0, 0.2386, -0.0061, 1.9172, -0.0084, -0.0099, 1.9172, -0.0032, -0.7343, 0, -0.2386, -0.0061, 1.9172, -0.0084, -0.7343, 0, -0.2386, -0.4538, 0, -0.6246, 0, 1.9172, -0.0104, -0.0061, 1.9172, -0.0084, -0.4538, 0, -0.6246, 0, 1.9172, -0.0104, -0.4538, 0, -0.6246, 0, 0, -0.7721)
+
+[node name="stage_carousel" type="Node3D" node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_duhdd")
+stage_name = "Carousel"
+_extra_snd_bank = 2
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.527554, 0.394345, 0.419879, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_trssn")
+script = ExtResource("4_wp8g0")
+_speed = -0.02
+
+[node name="lightmap_gi" type="LightmapGI" parent="."]
+quality = 2
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+light_data = ExtResource("2_83cbj")
+
+[node name="carousel" parent="." instance=ExtResource("2_trssn")]
+
+[node name="carousel" parent="carousel" index="0"]
+script = ExtResource("4_v0b10")
+_speed = 0.5
+
+[node name="collision" parent="carousel" index="1"]
+visible = false
+
+[node name="StaticBody3D" type="StaticBody3D" parent="carousel/collision" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="carousel/collision/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_mfavw")
+
+[node name="door" parent="carousel" index="2"]
+surface_material_override/0 = ExtResource("8_rdlos")
+
+[node name="label_3d" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 1, -2)
+text = "TODO use either diamond or heart card for door"
+
+[node name="entrance" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -12)
+script = ExtResource("8_v8cly")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9, 0)
+stream = ExtResource("9_mfavw")
+attenuation_model = 2
+volume_db = -6.0
+unit_size = 18.0
+max_db = 0.0
+autoplay = true
+panning_strength = 0.5
+bus = &"amb"
+
+[editable path="carousel"]

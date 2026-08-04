@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c8xyom55scsx2"]
+
+[ext_resource type="Shader" uid="uid://bdbso3iuonqsb" path="res://gdshader/vertex_scroll.gdshader" id="1_y0si6"]
+[ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="2_4tdp2"]
+
+[resource]
+render_priority = 2
+shader = ExtResource("1_y0si6")
+shader_parameter/tex = ExtResource("2_4tdp2")
+shader_parameter/emission = 2.0
+shader_parameter/color = Color(0.893, 0.94, 0.799, 0.039215688)
+shader_parameter/scroll_speed_primary = -0.05
+shader_parameter/scroll_speed_secondary = 0.1
+shader_parameter/use_alpha = true

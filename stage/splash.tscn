@@ -1,0 +1,106 @@
+[gd_scene format=3 uid="uid://cipj1kuvr7h06"]
+
+[ext_resource type="Script" uid="uid://codxs0qxpgted" path="res://gdscript/ui/splash.gd" id="1_jwcny"]
+[ext_resource type="AudioStream" uid="uid://ckmyd3f7k68jn" path="res://audio/sfx/mice_click_01.ogg" id="2_bfjj5"]
+[ext_resource type="AudioStream" uid="uid://wlcw30vc22xm" path="res://audio/sfx/purr_01.ogg" id="3_omyg0"]
+[ext_resource type="AudioStream" uid="uid://cxaf6dxoqbfvc" path="res://audio/sfx/purr_00.ogg" id="4_l4euu"]
+[ext_resource type="Texture2D" uid="uid://c74y3ytm6mcbm" path="res://texture/splash_mel_00.png" id="6_aypb3"]
+[ext_resource type="Texture2D" uid="uid://cxqmadqqr2dg5" path="res://texture/splash_felt_01.png" id="7_8p78m"]
+[ext_resource type="Shader" uid="uid://bp4i2aerabjlp" path="res://gdshader/ui_squiggly.gdshader" id="7_aypb3"]
+[ext_resource type="Texture2D" uid="uid://byonwpbdcbm36" path="res://texture/logo_invert.png" id="7_xohyv"]
+[ext_resource type="Shader" uid="uid://dx37j0bcuns50" path="res://gdshader/invert.gdshader" id="10_yw2t7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bfjj5"]
+shader = ExtResource("7_aypb3")
+shader_parameter/interval = 0.2
+shader_parameter/timeDelay = 0.0
+shader_parameter/intensityX = 1.3
+shader_parameter/intensityY = 1.0
+shader_parameter/seed = 12.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xohyv"]
+shader = ExtResource("7_aypb3")
+shader_parameter/interval = 0.3
+shader_parameter/timeDelay = 2.0
+shader_parameter/intensityX = 1.0
+shader_parameter/intensityY = 2.0
+shader_parameter/seed = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_omglr"]
+shader = ExtResource("10_yw2t7")
+
+[node name="splash" type="CanvasLayer" unique_id=1092364680]
+script = ExtResource("1_jwcny")
+click = Array[AudioStream]([ExtResource("2_bfjj5"), ExtResource("2_bfjj5")])
+cat_noise = Array[AudioStream]([ExtResource("3_omyg0"), ExtResource("4_l4euu")])
+_cat = Array[Texture]([ExtResource("7_8p78m"), ExtResource("6_aypb3")])
+
+[node name="background" type="ColorRect" parent="." unique_id=1802797544]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="cat" type="TextureButton" parent="." unique_id=1739663469]
+unique_name_in_owner = true
+texture_filter = 1
+material = SubResource("ShaderMaterial_bfjj5")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -104.83862
+offset_top = -69.171875
+offset_right = 104.83862
+offset_bottom = 69.171875
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(65, 66)
+mouse_default_cursor_shape = 2
+texture_normal = ExtResource("7_8p78m")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="timer" type="Timer" parent="." unique_id=1489844718]
+unique_name_in_owner = true
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="title" type="TextureRect" parent="." unique_id=1659645001]
+unique_name_in_owner = true
+visible = false
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+material = SubResource("ShaderMaterial_xohyv")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.81976
+offset_top = -49.5
+offset_right = 93.81976
+offset_bottom = 49.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("7_xohyv")
+expand_mode = 1
+
+[node name="color_rect2" type="ColorRect" parent="." unique_id=554274097]
+visible = false
+material = SubResource("ShaderMaterial_omglr")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[connection signal="pressed" from="cat" to="." method="_on_texture_button_pressed"]
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]

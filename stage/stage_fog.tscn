@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://286yietrjjiw"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_1w3th"]
+[ext_resource type="AudioStream" uid="uid://k8j6mm7wwuoq" path="res://audio/music/se_fog.ogg" id="2_jkrj0"]
+[ext_resource type="PackedScene" uid="uid://c5vddook8dpxp" path="res://stage/mesh/fog.blend" id="2_tqpxf"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="3_rru7g"]
+[ext_resource type="LightmapGIData" uid="uid://bv28x8upgxt65" path="res://stage/lightmap/stage_fog.lmbake" id="4_5wk1q"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="5_4ubdw"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="6_skaf8"]
+
+[sub_resource type="Gradient" id="Gradient_jkrj0"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0.038339645, 0.90275466)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nndd6"]
+gradient = SubResource("Gradient_jkrj0")
+width = 64
+
+[sub_resource type="Environment" id="Environment_tqpxf"]
+background_mode = 1
+tonemap_exposure = 0.3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.2468, 0.24300002, 0.3, 1)
+fog_density = 1.0
+fog_height_density = -0.2
+fog_depth_begin = 0.0
+fog_depth_end = 12.0
+adjustment_enabled = true
+adjustment_brightness = 1.3
+adjustment_contrast = 0.9
+adjustment_saturation = 0.3
+adjustment_color_correction = SubResource("GradientTexture1D_nndd6")
+
+[node name="stage_fog" type="Node3D" unique_id=848039929 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_1w3th")
+stage_name = "world_fog"
+stage_name_alt = "world_fog_alt"
+_bloom = 1.0
+bgm = ExtResource("2_jkrj0")
+bgm_pitch = 0.4
+bgm_volume = 0.2
+_entrance = [NodePath("entrance")]
+weather = 2
+allow_run = false
+_stage_light = Color(0.184601, 0.181751, 0.226708, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=66531183]
+environment = SubResource("Environment_tqpxf")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=705605922 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("3_rru7g")
+_bounds = NodePath("../fog/ground")
+_world = NodePath("../fog")
+_door_probability = 8
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="interactable" parent="dream_looper" unique_id=1855696069 instance=ExtResource("5_4ubdw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40, 1, 39.95)
+_to_stage = "uid://bpn3x3o40r71"
+voices = false
+
+[node name="fog" parent="." unique_id=370415119 instance=ExtResource("2_tqpxf")]
+
+[node name="lightmap_gi" type="LightmapGI" parent="fog" unique_id=52792026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000684738, 2.01388, -0.000366718)
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.2
+environment_mode = 3
+environment_custom_color = Color(1, 0.85, 0.85, 1)
+environment_custom_energy = 0.1
+generate_probes_subdiv = 0
+light_data = ExtResource("4_5wk1q")
+
+[node name="entrance" type="Node3D" parent="." unique_id=1378937769]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.20522, 8)
+script = ExtResource("6_skaf8")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[editable path="fog"]

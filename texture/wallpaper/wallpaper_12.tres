@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://cv8xmu6aicip"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_678b1"]
+[ext_resource type="Texture2D" uid="uid://dhmjxmjxlkduh" path="res://texture/wallpaper/wallpaper_12.png" id="2_678b1"]
+
+[resource]
+script = ExtResource("1_678b1")
+name = "wallpaper_beach"
+texture = ExtResource("2_678b1")
+accent_colour = Color(0.07450981, 0.21176471, 0.4862745, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

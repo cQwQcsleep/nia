@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dme4pkavwu2d8"]
+
+[ext_resource type="Shader" uid="uid://bbwpp10sqkmwr" path="res://gdshader/screen.gdshader" id="1_1mp86"]
+[ext_resource type="Texture2D" uid="uid://c2jqcutodx0ec" path="res://texture/eye_1.png" id="1_pdgi8"]
+[ext_resource type="Texture2D" uid="uid://c7vxrhgm165dl" path="res://texture/eye_2.png" id="2_1mp86"]
+[ext_resource type="Texture2D" uid="uid://benbwsvq5mt2y" path="res://texture/eye_3.png" id="3_n200v"]
+[ext_resource type="Texture2D" uid="uid://c1i3j80vfuqi0" path="res://texture/eye_4.png" id="4_dkrpw"]
+[ext_resource type="Texture2D" uid="uid://du654cc020vhg" path="res://texture/eye_5.png" id="5_dkrpw"]
+[ext_resource type="Texture2D" uid="uid://dkx053dn13ft3" path="res://texture/eye_7.png" id="6_fwdx2"]
+[ext_resource type="Texture2D" uid="uid://bnpwqvanlk6qp" path="res://texture/eye_8.png" id="7_g0pyo"]
+[ext_resource type="Texture2D" uid="uid://c82t20qxhfhhk" path="res://texture/eye_6.png" id="7_gs1l0"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_n200v"]
+frames = 8
+speed_scale = 5.0
+frame_0/texture = ExtResource("1_pdgi8")
+frame_1/texture = ExtResource("2_1mp86")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_n200v")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_dkrpw")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_dkrpw")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("7_gs1l0")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("6_fwdx2")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("7_g0pyo")
+frame_7/duration = 1.0
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1mp86")
+shader_parameter/_texture = SubResource("AnimatedTexture_n200v")
+shader_parameter/_emission = 0.3
+shader_parameter/_flicker_strength = 32.0

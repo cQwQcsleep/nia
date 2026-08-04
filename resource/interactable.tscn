@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://b74aymkxe5w2h"]
+
+[ext_resource type="Script" uid="uid://b4mv2cm6ht67m" path="res://gdscript/interactable.gd" id="1_lc8nb"]
+[ext_resource type="AudioStream" uid="uid://lfwpuk4unhs7" path="res://audio/sfx/door_open.ogg" id="2_hnbv1"]
+[ext_resource type="Shader" uid="uid://w3a6auulspk6" path="res://gdshader/wireframe.gdshader" id="2_tahan"]
+[ext_resource type="Shader" uid="uid://ogppolm8ojxm" path="res://gdshader/pulse.gdshader" id="3_hnbv1"]
+[ext_resource type="AudioStream" uid="uid://itf47ywdrqlu" path="res://audio/sfx/whisper.ogg" id="5_hnbv1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_djsru"]
+render_priority = 2
+shader = ExtResource("2_tahan")
+shader_parameter/albedo = Color(0.8235294, 0.10980392, 0.2784314, 1)
+shader_parameter/outline_width = 1.0000000149012
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bte02"]
+render_priority = 1
+next_pass = SubResource("ShaderMaterial_djsru")
+shader = ExtResource("3_hnbv1")
+shader_parameter/freq = 3.0
+shader_parameter/max_alpha = 0.10000000475
+shader_parameter/min_alpha = 0.0
+
+[node name="interactable" type="Area3D" unique_id=731676892]
+collision_layer = 2
+script = ExtResource("1_lc8nb")
+_interact_sfx = ExtResource("2_hnbv1")
+
+[node name="collider" type="CollisionShape3D" parent="." unique_id=398334105]
+debug_color = Color(0.816, 0, 0.96, 1)
+
+[node name="highlight" type="MeshInstance3D" parent="." unique_id=2101404]
+unique_name_in_owner = true
+material_override = SubResource("ShaderMaterial_bte02")
+gi_mode = 0
+
+[node name="listen" type="AudioStreamPlayer3D" parent="." unique_id=405290094]
+unique_name_in_owner = true
+stream = ExtResource("5_hnbv1")
+attenuation_model = 2
+unit_size = 3.0
+max_db = -3.0
+autoplay = true
+max_distance = 18.0
+bus = &"snd"

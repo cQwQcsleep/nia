@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://bod557sgvm67q"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_t2op1"]
+[ext_resource type="Texture2D" uid="uid://cnar24rrmfjdv" path="res://texture/wallpaper/wallpaper_29.png" id="2_t2op1"]
+
+[resource]
+script = ExtResource("1_t2op1")
+name = "wallpaper_flowers_red"
+texture = ExtResource("2_t2op1")
+accent_colour = Color(0.96, 0.26879996, 0.26879996, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

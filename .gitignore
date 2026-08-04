@@ -1,0 +1,21 @@
+# Godot 导入缓存
+.godot/
+
+# GDRE 反编译字节码备份
+.autoconverted/
+
+# 恢复工具、原始产物与日志（不提交）
+tools/
+nop_src/
+nop.zip
+*.log
+
+# 构建产物
+build/
+*.apk
+*.aab
+
+# 系统文件
+Thumbs.db
+Desktop.ini
+.DS_Store

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://dmpnspijmtvde"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_vnuq2"]
+[ext_resource type="Texture2D" uid="uid://c4xw6abee53kr" path="res://texture/wallpaper/wallpaper_27.png" id="2_vnuq2"]
+
+[resource]
+script = ExtResource("1_vnuq2")
+name = "wallpaper_transparent"
+texture = ExtResource("2_vnuq2")
+accent_colour = Color(0.75, 0.6225, 0.67562497, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

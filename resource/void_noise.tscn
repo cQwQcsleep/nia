@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cs20jg06xcndg"]
+
+[ext_resource type="AudioStream" uid="uid://d37ii1n5312en" path="res://audio/amb/empty_void.ogg" id="1_mpenr"]
+
+[node name="void_noise" type="AudioStreamPlayer3D" unique_id=962599694]
+stream = ExtResource("1_mpenr")
+attenuation_model = 2
+unit_size = 8.0
+max_db = 0.0
+autoplay = true
+max_distance = 16.0
+panning_strength = 2.0
+bus = &"amb"

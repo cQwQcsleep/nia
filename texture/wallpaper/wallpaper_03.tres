@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://dbqjty71sm0l5"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_p5lxr"]
+[ext_resource type="Texture2D" uid="uid://btfv2mtjdu1xx" path="res://texture/wallpaper/wallpaper_03.png" id="2_p5lxr"]
+
+[resource]
+script = ExtResource("1_p5lxr")
+name = "wallpaper_snowy_path"
+texture = ExtResource("2_p5lxr")
+accent_colour = Color(0.4335, 0.43987498, 0.51, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

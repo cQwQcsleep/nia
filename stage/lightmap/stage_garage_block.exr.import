@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cvwp6tc0ryt8m"
+path.bptc="res://.godot/imported/stage_garage_block.exr-24fcc3df0f07a15b9ce5f4ff4f1e520f.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://stage/lightmap/stage_garage_block.exr"
+dest_files=["res://.godot/imported/stage_garage_block.exr-24fcc3df0f07a15b9ce5f4ff4f1e520f.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=true
+compress/lossy_quality=1.0
+compress/uastc_level=2
+compress/rdo_quality_loss=0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=2
+slices/vertical=2

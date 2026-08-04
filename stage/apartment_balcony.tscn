@@ -1,0 +1,429 @@
+[gd_scene format=3 uid="uid://fh0md8xsce6p"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_pjsds"]
+[ext_resource type="Shader" uid="uid://bopudhuh7r115" path="res://gdshader/weird_sky_clouds.gdshader" id="2_4gvlj"]
+[ext_resource type="PackedScene" uid="uid://ddkqv5qr7ujo8" path="res://stage/mesh/apartment_balcony.blend" id="2_ch42t"]
+[ext_resource type="LightmapGIData" uid="uid://yin0l0si538i" path="res://stage/lightmap/apartment_balcony.lmbake" id="2_dd2ln"]
+[ext_resource type="AudioStream" uid="uid://qjnfva5u3bqb" path="res://audio/music/se_box.ogg" id="2_uqvfp"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_5o6mx"]
+[ext_resource type="Texture2D" uid="uid://crjte7rlhhmow" path="res://texture/sky_apartment.png" id="3_62t57"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="4_7nafh"]
+[ext_resource type="Texture2D" uid="uid://dlohhmu7glu5k" path="res://texture/apartment_gate.png" id="4_cpvkj"]
+[ext_resource type="Texture2D" uid="uid://bqxdjs2mrxotl" path="res://texture/apartment_railing.png" id="4_gyj5d"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="8_n28qf"]
+[ext_resource type="Texture2D" uid="uid://jxl0sc7f1qmo" path="res://texture/antenna_02.png" id="9_2jf02"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="9_j3ese"]
+[ext_resource type="Texture2D" uid="uid://q7wao1e633mf" path="res://texture/apartment_light.png" id="9_kj3av"]
+[ext_resource type="Texture2D" uid="uid://c33cki0t6kjr0" path="res://texture/wires.png" id="9_rmyuh"]
+[ext_resource type="Texture2D" uid="uid://dkor50501mfp3" path="res://texture/apartment_light_em.png" id="10_1a0dm"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="11_1a0dm"]
+[ext_resource type="Texture2D" uid="uid://qd8efh7w5eke" path="res://texture/wire_01.png" id="12_18eu1"]
+[ext_resource type="Texture2D" uid="uid://cdqnuxblf5li3" path="res://texture/wire_02.png" id="13_jw4bi"]
+[ext_resource type="Texture2D" uid="uid://3y787v663ikp" path="res://texture/abandoned_planet.png" id="13_kdjjj"]
+[ext_resource type="AudioStream" uid="uid://bcf0yota14ntp" path="res://audio/amb/airflow.ogg" id="14_4gvlj"]
+[ext_resource type="PackedScene" uid="uid://bs0w8cag876q" path="res://stage/mesh/extra/death_cube.blend" id="15_rmyuh"]
+[ext_resource type="AudioStream" uid="uid://cpgik1sdwkntr" path="res://audio/amb/apartments_cityscape.ogg" id="16_66yti"]
+[ext_resource type="PackedScene" uid="uid://cxv3msarmgfpa" path="res://resource/particle_moth.tscn" id="24_ijp5h"]
+[ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="25_ado86"]
+
+[sub_resource type="Gradient" id="Gradient_4gvlj"]
+offsets = PackedFloat32Array(0.021604938, 0.7, 1)
+colors = PackedColorArray(0, 0, 0, 1, 1, 0.5, 0.5250001, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_rmyuh"]
+gradient = SubResource("Gradient_4gvlj")
+width = 64
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4gvlj"]
+noise_type = 3
+fractal_octaves = 4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_rmyuh"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_4gvlj")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt5hb"]
+shader = ExtResource("2_4gvlj")
+shader_parameter/source_panorama = ExtResource("3_62t57")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_rmyuh")
+shader_parameter/exposure = 1.0
+shader_parameter/cloud_scroll_speed = 0.04
+shader_parameter/cloud_scale = 4.0
+shader_parameter/cloud_alpha_threshold = 0.6
+shader_parameter/cloud_alpha_strength = 0.4
+shader_parameter/cloud_color = Color(0.678431, 0.662745, 0.584314, 1)
+shader_parameter/horizon_compression = 1.0
+
+[sub_resource type="Sky" id="Sky_kdjjj"]
+sky_material = SubResource("ShaderMaterial_tt5hb")
+
+[sub_resource type="Environment" id="Environment_ch42t"]
+background_mode = 2
+background_color = Color(0.56, 0.504, 0.504933, 1)
+sky = SubResource("Sky_kdjjj")
+reflected_light_source = 1
+tonemap_mode = 1
+tonemap_exposure = 0.2
+tonemap_white = 0.5
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.67, 0.654367, 0.5762, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = -1.0
+fog_height_density = 0.2
+fog_depth_begin = 4.0
+fog_depth_end = 128.0
+adjustment_enabled = true
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_rmyuh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n28qf"]
+resource_name = "gate"
+render_priority = 1
+transparency = 2
+alpha_scissor_threshold = 0.2
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_gyj5d")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gyj5d"]
+resource_name = "gate.001"
+transparency = 2
+alpha_scissor_threshold = 0.2
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("4_cpvkj")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18eu1"]
+resource_name = "light"
+albedo_texture = ExtResource("9_kj3av")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("10_1a0dm")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_18eu1"]
+render_priority = 1
+shader = ExtResource("11_1a0dm")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("12_18eu1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jw4bi"]
+render_priority = 1
+shader = ExtResource("11_1a0dm")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(-1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("13_jw4bi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0j6l7"]
+resource_name = "antenna.002"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("9_2jf02")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uqvfp"]
+render_priority = 1
+shader = ExtResource("11_1a0dm")
+shader_parameter/wind_strength = 0.2000000095
+shader_parameter/wind_speed = 1.10000005225
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("9_rmyuh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kdjjj"]
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("13_kdjjj")
+billboard_mode = 1
+billboard_keep_scale = true
+
+[node name="apartment_balcony" type="Node3D" unique_id=710325567 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_pjsds")
+stage_name = "world_apartment_balcony"
+_bloom = 0.7
+_extra_snd_bank = 1
+bgm = ExtResource("2_uqvfp")
+bgm_pitch = 0.7
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 3
+weather_height = 10
+respawn_y = -6
+_stage_light = Color(0.72, 0.54, 0.651, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=2060068803]
+environment = SubResource("Environment_ch42t")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=2120716469]
+visible = false
+supersampling = true
+supersampling_factor = 5.0
+bounces = 16
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.92, 0.4692, 0.4692, 1)
+generate_probes_subdiv = 0
+light_data = ExtResource("2_dd2ln")
+
+[node name="omni_light_3d" type="OmniLight3D" parent="lightmap_gi" unique_id=1733659584]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37584805, 0.56613207, -3)
+light_color = Color(1, 0.26, 0.26, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="omni_light_3d2" type="OmniLight3D" parent="lightmap_gi" unique_id=512655608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37584805, 0.56613207, -8)
+light_color = Color(1, 0.35866666, 0.26, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="omni_light_3d3" type="OmniLight3D" parent="lightmap_gi" unique_id=1435051896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37584805, 0.56613207, -13)
+light_color = Color(1, 0.6053333, 0.26, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="omni_light_3d4" type="OmniLight3D" parent="lightmap_gi" unique_id=541371881]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37584805, 0.56613207, -18)
+light_color = Color(1, 0.3, 0.3116665, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="omni_light_3d5" type="OmniLight3D" parent="lightmap_gi" unique_id=1701469914]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37584805, 0.56613207, -21.561983)
+light_color = Color(1, 0.47999996, 0.39999998, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="mid_light" type="OmniLight3D" parent="lightmap_gi" unique_id=1203119991]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.624152, 0.56613207, -21.561983)
+light_color = Color(1, 0.47999996, 0.39999998, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="omni_light_3d6" type="OmniLight3D" parent="lightmap_gi" unique_id=941090811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.624151, 0.56613207, -21.561983)
+light_color = Color(1, 0.26, 0.5436666, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="omni_light_3d7" type="OmniLight3D" parent="lightmap_gi" unique_id=1859760410]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.624151, 0.56613207, -21.561983)
+light_color = Color(1, 0.35866666, 0.26, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="lightmap_gi" unique_id=367701014]
+transform = Transform3D(-0.91096926, -0.11159316, -0.39709178, -0.35355338, 0.70710677, 0.6123724, 0.21244965, 0.6982456, -0.68360674, 0, 0, -27)
+light_color = Color(0.7, 0.25083333, 0.21000001, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="apartment_balcony" parent="." unique_id=1198646525 instance=ExtResource("2_ch42t")]
+
+[node name="railing" parent="apartment_balcony" index="0" unique_id=425246233]
+surface_material_override/1 = SubResource("StandardMaterial3D_n28qf")
+
+[node name="gate" parent="apartment_balcony" index="5" unique_id=68007463]
+surface_material_override/0 = SubResource("StandardMaterial3D_gyj5d")
+
+[node name="interactable" parent="apartment_balcony/gate" index="0" unique_id=1246911544 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+uninteractable = true
+
+[node name="light" parent="apartment_balcony" index="6" unique_id=970792986]
+material_override = SubResource("StandardMaterial3D_18eu1")
+
+[node name="wire" parent="apartment_balcony" index="10" unique_id=871749384]
+surface_material_override/0 = SubResource("ShaderMaterial_18eu1")
+surface_material_override/1 = SubResource("ShaderMaterial_jw4bi")
+
+[node name="building" parent="apartment_balcony" index="12" unique_id=2089469181]
+surface_material_override/5 = SubResource("StandardMaterial3D_0j6l7")
+
+[node name="wires" parent="apartment_balcony" index="15" unique_id=1461999370]
+surface_material_override/0 = SubResource("ShaderMaterial_uqvfp")
+
+[node name="reference_player" parent="apartment_balcony" index="25" unique_id=966927963]
+visible = false
+
+[node name="interactable" parent="apartment_balcony/door" parent_id_path=PackedInt32Array(1198646525, 1428835280) index="0" unique_id=1943882366 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+uninteractable = true
+
+[node name="interactable" parent="apartment_balcony/door_001" parent_id_path=PackedInt32Array(1198646525, 430055409) index="0" unique_id=101625135 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_002" parent_id_path=PackedInt32Array(1198646525, 1920389025) index="0" unique_id=743988598 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_003" parent_id_path=PackedInt32Array(1198646525, 1887449665) index="0" unique_id=1260454629 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_004" parent_id_path=PackedInt32Array(1198646525, 1902229978) index="0" unique_id=2066236835 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_005" parent_id_path=PackedInt32Array(1198646525, 1528302816) index="0" unique_id=2128623050 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_007" parent_id_path=PackedInt32Array(1198646525, 696845245) index="0" unique_id=404124296 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_008" parent_id_path=PackedInt32Array(1198646525, 888228141) index="0" unique_id=769749102 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="interactable" parent="apartment_balcony/door_009" parent_id_path=PackedInt32Array(1198646525, 1319639358) index="0" unique_id=486581853 instance=ExtResource("4_7nafh")]
+_to_stage = "uid://c85hiveh7xe8t"
+is_random = true
+
+[node name="base7" parent="apartment_balcony" index="39" unique_id=1693643021]
+visible = false
+
+[node name="entrance" type="Node3D" parent="." unique_id=439943301]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.496582, -0.9978369, -3.4545903)
+script = ExtResource("3_5o6mx")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="eye_watcher" parent="." unique_id=939095388 instance=ExtResource("8_n28qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 0, -5)
+
+[node name="eye_watcher2" parent="." unique_id=1344211450 instance=ExtResource("8_n28qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22, 3, 0)
+
+[node name="eye_watcher3" parent="." unique_id=798223468 instance=ExtResource("8_n28qf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13, -1, 12)
+
+[node name="distant_light" parent="." unique_id=307943593 instance=ExtResource("9_j3ese")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56, 27, -56.3963)
+
+[node name="distant_light3" parent="." unique_id=1579191983 instance=ExtResource("9_j3ese")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.971, 24.2594, -81.4415)
+_flicker = true
+
+[node name="distant_light4" parent="." unique_id=676569392 instance=ExtResource("9_j3ese")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.01155, 40.2594, -107.63089)
+
+[node name="distant_light2" parent="." unique_id=870849556 instance=ExtResource("9_j3ese")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.1296, 42.5199, 45.9457)
+
+[node name="abandoned_planet" type="Sprite3D" parent="." unique_id=1589152875]
+transform = Transform3D(1, 0, 0, 0, 1, -0.000383972, 0, 0.000383972, 1, 71.2336, 52.5775, -114.589)
+material_override = SubResource("StandardMaterial3D_kdjjj")
+pixel_size = 0.9
+texture = ExtResource("13_kdjjj")
+
+[node name="ac_amb" type="AudioStreamPlayer3D" parent="." unique_id=937448887]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.775863, 0.271786, -18.1171)
+stream = ExtResource("14_4gvlj")
+unit_size = 4.0
+max_db = -8.0
+pitch_scale = 0.9
+autoplay = true
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="ac_amb2" type="AudioStreamPlayer3D" parent="." unique_id=1250092056]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.8242, 0.271786, -20.5857)
+stream = ExtResource("14_4gvlj")
+unit_size = 4.0
+max_db = -8.0
+autoplay = true
+panning_strength = 0.5
+bus = &"amb"
+
+[node name="death_cube" parent="." unique_id=779918692 instance=ExtResource("15_rmyuh")]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, -0.408969, -0.99165, -0.933325)
+
+[node name="death_cube2" parent="." unique_id=1205311227 instance=ExtResource("15_rmyuh")]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 2.12644, -0.992536, -22.3568)
+
+[node name="death_cube4" parent="." unique_id=2071023229 instance=ExtResource("15_rmyuh")]
+transform = Transform3D(0.708776, 0.00125998, 0.705432, -0.00252744, 0.999997, 0.000753289, -0.705429, -0.00231686, 0.708777, -28.4188, -0.992536, -22.1962)
+
+[node name="death_cube3" parent="." unique_id=947076706 instance=ExtResource("15_rmyuh")]
+transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -7.73349, -0.00306246, -22.8584)
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=233717470]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -36)
+stream = ExtResource("16_66yti")
+attenuation_model = 2
+unit_size = 48.0
+max_db = -5.0
+autoplay = true
+panning_strength = 0.4
+bus = &"amb"
+
+[node name="particle_moth" parent="." unique_id=1882366214 instance=ExtResource("24_ijp5h")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 1.9299508, 1.5571733, -21.534252)
+
+[node name="particle_moth2" parent="." unique_id=984785434 instance=ExtResource("24_ijp5h")]
+transform = Transform3D(0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 0.99999994, -8.27478, 1.5571733, -21.534252)
+
+[node name="particle_moth3" parent="." unique_id=677506484 instance=ExtResource("24_ijp5h")]
+transform = Transform3D(0.99999994, 0, -5.9604645e-08, 0, 1, 0, 5.9604645e-08, 0, 0.99999994, -26.27478, 1.5571733, -21.534252)
+
+[node name="water_droplets" parent="." unique_id=868197220 instance=ExtResource("25_ado86")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.187193, 1.7378495, -20.606657)
+visibility_aabb = AABB(-0.09993003, -17.979845, -14.908916, 0.19983314, 17.979845, 29.829071)
+emission_box_extents = Vector3(0.1, 0, 15)
+
+[editable path="apartment_balcony"]

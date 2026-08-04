@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://2xx10u3qbxfs"]
+
+[ext_resource type="Texture2D" uid="uid://c1ybe03xn142p" path="res://texture/park_light.png" id="1_y66l2"]
+[ext_resource type="Texture2D" uid="uid://dnfogo4r52mfc" path="res://texture/park_light_em.png" id="2_xbmhi"]
+
+[resource]
+resource_name = "ceiling_light"
+cull_mode = 2
+albedo_texture = ExtResource("1_y66l2")
+emission_enabled = true
+emission_energy_multiplier = 0.4
+emission_texture = ExtResource("2_xbmhi")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}

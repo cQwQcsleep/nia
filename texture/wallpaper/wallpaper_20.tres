@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://d0h604hc2qrrq"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_bojx3"]
+[ext_resource type="Texture2D" uid="uid://c3f53i5k7pkgm" path="res://texture/wallpaper/wallpaper_20.png" id="2_bojx3"]
+
+[resource]
+script = ExtResource("1_bojx3")
+name = "wallpaper_blue_skies"
+texture = ExtResource("2_bojx3")
+accent_colour = Color(0.3254902, 0.49803922, 0.5921569, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

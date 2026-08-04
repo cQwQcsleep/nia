@@ -1,0 +1,231 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://cwr2k6cnwcbdm"
+path="res://.godot/imported/waterpark.blend-51cb53ee3d4e36194be9cbb0f6a541c3.scn"
+
+[deps]
+
+source_file="res://stage/mesh/waterpark.blend"
+dest_files=["res://.godot/imported/waterpark.blend-51cb53ee3d4e36194be9cbb0f6a541c3.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="waterpark"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"animations": {
+"Animation": {
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/keep_custom_tracks": false,
+"save_to_file/path": "",
+"settings/loop_mode": 1,
+"slices/amount": 0
+}
+},
+"meshes": {
+"paint_water_trigger": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"water_park_trigger": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"water_trigger": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:ball-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball-rigid/ball-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ball_001-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball_001-rigid/ball_001-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ball_002-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball_002-rigid/ball_002-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ball_003-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball_003-rigid/ball_003-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ball_004-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball_004-rigid/ball_004-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ball_005-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:ball_005-rigid/ball_005-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:ladder_003": {
+"physics/layer": 512
+},
+"PATH:ladder_004_001": {
+"physics/layer": 512
+},
+"PATH:lilypad-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad-rigid/lilypad-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:lilypad_001-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad_001-rigid/lilypad_001-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:lilypad_002-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad_002-rigid/lilypad_002-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:lilypad_003-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad_003-rigid/lilypad_003-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:lilypad_004-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad_004-rigid/lilypad_004-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:lilypad_005-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:lilypad_005-rigid/lilypad_005-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:log-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:log-rigid/log-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:noodle-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:noodle-rigid/noodle-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:noodle_001-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:noodle_001-rigid/noodle_001-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:noodle_002-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:noodle_002-rigid/noodle_002-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:noodle_003-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:noodle_003-rigid/noodle_003-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:noodle_004-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:noodle_004-rigid/noodle_004-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:paint_water": {
+"physics/layer": 16
+},
+"PATH:slide": {
+"physics/layer": 512
+},
+"PATH:swim_tube-rigid": {
+"node/script": Resource("uid://o7cds5xled23", "res://gdscript/moveable.gd")
+},
+"PATH:swim_tube-rigid/swim_tube-rigid": {
+"physics/body_type": 1,
+"physics/shape_type": 1
+},
+"PATH:water": {
+"physics/layer": 16
+},
+"PATH:water_park": {
+"physics/layer": 16
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

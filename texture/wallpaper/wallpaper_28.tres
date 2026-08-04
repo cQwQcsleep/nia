@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://s6jxd64gw0yi"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_fasuu"]
+[ext_resource type="Texture2D" uid="uid://3egprwjtpeul" path="res://texture/wallpaper/wallpaper_28.png" id="2_fasuu"]
+
+[resource]
+script = ExtResource("1_fasuu")
+name = "wallpaper_mars"
+texture = ExtResource("2_fasuu")
+accent_colour = Color(0.96, 0.49919996, 0.26879996, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

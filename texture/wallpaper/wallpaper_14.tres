@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://tvj3kbxf1ntn"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_ogeuv"]
+[ext_resource type="Texture2D" uid="uid://d3013u4g40m7g" path="res://texture/wallpaper/wallpaper_14.png" id="2_ogeuv"]
+
+[resource]
+script = ExtResource("1_ogeuv")
+name = "wallpaper_stairs"
+texture = ExtResource("2_ogeuv")
+accent_colour = Color(0.09411765, 0.28627452, 0.15686275, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

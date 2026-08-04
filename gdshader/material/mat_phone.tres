@@ -1,0 +1,39 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://yf5drv77kuna"]
+
+[ext_resource type="Texture2D" uid="uid://cno4kj5wg3au4" path="res://texture/phone.png" id="1_mb7vg"]
+[ext_resource type="Texture2D" uid="uid://b5m6t6738udu5" path="res://texture/phone_em.png" id="2_mb7vg"]
+[ext_resource type="Texture2D" uid="uid://brhu3dg4bpe5v" path="res://texture/phone_mt.png" id="3_82bs1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_82bs1"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.01
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "phone"
+next_pass = SubResource("StandardMaterial3D_82bs1")
+cull_mode = 2
+shading_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_mb7vg")
+metallic = 0.6
+metallic_specular = 0.2
+metallic_texture = ExtResource("3_82bs1")
+roughness = 0.8
+emission_energy_multiplier = 0.0
+emission_texture = ExtResource("2_mb7vg")
+rim_enabled = true
+refraction_scale = 0.53
+texture_filter = 5
+stencil_mode = 1
+stencil_flags = 2
+metadata/extras = {
+"mmd_material": {}
+}

@@ -1,0 +1,37 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://b182x87sgd83r"]
+
+[ext_resource type="Shader" uid="uid://bbwpp10sqkmwr" path="res://gdshader/screen.gdshader" id="1_dnyju"]
+[ext_resource type="Texture2D" uid="uid://dvh52c6s3ijhr" path="res://texture/cloud_0.png" id="1_t5y84"]
+[ext_resource type="Texture2D" uid="uid://44s8xfgvwqt" path="res://texture/cloud_1.png" id="2_dnyju"]
+[ext_resource type="Texture2D" uid="uid://dbd6282trtouy" path="res://texture/cloud_2.png" id="3_5x87v"]
+[ext_resource type="Texture2D" uid="uid://df3nq752rien1" path="res://texture/cloud_3.png" id="4_3yamt"]
+[ext_resource type="Texture2D" uid="uid://43ceetw5w7sn" path="res://texture/cloud_4.png" id="5_66qab"]
+[ext_resource type="Texture2D" uid="uid://qctegnfvmyhi" path="res://texture/cloud_5.png" id="6_q3rmm"]
+[ext_resource type="Texture2D" uid="uid://djiuvqqnhrkns" path="res://texture/cloud_6.png" id="7_d7x0l"]
+[ext_resource type="Texture2D" uid="uid://chkhesclj5l5x" path="res://texture/cloud_7.png" id="8_6ssmm"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_5x87v"]
+frames = 8
+speed_scale = 3.0
+frame_0/texture = ExtResource("1_t5y84")
+frame_1/texture = ExtResource("2_dnyju")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_5x87v")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("4_3yamt")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("5_66qab")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("6_q3rmm")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("7_d7x0l")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("8_6ssmm")
+frame_7/duration = 1.0
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_dnyju")
+shader_parameter/_texture = SubResource("AnimatedTexture_5x87v")
+shader_parameter/_emission = 0.8
+shader_parameter/_flicker_strength = 32.0

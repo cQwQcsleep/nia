@@ -1,0 +1,419 @@
+[gd_scene load_steps=35 format=3 uid="uid://bvfltcfqkts7f"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_msrgk"]
+[ext_resource type="LightmapGIData" uid="uid://bwr615cip8wtc" path="res://stage/lightmap/stage_constructs.lmbake" id="2_g5s16"]
+[ext_resource type="PackedScene" uid="uid://b60prj13cgnfy" path="res://stage/mesh/constructs.blend" id="2_gr2ti"]
+[ext_resource type="Texture2D" uid="uid://dl3oi3ebsiw86" path="res://texture/sky_night.png" id="2_m74od"]
+[ext_resource type="Texture2D" uid="uid://3af0pc6fx1ox" path="res://texture/plaster.png" id="4_tatil"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_niqut"]
+[ext_resource type="Texture2D" uid="uid://dvycl0wgyvnvo" path="res://texture/metal_grid_2.png" id="5_vwkjx"]
+[ext_resource type="Texture2D" uid="uid://ccja0i5vk8kp7" path="res://texture/water_tower.png" id="6_tohrw"]
+[ext_resource type="Texture2D" uid="uid://d0qwrliymad31" path="res://texture/metal_fence.png" id="7_usy88"]
+[ext_resource type="Texture2D" uid="uid://b03fvrqyhkaox" path="res://texture/dead_tree.png" id="8_r5hpw"]
+[ext_resource type="Texture2D" uid="uid://b4b34vx1meafi" path="res://texture/dead_tree_1.png" id="9_ytawi"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="10_eubhc"]
+[ext_resource type="Texture2D" uid="uid://chewiklmenhev" path="res://texture/chain.png" id="11_frn5i"]
+[ext_resource type="AudioStream" uid="uid://o6gdppnbod0g" path="res://audio/amb/suburban_night.ogg" id="12_8nfe5"]
+[ext_resource type="PackedScene" uid="uid://06ujuma48lj8" path="res://resource/pupil_watcher.tscn" id="13_g6p2h"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="16_02nhr"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8nfe5"]
+panorama = ExtResource("2_m74od")
+
+[sub_resource type="Sky" id="Sky_g6p2h"]
+sky_material = SubResource("PanoramaSkyMaterial_8nfe5")
+
+[sub_resource type="Environment" id="Environment_gr2ti"]
+background_mode = 2
+background_color = Color(1, 0.879735, 0.87994, 1)
+background_energy_multiplier = 0.3
+sky = SubResource("Sky_g6p2h")
+glow_enabled = true
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.143733, 0.0483068, 0.0865209, 1)
+fog_light_energy = 0.0
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 2.0
+fog_height_density = 0.4
+fog_depth_curve = 0.5
+fog_depth_begin = 2.0
+fog_depth_end = 74.0
+adjustment_enabled = true
+adjustment_saturation = 1.1
+
+[sub_resource type="Sky" id="Sky_frn5i"]
+sky_material = SubResource("PanoramaSkyMaterial_8nfe5")
+
+[sub_resource type="QuadMesh" id="QuadMesh_gr2ti"]
+size = Vector2(50, 50)
+orientation = 1
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g5s16"]
+data = PackedVector3Array(25, 0, 25, -25, 0, 25, 25, 0, -25, -25, 0, 25, -25, 0, -25, 25, 0, -25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_niqut"]
+resource_name = "wall"
+cull_mode = 2
+albedo_color = Color(0.91, 0.80444, 0.6461, 1)
+albedo_texture = ExtResource("4_tatil")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwkjx"]
+resource_name = "wall_brick"
+cull_mode = 2
+albedo_color = Color(0.71, 0.38411, 0.3266, 1)
+albedo_texture = ExtResource("4_tatil")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tatil"]
+data = PackedVector3Array(-4.125, -1.25, 5.775, -4.125, 2.15, 2.975, -4.125, 2.15, 5.775, -4.125, -1.25, 5.775, -4.125, -1.25, -4.675, -4.125, 2.15, 2.975, -4.125, -1.25, -4.675, -3.025, 2.15, 2.975, -4.125, 2.15, 2.975, -4.125, -1.25, -4.675, -3.025, -1.25, -4.675, -3.025, 2.15, 2.975, -4.125, 2.15, 2.975, -3.025, 2.15, 2.975, -3.025, 2.15, 5.775, -4.125, -2.25, -7.225, -3.025, -1.25, -4.675, -4.125, -1.25, -4.675, -4.125, 2.15, 2.975, -3.025, 2.15, 5.775, -4.125, 2.15, 5.775, -3.025, 2.15, 5.775, -4.125, 2.15, 10.775, -4.125, 2.15, 5.775, -3.025, 2.15, 5.775, -3.025, 2.15, 10.775, -4.125, 2.15, 10.775, -4.125, -2.25, -7.225, -3.025, -2.25, -7.225, -3.025, -1.25, -4.675, -4.125, -2.25, -7.225, -3.025, -2.25, -14.225, -3.025, -2.25, -7.225, -4.125, -2.25, -7.225, -4.125, -2.25, -14.225, -3.025, -2.25, -14.225, -4.125, -2.25, 5.775, -4.125, -1.25, -4.675, -4.125, -1.25, 5.775, -4.125, -2.25, 5.775, -4.125, -2.25, -7.225, -4.125, -1.25, -4.675, 2.975, -2.25, -14.225, 8.975, -0.1582, -7.225, 2.975, -2.25, -7.225, 2.975, -2.25, -14.225, 8.975, 0.0747, -14.225, 8.975, -0.1582, -7.225, 2.975, -1.25, -4.675, 8.975, 2.15, 2.975, -0.8913, 2.2277, 2.975, 2.975, -1.25, -4.675, 8.975, 0.8418, -4.675, 8.975, 2.15, 2.975, -0.8913, 2.2277, 2.975, 8.975, 2.15, 5.775, 2.975, 2.15, 5.775, -0.8913, 2.2277, 2.975, 8.975, 2.15, 2.975, 8.975, 2.15, 5.775, 8.975, 2.15, 5.775, 2.975, 1.8654, 10.775, 2.975, 2.15, 5.775, 8.975, 2.15, 5.775, 8.975, 2.5968, 10.775, 2.975, 1.8654, 10.775, -3.025, 2.15, 2.975, -0.8913, 2.2277, 2.975, 2.975, 2.15, 5.775, -3.025, 2.15, 2.975, 2.975, 2.15, 5.775, -3.025, 2.15, 5.775, -3.025, -1.25, -4.675, -0.8913, 2.2277, 2.975, -3.025, 2.15, 2.975, -3.025, -1.25, -4.675, 2.975, -1.25, -4.675, -0.8913, 2.2277, 2.975, 2.975, 2.15, 5.775, -3.025, 2.15, 10.775, -3.025, 2.15, 5.775, 2.975, 2.15, 5.775, 2.975, 1.8654, 10.775, -3.025, 2.15, 10.775, 2.975, -2.25, -7.225, 8.975, 0.8418, -4.675, 2.975, -1.25, -4.675, 2.975, -2.25, -7.225, 8.975, -0.1582, -7.225, 8.975, 0.8418, -4.675, -3.025, -2.25, -7.225, 2.975, -1.25, -4.675, -3.025, -1.25, -4.675, -3.025, -2.25, -7.225, 2.975, -2.25, -7.225, 2.975, -1.25, -4.675, -3.025, -2.25, -14.225, 2.975, -2.25, -7.225, -3.025, -2.25, -7.225, -3.025, -2.25, -14.225, 2.975, -2.25, -14.225, 2.975, -2.25, -7.225)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tohrw"]
+resource_name = "gutter"
+transparency = 2
+alpha_scissor_threshold = 0.2
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("5_vwkjx")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_usy88"]
+resource_name = "water_tower"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("6_tohrw")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r5hpw"]
+resource_name = "metal_fence"
+transparency = 2
+alpha_scissor_threshold = 0.2
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("7_usy88")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ytawi"]
+resource_name = "dead_tree"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("8_r5hpw")
+roughness = 0.5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02nhr"]
+render_priority = 0
+shader = ExtResource("10_eubhc")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/tex = ExtResource("9_ytawi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eubhc"]
+resource_name = "swing_chain"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("11_frn5i")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="SphereMesh" id="SphereMesh_niqut"]
+
+[sub_resource type="Shader" id="Shader_g5s16"]
+code = "shader_type spatial;
+render_mode unshaded;
+uniform sampler2D source_panorama : filter_linear, source_color, hint_default_black;
+uniform float distortion_amount : hint_range(0.0, 2.0) = 0.0;
+
+float rand(vec3 co) {
+    return fract(sin(dot(co ,vec3(12.9898,78.233,45.164))) * 43758.5453);
+}
+
+void vertex() {
+    float amount = distortion_amount;
+
+    // random offset per vertex
+    vec3 offset;
+    offset.x = rand(VERTEX + vec3(1.0)) - 0.5;
+    offset.y = rand(VERTEX + vec3(2.0)) - 0.5;
+    offset.z = rand(VERTEX + vec3(3.0)) - 0.5;
+
+    VERTEX += offset * amount;
+}
+void fragment() {
+	ALBEDO = texture(source_panorama, UV).rgb;
+	ALPHA = texture(source_panorama, UV).a;
+	}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwkjx"]
+render_priority = 0
+shader = SubResource("Shader_g5s16")
+shader_parameter/distortion_amount = 0.0
+
+[node name="stage_constructs" type="Node3D" node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_msrgk")
+stage_name = "Grassy Constructs"
+_extra_snd_bank = 1
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.625093, 0.478844, 0.52596, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_gr2ti")
+
+[node name="lightmap_gi" type="LightmapGI" parent="."]
+quality = 2
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.2
+environment_mode = 3
+environment_custom_sky = SubResource("Sky_frn5i")
+environment_custom_color = Color(0.57, 0.3477, 0.50331, 1)
+environment_custom_energy = 0.7
+light_data = ExtResource("2_g5s16")
+
+[node name="grass" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96708, 3.93178, -14.9861)
+light_color = Color(0.442, 0.52, 0, 1)
+light_energy = 1.8
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 12.0
+omni_attenuation = 1.2
+
+[node name="grass2" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65963, 4.93178, -9.62305)
+light_color = Color(0.277275, 0.45, 0.2295, 1)
+light_energy = 1.8
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 15.0
+omni_attenuation = 1.2
+
+[node name="grass3" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.96708, 6.93178, -1.62305)
+light_color = Color(0.1763, 0.43, 0.282008, 1)
+light_energy = 1.8
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 15.0
+omni_attenuation = 1.2
+
+[node name="big_grass" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.3404, 4.93178, -9.62305)
+light_color = Color(0.112667, 0.52, 0, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.2
+
+[node name="big_grass2" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3252, 4.93178, -19.6231)
+light_color = Color(0.345478, 0.40833, 1.92523e-07, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.2
+
+[node name="big_grass3" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3404, 4.93178, 6.37695)
+light_color = Color(0.172963, 0.335144, 0.128191, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.2
+
+[node name="big_grass4" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3404, 4.93178, 2.37695)
+light_color = Color(0.388565, 0.311232, 0.0147554, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.2
+
+[node name="big_grass5" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.3404, 4.93178, 15.377)
+light_color = Color(0.388565, 0.311232, 0.0147554, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.2
+
+[node name="brick" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.03292, 1.93178, 1.37695)
+light_color = Color(0.575069, 0.258453, 0.248279, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 36.0
+omni_attenuation = 1.4
+
+[node name="brick2" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.03292, 1.93178, 5.37695)
+light_color = Color(0.58, 0.34858, 0.2494, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 36.0
+omni_attenuation = 1.4
+
+[node name="brick3" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03292, 1.93178, 12.3769)
+light_color = Color(0.368856, 0.0895186, 0.11817, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 36.0
+omni_attenuation = 1.4
+
+[node name="brick4" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.25706, 2.0529, 11.0843)
+light_color = Color(0.56, 0.4536, 0.2408, 1)
+light_energy = 0.2
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 36.0
+omni_attenuation = 1.4
+
+[node name="ground" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.53258, 1.96301, -11.906)
+light_color = Color(0.29, 0.2494, 0.2088, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.2
+
+[node name="ground2" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.53258, 1.96301, -7.90603)
+light_color = Color(0.2494, 0.2088, 0.29, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.2
+
+[node name="ground4" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.53258, 1.96301, -15.906)
+light_color = Color(0.2494, 0.2088, 0.29, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.2
+
+[node name="ground3" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.53258, 1.96301, -4.90603)
+light_color = Color(0.29, 0.219627, 0.2088, 1)
+light_energy = 3.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+omni_attenuation = 1.2
+
+[node name="ground5" type="OmniLight3D" parent="lightmap_gi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.19708, 1.96301, 5.09397)
+light_color = Color(0.29, 0.219627, 0.2088, 1)
+light_energy = 2.0
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 32.0
+omni_attenuation = 1.4
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="."]
+visible = false
+mesh = SubResource("QuadMesh_gr2ti")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh_instance_3d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh_instance_3d/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_g5s16")
+
+[node name="constructs" parent="." instance=ExtResource("2_gr2ti")]
+
+[node name="hill" parent="constructs" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_niqut")
+surface_material_override/1 = SubResource("StandardMaterial3D_vwkjx")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="constructs/hill" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="constructs/hill/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_tatil")
+
+[node name="inner_outer_wall" parent="constructs" index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_niqut")
+surface_material_override/1 = SubResource("StandardMaterial3D_vwkjx")
+
+[node name="ground" parent="constructs" index="5"]
+surface_material_override/1 = SubResource("StandardMaterial3D_tohrw")
+
+[node name="water_tower" parent="constructs" index="8"]
+surface_material_override/0 = SubResource("StandardMaterial3D_usy88")
+
+[node name="metal_fence" parent="constructs" index="10"]
+surface_material_override/0 = SubResource("StandardMaterial3D_r5hpw")
+
+[node name="dead_trees" parent="constructs" index="11"]
+surface_material_override/0 = SubResource("StandardMaterial3D_ytawi")
+
+[node name="dum_tree" parent="constructs" index="14"]
+surface_material_override/0 = SubResource("ShaderMaterial_02nhr")
+
+[node name="swing_seat" parent="constructs" index="16"]
+surface_material_override/1 = SubResource("StandardMaterial3D_eubhc")
+
+[node name="mesh_instance_3d2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+mesh = SubResource("SphereMesh_niqut")
+surface_material_override/0 = SubResource("ShaderMaterial_vwkjx")
+
+[node name="entrance" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0.0212644, 16)
+script = ExtResource("5_niqut")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="reflection_probe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.28607, 5.09176, -4.12439)
+size = Vector3(32.2274, 14.1338, 42.0945)
+box_projection = true
+ambient_mode = 0
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32, 13, -21)
+stream = ExtResource("12_8nfe5")
+unit_size = 40.0
+autoplay = true
+panning_strength = 0.4
+bus = &"amb"
+
+[node name="pupil_watcher" parent="." instance=ExtResource("13_g6p2h")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13, 9, -32)
+
+[node name="particle_bird" parent="." instance=ExtResource("16_02nhr")]
+
+[editable path="constructs"]

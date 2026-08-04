@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d0m4opu8a3k7a"]
+
+[ext_resource type="Texture2D" uid="uid://cwbm354xxytyu" path="res://texture/epilogue/window_corners.png" id="1_4t3cb"]
+
+[resource]
+resource_name = "window_corner"
+render_priority = -1
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_4t3cb")
+texture_filter = 5
+stencil_flags = 2

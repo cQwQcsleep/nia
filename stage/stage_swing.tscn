@@ -1,0 +1,649 @@
+[gd_scene format=3 uid="uid://cwbfwux0p5ib5"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_h3nm0"]
+[ext_resource type="LightmapGIData" uid="uid://dbtlmckwjqsph" path="res://stage/lightmap/stage_swing.lmbake" id="2_66qu4"]
+[ext_resource type="AudioStream" uid="uid://ba7txguri8kre" path="res://audio/music/se_petal.ogg" id="2_cijv2"]
+[ext_resource type="PackedScene" uid="uid://djmxygamgxhw7" path="res://stage/mesh/swing.blend" id="2_ndt8q"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="4_0m3ah"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_i4vyd"]
+[ext_resource type="Texture2D" uid="uid://b2g0hngoy01md" path="res://texture/hedge.png" id="5_fen6r"]
+[ext_resource type="Texture2D" uid="uid://da5gu5qgw3mbw" path="res://texture/chain_01.png" id="5_umake"]
+[ext_resource type="Texture2D" uid="uid://dd4w1v4jjosm" path="res://texture/tulip_01.png" id="5_wef1q"]
+[ext_resource type="Texture2D" uid="uid://th7typ6ewdji" path="res://texture/ivy_05.png" id="7_mb5u5"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="7_tt33g"]
+[ext_resource type="Texture2D" uid="uid://d0y80mnl05tcs" path="res://texture/bush_00.png" id="8_j8dl4"]
+[ext_resource type="Texture2D" uid="uid://bf74bi2r5fk5e" path="res://texture/tulip.png" id="8_jwqc1"]
+[ext_resource type="Texture2D" uid="uid://cdk8dqxioalgr" path="res://texture/ivy_00.png" id="8_r7xp0"]
+[ext_resource type="Texture2D" uid="uid://4pv8yl6ixwoo" path="res://texture/grass_10.png" id="8_xfmj6"]
+[ext_resource type="Texture2D" uid="uid://btlml433l54i4" path="res://texture/willow.png" id="9_rst6j"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="10_0pkwv"]
+[ext_resource type="Texture2D" uid="uid://c33cki0t6kjr0" path="res://texture/wires.png" id="10_6uwn2"]
+[ext_resource type="Texture2D" uid="uid://ckp8ypn625t6c" path="res://texture/willow_01.png" id="10_rg3ta"]
+[ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="11_h4ash"]
+[ext_resource type="Texture2D" uid="uid://byfgraxfx2tqg" path="res://texture/water_1.png" id="12_aqlbv"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="12_j8dl4"]
+[ext_resource type="Texture2D" uid="uid://cg7njhok4fba1" path="res://texture/bush_01.png" id="12_xv773"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="13_4eha8"]
+[ext_resource type="Texture2D" uid="uid://bewc820u84uxn" path="res://texture/light_02.png" id="15_6a40o"]
+[ext_resource type="Texture2D" uid="uid://c6b8f5tgrr01p" path="res://texture/distant_lights.png" id="17_h4ash"]
+[ext_resource type="Texture2D" uid="uid://clnu0tc5l747v" path="res://texture/dead_tree_06.png" id="17_ia3es"]
+[ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="19_6gulx"]
+[ext_resource type="Texture2D" uid="uid://c1lmo4sp6bts2" path="res://texture/shadow_swing.png" id="20_xjywc"]
+[ext_resource type="Script" uid="uid://feckn7f3pmud" path="res://addons/decal_compatibility/decal_compatibility.gd" id="21_v5xv0"]
+[ext_resource type="AudioStream" uid="uid://b2wwwobqqfpch" path="res://audio/amb/forest_night_01.ogg" id="22_xjywc"]
+[ext_resource type="AudioStream" uid="uid://38mxjojbylv8" path="res://audio/amb/city_skyline.ogg" id="23_v5xv0"]
+[ext_resource type="Texture2D" uid="uid://csatk03oo1klu" path="res://texture/curtain.png" id="24_rg3ta"]
+[ext_resource type="Texture2D" uid="uid://n4iybwxgdxcw" path="res://texture/tulip_bush.png" id="25_cijv2"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="25_wef1q"]
+[ext_resource type="Shader" uid="uid://bp6sw1dxh0phf" path="res://gdshader/curtain_sway.gdshader" id="25_x3is8"]
+[ext_resource type="Texture2D" uid="uid://bxwcoqw21rdii" path="res://texture/treeline_07.png" id="26_ixbg2"]
+[ext_resource type="Texture2D" uid="uid://bmqs5k32axpbu" path="res://texture/radio_tower.png" id="27_f76xy"]
+[ext_resource type="PackedScene" uid="uid://bs0w8cag876q" path="res://stage/mesh/extra/death_cube.blend" id="27_nxclp"]
+[ext_resource type="Texture2D" uid="uid://xwriaybjyasq" path="res://texture/fence_08.png" id="28_5i2m5"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="28_lfm8x"]
+[ext_resource type="Texture2D" uid="uid://djtjn3l4eke3r" path="res://texture/red_mond_01.png" id="28_t5ice"]
+[ext_resource type="Texture2D" uid="uid://pd74q4687m7a" path="res://texture/grass_09.png" id="29_d65q4"]
+[ext_resource type="Texture2D" uid="uid://db05qykvgx6dq" path="res://texture/tree_20.png" id="33_enlfj"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="37_ixbg2"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="37_t5ice"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="46_enlfj"]
+
+[sub_resource type="Gradient" id="Gradient_0m3ah"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.015432099, 0.3, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.325875, 0.2475, 0.33, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_y1l7x"]
+gradient = SubResource("Gradient_0m3ah")
+width = 64
+
+[sub_resource type="Environment" id="Environment_h3nm0"]
+background_mode = 1
+background_color = Color(0.46750003, 0.5694999, 0.85, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.6
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.44000003, 0.49999997, 0.8, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height_density = 0.2
+fog_depth_begin = 8.0
+fog_depth_end = 128.0
+adjustment_enabled = true
+adjustment_brightness = 0.7
+adjustment_contrast = 0.75
+adjustment_saturation = 1.22
+adjustment_color_correction = SubResource("GradientTexture1D_y1l7x")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_enlfj"]
+load_path = "res://.godot/imported/grass_09.png-09891ee344a427f666c76ad7ffdda332.s3tc.ctex"
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cijv2"]
+resource_name = "grass"
+cull_mode = 2
+albedo_texture = ExtResource("29_d65q4")
+emission_enabled = true
+emission_energy_multiplier = 0.5
+emission_texture = SubResource("CompressedTexture2D_enlfj")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r7xp0"]
+render_priority = 1
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_speed = 3.0000001425
+shader_parameter/wind_direction = Vector3(-1, 1, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("7_mb5u5")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2hxvi"]
+noise_type = 3
+frequency = 0.02
+fractal_gain = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_pymsx"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_2hxvi")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tt33g"]
+render_priority = 2
+shader = ExtResource("4_i4vyd")
+shader_parameter/texture_albedo = ExtResource("5_fen6r")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_pymsx")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.400000019
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uohrp"]
+render_priority = 1
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.0400000019
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("8_r7xp0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3is8"]
+render_priority = 3
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.0400000019
+shader_parameter/wind_speed = 3.0000001425
+shader_parameter/wind_direction = Vector3(1, 1, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("9_rst6j")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t5ice"]
+render_priority = 2
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.0400000019
+shader_parameter/wind_speed = 1.6000000760000002
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("10_rg3ta")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xv773"]
+render_priority = 4
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.030000001425
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.3
+shader_parameter/tex = ExtResource("8_xfmj6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4eha8"]
+render_priority = 0
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 1.4000000665
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("8_j8dl4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j8dl4"]
+render_priority = 3
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("8_jwqc1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5xv0"]
+render_priority = 1
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 1, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("10_6uwn2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mu5yk"]
+render_priority = 3
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.050000002375
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(-1, 0, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("12_xv773")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6a40o"]
+render_priority = 0
+shader = ExtResource("10_0pkwv")
+shader_parameter/albedo = Color(0.558489, 0.611011, 0.901914, 1)
+shader_parameter/water_emission_strength = 0.0
+shader_parameter/water_texture1 = ExtResource("11_h4ash")
+shader_parameter/water_texture2 = ExtResource("12_aqlbv")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.1
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.7
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqlbv"]
+render_priority = -5
+transparency = 1
+blend_mode = 1
+cull_mode = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.588235)
+albedo_texture = ExtResource("17_h4ash")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("17_h4ash")
+texture_filter = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6a40o"]
+render_priority = -5
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("15_6a40o")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_aqlbv"]
+
+[sub_resource type="Gradient" id="Gradient_aqlbv"]
+offsets = PackedFloat32Array(0, 0.3, 0.551282, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0.392157, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_6a40o"]
+offsets = PackedFloat32Array(0.4, 0.6)
+colors = PackedColorArray(1, 0.425787, 0.357085, 1, 1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82chw"]
+render_priority = 2
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("25_cijv2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxclp"]
+render_priority = 0
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.1
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("17_ia3es")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mb5u5"]
+resource_name = "swing_chain"
+render_priority = 4
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_umake")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ixbg2"]
+render_priority = 1
+shader = ExtResource("25_x3is8")
+shader_parameter/tex = ExtResource("24_rg3ta")
+shader_parameter/alpha = 0.0
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.1
+shader_parameter/sway_strength_z = 0.06
+shader_parameter/sway_speed_x = 2.0
+shader_parameter/sway_speed_z = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_enlfj"]
+resource_name = "fence_trans"
+render_priority = 4
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("28_5i2m5")
+texture_filter = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lfm8x"]
+render_priority = 0
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 1.0000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("26_ixbg2")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lfm8x"]
+resource_name = "radio_tower"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.3137255)
+albedo_texture = ExtResource("27_f76xy")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_d65q4"]
+noise_type = 2
+frequency = 0.1
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_d65q4"]
+width = 64
+height = 64
+noise = SubResource("FastNoiseLite_d65q4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4ugfk"]
+render_priority = 3
+shader = ExtResource("4_i4vyd")
+shader_parameter/texture_albedo = ExtResource("29_d65q4")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_d65q4")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.400000019
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cijv2"]
+render_priority = -1
+shader = ExtResource("7_tt33g")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 1, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("33_enlfj")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fen6r"]
+noise_type = 2
+frequency = 0.02
+fractal_gain = 3.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2hxvi"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_fen6r")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4vyd"]
+render_priority = 4
+shader = ExtResource("4_i4vyd")
+shader_parameter/texture_albedo = ExtResource("5_wef1q")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_2hxvi")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 1.0
+shader_parameter/mask_scale = 0.03
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2hxvi"]
+render_priority = -5
+transparency = 1
+disable_ambient_light = true
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.5882353)
+albedo_texture = ExtResource("28_t5ice")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = ExtResource("28_t5ice")
+billboard_mode = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6uwn2"]
+render_priority = 0
+shader = ExtResource("19_6gulx")
+shader_parameter/albedo = ExtResource("20_xjywc")
+shader_parameter/modulate = Color(1, 1, 1, 1)
+shader_parameter/albedo_mix = 0.8
+shader_parameter/scale_mod = Vector3(0.33333334, 1, 0.25)
+shader_parameter/cube_half_size = Vector3(1.5, 0.5, 2)
+shader_parameter/enable_y_fade = true
+shader_parameter/fade_start = 0.3
+shader_parameter/fade_end = 0.7
+shader_parameter/fade_power = 1.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_wef1q"]
+material = SubResource("ShaderMaterial_6uwn2")
+size = Vector3(3, 1, 4)
+
+[node name="stage_swing" type="Node3D" unique_id=1234696078 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_h3nm0")
+stage_name = "world_swing"
+_bloom = 0.5
+_extra_snd_bank = 1
+bgm = ExtResource("2_cijv2")
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.9, 0.747, 0.747, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=2104491342]
+environment = SubResource("Environment_h3nm0")
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=738078732]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.811765, 0.701961, 0.996078, 1)
+environment_custom_energy = 0.8
+light_data = ExtResource("2_66qu4")
+
+[node name="moon_light" type="OmniLight3D" parent="lightmap_gi" unique_id=253896958]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.0729, 12, 4.06657)
+light_color = Color(0.482353, 0.164706, 0.305882, 1)
+light_energy = 1.2
+light_bake_mode = 1
+omni_range = 42.0
+omni_attenuation = 0.2
+
+[node name="beginning_light" type="OmniLight3D" parent="lightmap_gi" unique_id=373001155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 3, 0)
+light_color = Color(0.601333, 0.54, 1, 1)
+light_bake_mode = 1
+omni_range = 12.0
+
+[node name="house_light" type="OmniLight3D" parent="lightmap_gi" unique_id=1362371393]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 3, -6)
+light_color = Color(1, 0.54, 0.54, 1)
+light_bake_mode = 1
+omni_range = 12.0
+
+[node name="tree_light" type="OmniLight3D" parent="lightmap_gi" unique_id=52578056]
+transform = Transform3D(0.999993, 0, -0.00375245, 0, 1, 0, 0.00375245, 0, 0.999993, -3.95249, 6.41655, 0.258571)
+light_color = Color(0.32, 1, 0.444667, 1)
+light_bake_mode = 1
+omni_range = 12.0
+
+[node name="abandon_house_light" type="OmniLight3D" parent="lightmap_gi" unique_id=1516938542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5, 11)
+light_color = Color(1, 0.37, 0.3805, 1)
+light_bake_mode = 1
+omni_range = 16.0
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="lightmap_gi" unique_id=120668460]
+transform = Transform3D(0.49580505, 0.54132575, -0.67907566, -0.064632006, 0.80278665, 0.5927532, 0.86602545, -0.24999999, 0.43301263, -3.4737215, 6.5881615, 0)
+light_color = Color(0.48235294, 0.16470589, 0.30588236, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="swing" parent="." unique_id=1555647376 instance=ExtResource("2_ndt8q")]
+
+[node name="ground" parent="swing" index="0" unique_id=922203935]
+surface_material_override/0 = SubResource("StandardMaterial3D_cijv2")
+
+[node name="swing_bar" parent="swing" index="1" unique_id=1229525610]
+surface_material_override/1 = SubResource("ShaderMaterial_r7xp0")
+
+[node name="hedge" parent="swing" index="2" unique_id=382251634]
+surface_material_override/1 = SubResource("ShaderMaterial_tt33g")
+
+[node name="tree" parent="swing" index="4" unique_id=329603592]
+surface_material_override/1 = SubResource("ShaderMaterial_uohrp")
+surface_material_override/2 = SubResource("ShaderMaterial_x3is8")
+surface_material_override/3 = SubResource("ShaderMaterial_t5ice")
+
+[node name="grasses" parent="swing" index="6" unique_id=664293766]
+material_override = SubResource("ShaderMaterial_xv773")
+
+[node name="bush" parent="swing" index="7" unique_id=634043203]
+surface_material_override/0 = SubResource("ShaderMaterial_4eha8")
+
+[node name="tulip" parent="swing" index="10" unique_id=221551855]
+surface_material_override/0 = SubResource("ShaderMaterial_j8dl4")
+
+[node name="wires" parent="swing" index="11" unique_id=1927958789]
+surface_material_override/0 = SubResource("ShaderMaterial_v5xv0")
+
+[node name="bush_001" parent="swing" index="12" unique_id=1451578396]
+surface_material_override/0 = SubResource("ShaderMaterial_mu5yk")
+
+[node name="water" parent="swing" index="13" unique_id=100248603]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10099, 0, -0.0340786)
+surface_material_override/0 = SubResource("ShaderMaterial_6a40o")
+
+[node name="the_city" parent="swing" index="17" unique_id=1767225781]
+surface_material_override/0 = SubResource("StandardMaterial3D_aqlbv")
+
+[node name="cars" type="CPUParticles3D" parent="swing/the_city" index="0" unique_id=1452258593]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7, -113)
+material_override = SubResource("StandardMaterial3D_6a40o")
+amount = 12
+lifetime = 15.0
+preprocess = 10.0
+mesh = SubResource("QuadMesh_aqlbv")
+emission_shape = 3
+emission_box_extents = Vector3(3, 3, 3)
+gravity = Vector3(0, 0, 0.1)
+linear_accel_max = 5.0
+scale_amount_min = 2.0
+scale_amount_max = 5.0
+color_ramp = SubResource("Gradient_aqlbv")
+color_initial_ramp = SubResource("Gradient_6a40o")
+
+[node name="city_ambience" type="AudioStreamPlayer3D" parent="swing/the_city" index="1" unique_id=1583034831]
+stream = ExtResource("23_v5xv0")
+unit_size = 78.0
+autoplay = true
+panning_strength = 1.4
+bus = &"amb"
+
+[node name="tulip_bush" parent="swing" index="19" unique_id=627186778]
+surface_material_override/0 = SubResource("ShaderMaterial_82chw")
+
+[node name="dead_tree" parent="swing" index="20" unique_id=1760921086]
+surface_material_override/0 = SubResource("ShaderMaterial_nxclp")
+
+[node name="swing_seat-rigid" parent="swing" index="21" unique_id=1987891340]
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+center_of_mass_mode = 1
+inertia = Vector3(0, 0, 5)
+type = 2
+_can_move = true
+
+[node name="swing_chain" parent="swing/swing_seat-rigid" index="0" unique_id=129082266]
+surface_material_override/0 = SubResource("StandardMaterial3D_mb5u5")
+
+[node name="curtain" parent="swing" index="23" unique_id=259880882]
+surface_material_override/0 = SubResource("ShaderMaterial_ixbg2")
+
+[node name="fence" parent="swing" index="24" unique_id=1318779883]
+surface_material_override/0 = SubResource("StandardMaterial3D_enlfj")
+
+[node name="treeline" parent="swing" index="25" unique_id=133252471]
+surface_material_override/0 = SubResource("ShaderMaterial_lfm8x")
+
+[node name="radio_tower_001" parent="swing" index="26" unique_id=390450821]
+surface_material_override/0 = SubResource("StandardMaterial3D_lfm8x")
+
+[node name="distant_light" parent="swing/radio_tower_001" index="0" unique_id=676569392 instance=ExtResource("28_lfm8x")]
+transform = Transform3D(1, 0, -1.4901161e-08, 0, 1, 0, 1.4901161e-08, 0, 1, -0.6191559, 55, -1.9064026)
+
+[node name="ground_layer" parent="swing" index="27" unique_id=358195015]
+material_override = SubResource("ShaderMaterial_4ugfk")
+
+[node name="trees" parent="swing" index="28" unique_id=873860028]
+surface_material_override/1 = SubResource("ShaderMaterial_cijv2")
+
+[node name="ground_layer_001" parent="swing" index="29" unique_id=1103662076]
+material_override = SubResource("ShaderMaterial_4ugfk")
+
+[node name="ground_layer_002" parent="swing" index="30" unique_id=21643069]
+material_override = SubResource("ShaderMaterial_4ugfk")
+material_overlay = SubResource("ShaderMaterial_i4vyd")
+
+[node name="StaticBody3D" parent="swing/ground_layer_002" index="0" unique_id=1597124083]
+collision_layer = 16
+
+[node name="entrance" type="Node3D" parent="." unique_id=228026243]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 7, 0.0648286, 0)
+script = ExtResource("4_0m3ah")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="moon" type="Sprite3D" parent="." unique_id=154213093]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -141, 61, 22.7451)
+material_override = SubResource("StandardMaterial3D_2hxvi")
+extra_cull_margin = 5.0
+pixel_size = 0.15
+texture = ExtResource("28_t5ice")
+
+[node name="particle_wind" parent="." unique_id=1641133297 instance=ExtResource("12_j8dl4")]
+
+[node name="wind" parent="particle_wind" index="1"]
+color = Color(1, 1, 1, 0.784314)
+
+[node name="particle_leaf" parent="." unique_id=1040626395 instance=ExtResource("13_4eha8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 14.3009, 0)
+amount = 64
+color = Color(0.26049, 0.38, 0.2394, 0.9411765)
+_max_particle = 64
+
+[node name="particle_leaf2" parent="." unique_id=1923364419 instance=ExtResource("13_4eha8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 16.3009, 0)
+amount = 48
+gravity = Vector3(1, -1, 0)
+color = Color(0.26049, 0.38, 0.2394, 0.9411765)
+_max_particle = 48
+
+[node name="decal_compatibility" type="MeshInstance3D" parent="." unique_id=860912043]
+transform = Transform3D(2.98023e-08, 0, 1, 0, 1, 0, -1, 0, 2.98023e-08, -2.2775722, -0.041358948, -0.61657524)
+cast_shadow = 0
+gi_lightmap_scale = 0
+mesh = SubResource("BoxMesh_wef1q")
+Skeleton = null
+script = ExtResource("21_v5xv0")
+size = Vector3(3, 1, 4)
+texture = ExtResource("20_xjywc")
+albedo_mix = 0.8
+metadata/_custom_type_script = "uid://feckn7f3pmud"
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=715237562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+stream = ExtResource("22_xjywc")
+unit_size = 48.0
+max_db = -3.0
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="eye_watcher" parent="." unique_id=1012859374 instance=ExtResource("25_wef1q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 12, -13)
+
+[node name="death_cube" parent="." unique_id=1941205409 instance=ExtResource("27_nxclp")]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 4.95327, 0.0671493, 3.40704)
+
+[node name="death_cube2" parent="." unique_id=1100455299 instance=ExtResource("27_nxclp")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 4.97045, 0.0443723, 3.81708)
+
+[node name="death_cube3" parent="." unique_id=749648292 instance=ExtResource("27_nxclp")]
+transform = Transform3D(-0.444307, 0, 0.895875, 0, 1, 0, -0.895875, 0, -0.444307, -19.0894, 0.0468924, 5.22012)
+
+[node name="particle_bird" parent="." unique_id=615170746 instance=ExtResource("37_t5ice")]
+
+[node name="generic_door" parent="." unique_id=1341957503 instance=ExtResource("37_ixbg2")]
+transform = Transform3D(0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, 0.70710677, -51.871784, 0.9439074, 4.604115)
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("46_enlfj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.2369833, -0.72574973, 0.01337409)
+
+[editable path="swing"]
+[editable path="particle_wind"]

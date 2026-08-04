@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://er0wrftipajs"
+path.bptc="res://.godot/imported/stage_tvs.exr-6ebc26185d411f1046a2d864e7c05482.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://stage/lightmap/stage_tvs.exr"
+dest_files=["res://.godot/imported/stage_tvs.exr-6ebc26185d411f1046a2d864e7c05482.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=true
+compress/lossy_quality=1.0
+compress/uastc_level=2
+compress/rdo_quality_loss=0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=1

@@ -1,0 +1,911 @@
+[gd_scene format=3 uid="uid://ceoj11fysf8am"]
+
+[ext_resource type="Script" uid="uid://mpc15rnk4liy" path="res://gdscript/global_game.gd" id="1_lw8lm"]
+[ext_resource type="AudioStream" uid="uid://c4s6j2705vm4u" path="res://audio/sfx/random_woohoo.ogg" id="2_3ofjq"]
+[ext_resource type="AudioStream" uid="uid://bsrmg0fq1vvmj" path="res://audio/amb/thunder_00.ogg" id="2_cpxuj"]
+[ext_resource type="Texture2D" uid="uid://df3ewni2cu1cx" path="res://icon.svg" id="2_ky4nq"]
+[ext_resource type="AudioStream" uid="uid://3yhroppnbgem" path="res://audio/sfx/rand_dist_society.ogg" id="3_aa8ud"]
+[ext_resource type="AudioStream" uid="uid://by3wt0phfgttc" path="res://audio/sfx/rand_dist_car1.ogg" id="3_odhx5"]
+[ext_resource type="AudioStream" uid="uid://h0mi2jf8um00" path="res://audio/amb/thunder_01.ogg" id="3_w7ha7"]
+[ext_resource type="AudioStream" uid="uid://dxp6yg8rsqeia" path="res://audio/amb/thunder_02.ogg" id="4_75cvk"]
+[ext_resource type="Shader" uid="uid://dy0ir1qwwcbhc" path="res://gdshader/tv_trash.gdshader" id="4_gc0fl"]
+[ext_resource type="AudioStream" uid="uid://guvds7fo06a3" path="res://audio/sfx/rand_ear_ring.ogg" id="4_o6qkw"]
+[ext_resource type="AudioStream" uid="uid://dn5lys40cweol" path="res://audio/sfx/rand_dist_car2.ogg" id="4_yhraf"]
+[ext_resource type="AudioStream" uid="uid://depv51eoos7td" path="res://audio/sfx/rand_dist_car.ogg" id="5_aa8ud"]
+[ext_resource type="AudioStream" uid="uid://btx7mm1ctrrcc" path="res://audio/sfx/rand_bo_boo_boom_boo.ogg" id="5_xm5sk"]
+[ext_resource type="AudioStream" uid="uid://8rn6hytx26hm" path="res://audio/amb/thunder_03.ogg" id="5_xssci"]
+[ext_resource type="AudioStream" uid="uid://desnxgwbibttj" path="res://audio/amb/thunder_04.ogg" id="6_bhbi4"]
+[ext_resource type="Shader" uid="uid://conb76hkbptpq" path="res://gdshader/dither.gdshader" id="6_ddutu"]
+[ext_resource type="AudioStream" uid="uid://dq7nwno2cijb7" path="res://audio/sfx/rand_rib.ogg" id="6_xm5sk"]
+[ext_resource type="AudioStream" uid="uid://dk0t2kv8q4y1h" path="res://audio/sfx/rand_slash.ogg" id="7_6ji0a"]
+[ext_resource type="AudioStream" uid="uid://q1y1r5qr8kaq" path="res://audio/sfx/rand_dist_puppy.ogg" id="7_rky8y"]
+[ext_resource type="AudioStream" uid="uid://edkv66ow7k3v" path="res://audio/amb/thunder_05.ogg" id="7_torrg"]
+[ext_resource type="AudioStream" uid="uid://doqhpoj7m6fas" path="res://audio/sfx/rand_fall.ogg" id="8_8sb4a"]
+[ext_resource type="Shader" uid="uid://d2ho82vs8rdis" path="res://gdshader/trans_mosaic.gdshader" id="8_gc0fl"]
+[ext_resource type="AudioStream" uid="uid://btsike8nm7m7j" path="res://audio/amb/thunder_06.ogg" id="8_he7w2"]
+[ext_resource type="AudioStream" uid="uid://dv3ag8gl64rux" path="res://audio/sfx/rand_aux.ogg" id="9_c7t7t"]
+[ext_resource type="Material" uid="uid://ux58bmhyupdw" path="res://gdshader/material/mat_player.tres" id="9_gc0fl"]
+[ext_resource type="AudioStream" uid="uid://xpb46had24ds" path="res://audio/amb/thunder_07.ogg" id="9_ipjmh"]
+[ext_resource type="AudioStream" uid="uid://cwodwr75eudhy" path="res://audio/sfx/rand_dist_firework_a.ogg" id="10_6ji0a"]
+[ext_resource type="AudioStream" uid="uid://06kv0soyggwh" path="res://audio/sfx/rand_atem.ogg" id="10_ilr84"]
+[ext_resource type="AudioStream" uid="uid://clwsa2rxm7jht" path="res://audio/amb/thunder_08.ogg" id="10_wglsv"]
+[ext_resource type="AudioStream" uid="uid://bs7ydg4qe7g23" path="res://audio/sfx/rand_dist_firework_b.ogg" id="11_8sb4a"]
+[ext_resource type="AudioStream" uid="uid://cftuwnrgw7q6r" path="res://audio/sfx/rand_echo.ogg" id="11_kla5n"]
+[ext_resource type="AudioStream" uid="uid://7b2akxh17nkf" path="res://audio/sfx/rand_dist_firework_c.ogg" id="12_womct"]
+[ext_resource type="AudioStream" uid="uid://cjb1r6qffor08" path="res://audio/sfx/emi_bye.ogg" id="18_ljlb8"]
+[ext_resource type="AudioStream" uid="uid://6pwf11jwm0u8" path="res://audio/sfx/emi_chaos.ogg" id="19_11cip"]
+[ext_resource type="AudioStream" uid="uid://d0u0qkjq2w74v" path="res://audio/sfx/emi_giggle.ogg" id="20_kla5n"]
+[ext_resource type="AudioStream" uid="uid://c3wg3t3u1rayj" path="res://audio/sfx/emi_wait.ogg" id="21_11cip"]
+[ext_resource type="AudioStream" uid="uid://d031et1damr28" path="res://audio/sfx/rand_mice.ogg" id="21_ipjmh"]
+[ext_resource type="AudioStream" uid="uid://dlrgbaq4yby13" path="res://audio/sfx/rand_horn.ogg" id="21_w7ha7"]
+[ext_resource type="AudioStream" uid="uid://djvs1sqcapvd5" path="res://audio/sfx/rand_horn_01.ogg" id="22_75cvk"]
+[ext_resource type="AudioStream" uid="uid://c5k42i7qtvs2x" path="res://audio/sfx/rand_tunnel.ogg" id="22_mpf4l"]
+[ext_resource type="AudioStream" uid="uid://dqdl26povs4xy" path="res://audio/sfx/rand_bass_00.ogg" id="23_dbbr0"]
+[ext_resource type="Script" uid="uid://d2xx2j0kmvq7b" path="res://gdscript/debug.gd" id="23_womct"]
+[ext_resource type="AudioStream" uid="uid://dhb6fuqstint8" path="res://audio/sfx/rand_bass_01.ogg" id="24_43qv1"]
+[ext_resource type="AudioStream" uid="uid://hlsac6k6r3nn" path="res://audio/sfx/rand_connection.ogg" id="25_43qv1"]
+[ext_resource type="AudioStream" uid="uid://4vewgxdnbh78" path="res://audio/sfx/rand_hammering.ogg" id="26_totq3"]
+[ext_resource type="AudioStream" uid="uid://bhf620cfgr1hl" path="res://audio/sfx/rand_rumble_00.ogg" id="27_6nc0n"]
+[ext_resource type="AudioStream" uid="uid://5al4oeoylira" path="res://audio/sfx/rand_rumble_01.ogg" id="28_mjsvl"]
+[ext_resource type="AudioStream" uid="uid://cdgswco5be2pm" path="res://audio/sfx/rand_wah_wah.ogg" id="29_nlcti"]
+[ext_resource type="AudioStream" uid="uid://clgmlcq4hme57" path="res://audio/sfx/rand_calling.ogg" id="30_6r0h1"]
+[ext_resource type="AudioStream" uid="uid://dmpv7jxkpwb1" path="res://audio/sfx/rand_moog_01.ogg" id="31_dhhgm"]
+[ext_resource type="AudioStream" uid="uid://b3k8718ijiqqr" path="res://audio/sfx/rand_moog_00.ogg" id="32_0tq8p"]
+[ext_resource type="AudioStream" uid="uid://cwc6ww707ownc" path="res://audio/sfx/rand_meow.ogg" id="33_38o08"]
+[ext_resource type="AudioStream" uid="uid://1lbwh62ba2ba" path="res://audio/sfx/rand_drone.ogg" id="34_n2h7g"]
+[ext_resource type="AudioStream" uid="uid://dvsmavqvodjld" path="res://audio/sfx/rand_boom.ogg" id="35_bf0v4"]
+[ext_resource type="AudioStream" uid="uid://bkd4dncbjfj71" path="res://audio/sfx/rand_fall_01.ogg" id="36_hhdg1"]
+[ext_resource type="AudioStream" uid="uid://bwcjq72uygix0" path="res://audio/sfx/keypad.ogg" id="41_36ry1"]
+[ext_resource type="AudioStream" uid="uid://b4t6w5qpvilb4" path="res://audio/sfx/menu_slider.ogg" id="42_eost7"]
+[ext_resource type="PackedScene" uid="uid://bfap5fppofylf" path="res://resource/nia.tscn" id="42_p8t7f"]
+[ext_resource type="AudioStream" uid="uid://wd4t1psugu81" path="res://audio/sfx/screenshot.ogg" id="43_1vufc"]
+[ext_resource type="AudioStream" uid="uid://b2t8m5bfkgjn3" path="res://audio/sfx/screenshot_lq.ogg" id="44_l2orc"]
+[ext_resource type="AudioStream" uid="uid://m4se3qyck7kb" path="res://audio/sfx/rand_banging.ogg" id="44_lnyjl"]
+[ext_resource type="AudioStream" uid="uid://dcpby2sj7d06f" path="res://audio/sfx/step_concrete.ogg" id="45_ifd0v"]
+[ext_resource type="AudioStream" uid="uid://b7a833xdtj0g5" path="res://audio/sfx/step_mattress.ogg" id="45_l2orc"]
+[ext_resource type="AudioStream" uid="uid://cmd6uij2hx5d8" path="res://audio/sfx/step_dirt.ogg" id="45_sgneq"]
+[ext_resource type="AudioStream" uid="uid://b8rsbg8p1xbj8" path="res://audio/sfx/lens_00.ogg" id="45_ud0r0"]
+[ext_resource type="AudioStream" uid="uid://blwslx2h2gm0l" path="res://audio/sfx/step_gravel.ogg" id="46_4bx1l"]
+[ext_resource type="AudioStream" uid="uid://bgu81m1cixflx" path="res://audio/sfx/lens_01.ogg" id="46_n1oit"]
+[ext_resource type="AudioStream" uid="uid://beipbfh0tu4vr" path="res://audio/sfx/step_sand.ogg" id="46_qjyod"]
+[ext_resource type="PackedScene" uid="uid://bdqfhj5ka147e" path="res://resource/pawprint.tscn" id="46_wglsv"]
+[ext_resource type="AudioStream" uid="uid://bb7uuvj7ktq2w" path="res://audio/sfx/phone_keypad_long.ogg" id="46_y1cro"]
+[ext_resource type="AudioStream" uid="uid://ds3tmjpq3gbyf" path="res://audio/sfx/phone_keypad_short.ogg" id="47_dbbr0"]
+[ext_resource type="PackedScene" uid="uid://c583q5kbgf4ht" path="res://resource/anomaly_shooting_star.tscn" id="47_efs7m"]
+[ext_resource type="Material" uid="uid://dow05l12vlm1v" path="res://gdshader/material/anomaly_wireframe.tres" id="48_3yyw3"]
+[ext_resource type="AudioStream" uid="uid://c311gn2k4hi6m" path="res://audio/sfx/step_rain.ogg" id="48_5fy41"]
+[ext_resource type="AudioStream" uid="uid://c5u5ngjyxhrxl" path="res://audio/sfx/step_metal.ogg" id="48_76q46"]
+[ext_resource type="AudioStream" uid="uid://pnvmi2qdebbg" path="res://audio/sfx/out_of_memory.ogg" id="48_totq3"]
+[ext_resource type="AudioStream" uid="uid://c7r6r5xswurgr" path="res://audio/sfx/step_regular.ogg" id="49_oxli6"]
+[ext_resource type="Shader" uid="uid://dgm1qpjlvr1sd" path="res://gdshader/canvas_saturation.gdshader" id="50_0e64a"]
+[ext_resource type="AudioStream" uid="uid://d13bguh0frqli" path="res://audio/sfx/step_rubble.ogg" id="50_oxli6"]
+[ext_resource type="AudioStream" uid="uid://dbl0ew4sik01d" path="res://audio/sfx/step_snowy.ogg" id="50_qjyod"]
+[ext_resource type="AudioStream" uid="uid://48nwehcqrc0v" path="res://audio/sfx/amelia_talk.ogg" id="51_hhdg1"]
+[ext_resource type="AudioStream" uid="uid://1ar5iyhljgtk" path="res://audio/sfx/camera_lens.ogg" id="51_m0xyr"]
+[ext_resource type="AudioStream" uid="uid://rbnukombwplb" path="res://audio/sfx/awoo.ogg" id="51_nx8l0"]
+[ext_resource type="AudioStream" uid="uid://berid7h42iqeu" path="res://audio/sfx/step_wet.ogg" id="51_vvmsc"]
+[ext_resource type="AudioStream" uid="uid://cjnbypoyl8xrm" path="res://audio/sfx/step_stone.ogg" id="52_4bx1l"]
+[ext_resource type="AudioStream" uid="uid://dbdv8i3aawfct" path="res://audio/sfx/cloth_00.ogg" id="52_f8map"]
+[ext_resource type="AudioStream" uid="uid://b6tapcu3rby8u" path="res://audio/sfx/blink.ogg" id="52_vntk6"]
+[ext_resource type="AudioStream" uid="uid://bicj3euoiqdb7" path="res://audio/sfx/step_rubber.ogg" id="53_7vwoi"]
+[ext_resource type="AudioStream" uid="uid://chiodplgk8uxc" path="res://audio/sfx/damage.ogg" id="53_v44l7"]
+[ext_resource type="AudioStream" uid="uid://yesea5wonod3" path="res://audio/sfx/attention_jiggle.ogg" id="54_eqlqg"]
+[ext_resource type="AudioStream" uid="uid://jyt1uqsmhius" path="res://audio/sfx/glitch.ogg" id="54_od2w2"]
+[ext_resource type="AudioStream" uid="uid://c1av5n00vnhbl" path="res://audio/sfx/keychain.ogg" id="55_dlxsf"]
+[ext_resource type="AudioStream" uid="uid://cy7mianxmhtcn" path="res://audio/sfx/step_wood.ogg" id="55_t2det"]
+[ext_resource type="AudioStream" uid="uid://2m2lj5hvqsde" path="res://audio/sfx/step_wet_01.ogg" id="55_xfkt7"]
+[ext_resource type="AudioStream" uid="uid://brkj5ubxqhd0i" path="res://audio/sfx/keychain_01.ogg" id="56_7sor4"]
+[ext_resource type="AudioStream" uid="uid://0oimglxe8b1p" path="res://audio/sfx/step_wet_02.ogg" id="56_76q46"]
+[ext_resource type="AudioStream" uid="uid://dfy20t6ru55j0" path="res://audio/sfx/mice_click_00.ogg" id="56_uxwx0"]
+[ext_resource type="AudioStream" uid="uid://s5m5ax8ww2sp" path="res://audio/sfx/butterfly_wing_flap.ogg" id="56_ydib0"]
+[ext_resource type="AudioStream" uid="uid://cjsxrsj8oq7k3" path="res://audio/sfx/step_wet_03.ogg" id="57_ifd0v"]
+[ext_resource type="AudioStream" uid="uid://ckmyd3f7k68jn" path="res://audio/sfx/mice_click_01.ogg" id="57_xnqot"]
+[ext_resource type="AudioStream" uid="uid://er5j2atnkf5u" path="res://audio/sfx/step_wet_04.ogg" id="58_p8t7f"]
+[ext_resource type="AudioStream" uid="uid://rt2slju8q6vh" path="res://audio/sfx/step_wet_05.ogg" id="59_7vwoi"]
+[ext_resource type="AudioStream" uid="uid://dmhaqbda6haqp" path="res://audio/sfx/step_crystal.ogg" id="59_mjsvl"]
+[ext_resource type="AudioStream" uid="uid://cq4jmde08bnrp" path="res://audio/sfx/meow.ogg" id="60_02aur"]
+[ext_resource type="AudioStream" uid="uid://dm6583y7sxokv" path="res://audio/sfx/step_wet_06.ogg" id="60_eost7"]
+[ext_resource type="AudioStream" uid="uid://ur1y73vg1sye" path="res://audio/sfx/step_wet_07.ogg" id="61_0aymj"]
+[ext_resource type="AudioStream" uid="uid://b33ew2f1eh2ek" path="res://audio/sfx/step_metal_deep.ogg" id="61_n1oit"]
+[ext_resource type="AudioStream" uid="uid://0l5u8x6nucus" path="res://audio/sfx/step_wet_08.ogg" id="62_8iyt1"]
+[ext_resource type="AudioStream" uid="uid://dhpx172by6nja" path="res://audio/sfx/step_grass.ogg" id="62_pgubq"]
+[ext_resource type="AudioStream" uid="uid://b4vh676d807v8" path="res://audio/sfx/no.ogg" id="63_oh4qs"]
+[ext_resource type="AudioStream" uid="uid://bykecjjs7xqdf" path="res://audio/sfx/step_fleshy.ogg" id="66_dhhgm"]
+[ext_resource type="AudioStream" uid="uid://dmvh7ag8erl1n" path="res://audio/sfx/nia_damage.ogg" id="66_iuxes"]
+[ext_resource type="AudioStream" uid="uid://d3wkv4elbv00c" path="res://audio/sfx/phone_keychain.ogg" id="68_b24mb"]
+[ext_resource type="AudioStream" uid="uid://b2pe1tof4jvvd" path="res://audio/sfx/phone_off.ogg" id="71_a7nv1"]
+[ext_resource type="AudioStream" uid="uid://cwydjgx2b8vqi" path="res://audio/sfx/phone_open.ogg" id="72_38o08"]
+[ext_resource type="AudioStream" uid="uid://cxaf6dxoqbfvc" path="res://audio/sfx/purr_00.ogg" id="72_b24mb"]
+[ext_resource type="AudioStream" uid="uid://wlcw30vc22xm" path="res://audio/sfx/purr_01.ogg" id="73_a7nv1"]
+[ext_resource type="Texture2D" uid="uid://cl18j7am4asfq" path="res://resource/rotten_gradient.tres" id="75_0e64a"]
+[ext_resource type="AudioStream" uid="uid://86oq5cjiq1av" path="res://audio/sfx/step_foil.ogg" id="81_syo06"]
+[ext_resource type="PackedScene" uid="uid://d0b8fbltmecon" path="res://resource/weather_rain.tscn" id="84_s06ad"]
+[ext_resource type="PackedScene" uid="uid://ccmqsnj5xhghm" path="res://resource/weather_snow.tscn" id="85_efs7m"]
+[ext_resource type="PackedScene" uid="uid://c4v1x4f5t7wyw" path="res://resource/weather_storm_snow.tscn" id="86_yaqqd"]
+[ext_resource type="AudioStream" uid="uid://qqeiolqkaep5" path="res://audio/sfx/step_carpet.ogg" id="87_tcigt"]
+[ext_resource type="AudioStream" uid="uid://cxinku1d6cjvf" path="res://audio/sfx/sit_soft.ogg" id="88_ivle7"]
+[ext_resource type="AudioStream" uid="uid://bogn6bh6hg3x5" path="res://audio/sfx/swish.ogg" id="91_2a7df"]
+[ext_resource type="Shader" uid="uid://cd6meu6mriln4" path="res://gdshader/trans_circular.gdshader" id="92_yaqqd"]
+[ext_resource type="AudioStream" uid="uid://vsxpu086phs1" path="res://audio/sfx/water_splash.ogg" id="94_7so7j"]
+[ext_resource type="AudioStream" uid="uid://cvvhm27nnxvl2" path="res://audio/sfx/step_keyboard.ogg" id="95_r4f81"]
+[ext_resource type="AudioStream" uid="uid://bxayfgus4mcjj" path="res://audio/sfx/water_splash_out.ogg" id="95_vntk6"]
+[ext_resource type="Texture2D" uid="uid://d0l7se00unait" path="res://texture/highlight_eye.png" id="97_xnqot"]
+[ext_resource type="Script" uid="uid://db7en64mcms5i" path="res://addons/nophenia/editor_tools.gd" id="98_0tq8p"]
+[ext_resource type="AudioStream" uid="uid://diwqua28621jw" path="res://audio/sfx/step_plaster.ogg" id="99_mypdx"]
+[ext_resource type="AudioStream" uid="uid://deyo60ywfsyg0" path="res://audio/sfx/ui_click.ogg" id="101_dlxsf"]
+[ext_resource type="AudioStream" uid="uid://lcsh8jgssw1a" path="res://audio/sfx/toggle_photo_mode.ogg" id="103_a7nv1"]
+[ext_resource type="Texture2D" uid="uid://bglg6rcughjus" path="res://texture/damage_visual.png" id="114_jw4jh"]
+[ext_resource type="Shader" uid="uid://dx37j0bcuns50" path="res://gdshader/invert.gdshader" id="114_syo06"]
+
+[sub_resource type="Gradient" id="Gradient_1vufc"]
+offsets = PackedFloat32Array(0.110874, 0.305085)
+colors = PackedColorArray(0.2268, 0.84, 0.65604, 0.352941, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l2orc"]
+gradient = SubResource("Gradient_1vufc")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8jplc"]
+shader = ExtResource("8_gc0fl")
+shader_parameter/state = 0.0
+
+[sub_resource type="Shader" id="Shader_6nc0n"]
+code = "shader_type canvas_item;
+
+uniform float mask_softness = 1.4; // negative values result in mask being inverted
+uniform float mask_threshold = 0.6;
+
+uniform float sort :hint_range(0.0, 2.0)= 0.0;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable;
+//global uniform sampler2D screen_texture;
+void fragment(){
+	//vec2 uv = FRAGCOORD.xy / (1.0 / SCREEN_PIXEL_SIZE).xy;
+	vec2 uv = UV;
+	vec4 tex = texture(screen_texture, uv);
+
+	// Masking
+	float f = mask_softness / 2.0;
+	float a = mask_threshold - f;
+	float b = mask_threshold + f;
+	float average = (tex.x + tex.y + tex.z) / 3.0;
+	float mask = smoothstep(a, b, average);
+
+	// Pseudo Pixel Sorting
+	float sort_threshold = 1.0 - clamp(sort / 2.6, 0.0, 1.0);
+	vec2 sort_uv = vec2(uv.x, sort_threshold);
+
+	// Curved melting transition
+	vec2 transition_uv = uv;
+	float turbulance = fract(sin(dot(vec2(transition_uv.x), vec2(12.9, 78.2)))* 437.5);
+	transition_uv.y += pow(sort, 2.0 + (sort * 2.0)) * mask * turbulance;
+	COLOR = texture(screen_texture, transition_uv);
+
+	// Draw pixel sorting effect behind the melting transition
+	if(transition_uv.y > 1.){
+		COLOR = texture(screen_texture, sort_uv);
+	}else{
+		COLOR = texture(screen_texture, uv);
+	}
+
+//	COLOR = vec4(mask, mask, mask, 1.0); // Uncomment this to check mask
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n1oit"]
+shader = SubResource("Shader_6nc0n")
+shader_parameter/mask_softness = 1.4
+shader_parameter/mask_threshold = 0.6
+shader_parameter/sort = 0.0
+
+[sub_resource type="Shader" id="Shader_n1oit"]
+code = "shader_type canvas_item;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable;
+float random(vec2 uv) {
+	return fract(sin(dot(uv, vec2(12.9898, 78.233))) * 438.5453);
+}
+
+uniform float state : hint_range(-1.0, 1.0) = 1.0;
+
+void fragment() {
+	// Get size of texture in pixels
+	float size_x = float(160);
+	float size_y = float(120);
+	// 
+	vec4 pixelColor = COLOR;
+	// Create a new \"UV\" which remaps every UV value to a snapped pixel value
+	vec2 UVr = vec2(floor(UV.x*size_x)/size_x, floor(UV.y*size_y)/size_y);
+	// Determine whether pixel should be visible or not
+	float visible = step(state, random(UVr));
+	// Draw the pixel, or not depending on if it is visible or not
+	COLOR = vec4(pixelColor.r, pixelColor.g, pixelColor.b, min(visible, pixelColor.a));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6nc0n"]
+shader = SubResource("Shader_n1oit")
+shader_parameter/state = 1.0
+
+[sub_resource type="Shader" id="Shader_mjsvl"]
+code = "shader_type canvas_item;
+uniform sampler2D screen_texture : hint_screen_texture, repeat_disable;
+uniform float state : hint_range(1.0, 5.0)= 1.0;
+void fragment() {
+	vec2 uv = SCREEN_UV;
+
+    // Center of screen
+    vec2 center = vec2(0.45, 0.5);
+
+    // Offset from center
+    vec2 offset = uv - center;
+
+    // Apply zoom
+    vec2 zoomed_uv = center + offset / state;
+
+    // Sample screen texture
+    COLOR = texture(screen_texture, zoomed_uv);
+	// Called for every pixel the material is visible on.
+}
+
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nlcti"]
+shader = SubResource("Shader_mjsvl")
+shader_parameter/state = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_58lme"]
+shader = ExtResource("92_yaqqd")
+shader_parameter/state = 1.04999995231628
+shader_parameter/screen_width = 640.0
+shader_parameter/screen_height = 480.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0e64a"]
+shader = ExtResource("114_syo06")
+
+[sub_resource type="Shader" id="Shader_xnqot"]
+code = "shader_type canvas_item;
+
+uniform float time;
+uniform float fade_speed = 1.0; // Speed of fade oscillation
+uniform float spin_speed = 2.0; // Speed of spin
+
+void fragment() {
+    vec2 uv = UV - vec2(0.5);
+    float angle = sin(TIME * spin_speed) * 0.2; // Range [-0.5, 0.5]
+    uv.x += sin(uv.x * 1.0) * angle;
+    vec2 rotated_uv = uv + vec2(0.5);
+    vec4 tex = texture(TEXTURE, rotated_uv);
+    float alpha = 0.75 + 0.25 * sin(TIME * fade_speed); // Range [0.5, 1.0]
+    tex.a *= alpha;
+    COLOR = tex;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2a7df"]
+shader = SubResource("Shader_xnqot")
+shader_parameter/time = 2.295
+shader_parameter/fade_speed = 4.0
+shader_parameter/spin_speed = 3.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_jw4jh"]
+blend_mode = 3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v7i4q"]
+shader = ExtResource("4_gc0fl")
+shader_parameter/enable_dither_filter = true
+shader_parameter/enable_horizontal_blur = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y2dwt"]
+shader = ExtResource("6_ddutu")
+shader_parameter/change_color_depth = true
+shader_parameter/target_color_depth = 5
+shader_parameter/dithering = true
+shader_parameter/scale_resolution = false
+shader_parameter/target_resolution_scale = 3
+shader_parameter/enable_recolor = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_womct"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_jw4jh"]
+device = -1
+keycode = 79
+unicode = 111
+
+[sub_resource type="Shortcut" id="Shortcut_v44l7"]
+events = [SubResource("InputEventKey_jw4jh")]
+
+[node name="game" type="Node" unique_id=378091349]
+process_mode = 3
+process_priority = 10
+script = ExtResource("1_lw8lm")
+lane = Array[String](["apophenia", "this is everything to me", "lane", "nia", "love me", "i will be everything you need...", "to be everything you need...", "put your trust in me,", "you're not gonna die alone", "prove to me i'm not gonna die alone", "i'm not gonna die alone", "you can't keep running", "i don't think so", "why do i always feel this way?", "am i forming memories i don't want to forget?", "didn't it hurt less when you were lonely?", "wake up,", "idiot.", "why am i barefoot anyways", "there is too much for me to say", "how do i fall in love with life again?", "i'm stuck in the world of my own creation", "when will i be granted freedom?", "i want to live", "i hope i can love feeling again", "i'll dream of you", "error", "no connection", "keep searching", "are you real?", "you won't read about it", "unknown", "signal", "...", "what is my purpose?", "you are here, no matter what", "it's still you", "you will always be enough", "don't give up", "don't kill yourself", "when will i be listened to?", "trust yourself", "i'll be okay", "you'll be okay", "it'll be okay", "it's just you and me", "you don't have to live for approval", "nostalgic...", "the weight of the world", "why is nostalgia so intoxicating?", "have i changed you?", "or have i chained you?", "it's over", "you don't know me", "hahahehe", "rose and thorns", "thorns and rose", "everyone is waiting for you", "you will feel everything", "it will hurt more than a bit", "what will i create?", "derealisation", "unwanted", "undead", "angel", "hurt me", "im scared", "when will my feelings be understood?", "is this really just a game or a way for me to not lose it?", "do", "free me", "escape", "disillusion", "apathy", "do not listen to them", "when will their voices stop", "when will the voices stop", "everything is going to be okay", "she only has herself to blame", "wasting time!", "then you wonder", "and then,", "she shares her around", "<gdscript>", "<null>", "and she shares her world", "severance", "severed from the world", "lowering oneself", "waiting for answers", "ill be beside you", "glass", "what meaning", "no hesitation", "let me forget about those places", "let us forget", "allow us to forget", "community", "restart your heart", "you'll be alright", "you'll be just fine", "don't care", "useless!", "bedroom", "it's cold", "cold weather", "every shape is not alone", "it's okay!", "i'll be beside you", "when you break", "joyful", "trees that used to grow", "a melody", "strawberry melody", "silence", "no matter how many times i try to die, i", "dinnnnneeeeeeeeer", "move_speed", "random no signal text generator ", "i’m happy to be alive", "will it heal you too?", "it’s done", "weightless", "i was happy, for once", "anemoia", "but have you healed yourself?", "and you’ve healed yourself", "now, you’ve healed us", "i fucking hate you", "isn't this the place you love so much...?", "isn't this the place you call home?", "delusional ramblings", "continue to suffer until it’s tolerable to ignore", "human nature is", "is it human nature?", "%s saved me", "%s will save me", "%s will heal you", "%s healed me", "%s took her life…", "%s failed her…", "%s", "decompile %s down to it’s core", "let %s reveal the truth", "delusional %s, delusional expectations", "i’m more human", "an everyday problem", "i don’t even recognise myself anymore", "but my heart does not", "our heart", "co-connected", "i will not lie or cry", "you deserved better than me", "imposter", "she’s supposed to keep living.", "no matter the circumstances", "she has to keep going", "preserving means survival", "i miss when this wasn’t normal…", "silly wolf noises", "i’d rather die.", "i just wanted to be seen to be heard", "is my happiness the biggest burden i will never be able to carry?", "you’re so dumb", "i’ll purge you from me.", "i don’t want you to exist", "the end of everything", "purify me", "i will forget it all", "%s made me forget", "the %s used to bloom", "connection to %s has been established", "i wish we met sooner", "useless failure", "wolfailure", "stop pretending to care", "you piss me off", "i wish for this body to be destroyed", "would she be ok with this?", "disgusting freak", "natural freak", "freak", "die then", "…sorry.", "regret", "so fucking stupid", "yourself", "save me from myself", "you make my life worth living", "i wish it was easier to love me", "52.28.33.214:5002", "i developed a strong taste for %s", "shut up, you're beautiful", "you are valid", "a place where someone still thinks about you is a place you can call home", "suffocating in my endless river of dreams", "how will we ever meet again?", "forever", "how will i ever meet you again?", "broken pulse", "proven, wrongfully, misunderstood", "i admire your perseverance", "the deep intimacy of this array,", "to never be understood, even by myself,", "what is it that you seek?", "this is the end, end", "my love my love my love,", "it's so clear", "i can't take it", "bloodied wrists", "oh love", "escape escape escape", "einsamkeit", "leblos", "hilflos", "getrennt", "blutnacht", "skyscrapers in wheat fields,", "keep tearing the pages,", "reminiscing", "there is a last for everything", "the only thing that's different is me", "even if you're not looking", "there's someone who finds comfort in your presence", "she is dead.", "Achtung!", "generated dreams", "hollow eyes", "blur the lines", "turn %s into a memory...", "i wish to have a happy end", "virtual tears", "obsession", "reverb in the deep", "clarity", "common sense", "if you're reading this... please save me...", "i never wanted to cause you any sorrow.", "i never wanted to cause you any pain.", "where flowers once bloomed", "the only limit to all of this is your imagination", "i love my computer world", "sad", "how sad", "nothing but decay", "digital age", "digital bond", "red.", "it's all red", "red...", "search for red...", "i am my own guardian angel", "data loss", "data corruption", "i cried", "i tried", "i laughed", "i smiled", "i relapsed", "but now", "it's done"])
+location_nonsense = Array[String](["location_random_00", "location_random_01", "location_random_02", "location_random_03", "location_random_04", "location_random_05", "location_random_06", "location_random_07", "location_random_08", "location_random_09", "location_random_10", "location_random_11", "location_random_12", "location_random_13", "location_random_14", "location_random_15", "location_random_16", "location_random_17", "location_random_18", "location_random_19", "location_random_20", "location_random_21", "location_random_22", "location_random_23", "location_random_24", "location_random_25", "location_random_26"])
+thunder_sfx = Array[AudioStream]([ExtResource("2_cpxuj"), ExtResource("3_w7ha7"), ExtResource("4_75cvk"), ExtResource("5_xssci"), ExtResource("6_bhbi4"), ExtResource("7_torrg"), ExtResource("8_he7w2"), ExtResource("9_ipjmh"), ExtResource("10_wglsv")])
+anomaly_snd_bank_0 = Array[AudioStream]([ExtResource("2_3ofjq"), ExtResource("3_aa8ud"), ExtResource("4_o6qkw"), ExtResource("5_xm5sk"), ExtResource("6_xm5sk"), ExtResource("7_6ji0a"), ExtResource("8_8sb4a"), ExtResource("9_c7t7t"), ExtResource("10_ilr84"), ExtResource("11_kla5n"), ExtResource("21_ipjmh"), ExtResource("22_mpf4l"), ExtResource("23_dbbr0"), ExtResource("24_43qv1"), ExtResource("25_43qv1"), ExtResource("26_totq3"), ExtResource("27_6nc0n"), ExtResource("28_mjsvl"), ExtResource("29_nlcti"), ExtResource("30_6r0h1"), ExtResource("31_dhhgm"), ExtResource("32_0tq8p"), ExtResource("33_38o08"), ExtResource("34_n2h7g"), ExtResource("35_bf0v4"), ExtResource("36_hhdg1")])
+anomaly_snd_bank_1 = Array[AudioStream]([ExtResource("3_odhx5"), ExtResource("4_yhraf"), ExtResource("5_aa8ud"), ExtResource("7_rky8y"), ExtResource("10_6ji0a"), ExtResource("11_8sb4a"), ExtResource("12_womct"), ExtResource("21_w7ha7"), ExtResource("22_75cvk"), ExtResource("44_lnyjl")])
+anomaly_snd_bank_2 = Array[AudioStream]([ExtResource("18_ljlb8"), ExtResource("19_11cip"), ExtResource("20_kla5n"), ExtResource("21_11cip")])
+all_wallpaper = Array[String](["uid://c160xqrty8rtb", "uid://d1tgy40bhfvnn", "uid://d1072cuio0uny", "uid://ck35yyuqne6lx", "uid://dbqjty71sm0l5", "uid://li7dera0d4j", "uid://cwo1nrtg0pyjf", "uid://dq5yj1ijgu8ok", "uid://beyf48jemw8h0", "uid://bucd4tm0x31cb", "uid://b7atymixe0s0t", "uid://br2ijpjkcxqf1", "uid://ctdhg1mmyogud", "uid://cv8xmu6aicip", "uid://cs3y1tb84eqmk", "uid://tvj3kbxf1ntn", "uid://xiwvlsa63s4u", "uid://bi4qyseemn403", "uid://lscovc457uv4", "uid://dcl34a5rff7n8", "uid://bhxkatyua11si", "uid://d0h604hc2qrrq", "uid://brc3we6rg7oro", "uid://dbrii8l7lk1np", "uid://cwjsy2vja1xyf", "uid://vtu40jhvjk0v", "uid://ndksjyxjup7", "uid://b0oof1dbadr8l", "uid://dmpnspijmtvde", "uid://s6jxd64gw0yi", "uid://bod557sgvm67q", "uid://behsd2jsblqre", "uid://c7dqxpicoeh2g", "uid://duk5kxr171wdx", "uid://cjwnsfepqv1cn", "uid://b88jc5rggoj8e", "uid://di5nr2k4w0y7h", "uid://df6dlfqvggxos", "uid://bu3u82o5fo0tx", "uid://b2jnls31k853y", "uid://c1sks2o6qlwad", "uid://8p608gqdl2wy", "uid://boiiik34f4aur", "uid://56v023dvubvu"])
+_traverse_random = Array[String](["uid://dk58shnyb21fa", "uid://fh0md8xsce6p", "uid://biqcb0pysqtic", "uid://m80ujpegylho", "uid://iukpcw4e4bhk", "uid://cacepml8x2hnb", "uid://8kdybyba2g0u", "uid://dbal70fmj1e1b", "uid://dxvetk8m73qsd", "uid://hcknbgdqge1n", "uid://g244v8olmg4i", "uid://dc4ymebicrwwa", "uid://68hpmm6s5stw", "uid://bkamalo33wpfp", "uid://b38crygqhfacm", "uid://c7brg5h08lq80", "uid://dedroxhuq3be", "uid://d12coxdvfpncy", "uid://0fkr2gu14bwf"])
+
+[node name="resource_preloader" type="ResourcePreloader" parent="." unique_id=690901983]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+resources = [PackedStringArray("amelia_talk", "anomaly_shooting_star", "anomaly_wireframe", "attention_jiggle", "awoo", "blink", "butterfly_wing_flap", "camera_lens", "canvas_saturation", "cloth_00", "damage", "glitch", "keychain", "keychain_01", "keypad", "lens_00", "lens_01", "mat_player", "menu_slider", "meow", "mice_click_00", "mice_click_01", "nia", "nia_damage", "no", "out_of_memory", "pawprint", "phone_keychain", "phone_keypad_long", "phone_keypad_short", "phone_off", "phone_open", "purr_00", "purr_01", "rotten_gradient", "screenshot", "screenshot_lq", "sit_soft", "step_carpet", "step_concrete", "step_crystal", "step_dirt", "step_fleshy", "step_foil", "step_grass", "step_gravel", "step_keyboard", "step_mattress", "step_metal", "step_metal_deep", "step_plaster", "step_rain", "step_regular", "step_rubber", "step_rubble", "step_sand", "step_snowy", "step_stone", "step_wet", "step_wet_01", "step_wet_02", "step_wet_03", "step_wet_04", "step_wet_05", "step_wet_06", "step_wet_07", "step_wet_08", "step_wood", "swish", "toggle_photo_mode", "ui_click", "water_splash", "water_splash_out", "weather_rain", "weather_snow", "weather_storm_snow"), [ExtResource("51_hhdg1"), ExtResource("47_efs7m"), ExtResource("48_3yyw3"), ExtResource("54_eqlqg"), ExtResource("51_nx8l0"), ExtResource("52_vntk6"), ExtResource("56_ydib0"), ExtResource("51_m0xyr"), ExtResource("50_0e64a"), ExtResource("52_f8map"), ExtResource("53_v44l7"), ExtResource("54_od2w2"), ExtResource("55_dlxsf"), ExtResource("56_7sor4"), ExtResource("41_36ry1"), ExtResource("45_ud0r0"), ExtResource("46_n1oit"), ExtResource("9_gc0fl"), ExtResource("42_eost7"), ExtResource("60_02aur"), ExtResource("56_uxwx0"), ExtResource("57_xnqot"), ExtResource("42_p8t7f"), ExtResource("66_iuxes"), ExtResource("63_oh4qs"), ExtResource("48_totq3"), ExtResource("46_wglsv"), ExtResource("68_b24mb"), ExtResource("46_y1cro"), ExtResource("47_dbbr0"), ExtResource("71_a7nv1"), ExtResource("72_38o08"), ExtResource("72_b24mb"), ExtResource("73_a7nv1"), ExtResource("75_0e64a"), ExtResource("43_1vufc"), ExtResource("44_l2orc"), ExtResource("88_ivle7"), ExtResource("87_tcigt"), ExtResource("45_ifd0v"), ExtResource("59_mjsvl"), ExtResource("45_sgneq"), ExtResource("66_dhhgm"), ExtResource("81_syo06"), ExtResource("62_pgubq"), ExtResource("46_4bx1l"), ExtResource("95_r4f81"), ExtResource("45_l2orc"), ExtResource("48_76q46"), ExtResource("61_n1oit"), ExtResource("99_mypdx"), ExtResource("48_5fy41"), ExtResource("49_oxli6"), ExtResource("53_7vwoi"), ExtResource("50_oxli6"), ExtResource("46_qjyod"), ExtResource("50_qjyod"), ExtResource("52_4bx1l"), ExtResource("51_vvmsc"), ExtResource("55_xfkt7"), ExtResource("56_76q46"), ExtResource("57_ifd0v"), ExtResource("58_p8t7f"), ExtResource("59_7vwoi"), ExtResource("60_eost7"), ExtResource("61_0aymj"), ExtResource("62_8iyt1"), ExtResource("55_t2det"), ExtResource("91_2a7df"), ExtResource("103_a7nv1"), ExtResource("101_dlxsf"), ExtResource("94_7so7j"), ExtResource("95_vntk6"), ExtResource("84_s06ad"), ExtResource("85_efs7m"), ExtResource("86_yaqqd")]]
+
+[node name="info" type="CanvasLayer" parent="." unique_id=77969542]
+layer = 2
+offset = Vector2(44, 0)
+scale = Vector2(1, 1.0012492)
+transform = Transform2D(1, 0, -0.05, 1, 44, 0)
+
+[node name="hint_pause" type="RichTextLabel" parent="info" unique_id=97893059]
+unique_name_in_owner = true
+visible = false
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 126.0
+offset_bottom = 28.0
+text = "[ESC] menu"
+fit_content = true
+scroll_active = false
+
+[node name="texture_rect" type="TextureRect" parent="info" unique_id=1157071331]
+visible = false
+offset_left = 8.0
+offset_top = 440.0
+offset_right = 136.0
+offset_bottom = 568.0
+texture = ExtResource("2_ky4nq")
+
+[node name="location" type="Control" parent="info" unique_id=1760569580]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -15.75
+offset_top = -75.0
+offset_right = 190.25
+offset_bottom = -9.99997
+grow_vertical = 0
+scale = Vector2(0.6, 1.1)
+mouse_filter = 2
+
+[node name="location_outline" type="RichTextLabel" parent="info/location" unique_id=1021058937]
+unique_name_in_owner = true
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_shadow_color = Color(0.78, 0.156, 0.3432, 0.588235)
+theme_override_constants/line_separation = 5
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 4
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "snowy_quarters"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
+
+[node name="location_name" type="RichTextLabel" parent="info/location" unique_id=1435805274]
+unique_name_in_owner = true
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.78, 0.156, 0.3432, 0.588235)
+theme_override_constants/line_separation = 5
+theme_override_constants/shadow_outline_size = 0
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+text = "snowy_quarters"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
+
+[node name="location_gradient" type="TextureRect" parent="info/location/location_name" unique_id=1732210253]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -1.0000305
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_l2orc")
+
+[node name="location_fade" type="RichTextLabel" parent="info/location" unique_id=1214092746]
+self_modulate = Color(1, 1, 1, 0.313726)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = 306.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.78, 0.156, 0.3432, 0.588235)
+theme_override_constants/line_separation = 5
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "snowy_quarters"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
+
+[node name="location_fade3" type="RichTextLabel" parent="info/location" unique_id=2134139511]
+self_modulate = Color(1, 1, 1, 0.0784314)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -16.0
+offset_right = 306.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.78, 0.156, 0.3432, 0.588235)
+theme_override_constants/line_separation = 5
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "snowy_quarters"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
+
+[node name="location_fade2" type="RichTextLabel" parent="info/location" unique_id=1237125678]
+self_modulate = Color(1, 1, 1, 0.196078)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, 1.1)
+mouse_filter = 2
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.78, 0.156, 0.3432, 0.588235)
+theme_override_constants/line_separation = 5
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/normal_font_size = 28
+bbcode_enabled = true
+text = "snowy_quarters"
+fit_content = true
+scroll_active = false
+vertical_alignment = 2
+
+[node name="trans" type="CanvasLayer" parent="." unique_id=1109119663]
+layer = 5
+
+[node name="trans_mosaic" type="ColorRect" parent="trans" unique_id=126104070]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_8jplc")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="trans_color" type="ColorRect" parent="trans" unique_id=1943806543]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="trans_fade" type="TextureRect" parent="trans" unique_id=381813166]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+expand_mode = 1
+
+[node name="trans_sorting" type="ColorRect" parent="trans" unique_id=1699540006]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_n1oit")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="trans_pixel" type="ColorRect" parent="trans" unique_id=860488094]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_6nc0n")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="trans_zoom" type="ColorRect" parent="trans" unique_id=1977138667]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_nlcti")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="trans_circular" type="ColorRect" parent="trans" unique_id=1734450049]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_58lme")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="trans_invert" type="ColorRect" parent="trans" unique_id=959380146]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_0e64a")
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="texture_rect" type="ColorRect" parent="trans" unique_id=456521949]
+visible = false
+offset_right = 128.0
+offset_bottom = 128.0
+color = Color(1, 1, 1, 0.08235294)
+
+[node name="loading_indicator" type="TextureRect" parent="trans" unique_id=1152050932]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_2a7df")
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -39.0
+offset_top = -40.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("97_xnqot")
+stretch_mode = 2
+
+[node name="other" type="CanvasLayer" parent="." unique_id=1578750006]
+layer = 6
+
+[node name="damage_visual_overlay" type="ColorRect" parent="other" unique_id=2116733752]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.6431373, 0, 0.003921569, 1)
+
+[node name="damage_visual" type="TextureRect" parent="other" unique_id=159038582]
+unique_name_in_owner = true
+visible = false
+z_index = 1
+material = SubResource("CanvasItemMaterial_jw4jh")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("114_jw4jh")
+expand_mode = 1
+
+[node name="post" type="CanvasLayer" parent="." unique_id=1842209336]
+layer = 6
+
+[node name="label" type="Label" parent="post" unique_id=1206603944]
+visible = false
+offset_right = 74.0
+offset_bottom = 19.0
+text = "prototype"
+
+[node name="blur" type="BackBufferCopy" parent="post" unique_id=1379796625]
+position = Vector2(319.5, 240)
+scale = Vector2(3.205, 2.4)
+copy_mode = 2
+
+[node name="post_blur" type="ColorRect" parent="post/blur" unique_id=647718402]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_v7i4q")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.688
+offset_top = -100.0
+offset_right = -99.688
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="dither" type="BackBufferCopy" parent="post" unique_id=1406249240]
+position = Vector2(319.5, 240)
+scale = Vector2(3.205, 2.4)
+copy_mode = 2
+
+[node name="post_dither" type="ColorRect" parent="post/dither" unique_id=28231937]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_y2dwt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -99.688
+offset_top = -100.0
+offset_right = -99.688
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="debug" type="CanvasLayer" parent="." unique_id=1213360065]
+process_priority = 100
+layer = 10
+visible = false
+script = ExtResource("23_womct")
+
+[node name="node" type="Node" parent="debug" unique_id=212236425]
+script = ExtResource("98_0tq8p")
+_include_in_demo = Array[String](["uid://bpwmdyp71nell", "uid://dp688x5eip4bo", "uid://c4pebf3w8611y"])
+
+[node name="debuginfo" type="Label" parent="debug" unique_id=1609606530]
+unique_name_in_owner = true
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -97.5
+offset_top = -35.0
+offset_right = 97.5
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="h_box_container" type="HBoxContainer" parent="debug" unique_id=109737488]
+modulate = Color(1, 1, 1, 0.78431374)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 232.0
+grow_horizontal = 2
+
+[node name="scroll_container" type="ScrollContainer" parent="debug/h_box_container" unique_id=1471037108]
+layout_mode = 2
+size_flags_horizontal = 3
+follow_focus = true
+horizontal_scroll_mode = 0
+
+[node name="debug_rooms" type="VBoxContainer" parent="debug/h_box_container/scroll_container" unique_id=1837589495]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="room_amount" type="Label" parent="debug/h_box_container/scroll_container/debug_rooms" unique_id=1900875574]
+unique_name_in_owner = true
+layout_mode = 2
+text = "gh"
+
+[node name="v_separator" type="VSeparator" parent="debug/h_box_container" unique_id=1930182002]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/separator = SubResource("StyleBoxEmpty_womct")
+
+[node name="scroll_container2" type="ScrollContainer" parent="debug/h_box_container" unique_id=1653326984]
+layout_mode = 2
+size_flags_horizontal = 3
+horizontal_scroll_mode = 0
+
+[node name="v_box_container" type="GridContainer" parent="debug/h_box_container/scroll_container2" unique_id=58306889]
+layout_mode = 2
+size_flags_horizontal = 3
+columns = 3
+
+[node name="button2" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=479822640]
+layout_mode = 2
+text = "reload"
+
+[node name="show_snd" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1463295926]
+layout_mode = 2
+toggle_mode = true
+text = "visualize_audio"
+
+[node name="save_pos" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1982306103]
+layout_mode = 2
+text = "save_pos"
+
+[node name="load_pos" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=2067294156]
+layout_mode = 2
+text = "load_pos"
+
+[node name="show_collision" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1866546023]
+layout_mode = 2
+toggle_mode = true
+text = "show_collision"
+
+[node name="random_event" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=558327427]
+layout_mode = 2
+shortcut = SubResource("Shortcut_v44l7")
+text = "random_event"
+
+[node name="disable_light" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=167024655]
+layout_mode = 2
+toggle_mode = true
+text = "toggle_light"
+
+[node name="toggle_fog" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1202970160]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "toggle_fog"
+
+[node name="toggle_audio" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=368868971]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "toggle_audio"
+
+[node name="lightning" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1134142766]
+layout_mode = 2
+text = "weather_lightning"
+
+[node name="reload_player" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=973971561]
+layout_mode = 2
+text = "reload_player"
+
+[node name="reset_config" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=97621087]
+layout_mode = 2
+text = "reset_config"
+
+[node name="damage_player" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=645634048]
+layout_mode = 2
+text = "damage_player"
+
+[node name="damage_player2" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=1796070062]
+layout_mode = 2
+text = "unlock_wallpapers"
+
+[node name="h_box_container" type="HBoxContainer" parent="debug/h_box_container/scroll_container2/v_box_container" unique_id=2082249273]
+layout_mode = 2
+
+[node name="transition_id" type="OptionButton" parent="debug/h_box_container/scroll_container2/v_box_container/h_box_container" unique_id=1249670341]
+unique_name_in_owner = true
+layout_mode = 2
+selected = 0
+item_count = 8
+popup/item_0/text = "blend"
+popup/item_0/id = 0
+popup/item_1/text = "mosaic"
+popup/item_1/id = 1
+popup/item_2/text = "fade"
+popup/item_2/id = 2
+popup/item_3/text = "zoom"
+popup/item_3/id = 3
+popup/item_4/text = "sort"
+popup/item_4/id = 4
+popup/item_5/text = "pixel"
+popup/item_5/id = 5
+popup/item_6/text = "circular"
+popup/item_6/id = 6
+popup/item_7/text = "invert"
+popup/item_7/id = 7
+
+[node name="transition" type="Button" parent="debug/h_box_container/scroll_container2/v_box_container/h_box_container" unique_id=445316584]
+layout_mode = 2
+toggle_mode = true
+button_pressed = true
+text = "transition"
+
+[node name="debug_label" type="Label" parent="debug" unique_id=1980423044]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.78431374)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -27.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+horizontal_alignment = 2
+
+[node name="v_box_container" type="VBoxContainer" parent="debug" unique_id=1495109991]
+modulate = Color(1, 1, 1, 0.78431374)
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -160.0
+offset_right = 96.0
+offset_bottom = -8.0
+grow_vertical = 0
+
+[node name="lang_eng" type="Button" parent="debug/v_box_container" unique_id=260244267]
+layout_mode = 2
+text = "english"
+
+[node name="lang_jp" type="Button" parent="debug/v_box_container" unique_id=1717769055]
+layout_mode = 2
+text = "credits_japanese"
+
+[node name="lang_ger" type="Button" parent="debug/v_box_container" unique_id=241750170]
+layout_mode = 2
+text = "credits_german"
+
+[node name="lang_ru" type="Button" parent="debug/v_box_container" unique_id=1613300281]
+layout_mode = 2
+text = "credits_russian"
+
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/button2" to="debug" method="_reload"]
+[connection signal="toggled" from="debug/h_box_container/scroll_container2/v_box_container/show_snd" to="debug" method="_on_show_snd_toggled"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/save_pos" to="debug" method="_on_save_pos_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/load_pos" to="debug" method="_on_load_pos_pressed"]
+[connection signal="toggled" from="debug/h_box_container/scroll_container2/v_box_container/show_collision" to="debug" method="_on_button_toggled"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/random_event" to="debug" method="_on_random_event_pressed"]
+[connection signal="toggled" from="debug/h_box_container/scroll_container2/v_box_container/disable_light" to="debug" method="_on_disable_light_toggled"]
+[connection signal="toggled" from="debug/h_box_container/scroll_container2/v_box_container/toggle_fog" to="debug" method="_on_toggle_fog_toggled"]
+[connection signal="toggled" from="debug/h_box_container/scroll_container2/v_box_container/toggle_audio" to="debug" method="_on_toggle_audio_toggled"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/lightning" to="debug" method="_on_lightning_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/reload_player" to="debug" method="_on_reload_player_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/reset_config" to="debug" method="_on_reset_config_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/damage_player" to="debug" method="_on_damage_player_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/damage_player2" to="debug" method="_on_damage_player_2_pressed"]
+[connection signal="pressed" from="debug/h_box_container/scroll_container2/v_box_container/h_box_container/transition" to="debug" method="_on_transition_pressed"]
+[connection signal="pressed" from="debug/v_box_container/lang_eng" to="debug" method="_on_lang_eng_pressed"]
+[connection signal="pressed" from="debug/v_box_container/lang_jp" to="debug" method="_on_lang_jp_pressed"]
+[connection signal="pressed" from="debug/v_box_container/lang_ger" to="debug" method="_on_lang_ger_pressed"]
+[connection signal="pressed" from="debug/v_box_container/lang_ru" to="debug" method="_on_lang_ru_pressed"]

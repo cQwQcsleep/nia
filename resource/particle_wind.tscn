@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://b67v28osrd7uq"]
+
+[ext_resource type="Texture2D" uid="uid://dhm6f3e1s0b2n" path="res://texture/wind_trail_00.png" id="1_t1n2r"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_67ia2"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="2_id1w8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmi5e"]
+transparency = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_t1n2r")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 9
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_pp6ga"]
+size = Vector2(5, 1)
+
+[sub_resource type="Gradient" id="Gradient_mmi5e"]
+offsets = PackedFloat32Array(0.00213675, 0.2, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_401if"]
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 0.588235)
+
+[node name="particle_wind" type="Node3D"]
+
+[node name="attach_player" type="Node3D" parent="."]
+script = ExtResource("2_id1w8")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="wind" type="CPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0)
+material_override = SubResource("StandardMaterial3D_mmi5e")
+amount = 14
+lifetime = 2.0
+lifetime_randomness = 0.5
+mesh = SubResource("QuadMesh_pp6ga")
+emission_shape = 3
+emission_box_extents = Vector3(15, 5, 15)
+gravity = Vector3(-0.1, -0.1, -0.1)
+angle_min = -60.0
+angle_max = 60.0
+scale_amount_max = 2.0
+color_ramp = SubResource("Gradient_mmi5e")
+color_initial_ramp = SubResource("Gradient_401if")
+anim_speed_min = 1.0
+anim_speed_max = 1.0
+script = ExtResource("2_67ia2")
+_max_particle = 14

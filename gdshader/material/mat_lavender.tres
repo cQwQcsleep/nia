@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://c4kjgl4u1xnuh"]
+
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="1_h1c4j"]
+[ext_resource type="Texture2D" uid="uid://dwkttkqc8vpeh" path="res://texture/lavender.png" id="2_4kmkj"]
+
+[resource]
+render_priority = 1
+shader = ExtResource("1_h1c4j")
+shader_parameter/wind_strength = 0.030000001425
+shader_parameter/wind_speed = 2.0
+shader_parameter/wind_direction = Vector3(-0.5, 0, 0.5)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("2_4kmkj")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://bucd4tm0x31cb"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_286yt"]
+[ext_resource type="Texture2D" uid="uid://sqbgqpkdnykd" path="res://texture/wallpaper/wallpaper_08.png" id="2_286yt"]
+
+[resource]
+script = ExtResource("1_286yt")
+name = "wallpaper_puddle"
+texture = ExtResource("2_286yt")
+accent_colour = Color(0.19215687, 0.20784314, 0.24313726, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

@@ -1,0 +1,859 @@
+[gd_scene format=3 uid="uid://col62rfhsro8a"]
+
+[ext_resource type="PackedScene" uid="uid://cbk621y8uu18o" path="res://stage/mesh/snowy_quarters.blend" id="1_14abp"]
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_oojsw"]
+[ext_resource type="AudioStream" uid="uid://t65o8x55m7ca" path="res://audio/music/se_snow.ogg" id="2_bsxm6"]
+[ext_resource type="LightmapGIData" uid="uid://b1uy5xs4qynn8" path="res://stage/lightmap/stage_snowy_quarters.lmbake" id="2_dyofw"]
+[ext_resource type="Texture2D" uid="uid://c8t0bbjvfjhxf" path="res://texture/sky_snowy_quarters.png" id="2_o52gk"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="3_bdicf"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="4_g26un"]
+[ext_resource type="Texture2D" uid="uid://ck5h7ro7ltwvo" path="res://texture/snow_pavement.png" id="4_n5cbt"]
+[ext_resource type="Texture2D" uid="uid://8ii0fw2dkpuo" path="res://texture/tree_18.png" id="5_gr7tt"]
+[ext_resource type="Shader" uid="uid://bv5uhvm4ujbsa" path="res://gdshader/blend_triplanar.gdshader" id="5_n5cbt"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="5_ugyni"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_wkhb6"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="6_gr7tt"]
+[ext_resource type="Texture2D" uid="uid://c85qfvuxxwnib" path="res://texture/snow_bench.png" id="6_yi0aa"]
+[ext_resource type="Material" uid="uid://bu45m1gimtj0s" path="res://gdshader/material/snowy_quarters_snow.tres" id="7_dwmrg"]
+[ext_resource type="Texture2D" uid="uid://uht26cfwbnf4" path="res://texture/wood_12.png" id="8_3dshm"]
+[ext_resource type="Texture2D" uid="uid://cb5k0l6g5l7hq" path="res://texture/snow_03.png" id="9_e15le"]
+[ext_resource type="PackedScene" uid="uid://cxv3msarmgfpa" path="res://resource/particle_moth.tscn" id="11_a335x"]
+[ext_resource type="Texture2D" uid="uid://cia3gxuj7wlsm" path="res://texture/wire_04.png" id="12_wg1il"]
+[ext_resource type="Texture2D" uid="uid://n07p10x0e5ve" path="res://texture/fence_09.png" id="12_xb4kv"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="13_pjwx2"]
+[ext_resource type="Texture2D" uid="uid://iae6srh6oyug" path="res://texture/dead_tree_10.png" id="17_5enni"]
+[ext_resource type="Texture2D" uid="uid://c6mgymbd050fb" path="res://texture/snow_road_01.png" id="17_7ihxn"]
+[ext_resource type="Texture2D" uid="uid://c5rwvv6aj12mw" path="res://texture/dead_tree_11.png" id="17_bt7r7"]
+[ext_resource type="Texture2D" uid="uid://dd160achlfe1g" path="res://texture/snow_grass_01.png" id="17_hiod8"]
+[ext_resource type="Texture2D" uid="uid://dtsbl4li53d8d" path="res://texture/metal_08.png" id="17_og88l"]
+[ext_resource type="Texture2D" uid="uid://0kfm06iwwue5" path="res://texture/snow_pavement_01.png" id="17_xs4t0"]
+[ext_resource type="Texture2D" uid="uid://dmws8skea18x2" path="res://texture/window_lit_02.png" id="17_ypcsg"]
+[ext_resource type="Texture2D" uid="uid://ce1ff3kjheoau" path="res://texture/wall_08.png" id="18_7ihxn"]
+[ext_resource type="Texture2D" uid="uid://br0v4svodhvgq" path="res://texture/antenna.png" id="18_8ioxr"]
+[ext_resource type="Texture2D" uid="uid://dw2i1ojo72w8p" path="res://texture/snow_metal.png" id="19_be4k3"]
+[ext_resource type="Texture2D" uid="uid://cq57nidytjry8" path="res://texture/dead_tree_12.png" id="19_e15le"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="19_oiion"]
+[ext_resource type="Texture2D" uid="uid://bx4hy2i2ifjyr" path="res://texture/swing_seat_02.png" id="20_5yqfg"]
+[ext_resource type="Texture2D" uid="uid://bpaid8nukj355" path="res://texture/restroom_block.png" id="21_8rta4"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="21_eayfu"]
+[ext_resource type="Texture2D" uid="uid://dyidj1gk3qlkj" path="res://texture/moth_05.png" id="25_evhhe"]
+[ext_resource type="Shader" uid="uid://bdbso3iuonqsb" path="res://gdshader/vertex_scroll.gdshader" id="25_uepes"]
+[ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="26_xs4t0"]
+[ext_resource type="Texture2D" uid="uid://cub6shgg3d6of" path="res://texture/fence_10.png" id="30_c0fn5"]
+[ext_resource type="Texture2D" uid="uid://xdoksvwo020j" path="res://texture/wire_06.png" id="31_oj8jv"]
+[ext_resource type="Texture2D" uid="uid://dy4v3lsgxn6e3" path="res://texture/light_07.png" id="31_qgue2"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="32_m2gyt"]
+[ext_resource type="Texture2D" uid="uid://daokirg5lde4n" path="res://texture/light_03.png" id="33_kkqd2"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="35_g1kyc"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="37_fgr6r"]
+[ext_resource type="AudioStream" uid="uid://132cdaxyop0l" path="res://audio/amb/snow_quarters.ogg" id="46_v4l6t"]
+[ext_resource type="Shader" uid="uid://b608t0d4owqs1" path="res://gdshader/clouds_blocks.gdshader" id="47_icjug"]
+
+[sub_resource type="Gradient" id="Gradient_g26un"]
+offsets = PackedFloat32Array(0, 0.3, 0.8)
+colors = PackedColorArray(0, 0, 0, 1, 0.18, 0.20400001, 0.3, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gr7tt"]
+gradient = SubResource("Gradient_g26un")
+width = 64
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8ioxr"]
+panorama = ExtResource("2_o52gk")
+
+[sub_resource type="Sky" id="Sky_qgue2"]
+sky_material = SubResource("PanoramaSkyMaterial_8ioxr")
+
+[sub_resource type="Environment" id="Environment_oojsw"]
+background_mode = 2
+sky = SubResource("Sky_qgue2")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 1.4
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.043137256, 0.42352942, 0.6666667, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_depth_curve = 1.2311445
+fog_depth_end = 128.0
+adjustment_enabled = true
+adjustment_brightness = 0.7
+adjustment_contrast = 0.95
+adjustment_saturation = 0.7
+adjustment_color_correction = SubResource("GradientTexture1D_gr7tt")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_eayfu"]
+noise_type = 2
+frequency = 0.05
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ypcsg"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_eayfu")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o52gk"]
+render_priority = 0
+shader = ExtResource("21_eayfu")
+shader_parameter/texture_albedo = ExtResource("9_e15le")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_ypcsg")
+shader_parameter/alpha = 0.3
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.6000000285
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vx5u3"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("6_yi0aa")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pjwx2"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("8_3dshm")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n5cbt"]
+render_priority = 3
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.1
+shader_parameter/tex = ExtResource("5_gr7tt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwmrg"]
+resource_name = "gate_trans"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("12_xb4kv")
+texture_filter = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgr6r"]
+render_priority = 1
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("12_wg1il")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ghhg"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("4_n5cbt")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qgue2"]
+resource_name = "antenna"
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("18_8ioxr")
+texture_filter = 1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w5mtx"]
+resource_name = "Material.001"
+render_priority = -1
+transparency = 4
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("17_ypcsg")
+emission_enabled = true
+emission_texture = ExtResource("17_ypcsg")
+texture_filter = 5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oj8jv"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_7ihxn")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0fn5"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_hiod8")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g1kyc"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("18_7ihxn")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7ihxn"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_xs4t0")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ioxr"]
+render_priority = 1
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.1
+shader_parameter/tex = ExtResource("5_gr7tt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xs4t0"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_og88l")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eayfu"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("21_8rta4")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5enni"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_5enni")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_og88l"]
+render_priority = 0
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("17_5enni")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e15le"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("17_bt7r7")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evhhe"]
+render_priority = 1
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("17_bt7r7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5yqfg"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("19_e15le")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pl1x"]
+render_priority = 2
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("19_e15le")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uepes"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("20_5yqfg")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bt7r7"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("19_be4k3")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4l6t"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("31_qgue2")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.3
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pl1x"]
+resource_name = "moth.001"
+render_priority = -1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("25_evhhe")
+texture_repeat = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hiod8"]
+render_priority = 0
+shader = ExtResource("25_uepes")
+shader_parameter/tex = ExtResource("26_xs4t0")
+shader_parameter/emission = 1.0
+shader_parameter/color = Color(0.83, 0.38180003, 0.1577, 0.078431375)
+shader_parameter/scroll_speed_primary = 0.2
+shader_parameter/scroll_speed_secondary = 0.1
+shader_parameter/use_alpha = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8rta4"]
+render_priority = 1
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("12_wg1il")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m2gyt"]
+render_priority = 1
+shader = ExtResource("4_g26un")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(0.4, 0.4, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("31_oj8jv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkqd2"]
+render_priority = 0
+shader = ExtResource("5_n5cbt")
+shader_parameter/texture_a = ExtResource("30_c0fn5")
+shader_parameter/texture_b = ExtResource("9_e15le")
+shader_parameter/texture_b_scale = 0.1
+shader_parameter/texture_b_strength = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c0fn5"]
+resource_name = "fence_trans"
+render_priority = 2
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("30_c0fn5")
+texture_filter = 5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eayfu"]
+render_priority = 3
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.8, 0.42666665, 0.16, 0.078431375)
+albedo_texture = ExtResource("33_kkqd2")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_bsxm6"]
+size = Vector2(5000, 5000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_te8ag"]
+offset = Vector3(0, 130, 0)
+fractal_lacunarity = 1.4
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tmnk"]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_te8ag")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hpifw"]
+render_priority = -10
+shader = ExtResource("47_icjug")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.008
+shader_parameter/alpha_threshold = 0.2000000095
+shader_parameter/alpha_strength = 0.30000001425
+shader_parameter/cloud_color = Color(0, 0.75, 1, 1)
+shader_parameter/cloud_scale = 10.0
+shader_parameter/fade_radius = 0.25
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 3.0
+
+[node name="stage_snowy_quarters" type="Node3D" unique_id=526553577 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_oojsw")
+stage_name = "world_snowy_quarter"
+_bloom = 0.6
+_extra_snd_bank = 1
+bgm = ExtResource("2_bsxm6")
+bgm_pitch = 0.9
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 2
+respawn_y = -5
+_stage_light = Color(0.25999996, 0.35749996, 0.65, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1693766532]
+environment = SubResource("Environment_oojsw")
+
+[node name="particle_leaf" parent="." unique_id=749303828 groups=["stage_lit"] instance=ExtResource("6_gr7tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7, 0)
+amount = 32
+color = Color(0.7, 0.7, 0.7, 0.9411765)
+_max_particle = 32
+
+[node name="particle_leaf2" parent="." unique_id=130104285 groups=["stage_lit"] instance=ExtResource("6_gr7tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 44)
+amount = 32
+color = Color(0.7019608, 0.7019608, 0.7019608, 0.9411765)
+_max_particle = 32
+
+[node name="snowy_quarters" parent="." unique_id=1974409656 instance=ExtResource("1_14abp")]
+
+[node name="bench" parent="snowy_quarters" index="1" unique_id=1284728507]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_vx5u3")
+
+[node name="SnowBall_001" parent="snowy_quarters/bench" index="0" unique_id=2033412872]
+surface_material_override/0 = ExtResource("7_dwmrg")
+
+[node name="bench_001" parent="snowy_quarters" index="2" unique_id=196325566]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_vx5u3")
+
+[node name="tree" parent="snowy_quarters" index="3" unique_id=267734381]
+surface_material_override/0 = SubResource("ShaderMaterial_pjwx2")
+
+[node name="tree_leaves" parent="snowy_quarters/tree" index="1" unique_id=1776386848]
+surface_material_override/0 = SubResource("ShaderMaterial_n5cbt")
+
+[node name="drain_pipe" parent="snowy_quarters" index="4" unique_id=596831583]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="tree_wall" parent="snowy_quarters" index="5" unique_id=1574052716]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="lamp_post" parent="snowy_quarters" index="7" unique_id=1291547731]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="lamp_post_light" type="SpotLight3D" parent="snowy_quarters/lamp_post" index="1" unique_id=257685274]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.8293624, 0, 0)
+visible = false
+light_color = Color(0.6, 0.14400001, 0.14400001, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.5
+spot_angle = 75.0
+
+[node name="particle_moth2" parent="snowy_quarters/lamp_post" index="2" unique_id=2078684417 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8293624, 0, 0)
+
+[node name="lamp_post_002" parent="snowy_quarters" index="8" unique_id=1829570407]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="lamp_post_light2" type="SpotLight3D" parent="snowy_quarters/lamp_post_002" index="1" unique_id=1867435935]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.79646826, -0.20279264, 0)
+visible = false
+light_color = Color(0.6, 0.14400001, 0.14400001, 1)
+light_energy = 0.2
+light_bake_mode = 1
+shadow_enabled = true
+spot_range = 16.0
+spot_attenuation = 0.5
+spot_angle = 75.0
+
+[node name="particle_moth" parent="snowy_quarters/lamp_post_002" index="2" unique_id=92912101 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8293624, 0, 0)
+
+[node name="gate" parent="snowy_quarters" index="9" unique_id=1901749838]
+surface_material_override/0 = SubResource("StandardMaterial3D_dwmrg")
+
+[node name="interactable" parent="snowy_quarters/gate" index="1" unique_id=731676892 instance=ExtResource("3_bdicf")]
+uninteractable = true
+
+[node name="drain_pipe_001" parent="snowy_quarters" index="10" unique_id=1904177231]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="courtyard_wire" parent="snowy_quarters" index="11" unique_id=2063751660]
+surface_material_override/0 = SubResource("ShaderMaterial_fgr6r")
+
+[node name="drain_pipe_002" parent="snowy_quarters" index="12" unique_id=156034927]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="window_wood" parent="snowy_quarters" index="14" unique_id=201127598]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="courtyard_ground" parent="snowy_quarters" index="15" unique_id=1963623387]
+surface_material_override/0 = SubResource("ShaderMaterial_6ghhg")
+
+[node name="StaticBody3D" parent="snowy_quarters/courtyard_ground" index="0" unique_id=1090840328]
+collision_layer = 16
+
+[node name="drain_pipe_003" parent="snowy_quarters" index="17" unique_id=1501764880]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="paint" parent="snowy_quarters" index="18" unique_id=655712161]
+layers = 262144
+
+[node name="courtyard_building" parent="snowy_quarters" index="20" unique_id=1162456196]
+surface_material_override/8 = SubResource("StandardMaterial3D_qgue2")
+
+[node name="bed" parent="snowy_quarters" index="21" unique_id=1086294023]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="window_light" parent="snowy_quarters" index="22" unique_id=1130509187]
+surface_material_override/0 = SubResource("StandardMaterial3D_w5mtx")
+
+[node name="bench_002" parent="snowy_quarters" index="23" unique_id=2036910740]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_vx5u3")
+
+[node name="outside_ground" parent="snowy_quarters" index="47" unique_id=1756511882]
+surface_material_override/2 = SubResource("ShaderMaterial_oj8jv")
+surface_material_override/3 = SubResource("ShaderMaterial_c0fn5")
+surface_material_override/4 = SubResource("ShaderMaterial_g1kyc")
+surface_material_override/5 = SubResource("ShaderMaterial_7ihxn")
+
+[node name="StaticBody3D" parent="snowy_quarters/outside_ground" index="0" unique_id=1504046347]
+collision_layer = 16
+
+[node name="outside_tree_001" parent="snowy_quarters" index="48" unique_id=1687918571]
+surface_material_override/0 = SubResource("ShaderMaterial_pjwx2")
+
+[node name="tree_leaves_001" parent="snowy_quarters/outside_tree_001" index="1" unique_id=651322735]
+surface_material_override/0 = SubResource("ShaderMaterial_8ioxr")
+
+[node name="metal_barrier" parent="snowy_quarters" index="49" unique_id=1039667405]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_xs4t0")
+
+[node name="StaticBody3D" parent="snowy_quarters/metal_barrier" index="0" unique_id=111902429]
+collision_layer = 512
+
+[node name="wc" parent="snowy_quarters" index="50" unique_id=1519281666]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_eayfu")
+
+[node name="dead_trees" parent="snowy_quarters" index="51" unique_id=68623169]
+surface_material_override/0 = SubResource("ShaderMaterial_5enni")
+surface_material_override/1 = SubResource("ShaderMaterial_og88l")
+surface_material_override/3 = SubResource("ShaderMaterial_e15le")
+surface_material_override/4 = SubResource("ShaderMaterial_evhhe")
+surface_material_override/5 = SubResource("ShaderMaterial_5yqfg")
+surface_material_override/6 = SubResource("ShaderMaterial_8pl1x")
+
+[node name="swing" parent="snowy_quarters" index="52" unique_id=1082289843]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_uepes")
+
+[node name="swing_fence" parent="snowy_quarters" index="53" unique_id=2021966530]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_bt7r7")
+
+[node name="StaticBody3D" parent="snowy_quarters/swing_seat" parent_id_path=PackedInt32Array(1974409656, 1882254807) index="0" unique_id=252218073]
+collision_layer = 512
+
+[node name="StaticBody3D" parent="snowy_quarters/swing_seat_001" parent_id_path=PackedInt32Array(1974409656, 388214870) index="0" unique_id=78547055]
+collision_layer = 512
+
+[node name="tire" parent="snowy_quarters" index="56" unique_id=365263352]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="arch" parent="snowy_quarters" index="57" unique_id=2070700966]
+surface_material_override/0 = SubResource("ShaderMaterial_bt7r7")
+
+[node name="drain_pipe_long" parent="snowy_quarters" index="58" unique_id=1546016215]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="drain_pipe_long_001" parent="snowy_quarters" index="59" unique_id=2126337694]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="street_light" parent="snowy_quarters" index="60" unique_id=644047483]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_v4l6t")
+
+[node name="drain_pipe_long_002" parent="snowy_quarters" index="61" unique_id=2044385343]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="drain_pipe_long_003" parent="snowy_quarters" index="62" unique_id=544529652]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="drain_pipe_long_004" parent="snowy_quarters" index="63" unique_id=1111161215]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="drain_pipe_long_005" parent="snowy_quarters" index="64" unique_id=1676321315]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="outside_moth" parent="snowy_quarters" index="65" unique_id=1160522860]
+surface_material_override/0 = SubResource("StandardMaterial3D_8pl1x")
+
+[node name="street_light_light_volume" parent="snowy_quarters" index="66" unique_id=50319598]
+gi_mode = 0
+surface_material_override/0 = SubResource("ShaderMaterial_hiod8")
+
+[node name="metal_barrier_001" parent="snowy_quarters" index="67" unique_id=459658369]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_xs4t0")
+
+[node name="StaticBody3D" parent="snowy_quarters/metal_barrier_001" index="0" unique_id=1830286286]
+collision_layer = 512
+
+[node name="outside_top_wires" parent="snowy_quarters" index="68" unique_id=1221628808]
+surface_material_override/0 = SubResource("ShaderMaterial_8rta4")
+
+[node name="street_light_wire" parent="snowy_quarters" index="69" unique_id=1978592611]
+surface_material_override/0 = SubResource("ShaderMaterial_m2gyt")
+surface_material_override/1 = SubResource("ShaderMaterial_8rta4")
+
+[node name="rooftop_structure" parent="snowy_quarters" index="70" unique_id=748994655]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="playground_fence" parent="snowy_quarters" index="71" unique_id=833866378]
+surface_material_override/0 = SubResource("ShaderMaterial_kkqd2")
+surface_material_override/1 = SubResource("StandardMaterial3D_c0fn5")
+
+[node name="bars" parent="snowy_quarters" index="72" unique_id=1644938235]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+surface_material_override/0 = SubResource("ShaderMaterial_bt7r7")
+
+[node name="rooftop_structure_001" parent="snowy_quarters" index="73" unique_id=1107826239]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="stromkasten" parent="snowy_quarters" index="75" unique_id=696722974]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="stromkasten_001" parent="snowy_quarters" index="76" unique_id=1745262407]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="stromkasten_002" parent="snowy_quarters" index="77" unique_id=1737289936]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="stromkasten_003" parent="snowy_quarters" index="78" unique_id=1481011953]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="stromkasten_004" parent="snowy_quarters" index="79" unique_id=551438477]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="wc-light" parent="snowy_quarters" index="80" unique_id=1592356701]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="park_light" parent="snowy_quarters" index="81" unique_id=1430496452]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="distant_light" parent="snowy_quarters/park_light" index="1" unique_id=676569392 instance=ExtResource("32_m2gyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8330803, 0)
+material_override = SubResource("StandardMaterial3D_eayfu")
+pixel_size = 0.01
+texture = ExtResource("33_kkqd2")
+
+[node name="particle_moth" parent="snowy_quarters/park_light" index="2" unique_id=349044411 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8341587, 0)
+
+[node name="park_light_001" parent="snowy_quarters" index="82" unique_id=312487705]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="distant_light" parent="snowy_quarters/park_light_001" index="1" unique_id=2132025911 instance=ExtResource("32_m2gyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8330803, 0)
+material_override = SubResource("StandardMaterial3D_eayfu")
+pixel_size = 0.01
+texture = ExtResource("33_kkqd2")
+
+[node name="particle_moth" parent="snowy_quarters/park_light_001" index="2" unique_id=465087873 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8341587, 0)
+
+[node name="park_light_002" parent="snowy_quarters" index="83" unique_id=1552887679]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="distant_light" parent="snowy_quarters/park_light_002" index="1" unique_id=706345819 instance=ExtResource("32_m2gyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8330803, 0)
+material_override = SubResource("StandardMaterial3D_eayfu")
+pixel_size = 0.01
+texture = ExtResource("33_kkqd2")
+
+[node name="particle_moth" parent="snowy_quarters/park_light_002" index="2" unique_id=441909441 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8341587, 0)
+
+[node name="park_light_003" parent="snowy_quarters" index="84" unique_id=49528166]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="distant_light" parent="snowy_quarters/park_light_003" index="1" unique_id=41624899 instance=ExtResource("32_m2gyt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8330803, 0)
+material_override = SubResource("StandardMaterial3D_eayfu")
+pixel_size = 0.01
+texture = ExtResource("33_kkqd2")
+
+[node name="particle_moth" parent="snowy_quarters/park_light_003" index="2" unique_id=445672366 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8341587, 0)
+
+[node name="paint_001" parent="snowy_quarters" index="85" unique_id=1012858908]
+layers = 262144
+
+[node name="interactable" parent="snowy_quarters/wc_door" parent_id_path=PackedInt32Array(1974409656, 1097470990) index="1" unique_id=233420645 instance=ExtResource("3_bdicf")]
+uninteractable = true
+
+[node name="lightmap_gi" type="LightmapGI" parent="snowy_quarters" unique_id=487945955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+supersampling_factor = 3.0
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.050000012, 0.2083332, 1, 1)
+generate_probes_subdiv = 0
+light_data = ExtResource("2_dyofw")
+
+[node name="courtyard_light" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=1013204872]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 0)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light3" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=2088514217]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, 9)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light2" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=73242319]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 4, -8)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light7" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=916162219]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.259629e-09, 4, -8)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light4" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=2072264001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 0)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light5" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=527799491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, 9)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light8" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=1641684401]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 4, 9)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="courtyard_light6" type="OmniLight3D" parent="snowy_quarters/lightmap_gi" unique_id=464071476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 4, -8)
+light_color = Color(0.007843138, 0.09411765, 0.24705882, 1)
+light_energy = 1.3
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="spot_light_3d" type="SpotLight3D" parent="snowy_quarters/lightmap_gi" unique_id=376964260]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.719097, 9.955716, 21.929283)
+light_color = Color(0.85490197, 0.6, 0.47843137, 1)
+light_bake_mode = 0
+shadow_enabled = true
+spot_range = 32.0
+
+[node name="generic_door" parent="snowy_quarters" unique_id=1341957503 instance=ExtResource("5_ugyni")]
+transform = Transform3D(-0.99656117, 0.08286039, -8.7122146e-08, 0.08286039, 0.99656117, 7.243885e-09, 8.742278e-08, 0, -1, -19.845795, 0.99594724, 60.10235)
+
+[node name="door_frame" parent="snowy_quarters/generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="0" unique_id=185945896]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="door" parent="snowy_quarters/generic_door/door2" parent_id_path=PackedInt32Array(1341957503, 921329222) index="1" unique_id=1252318643]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="particle_moth" parent="snowy_quarters" unique_id=412536168 instance=ExtResource("11_a335x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.647183, 13.838182)
+
+[node name="outside_ac" parent="snowy_quarters" index="92" unique_id=381147038]
+material_overlay = SubResource("ShaderMaterial_o52gk")
+
+[node name="entrance" type="Node3D" parent="." unique_id=571059713]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -0.9879861, -0.3931616, -8.421806)
+script = ExtResource("5_wkhb6")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=2007699360 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("13_pjwx2")
+_bounds = NodePath("../snowy_quarters/bounds_loop")
+_all_axis = false
+_world = NodePath("../snowy_quarters")
+_fade_on_loop = true
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="eye_watcher" parent="." unique_id=1638901186 instance=ExtResource("19_oiion")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 14.4736595, -22)
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("35_g1kyc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3725567, -1.0086942, 42.42699)
+
+[node name="particle_bird" parent="." unique_id=1330701919 instance=ExtResource("37_fgr6r")]
+
+[node name="particle_moth" parent="." unique_id=1559543550 instance=ExtResource("11_a335x")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -16.428493, 2.3332765, 51.545654)
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1833831016]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 38, 44)
+stream = ExtResource("46_v4l6t")
+attenuation_model = 2
+unit_size = 64.0
+autoplay = true
+panning_strength = 0.4
+bus = &"amb"
+
+[node name="cloud_dome" type="MeshInstance3D" parent="." unique_id=1392656117]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_bsxm6")
+surface_material_override/0 = SubResource("ShaderMaterial_hpifw")
+
+[editable path="snowy_quarters"]
+[editable path="snowy_quarters/generic_door"]
+[editable path="snowy_quarters/generic_door/door2"]

@@ -1,0 +1,45 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://g5cqg2a6287u"
+path="res://.godot/imported/background.blend-628b28e53c51687a83002a34d2c541cb.scn"
+
+[deps]
+
+source_file="res://stage/mesh/background.blend"
+dest_files=["res://.godot/imported/background.blend-628b28e53c51687a83002a34d2c541cb.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="background"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"nodes": {
+"PATH:bounds": {
+"mesh_instance/layers": 0,
+"physics/layer": 512
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

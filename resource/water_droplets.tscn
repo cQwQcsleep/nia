@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bls8cw6cpi437"]
+
+[ext_resource type="Texture2D" uid="uid://b6r12ejo4b7pm" path="res://texture/particle_rain.png" id="1_p0h8f"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_oe0na"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwwj3"]
+render_priority = 1
+transparency = 4
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_p0h8f")
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_qwgdl"]
+size = Vector2(0.03, 1)
+center_offset = Vector3(0, -0.5, 0)
+
+[sub_resource type="Curve" id="Curve_qwgdl"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 50), 0.0, 0.0, 0, 0, Vector2(0.6, 50), 0.0, 0.0, 0, 0, Vector2(0.8, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_wwwj3"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.4, 0.1), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(0.9, 1), 0.0, 0.0, 0, 0, Vector2(0.977733, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_qwgdl"]
+offsets = PackedFloat32Array(0, 0.5, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_wwwj3"]
+colors = PackedColorArray(1, 1, 1, 0.0784314, 1, 1, 1, 0.784314)
+
+[node name="water_droplets" type="CPUParticles3D" groups=["stage_lit"]]
+material_override = SubResource("StandardMaterial3D_wwwj3")
+visibility_range_end = 48.0
+lifetime = 5.0
+preprocess = 5.0
+randomness = 0.2
+visibility_aabb = AABB(-4.94355, -16.9839, -4.78055, 7.66106, 16.9839, 8.75001)
+mesh = SubResource("QuadMesh_qwgdl")
+emission_shape = 3
+emission_box_extents = Vector3(5, 0, 5)
+particle_flag_rotate_y = true
+gravity = Vector3(0, -20, 0)
+damping_min = 1.0
+damping_max = 1.0
+damping_curve = SubResource("Curve_qwgdl")
+scale_amount_max = 2.0
+split_scale = true
+scale_curve_x = null
+scale_curve_y = SubResource("Curve_wwwj3")
+scale_curve_z = null
+color_ramp = SubResource("Gradient_qwgdl")
+color_initial_ramp = SubResource("Gradient_wwwj3")
+script = ExtResource("2_oe0na")
+_max_particle = 8

@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bovgeieer1y8a"]
+
+[ext_resource type="Texture2D" uid="uid://bwtgj51ifk7av" path="res://texture/doors.png" id="1_cps4m"]
+
+[resource]
+resource_name = "door"
+cull_mode = 2
+specular_mode = 2
+albedo_texture = ExtResource("1_cps4m")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}

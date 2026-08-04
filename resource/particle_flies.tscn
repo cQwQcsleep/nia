@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://be5lx238lrqka"]
+
+[ext_resource type="Texture2D" uid="uid://ns56hsarexes" path="res://texture/particle_fly.png" id="1_cbplo"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_gv1r4"]
+[ext_resource type="AudioStream" uid="uid://dtmeyilnr4td1" path="res://audio/amb/flies.ogg" id="3_8e26f"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m41cn"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_cbplo")
+texture_repeat = false
+
+[sub_resource type="QuadMesh" id="QuadMesh_lb6pv"]
+size = Vector2(0.6, 1)
+
+[sub_resource type="Curve" id="Curve_g514b"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.1, 160), 0.0, 0.0, 0, 0, Vector2(0.2, -160), 0.0, 0.0, 0, 0, Vector2(0.3, 0), 0.0, 0.0, 0, 0, Vector2(0.4, -200), 0.0, 0.0, 0, 0, Vector2(0.5, 160), 0.0, 0.0, 0, 0, Vector2(0.6, 120), 0.0, 0.0, 0, 0, Vector2(0.7, 200), 0.0, 0.0, 0, 0, Vector2(0.8, -80), 0.0, 0.0, 0, 0, Vector2(0.90000004, 120), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_m41cn"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(0.1, 1), 0.0, 0.0, 0, 0, Vector2(0.2, 0), 0.0, 0.0, 0, 0, Vector2(0.3, 0.8), 0.0, 0.0, 0, 0, Vector2(0.4, 0.5), 0.0, 0.0, 0, 0, Vector2(0.5, 1), 0.0, 0.0, 0, 0, Vector2(0.6, 0.5), 0.0, 0.0, 0, 0, Vector2(0.7, 1), 0.0, 0.0, 0, 0, Vector2(0.8, 0.2), 0.0, 0.0, 0, 0, Vector2(0.90000004, 0.8), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Gradient" id="Gradient_g514b"]
+offsets = PackedFloat32Array(0, 0.3, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_m41cn"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 0.84000003, 0.84000003, 1, 0.90999997, 1, 0.9265, 1, 1, 1, 1, 0.78431374)
+
+[node name="particle_flies" type="CPUParticles3D" unique_id=1228231537 groups=["stage_lit"]]
+transform = Transform3D(0.75576204, 0, -0.6548464, 0, 1, 0, 0.6548464, 0, 0.75576204, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_m41cn")
+visibility_range_end = 32.0
+amount = 16
+preprocess = 5.0
+speed_scale = 0.5
+visibility_aabb = AABB(-3.7854939, -1.7235813, -4.1302323, 7.7329473, 3.6158838, 6.8642764)
+mesh = SubResource("QuadMesh_lb6pv")
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+particle_flag_align_y = true
+spread = 180.0
+gravity = Vector3(0, 1, 0)
+initial_velocity_min = 2.0
+initial_velocity_max = 2.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+radial_accel_curve = SubResource("Curve_g514b")
+tangential_accel_min = -0.3
+tangential_accel_max = 0.3
+tangential_accel_curve = SubResource("Curve_g514b")
+damping_max = 2.0
+angle_max = 90.0
+scale_amount_min = 0.06
+scale_amount_max = 0.1
+split_scale = true
+scale_curve_x = SubResource("Curve_m41cn")
+scale_curve_y = null
+scale_curve_z = null
+color = Color(0.8474744, 0.84747446, 0.8474743, 1)
+color_ramp = SubResource("Gradient_g514b")
+color_initial_ramp = SubResource("Gradient_m41cn")
+script = ExtResource("2_gv1r4")
+_max_particle = 16
+
+[node name="amb_flies" type="AudioStreamPlayer3D" parent="." unique_id=1346201738]
+stream = ExtResource("3_8e26f")
+attenuation_model = 2
+max_db = 5.0
+autoplay = true
+max_distance = 14.0
+bus = &"amb"

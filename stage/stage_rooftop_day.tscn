@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://c4wag0ax8oexh"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_pm3aa"]
+[ext_resource type="LightmapGIData" uid="uid://dum32oe6wrjat" path="res://stage/lightmap/stage_rooftop_day.lmbake" id="2_24tfk"]
+[ext_resource type="PackedScene" uid="uid://dx43h36jqg8em" path="res://stage/mesh/rooftop_day.blend" id="2_rsv4g"]
+[ext_resource type="PackedScene" uid="uid://cg6mpbp56ax17" path="res://stage/mesh/apartment_hills.blend" id="3_qk6q4"]
+
+[sub_resource type="Environment" id="Environment_30khd"]
+background_mode = 1
+background_color = Color(1, 1, 1, 1)
+background_energy_multiplier = 0.6
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.164706, 0.235294, 0.862745, 1)
+fog_density = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ewuah"]
+size = Vector2(200, 200)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ldhum"]
+data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100, -100, 0, -100, 100, 0, -100)
+
+[node name="stage_rooftop_day" type="Node3D"]
+script = ExtResource("1_pm3aa")
+
+[node name="lightmap_gi" type="LightmapGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000684738, 2.01388, -0.000366718)
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.1
+light_data = ExtResource("2_24tfk")
+
+[node name="world_environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_30khd")
+
+[node name="rooftop_day" parent="." instance=ExtResource("2_rsv4g")]
+visible = false
+
+[node name="mesh_instance_3d" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.157939, 0)
+visible = false
+mesh = SubResource("PlaneMesh_ewuah")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="mesh_instance_3d"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="mesh_instance_3d/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_ldhum")
+
+[node name="apartment_hills" parent="." instance=ExtResource("3_qk6q4")]

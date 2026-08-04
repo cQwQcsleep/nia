@@ -1,0 +1,264 @@
+[gd_scene format=3 uid="uid://c0d12asbfw0xd"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_7qdkg"]
+[ext_resource type="LightmapGIData" uid="uid://c3infa5tqcydh" path="res://stage/lightmap/stage_flowerfield.lmbake" id="2_niwgl"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_qnsr0"]
+[ext_resource type="PackedScene" uid="uid://btjt7lmjq3ahr" path="res://stage/mesh/flowerfield.blend" id="2_yfjra"]
+[ext_resource type="Texture2D" uid="uid://bopidubh4dw0f" path="res://texture/flower_gallery.png" id="3_f4gya"]
+[ext_resource type="Texture2D" uid="uid://dr452tb7sup7t" path="res://texture/sky_red.png" id="3_qfotf"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_4hkph"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="5_msgd1"]
+[ext_resource type="Texture2D" uid="uid://cl14htj1xfure" path="res://texture/tree_12.png" id="7_hserf"]
+[ext_resource type="Texture2D" uid="uid://3p7s3wx1xb6j" path="res://texture/picture_frame.png" id="8_4swxn"]
+[ext_resource type="Script" uid="uid://b4mv2cm6ht67m" path="res://gdscript/interactable.gd" id="10_lktol"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="10_pd2vj"]
+[ext_resource type="Texture2D" uid="uid://b0jpp1ccjwbt4" path="res://texture/red_moon.png" id="12_cebip"]
+[ext_resource type="Texture2D" uid="uid://bb1l36oxolmv" path="res://texture/moon_bloomy.png" id="12_lwsi7"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="13_cebip"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="15_qfotf"]
+
+[sub_resource type="Gradient" id="Gradient_niwgl"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.1, 0.22839506, 0.9660494)
+colors = PackedColorArray(0, 0, 0, 1, 0.16683333, 0.1562, 0.22, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qnsr0"]
+gradient = SubResource("Gradient_niwgl")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hserf"]
+shader = ExtResource("2_qnsr0")
+shader_parameter/source_panorama = ExtResource("3_qfotf")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = 0.50000002305148
+
+[sub_resource type="Sky" id="Sky_4swxn"]
+sky_material = SubResource("ShaderMaterial_hserf")
+
+[sub_resource type="Environment" id="Environment_qog8c"]
+background_mode = 2
+sky = SubResource("Sky_4swxn")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.8
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.999
+fog_depth_begin = 12.0
+fog_depth_end = 80.0
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.94
+adjustment_saturation = 0.8
+adjustment_color_correction = SubResource("GradientTexture1D_qnsr0")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qnsr0"]
+resource_name = "flower"
+render_priority = 1
+cull_mode = 2
+albedo_texture = ExtResource("3_f4gya")
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 6.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4swxn"]
+resource_name = "tree"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("7_hserf")
+billboard_mode = 2
+distance_fade_mode = 1
+distance_fade_min_distance = 32.0
+distance_fade_max_distance = 64.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lktol"]
+resource_name = "picture_frame"
+albedo_texture = ExtResource("8_4swxn")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pd2vj"]
+resource_name = "picture_frame_trans"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("8_4swxn")
+texture_repeat = false
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="Shader" id="Shader_4swxn"]
+code = "
+shader_type spatial;
+render_mode cull_disabled, blend_mix;
+
+uniform float hue_shift_deg : hint_range(-360.0, 360.0) = 0.0;
+uniform float saturation : hint_range(0.0, 5.0) = 2.0;
+uniform float value : hint_range(0.0, 5.0) = 2.0;
+uniform float alpha : hint_range(0.0, 1.0) = 1.0;
+uniform sampler2D _screen : hint_screen_texture;
+vec3 rgb2hsv(vec3 c) {
+    vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+    vec4 p = mix(vec4(c.bg, K.wz),
+                 vec4(c.gb, K.xy),
+                 step(c.b, c.g));
+    vec4 q = mix(vec4(p.xyw, c.r),
+                 vec4(c.r, p.yzx),
+                 step(p.x, c.r));
+
+    float d = q.x - min(q.w, q.y);
+    float e = 1.0e-10;
+    return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)),
+                d / (q.x + e),
+                q.x);
+}
+
+vec3 hsv2rgb(vec3 c) {
+    vec3 rgb = clamp(abs(mod(c.x * 6.0 + vec3(0.0, 4.0, 2.0),
+                             6.0) - 3.0) - 1.0,
+                     0.0,
+                     1.0);
+    return c.z * mix(vec3(1.0), rgb, c.y);
+}
+
+void fragment() {
+    vec4 col = texture(_screen, SCREEN_UV);
+    vec3 hsv = rgb2hsv(col.rgb);
+
+
+    float hue_shift = hue_shift_deg / 360.0;
+
+    hsv.x = mod(hsv.x + hue_shift, 1.0);
+    hsv.y *= saturation;
+    hsv.z *= value;
+
+    col.rgb = hsv2rgb(hsv);
+   // col.a *= alpha;
+    ALBEDO = col.rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pd2vj"]
+render_priority = -1
+shader = SubResource("Shader_4swxn")
+shader_parameter/hue_shift_deg = 0.0
+shader_parameter/saturation = 0.0
+shader_parameter/value = 1.0000000475
+shader_parameter/alpha = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qfotf"]
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 0.63, 0.63, 0.54901963)
+albedo_texture = ExtResource("12_cebip")
+texture_repeat = false
+billboard_mode = 2
+billboard_keep_scale = true
+fixed_size = true
+
+[sub_resource type="Gradient" id="Gradient_qfotf"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.75, 0.42000002, 0.42000002, 1, 0.42000002, 0.75, 0.6785, 1, 0.75, 0.73899996, 0.42000002, 1)
+
+[node name="stage_flowerfield" type="Node3D" unique_id=1694853496 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_7qdkg")
+stage_name = "world_flower_field"
+_bloom = 1.0
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.88, 0.5456, 0.74066657, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=517692868]
+environment = SubResource("Environment_qog8c")
+script = ExtResource("4_4hkph")
+_speed = 0.01
+
+[node name="flowerfield" parent="." unique_id=1069244733 instance=ExtResource("2_yfjra")]
+
+[node name="ground_flowers_001" parent="flowerfield" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qnsr0")
+
+[node name="tree" parent="flowerfield" index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_4swxn")
+
+[node name="picture_frame" parent="flowerfield" index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lktol")
+surface_material_override/1 = SubResource("StandardMaterial3D_pd2vj")
+surface_material_override/2 = SubResource("ShaderMaterial_pd2vj")
+
+[node name="StaticBody3D" parent="flowerfield/fence-conv" index="0"]
+collision_layer = 512
+
+[node name="StaticBody3D" parent="flowerfield/fence-conv_001" index="0"]
+collision_layer = 512
+
+[node name="lightmap_gi" type="LightmapGI" parent="flowerfield" unique_id=1309812793]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.2
+environment_mode = 3
+environment_custom_color = Color(1, 0.55, 0.8124999, 1)
+environment_custom_energy = 1.8
+generate_probes_subdiv = 0
+light_data = ExtResource("2_niwgl")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1353338667 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("5_msgd1")
+_bounds = NodePath("../flowerfield/ground")
+_world = NodePath("../flowerfield")
+_door_probability = 2
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="interactable" type="Area3D" parent="dream_looper" unique_id=669592961]
+script = ExtResource("10_lktol")
+metadata/_custom_type_script = "uid://b4mv2cm6ht67m"
+
+[node name="entrance" type="Node3D" parent="." unique_id=634718464]
+transform = Transform3D(-0.8660254, 0, -0.49999988, 0, 1, 0, 0.49999988, 0, -0.8660254, 29, 0.37756324, -20.305662)
+script = ExtResource("10_pd2vj")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="node_3d" type="Node3D" parent="." unique_id=2095890580]
+
+[node name="moon" type="Sprite3D" parent="node_3d" unique_id=693894274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2158.5303, 505.10016, -423.28564)
+material_override = SubResource("StandardMaterial3D_qfotf")
+extra_cull_margin = 48.0
+flip_v = true
+pixel_size = 0.0015
+texture = ExtResource("12_lwsi7")
+
+[node name="attach_player" type="Node3D" parent="node_3d" unique_id=870806704]
+script = ExtResource("13_cebip")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="node_3d2" type="Node3D" parent="." unique_id=705043140]
+
+[node name="attach_player" type="Node3D" parent="node_3d2" unique_id=2102155235]
+script = ExtResource("13_cebip")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="particle_leaf" parent="node_3d2" unique_id=1155326422 instance=ExtResource("15_qfotf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.9921575, 0)
+particle_flag_align_y = true
+particle_flag_rotate_y = false
+gravity = Vector3(-1, 1, 0)
+color = Color(1, 1, 1, 0.5882353)
+color_initial_ramp = SubResource("Gradient_qfotf")
+
+[editable path="flowerfield"]

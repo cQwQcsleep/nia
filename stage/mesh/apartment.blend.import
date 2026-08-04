@@ -1,0 +1,790 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://dxljb52k3p0d8"
+path="res://.godot/imported/apartment.blend-d24149740315047ce81b16466c63ddb9.scn"
+
+[deps]
+
+source_file="res://stage/mesh/apartment.blend"
+dest_files=["res://.godot/imported/apartment.blend-d24149740315047ce81b16466c63ddb9.scn"]
+
+[params]
+
+nodes/root_type="Node3D"
+nodes/root_name="apartment"
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=false
+meshes/create_shadow_meshes=true
+meshes/light_baking=2
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=true
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+_subresources={
+"meshes": {
+"apartment_Circle": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Circle_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_004": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0042": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0043": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0052": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0053": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0062": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_010": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0102": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_015": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0152": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0153": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0154": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0155": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0156": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0157": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0162": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0163": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0164": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0165": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_0166": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_023": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_024": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_035": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_040": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_041": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_042": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_042_063": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_042_068": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_054": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cube_055": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cylinder": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cylinder_001": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cylinder_001_071": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Cylinder_002": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_005": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_006": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_008": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_008_035": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_011": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_016": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_017": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_021": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_026": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_030": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"apartment_Plane_043": {
+"generate/lightmap_uv": 0,
+"generate/lods": 1,
+"generate/shadow_meshes": 0,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+},
+"water_trigger": {
+"generate/lightmap_uv": 2,
+"generate/lods": 0,
+"generate/shadow_meshes": 2,
+"lods/normal_merge_angle": 20.0,
+"save_to_file/enabled": false,
+"save_to_file/fallback_path": "",
+"save_to_file/path": ""
+}
+},
+"nodes": {
+"PATH:apartment": {
+"physics/shape_type": 1
+},
+"PATH:barrier": {
+"physics/shape_type": 1
+},
+"PATH:barrier_001": {
+"physics/shape_type": 1
+},
+"PATH:barrier_002": {
+"physics/shape_type": 1
+},
+"PATH:barrier_003": {
+"physics/shape_type": 1
+},
+"PATH:barrier_004": {
+"physics/shape_type": 1
+},
+"PATH:barrier_005": {
+"physics/shape_type": 1
+},
+"PATH:bicyle": {
+"physics/shape_type": 1
+},
+"PATH:bicyle_002": {
+"physics/shape_type": 1
+},
+"PATH:bicyle_003": {
+"physics/shape_type": 1
+},
+"PATH:bicyle_004": {
+"physics/shape_type": 1
+},
+"PATH:bicyle_005": {
+"physics/shape_type": 1
+},
+"PATH:bicyle_006": {
+"physics/shape_type": 1
+},
+"PATH:cardboard": {
+"physics/shape_type": 1
+},
+"PATH:cardboard_002": {
+"physics/shape_type": 1
+},
+"PATH:cardboard_003": {
+"physics/shape_type": 1
+},
+"PATH:cardboard_004": {
+"physics/shape_type": 1
+},
+"PATH:concrete_block": {
+"physics/shape_type": 1
+},
+"PATH:concrete_block_001": {
+"physics/shape_type": 1
+},
+"PATH:concrete_block_002": {
+"physics/shape_type": 1
+},
+"PATH:garbage_dumpster": {
+"physics/shape_type": 1
+},
+"PATH:garbage_machinedrum": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag-convcol_001": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag-convcol_002": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag_001": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag_001_001": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag_001_002": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag_002": {
+"physics/shape_type": 1
+},
+"PATH:garbage_trash_bag_002_001": {
+"physics/shape_type": 1
+},
+"PATH:lilypad": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_001": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_002": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_003": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_004": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_005": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_006": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_007": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_008": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_009": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_010": {
+"physics/shape_type": 1
+},
+"PATH:lilypad_011": {
+"physics/shape_type": 1
+},
+"PATH:portable_house": {
+"physics/shape_type": 1
+},
+"PATH:powerline": {
+"physics/shape_type": 1
+},
+"PATH:powerline_001": {
+"physics/shape_type": 1
+},
+"PATH:powerline_002": {
+"physics/shape_type": 1
+},
+"PATH:powerline_003": {
+"physics/shape_type": 1
+},
+"PATH:powerline_004": {
+"physics/shape_type": 1
+},
+"PATH:powerline_005": {
+"physics/shape_type": 1
+},
+"PATH:powerline_006": {
+"physics/shape_type": 1
+},
+"PATH:powerline_007": {
+"physics/shape_type": 1
+},
+"PATH:powerline_008": {
+"physics/shape_type": 1
+},
+"PATH:powerline_009": {
+"physics/shape_type": 1
+},
+"PATH:powerline_guy_wire": {
+"physics/shape_type": 1
+},
+"PATH:powerline_guy_wire_001": {
+"physics/shape_type": 1
+},
+"PATH:powerline_guy_wire_002": {
+"physics/shape_type": 1
+},
+"PATH:powerline_guy_wire_003": {
+"physics/shape_type": 1
+},
+"PATH:road_barrier": {
+"physics/shape_type": 1
+},
+"PATH:road_barrier_001": {
+"physics/shape_type": 1
+},
+"PATH:road_end_barrier": {
+"physics/shape_type": 1
+},
+"PATH:road_end_barrier_001": {
+"physics/shape_type": 1
+},
+"PATH:road_end_barrier_003": {
+"physics/shape_type": 1
+},
+"PATH:tire_half": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_001": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_002": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_003": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_004": {
+"physics/shape_type": 1
+},
+"PATH:tire_half_005": {
+"physics/shape_type": 1
+},
+"PATH:toilet": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_001": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_002": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_003": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_004": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_005": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_006": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_007": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_008": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_009": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_010": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_011": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_012": {
+"physics/shape_type": 1
+},
+"PATH:traffic_cone_013": {
+"physics/shape_type": 1
+},
+"PATH:water_trigger": {
+"node/script": Resource("uid://b1b2nl5yye34a", "res://gdscript/water.gd")
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

@@ -1,0 +1,701 @@
+[gd_scene format=3 uid="uid://c85hiveh7xe8t"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_bfgfm"]
+[ext_resource type="AudioStream" uid="uid://qjnfva5u3bqb" path="res://audio/music/se_box.ogg" id="2_5d2iv"]
+[ext_resource type="Texture2D" uid="uid://dvhcrdrq2s4gk" path="res://texture/sky_hills.png" id="2_pwwyw"]
+[ext_resource type="LightmapGIData" uid="uid://bxfxdsko8lpoi" path="res://stage/lightmap/stage_warehouse.lmbake" id="2_rqlry"]
+[ext_resource type="PackedScene" uid="uid://b7g6tovg2v6t8" path="res://stage/mesh/warehouse.blend" id="2_uqg1j"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="3_pwwyw"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_6ugti"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="4_qq22n"]
+[ext_resource type="Texture2D" uid="uid://cr3q1t1o416l3" path="res://texture/apartment_floor.png" id="5_1f76h"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="5_joij4"]
+[ext_resource type="Texture2D" uid="uid://cqlcahum3lvvh" path="res://texture/water_02.png" id="6_6ugti"]
+[ext_resource type="Texture2D" uid="uid://cnwja4lsyka58" path="res://texture/decay_01.png" id="6_dte6i"]
+[ext_resource type="Texture2D" uid="uid://dxgmqo6e2ysdg" path="res://texture/tiles_01.png" id="6_sia8o"]
+[ext_resource type="Texture2D" uid="uid://byfgraxfx2tqg" path="res://texture/water_1.png" id="7_1f76h"]
+[ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="10_5r6j0"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="11_ia2qv"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="11_lawcr"]
+[ext_resource type="Texture2D" uid="uid://c3fqby3ioof2o" path="res://texture/particle_dust_01.png" id="13_8pmvg"]
+[ext_resource type="Texture2D" uid="uid://csatk03oo1klu" path="res://texture/curtain.png" id="13_u3fdv"]
+[ext_resource type="Texture2D" uid="uid://ciosnllyplv7x" path="res://texture/bottle_crate.png" id="14_2jeh7"]
+[ext_resource type="Texture2D" uid="uid://cnfxlvdy4s85w" path="res://texture/decay_05.png" id="14_3dqfl"]
+[ext_resource type="Texture2D" uid="uid://icwxfl70lk1" path="res://texture/mossy.png" id="15_o7eup"]
+[ext_resource type="Texture2D" uid="uid://ba5r8snkjusx" path="res://texture/paint_splatter.png" id="17_1hwgm"]
+[ext_resource type="Shader" uid="uid://bdbso3iuonqsb" path="res://gdshader/vertex_scroll.gdshader" id="18_f1b4d"]
+[ext_resource type="PackedScene" uid="uid://bs0w8cag876q" path="res://stage/mesh/extra/death_cube.blend" id="18_wr4f8"]
+[ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="19_ddys0"]
+[ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="19_w4adp"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="20_6hqtd"]
+[ext_resource type="Texture2D" uid="uid://sugs27i1wjyt" path="res://texture/silkweb.png" id="20_inrmp"]
+[ext_resource type="Texture2D" uid="uid://dc1m4xkgqfh3r" path="res://texture/tree_06.png" id="20_w4adp"]
+[ext_resource type="Texture2D" uid="uid://1oyyhd2c3cq1" path="res://texture/treeline_04.png" id="21_hjhrp"]
+[ext_resource type="Texture2D" uid="uid://c4y8ov6kemc83" path="res://texture/leaves_01.png" id="26_7krft"]
+[ext_resource type="Material" uid="uid://dypce2slnxxjk" path="res://gdshader/material/void.tres" id="27_ddbea"]
+[ext_resource type="PackedScene" uid="uid://olj2mbea2jud" path="res://stage/mesh/extra/void.blend" id="27_iawjb"]
+[ext_resource type="Texture2D" uid="uid://c33cki0t6kjr0" path="res://texture/wires.png" id="27_tlyd4"]
+[ext_resource type="AudioStream" uid="uid://btdmdp0kdfmbf" path="res://audio/amb/nature.ogg" id="30_544g0"]
+[ext_resource type="AudioStream" uid="uid://dd0pbd5boy5tv" path="res://audio/amb/hallway_wind.ogg" id="30_qiso2"]
+[ext_resource type="PackedScene" uid="uid://cs20jg06xcndg" path="res://resource/void_noise.tscn" id="31_1xywc"]
+[ext_resource type="AudioStream" uid="uid://cp8fm0l2m6w01" path="res://audio/amb/warehouse.ogg" id="32_2t6fi"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="34_iq2yx"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="40_i2mu2"]
+[ext_resource type="Texture2D" uid="uid://cmltuyir4ovgv" path="res://texture/leaf.png" id="41_ken10"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="42_klcxr"]
+[ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="43_jnspr"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="44_xn26x"]
+
+[sub_resource type="Gradient" id="Gradient_dte6i"]
+offsets = PackedFloat32Array(0.024577785, 0.665929, 0.8, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.65637, 0.66, 0.44219998, 1, 0.792054, 0.75799, 0.533562, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8pmvg"]
+gradient = SubResource("Gradient_dte6i")
+width = 64
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_pwwyw"]
+panorama = ExtResource("2_pwwyw")
+energy_multiplier = 1.2
+
+[sub_resource type="Sky" id="Sky_qiso2"]
+sky_material = SubResource("PanoramaSkyMaterial_pwwyw")
+
+[sub_resource type="Environment" id="Environment_bfgfm"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_qiso2")
+reflected_light_source = 1
+tonemap_mode = 4
+tonemap_exposure = 0.6
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(1, 1, 1, 1)
+fog_density = 0.5
+fog_sky_affect = 0.0
+fog_height = 26.0
+fog_height_density = -0.01
+fog_depth_begin = 6.0
+fog_depth_end = 200.0
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.86
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_8pmvg")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1f76h"]
+noise_type = 2
+fractal_gain = 0.7
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5r6j0"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_1f76h")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lawcr"]
+render_priority = 0
+shader = ExtResource("4_6ugti")
+shader_parameter/texture_albedo = ExtResource("5_1f76h")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_5r6j0")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 1.0
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.7
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dte6i"]
+render_priority = 0
+shader = ExtResource("4_6ugti")
+shader_parameter/texture_albedo = ExtResource("6_sia8o")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_5r6j0")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.3
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.4
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8pmvg"]
+resource_name = "hallway_wall_lower"
+next_pass = SubResource("ShaderMaterial_dte6i")
+cull_mode = 2
+albedo_texture = ExtResource("6_dte6i")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddys0"]
+render_priority = 1
+shader = ExtResource("4_6ugti")
+shader_parameter/texture_albedo = ExtResource("15_o7eup")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_5r6j0")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.02
+shader_parameter/mask_scale = 0.02
+shader_parameter/noise_threshold = 0.559
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5r6j0"]
+render_priority = 1
+shader = ExtResource("5_joij4")
+shader_parameter/albedo = Color(0.66, 0.909333, 1, 1)
+shader_parameter/water_emission_strength = 0.0
+shader_parameter/water_texture1 = ExtResource("6_6ugti")
+shader_parameter/water_texture2 = ExtResource("7_1f76h")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.01
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.5
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.2
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_inrmp"]
+data = PackedVector3Array(-10, -3, 1.486, -10.6364, -2.3636, 1.486, -10, -2.1, 1.486, -10, -3, 1.486, -10.9, -3, 1.486, -10.6364, -2.3636, 1.486, -10, -3, 1.486, -10.6364, -3.6364, 1.486, -10.9, -3, 1.486, -10, -3, 1.486, -10, -3.9, 1.486, -10.6364, -3.6364, 1.486, -10, -3, 1.486, -9.3636, -3.6364, 1.486, -10, -3.9, 1.486, -10, -3, 1.486, -9.1, -3, 1.486, -9.3636, -3.6364, 1.486, -10, -3, 1.486, -9.3636, -2.3636, 1.486, -9.1, -3, 1.486, -10, -3, 1.486, -10, -2.1, 1.486, -9.3636, -2.3636, 1.486, -10, -3.405, 1.486, -9.64926, -3.2025, 0.513997, -10, -3.405, 0.513997, -10, -3.405, 1.486, -9.64926, -3.2025, 1.486, -9.64926, -3.2025, 0.513997, -9.64926, -3.2025, 1.486, -9.64926, -2.7975, 0.513997, -9.64926, -3.2025, 0.513997, -9.64926, -3.2025, 1.486, -9.64926, -2.7975, 1.486, -9.64926, -2.7975, 0.513997, -9.64926, -2.7975, 1.486, -10, -2.595, 0.513997, -9.64926, -2.7975, 0.513997, -9.64926, -2.7975, 1.486, -10, -2.595, 1.486, -10, -2.595, 0.513997, -10, -2.595, 1.486, -10.3507, -2.7975, 0.513997, -10, -2.595, 0.513997, -10, -2.595, 1.486, -10.3507, -2.7975, 1.486, -10.3507, -2.7975, 0.513997, -10.3507, -2.7975, 1.486, -10.3507, -3.2025, 0.513997, -10.3507, -2.7975, 0.513997, -10.3507, -2.7975, 1.486, -10.3507, -3.2025, 1.486, -10.3507, -3.2025, 0.513997, -10.3507, -3.2025, 1.486, -10, -3.405, 0.513997, -10.3507, -3.2025, 0.513997, -10.3507, -3.2025, 1.486, -10, -3.405, 1.486, -10, -3.405, 0.513997, -10, -3, 0.513997, -10, -2.1, 0.513997, -10.6364, -2.3636, 0.513997, -10, -3, 0.513997, -10.6364, -2.3636, 0.513997, -10.9, -3, 0.513997, -10, -3, 0.513997, -10.9, -3, 0.513997, -10.6364, -3.6364, 0.513997, -10, -3, 0.513997, -10.6364, -3.6364, 0.513997, -10, -3.9, 0.513997, -10, -3, 0.513997, -10, -3.9, 0.513997, -9.3636, -3.6364, 0.513997, -10, -3, 0.513997, -9.3636, -3.6364, 0.513997, -9.1, -3, 0.513997, -10, -3, 0.513997, -9.1, -3, 0.513997, -9.3636, -2.3636, 0.513997, -10, -3, 0.513997, -9.3636, -2.3636, 0.513997, -10, -2.1, 0.513997, 0.0527884, 0.0944629, -31.9522, -0.418523, 0.816912, -31.6954, 0.123779, 0.981478, -32.087, 0.0527884, 0.0944629, -31.9522, -0.684738, 0.229145, -31.4543, -0.418523, 0.816912, -31.6954, 0.0527884, 0.0944629, -31.9522, -0.518919, -0.437517, -31.5048, -0.684738, 0.229145, -31.4543, 0.0527884, 0.0944629, -31.9522, -0.0182025, -0.792552, -31.8174, -0.518919, -0.437517, -31.5048, 0.0527884, 0.0944629, -31.9522, 0.5241, -0.627986, -32.209, -0.0182025, -0.792552, -31.8174, 0.0527884, 0.0944629, -31.9522, 0.790315, -0.0402186, -32.4501, 0.5241, -0.627986, -32.209, 0.0527884, 0.0944629, -31.9522, 0.624496, 0.626443, -32.3996, 0.790315, -0.0402186, -32.4501, 0.0527884, 0.0944629, -31.9522, 0.123779, 0.981478, -32.087, 0.624496, 0.626443, -32.3996, 0.0208429, -0.304694, -31.8915, -0.227529, -0.234468, -32.9124, -0.530925, -0.381559, -32.688, 0.0208429, -0.304694, -31.8915, 0.324238, -0.157603, -32.1159, -0.227529, -0.234468, -32.9124, 0.324238, -0.157603, -32.1159, -0.195583, 0.164689, -32.9731, -0.227529, -0.234468, -32.9124, 0.324238, -0.157603, -32.1159, 0.356184, 0.241554, -32.1766, -0.195583, 0.164689, -32.9731, 0.356184, 0.241554, -32.1766, -0.467033, 0.416754, -32.8093, -0.195583, 0.164689, -32.9731, 0.356184, 0.241554, -32.1766, 0.0847347, 0.49362, -32.0128, -0.467033, 0.416754, -32.8093, 0.0847347, 0.49362, -32.0128, -0.770428, 0.269663, -32.585, -0.467033, 0.416754, -32.8093, 0.0847347, 0.49362, -32.0128, -0.218661, 0.346528, -31.7885, -0.770428, 0.269663, -32.585, -0.218661, 0.346528, -31.7885, -0.802374, -0.129494, -32.5243, -0.770428, 0.269663, -32.585, -0.218661, 0.346528, -31.7885, -0.250607, -0.0526285, -31.7278, -0.802374, -0.129494, -32.5243, -0.250607, -0.0526285, -31.7278, -0.530925, -0.381559, -32.688, -0.802374, -0.129494, -32.5243, -0.250607, -0.0526285, -31.7278, 0.0208429, -0.304694, -31.8915, -0.530925, -0.381559, -32.688, -0.498979, 0.0175977, -32.7487, -0.427988, 0.904613, -32.8835, -0.970291, 0.740046, -32.4919, -0.498979, 0.0175977, -32.7487, -0.970291, 0.740046, -32.4919, -1.23651, 0.15228, -32.2508, -0.498979, 0.0175977, -32.7487, -1.23651, 0.15228, -32.2508, -1.07069, -0.514382, -32.3013, -0.498979, 0.0175977, -32.7487, -1.07069, -0.514382, -32.3013, -0.56997, -0.869417, -32.6139, -0.498979, 0.0175977, -32.7487, -0.56997, -0.869417, -32.6139, -0.0276675, -0.704851, -33.0055, -0.498979, 0.0175977, -32.7487, -0.0276675, -0.704851, -33.0055, 0.238547, -0.117084, -33.2466, -0.498979, 0.0175977, -32.7487, 0.238547, -0.117084, -33.2466, 0.0727288, 0.549578, -33.1961, -0.498979, 0.0175977, -32.7487, 0.0727288, 0.549578, -33.1961, -0.427988, 0.904613, -32.8835, 19.6998, 0.184691, -34.6249, 20.0191, 0.893201, -34.171, 19.6603, 1.07775, -34.7292, 19.6998, 0.184691, -34.6249, 20.1909, 0.293619, -33.8786, 20.0191, 0.893201, -34.171, 19.6998, 0.184691, -34.6249, 20.075, -0.369772, -34.0234, 20.1909, 0.293619, -33.8786, 19.6998, 0.184691, -34.6249, 19.7393, -0.708365, -34.5205, 20.075, -0.369772, -34.0234, 19.6998, 0.184691, -34.6249, 19.3805, -0.523819, -35.0788, 19.7393, -0.708365, -34.5205, 19.6998, 0.184691, -34.6249, 19.2087, 0.0757634, -35.3712, 19.3805, -0.523819, -35.0788, 19.6998, 0.184691, -34.6249, 19.3246, 0.739154, -35.2264, 19.2087, 0.0757634, -35.3712, 19.6998, 0.184691, -34.6249, 19.6603, 1.07775, -34.7292, 19.3246, 0.739154, -35.2264, 19.7176, -0.217184, -34.5779, 18.7039, -0.032586, -34.3608, 18.9042, -0.191073, -34.0465, 19.7176, -0.217184, -34.5779, 19.5173, -0.0586972, -34.8923, 18.7039, -0.032586, -34.3608, 19.5173, -0.0586972, -34.8923, 18.6861, 0.36929, -34.4077, 18.7039, -0.032586, -34.3608, 19.5173, -0.0586972, -34.8923, 19.4995, 0.343178, -34.9392, 18.6861, 0.36929, -34.4077, 19.4995, 0.343178, -34.9392, 18.8686, 0.612678, -34.1404, 18.6861, 0.36929, -34.4077, 19.4995, 0.343178, -34.9392, 19.682, 0.586567, -34.6718, 18.8686, 0.612678, -34.1404, 19.682, 0.586567, -34.6718, 19.0689, 0.454191, -33.8261, 18.8686, 0.612678, -34.1404, 19.682, 0.586567, -34.6718, 19.8823, 0.42808, -34.3575, 19.0689, 0.454191, -33.8261, 19.8823, 0.42808, -34.3575, 19.0867, 0.0523154, -33.7791, 19.0689, 0.454191, -33.8261, 19.8823, 0.42808, -34.3575, 19.9001, 0.0262042, -34.3106, 19.0867, 0.0523154, -33.7791, 19.9001, 0.0262042, -34.3106, 18.9042, -0.191073, -34.0465, 19.0867, 0.0523154, -33.7791, 19.9001, 0.0262042, -34.3106, 19.7176, -0.217184, -34.5779, 18.9042, -0.191073, -34.0465, 18.8864, 0.210802, -34.0934, 18.8469, 1.10386, -34.1978, 19.2057, 0.919313, -33.6395, 18.8864, 0.210802, -34.0934, 19.2057, 0.919313, -33.6395, 19.3775, 0.319731, -33.3471, 18.8864, 0.210802, -34.0934, 19.3775, 0.319731, -33.3471, 19.2616, -0.343661, -33.4919, 18.8864, 0.210802, -34.0934, 19.2616, -0.343661, -33.4919, 18.9259, -0.682254, -33.9891, 18.8864, 0.210802, -34.0934, 18.9259, -0.682254, -33.9891, 18.5671, -0.497708, -34.5473, 18.8864, 0.210802, -34.0934, 18.5671, -0.497708, -34.5473, 18.3953, 0.101875, -34.8397, 18.8864, 0.210802, -34.0934, 18.3953, 0.101875, -34.8397, 18.5112, 0.765266, -34.6949, 18.8864, 0.210802, -34.0934, 18.5112, 0.765266, -34.6949, 18.8469, 1.10386, -34.1978, 19.6998, 0.184691, -34.6249, 20.0191, 0.893201, -34.171, 19.6603, 1.07775, -34.7292, 19.6998, 0.184691, -34.6249, 20.1909, 0.293619, -33.8786, 20.0191, 0.893201, -34.171, 19.6998, 0.184691, -34.6249, 20.075, -0.369772, -34.0234, 20.1909, 0.293619, -33.8786, 19.6998, 0.184691, -34.6249, 19.7393, -0.708365, -34.5205, 20.075, -0.369772, -34.0234, 19.6998, 0.184691, -34.6249, 19.3805, -0.523819, -35.0788, 19.7393, -0.708365, -34.5205, 19.6998, 0.184691, -34.6249, 19.2087, 0.0757634, -35.3712, 19.3805, -0.523819, -35.0788, 19.6998, 0.184691, -34.6249, 19.3246, 0.739154, -35.2264, 19.2087, 0.0757634, -35.3712, 19.6998, 0.184691, -34.6249, 19.6603, 1.07775, -34.7292, 19.3246, 0.739154, -35.2264, 19.7176, -0.217184, -34.5779, 18.7039, -0.032586, -34.3608, 18.9042, -0.191073, -34.0465, 19.7176, -0.217184, -34.5779, 19.5173, -0.0586972, -34.8923, 18.7039, -0.032586, -34.3608, 19.5173, -0.0586972, -34.8923, 18.6861, 0.36929, -34.4077, 18.7039, -0.032586, -34.3608, 19.5173, -0.0586972, -34.8923, 19.4995, 0.343178, -34.9392, 18.6861, 0.36929, -34.4077, 19.4995, 0.343178, -34.9392, 18.8686, 0.612678, -34.1404, 18.6861, 0.36929, -34.4077, 19.4995, 0.343178, -34.9392, 19.682, 0.586567, -34.6718, 18.8686, 0.612678, -34.1404, 19.682, 0.586567, -34.6718, 19.0689, 0.454191, -33.8261, 18.8686, 0.612678, -34.1404, 19.682, 0.586567, -34.6718, 19.8823, 0.42808, -34.3575, 19.0689, 0.454191, -33.8261, 19.8823, 0.42808, -34.3575, 19.0867, 0.0523154, -33.7791, 19.0689, 0.454191, -33.8261, 19.8823, 0.42808, -34.3575, 19.9001, 0.0262042, -34.3106, 19.0867, 0.0523154, -33.7791, 19.9001, 0.0262042, -34.3106, 18.9042, -0.191073, -34.0465, 19.0867, 0.0523154, -33.7791, 19.9001, 0.0262042, -34.3106, 19.7176, -0.217184, -34.5779, 18.9042, -0.191073, -34.0465, 18.8864, 0.210802, -34.0934, 18.8469, 1.10386, -34.1978, 19.2057, 0.919313, -33.6395, 18.8864, 0.210802, -34.0934, 19.2057, 0.919313, -33.6395, 19.3775, 0.319731, -33.3471, 18.8864, 0.210802, -34.0934, 19.3775, 0.319731, -33.3471, 19.2616, -0.343661, -33.4919, 18.8864, 0.210802, -34.0934, 19.2616, -0.343661, -33.4919, 18.9259, -0.682254, -33.9891, 18.8864, 0.210802, -34.0934, 18.9259, -0.682254, -33.9891, 18.5671, -0.497708, -34.5473, 18.8864, 0.210802, -34.0934, 18.5671, -0.497708, -34.5473, 18.3953, 0.101875, -34.8397, 18.8864, 0.210802, -34.0934, 18.3953, 0.101875, -34.8397, 18.5112, 0.765266, -34.6949, 18.8864, 0.210802, -34.0934, 18.5112, 0.765266, -34.6949, 18.8469, 1.10386, -34.1978, 19.3122, -0.564432, -21.3656, 20.1765, -0.533671, -21.1163, 20.0992, -0.527622, -21.8008, 19.3122, -0.564432, -21.3656, 19.7475, -0.55774, -20.5779, 20.1765, -0.533671, -21.1163, 19.3122, -0.564432, -21.3656, 19.0636, -0.585731, -20.5009, 19.7475, -0.55774, -20.5779, 19.3122, -0.564432, -21.3656, 18.5253, -0.601245, -20.9305, 19.0636, -0.585731, -20.5009, 19.3122, -0.564432, -21.3656, 18.448, -0.595195, -21.6149, 18.5253, -0.601245, -20.9305, 19.3122, -0.564432, -21.3656, 18.877, -0.571128, -22.1533, 18.448, -0.595195, -21.6149, 19.3122, -0.564432, -21.3656, 19.5609, -0.543136, -22.2303, 18.877, -0.571128, -22.1533, 19.3122, -0.564432, -21.3656, 20.0992, -0.527622, -21.8008, 19.5609, -0.543136, -22.2303, 18.9581, -0.581, -21.1698, 18.9273, 0.395831, -21.5618, 18.9198, 0.390159, -21.1569, 18.9581, -0.581, -21.1698, 18.9655, -0.575327, -21.5747, 18.9273, 0.395831, -21.5618, 18.9655, -0.575327, -21.5747, 19.2814, 0.412397, -21.7576, 18.9273, 0.395831, -21.5618, 18.9655, -0.575327, -21.5747, 19.3197, -0.558762, -21.7705, 19.2814, 0.412397, -21.7576, 19.3197, -0.558762, -21.7705, 19.6281, 0.423292, -21.5485, 19.2814, 0.412397, -21.7576, 19.3197, -0.558762, -21.7705, 19.6664, -0.547867, -21.5614, 19.6281, 0.423292, -21.5485, 19.6664, -0.547867, -21.5614, 19.6206, 0.417619, -21.1436, 19.6281, 0.423292, -21.5485, 19.6664, -0.547867, -21.5614, 19.6589, -0.553539, -21.1565, 19.6206, 0.417619, -21.1436, 19.6589, -0.553539, -21.1565, 19.2665, 0.401053, -20.9478, 19.6206, 0.417619, -21.1436, 19.6589, -0.553539, -21.1565, 19.3048, -0.570106, -20.9607, 19.2665, 0.401053, -20.9478, 19.3048, -0.570106, -20.9607, 18.9198, 0.390159, -21.1569, 19.2665, 0.401053, -20.9478, 19.3048, -0.570106, -20.9607, 18.9581, -0.581, -21.1698, 18.9198, 0.390159, -21.1569, 19.2739, 0.406724, -21.3527, 20.0609, 0.443537, -21.7879, 20.1382, 0.437489, -21.1034, 19.2739, 0.406724, -21.3527, 20.1382, 0.437489, -21.1034, 19.7092, 0.413419, -20.565, 19.2739, 0.406724, -21.3527, 19.7092, 0.413419, -20.565, 19.0253, 0.385425, -20.488, 19.2739, 0.406724, -21.3527, 19.0253, 0.385425, -20.488, 18.487, 0.369913, -20.9176, 19.2739, 0.406724, -21.3527, 18.487, 0.369913, -20.9176, 18.4097, 0.375963, -21.602, 19.2739, 0.406724, -21.3527, 18.4097, 0.375963, -21.602, 18.8387, 0.400031, -22.1404, 19.2739, 0.406724, -21.3527, 18.8387, 0.400031, -22.1404, 19.5226, 0.428026, -22.2174, 19.2739, 0.406724, -21.3527, 19.5226, 0.428026, -22.2174, 20.0609, 0.443537, -21.7879, 39.1184, -0.324981, -0.0112846, 39.7162, 0.191292, -0.442676, 39.124, 0.520728, -0.319091, 39.1184, -0.324981, -0.0112846, 39.9582, -0.44057, -0.313557, 39.7162, 0.191292, -0.442676, 39.1184, -0.324981, -0.0112846, 39.7082, -1.00472, -0.00737631, 39.9582, -0.44057, -0.313557, 39.1184, -0.324981, -0.0112846, 39.1127, -1.17069, 0.296521, 39.7082, -1.00472, -0.00737631, 39.1184, -0.324981, -0.0112846, 38.5206, -0.841254, 0.420106, 39.1127, -1.17069, 0.296521, 39.1184, -0.324981, -0.0112846, 38.2786, -0.209392, 0.290987, 38.5206, -0.841254, 0.420106, 39.1184, -0.324981, -0.0112846, 38.5285, 0.354762, -0.0151947, 38.2786, -0.209392, 0.290987, 39.1184, -0.324981, -0.0112846, 39.124, 0.520728, -0.319091, 38.5285, 0.354762, -0.0151947, 39.1158, -0.705551, 0.127226, 39.1393, -0.162063, 1.02882, 39.4653, -0.397395, 0.980279, 39.1158, -0.705551, 0.127226, 38.7898, -0.470219, 0.17577, 39.1393, -0.162063, 1.02882, 38.7898, -0.470219, 0.17577, 39.1418, 0.218505, 0.890309, 39.1393, -0.162063, 1.02882, 38.7898, -0.470219, 0.17577, 38.7923, -0.0896511, 0.0372559, 39.1418, 0.218505, 0.890309, 38.7923, -0.0896511, 0.0372559, 39.4703, 0.363745, 0.703257, 39.1418, 0.218505, 0.890309, 38.7923, -0.0896511, 0.0372559, 39.1209, 0.0555885, -0.149796, 39.4703, 0.363745, 0.703257, 39.1209, 0.0555885, -0.149796, 39.7964, 0.128413, 0.654713, 39.4703, 0.363745, 0.703257, 39.1209, 0.0555885, -0.149796, 39.4469, -0.179743, -0.19834, 39.7964, 0.128413, 0.654713, 39.4469, -0.179743, -0.19834, 39.7938, -0.252155, 0.793227, 39.7964, 0.128413, 0.654713, 39.4469, -0.179743, -0.19834, 39.4444, -0.560312, -0.0598258, 39.7938, -0.252155, 0.793227, 39.4444, -0.560312, -0.0598258, 39.4653, -0.397395, 0.980279, 39.7938, -0.252155, 0.793227, 39.4444, -0.560312, -0.0598258, 39.1158, -0.705551, 0.127226, 39.4653, -0.397395, 0.980279, 39.4678, -0.016825, 0.841768, 39.4734, 0.828885, 0.533962, 40.0656, 0.499448, 0.410378, 39.4678, -0.016825, 0.841768, 40.0656, 0.499448, 0.410378, 40.3076, -0.132415, 0.539494, 39.4678, -0.016825, 0.841768, 40.3076, -0.132415, 0.539494, 40.0577, -0.696568, 0.845677, 39.4678, -0.016825, 0.841768, 40.0577, -0.696568, 0.845677, 39.4622, -0.862535, 1.14957, 39.4678, -0.016825, 0.841768, 39.4622, -0.862535, 1.14957, 38.87, -0.533098, 1.27316, 39.4678, -0.016825, 0.841768, 38.87, -0.533098, 1.27316, 38.628, 0.0987641, 1.14404, 39.4678, -0.016825, 0.841768, 38.628, 0.0987641, 1.14404, 38.878, 0.662918, 0.837859, 39.4678, -0.016825, 0.841768, 38.878, 0.662918, 0.837859, 39.4734, 0.828885, 0.533962)
+backface_collision = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hwgm"]
+resource_name = "decay.003"
+albedo_color = Color(0.942045, 0.554742, 0.640615, 1)
+albedo_texture = ExtResource("14_3dqfl")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="Shader" id="Shader_2jeh7"]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque;
+
+uniform sampler2D tex : source_color;
+uniform vec2 uv_scale = vec2(1.0, 1.0);
+
+uniform float sway_strength_x = 0.05;
+uniform float sway_strength_z = 0.03;
+uniform float sway_speed_x = 1.5;
+uniform float sway_speed_z = 1.0;
+
+void vertex() {
+    float sway_factor = VERTEX.y;
+
+    float offset_x = sin(TIME * sway_speed_x + VERTEX.y * 2.0) * sway_strength_x * sway_factor;
+    float offset_z = cos(TIME * sway_speed_z + VERTEX.x * 2.0) * sway_strength_z * sway_factor;
+
+    VERTEX.x += offset_x;
+    VERTEX.z += offset_z;
+}
+
+void fragment() {
+    vec2 uv = UV * uv_scale;
+    vec4 final_tex = texture(tex, uv);
+
+    ALBEDO = final_tex.rgb;
+    ALPHA = final_tex.a;
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wr4f8"]
+render_priority = 1
+shader = SubResource("Shader_2jeh7")
+shader_parameter/tex = ExtResource("13_u3fdv")
+shader_parameter/uv_scale = Vector2(1, 1)
+shader_parameter/sway_strength_x = 0.1
+shader_parameter/sway_strength_z = 0.06
+shader_parameter/sway_speed_x = 2.0
+shader_parameter/sway_speed_z = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wr4f8"]
+resource_name = "bottle_crate"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("14_2jeh7")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8grn"]
+resource_name = "jam"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_color = Color(0.35, 0.1085, 0.168875, 0.784314)
+albedo_texture = ExtResource("17_1hwgm")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iq2yx"]
+resource_name = "silkweb"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("20_inrmp")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xn26x"]
+render_priority = 2
+shader = ExtResource("18_f1b4d")
+shader_parameter/tex = ExtResource("19_w4adp")
+shader_parameter/emission = 1.0
+shader_parameter/color = Color(1, 1, 1, 0.039215688)
+shader_parameter/scroll_speed_primary = -0.05
+shader_parameter/scroll_speed_secondary = 0.1
+shader_parameter/use_alpha = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tlyd4"]
+render_priority = 0
+shader = ExtResource("20_6hqtd")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("21_hjhrp")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7krft"]
+noise_type = 2
+frequency = 0.02
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i2mu2"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_7krft")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ken10"]
+render_priority = 0
+shader = ExtResource("4_6ugti")
+shader_parameter/texture_albedo = ExtResource("26_7krft")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_i2mu2")
+shader_parameter/alpha = 0.3
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.5
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7krft"]
+render_priority = 2
+shader = ExtResource("20_6hqtd")
+shader_parameter/wind_strength = 0.010000000475
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("27_tlyd4")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pdhxc"]
+resource_name = "window_light"
+roughness = 0.5
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 1.5
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2mu2"]
+render_priority = -2
+shader = ExtResource("20_6hqtd")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 3.0000001425
+shader_parameter/wind_direction = Vector3(1, -1, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("20_w4adp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r6j0"]
+transparency = 4
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("13_8pmvg")
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 3.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_lawcr"]
+
+[sub_resource type="Curve" id="Curve_dte6i"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.2, 1), 0.0, 0.0, 0, 0, Vector2(0.5, 0.9), 0.0, 0.0, 0, 0, Vector2(0.8, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Gradient" id="Gradient_lawcr"]
+offsets = PackedFloat32Array(0, 0.1, 0.9, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_sia8o"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.6, 0.8)
+colors = PackedColorArray(0.678431, 0.517647, 0.34902, 1, 0.831373, 0.764706, 0.678431, 1, 0.435294, 0.560784, 0.576471, 1, 0.364706, 0.243137, 0.192157, 1, 0.447059, 0.541176, 0.635294, 1, 0.13, 0.26, 0.1365, 1, 1, 1, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_klcxr"]
+render_priority = -2
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("41_ken10")
+texture_repeat = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 4.0
+
+[node name="stage_warehouse" type="Node3D" unique_id=33886663 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_bfgfm")
+stage_name = "world_warehouse"
+_bloom = 1.0
+bgm = ExtResource("2_5d2iv")
+bgm_pitch = 0.8
+bgm_volume = 0.2
+_entrance = [NodePath("entrance")]
+weather = 3
+weather_height = 10
+sit_override = true
+respawn_y = -20
+_stage_light = Color(0.5, 0.375, 0.385417, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=2115754162]
+environment = SubResource("Environment_bfgfm")
+script = ExtResource("3_pwwyw")
+_speed = 0.01
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=1548954248]
+visible = false
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_energy = 0.0
+generate_probes_subdiv = 0
+light_data = ExtResource("2_rqlry")
+
+[node name="hallway_light" type="OmniLight3D" parent="lightmap_gi" unique_id=203719703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -14)
+light_color = Color(0.701961, 0.215686, 0.337255, 1)
+light_energy = 0.7
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="hallway_light3" type="OmniLight3D" parent="lightmap_gi" unique_id=1041493427]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.658853, -0.62089413)
+light_color = Color(0.7, 0.57925, 0.217, 1)
+light_energy = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 16.0
+
+[node name="hallway_exit" type="OmniLight3D" parent="lightmap_gi" unique_id=62229957]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, -26.4811)
+light_color = Color(0.7, 0.217, 0.217, 1)
+light_energy = 0.7
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="warehouse" type="OmniLight3D" parent="lightmap_gi" unique_id=1785200012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77, 3, -26.4811)
+light_color = Color(0.7, 0.217, 0.217, 1)
+light_energy = 0.7
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 24.0
+
+[node name="doors" type="OmniLight3D" parent="lightmap_gi" unique_id=58061491]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.6303, 3, 4.51893)
+light_color = Color(0.217, 0.7, 0.33775, 1)
+light_energy = 0.7
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 20.0
+
+[node name="hallway_light2" type="OmniLight3D" parent="lightmap_gi" unique_id=1944572701]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -28)
+light_color = Color(0.217, 0.7, 0.539, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 16.0
+omni_attenuation = 0.7
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="lightmap_gi" unique_id=877106988]
+transform = Transform3D(0.8660253, 0.43301272, -0.24999999, 1.4910118e-08, 0.4999999, 0.8660254, 0.5, -0.75, 0.43301263, 14, 2, 0)
+light_color = Color(0.7176471, 0.8901961, 0.5058824, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="warehouse" parent="." unique_id=760770681 instance=ExtResource("2_uqg1j")]
+
+[node name="floor" parent="warehouse" index="0" unique_id=1929988605]
+material_overlay = SubResource("ShaderMaterial_lawcr")
+
+[node name="hallway_wall" parent="warehouse" index="1" unique_id=1042662583]
+surface_material_override/6 = SubResource("StandardMaterial3D_8pmvg")
+
+[node name="radiator" parent="warehouse" index="2" unique_id=322600282]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="hallway_door_right" parent="warehouse" index="3" unique_id=1937659624]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/hallway_door_right" index="1" unique_id=2075618059 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="hallway_door_left" parent="warehouse" index="4" unique_id=566794005]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/hallway_door_left" index="1" unique_id=1973998971 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="hallway_side_door" parent="warehouse" index="5" unique_id=172937677]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/hallway_side_door" index="1" unique_id=403550919 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="hallway_end_door" parent="warehouse" index="6" unique_id=1533686390]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/hallway_end_door" index="1" unique_id=795714443 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="interactable" parent="warehouse/hallway_leaning_door" parent_id_path=PackedInt32Array(760770681, 1641454429) index="1" unique_id=1498024948 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="metal_block" parent="warehouse" index="8" unique_id=820855173]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="carpet" parent="warehouse" index="9" unique_id=1532499876]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="water" parent="warehouse" index="10" unique_id=1932780416]
+surface_material_override/0 = SubResource("ShaderMaterial_5r6j0")
+
+[node name="water_colliion" parent="warehouse/water" index="0" unique_id=1878416073]
+script = ExtResource("10_5r6j0")
+
+[node name="paperboat" parent="warehouse" index="11" unique_id=345407360]
+transform = Transform3D(-1, 0, -3.89414e-07, 0, 1, 0, 3.89414e-07, 0, -1, -0.655612, -0.0168632, -30.2996)
+
+[node name="cardboard" parent="warehouse" index="12" unique_id=1104003279]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="cable_drum" parent="warehouse" index="13" unique_id=101382897]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="CollisionShape3D" parent="warehouse/cable_drum/StaticBody3D" parent_id_path=PackedInt32Array(760770681, 983226328) index="0" unique_id=1269803314]
+shape = SubResource("ConcavePolygonShape3D_inrmp")
+
+[node name="warehouse_wall" parent="warehouse" index="14" unique_id=1492567899]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+surface_material_override/3 = SubResource("StandardMaterial3D_1hwgm")
+
+[node name="curtain" parent="warehouse" index="15" unique_id=1606720585]
+surface_material_override/0 = SubResource("ShaderMaterial_wr4f8")
+
+[node name="bottle_crate" parent="warehouse" index="16" unique_id=524174480]
+surface_material_override/0 = SubResource("StandardMaterial3D_wr4f8")
+
+[node name="pillar" parent="warehouse" index="17" unique_id=702972721]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="pillar_top" parent="warehouse" index="18" unique_id=101959746]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="chimney" parent="warehouse" index="19" unique_id=1283667624]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="warehouse_door_left" parent="warehouse" index="23" unique_id=293933412]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/warehouse_door_left" index="1" unique_id=1591009015 instance=ExtResource("4_qq22n")]
+_to_stage = "uid://hcvxfdddoeq1"
+
+[node name="warehouse_door_right" parent="warehouse" index="24" unique_id=1950153852]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="interactable" parent="warehouse/warehouse_door_right" index="1" unique_id=1103637475 instance=ExtResource("4_qq22n")]
+uninteractable = true
+
+[node name="warehouse_floor" parent="warehouse" index="27" unique_id=585757101]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+surface_material_override/1 = SubResource("StandardMaterial3D_1hwgm")
+
+[node name="fire_door" parent="warehouse" index="30" unique_id=716543406]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="paint_splatter" parent="warehouse" index="34" unique_id=1168345366]
+layers = 262144
+surface_material_override/0 = SubResource("StandardMaterial3D_o8grn")
+
+[node name="Plane" parent="warehouse" index="35" unique_id=522761404]
+surface_material_override/0 = SubResource("StandardMaterial3D_iq2yx")
+
+[node name="hallway_light-nolight" parent="warehouse" index="37" unique_id=911968726]
+material_override = SubResource("ShaderMaterial_xn26x")
+
+[node name="rails" parent="warehouse" index="38" unique_id=773030586]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="tree_001" parent="warehouse" index="39" unique_id=162045115]
+surface_material_override/0 = SubResource("ShaderMaterial_tlyd4")
+
+[node name="outside_grass" parent="warehouse" index="40" unique_id=1847201343]
+material_overlay = SubResource("ShaderMaterial_ken10")
+
+[node name="fridge" parent="warehouse" index="42" unique_id=697237956]
+material_overlay = SubResource("ShaderMaterial_ddys0")
+
+[node name="wire" parent="warehouse" index="44" unique_id=1789030526]
+surface_material_override/0 = SubResource("ShaderMaterial_7krft")
+
+[node name="window_light" parent="warehouse" index="45" unique_id=1549078481]
+layers = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_pdhxc")
+
+[node name="camera_fix" parent="warehouse" index="46" unique_id=709914775]
+gi_mode = 0
+
+[node name="void" parent="warehouse" index="47" unique_id=1392082539]
+surface_material_override/0 = ExtResource("27_ddbea")
+
+[node name="outside_trees" parent="warehouse" index="48" unique_id=351740356]
+surface_material_override/1 = SubResource("ShaderMaterial_i2mu2")
+
+[node name="AnimationPlayer" parent="warehouse" index="50" unique_id=262834302]
+autoplay = &"paperboatAction"
+speed_scale = 0.1
+
+[node name="void3" parent="." unique_id=1928351111 instance=ExtResource("27_iawjb")]
+transform = Transform3D(3.2847354, 0, 0, 0, 1.9063902, 0, 0, 0, 3.8282368, 66.675354, -2.3942006, 0)
+
+[node name="void_noise" parent="void3" unique_id=962599694 instance=ExtResource("31_1xywc")]
+
+[node name="void2" parent="." unique_id=1252312302 instance=ExtResource("27_iawjb")]
+transform = Transform3D(3.2847354, 0, 0, 0, 1.9063902, 0, 0, 0, 3.8282368, 66.675354, -2.3942006, -19.682863)
+
+[node name="void_noise" parent="void2" unique_id=1483086352 instance=ExtResource("31_1xywc")]
+
+[node name="dust_ash" type="Node3D" parent="." unique_id=2053664185 groups=["stage_lit_particle_color"]]
+
+[node name="particle" type="CPUParticles3D" parent="dust_ash" unique_id=185095023]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+material_override = SubResource("StandardMaterial3D_5r6j0")
+amount = 256
+lifetime = 4.0
+preprocess = 5.0
+speed_scale = 0.5
+randomness = 0.5
+mesh = SubResource("QuadMesh_lawcr")
+emission_shape = 3
+emission_box_extents = Vector3(5, 2, 5)
+particle_flag_rotate_y = true
+gravity = Vector3(0, 0, 0)
+angular_velocity_min = -60.0
+angular_velocity_max = 60.0
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+scale_amount_min = 0.01
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_dte6i")
+color = Color(1, 1, 1, 0.588235)
+color_ramp = SubResource("Gradient_lawcr")
+color_initial_ramp = SubResource("Gradient_sia8o")
+script = ExtResource("11_ia2qv")
+_max_particle = 256
+
+[node name="attach_player" type="Node3D" parent="dust_ash" unique_id=294486520]
+script = ExtResource("11_lawcr")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="death_cube" parent="." unique_id=1016129137 instance=ExtResource("18_wr4f8")]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -1.31504, 0.0192441, -2.71559)
+
+[node name="death_cube2" parent="." unique_id=1707217959 instance=ExtResource("18_wr4f8")]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -1.66092, 1.11804, -14.5917)
+
+[node name="particle_butterfly" parent="." unique_id=1029790706 instance=ExtResource("19_ddys0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, -31.6371)
+
+[node name="particle_butterfly2" parent="." unique_id=56078419 instance=ExtResource("19_ddys0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.3159, 10.4779, 10.7376)
+
+[node name="nature" type="AudioStreamPlayer3D" parent="." unique_id=2092919320]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.37212, 1.57726, -31.6846)
+stream = ExtResource("30_544g0")
+unit_size = 12.0
+max_db = 0.0
+autoplay = true
+max_distance = 12.0
+panning_strength = 1.2
+bus = &"amb"
+
+[node name="nature_warehouse" type="AudioStreamPlayer3D" parent="." unique_id=1006637123]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 78.3844, 9.68105, 12.4854)
+stream = ExtResource("30_544g0")
+unit_size = 12.0
+autoplay = true
+max_distance = 16.0
+panning_strength = 0.9
+bus = &"amb"
+
+[node name="hallway" type="AudioStreamPlayer3D" parent="." unique_id=46318019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.37212, 4.57726, -16.6846)
+stream = ExtResource("30_qiso2")
+unit_size = 16.0
+max_db = -4.0
+autoplay = true
+max_distance = 32.0
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="warehouse2" type="AudioStreamPlayer3D" parent="." unique_id=125801350]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 63.6279, 15.5773, -11.6846)
+stream = ExtResource("32_2t6fi")
+unit_size = 36.0
+max_db = 0.0
+autoplay = true
+panning_strength = 0.3
+bus = &"amb"
+
+[node name="entrance" type="Node3D" parent="." unique_id=344791143]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2)
+script = ExtResource("34_iq2yx")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="particle_leaf" parent="." unique_id=749303828 instance=ExtResource("40_i2mu2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 7, -14)
+material_override = SubResource("StandardMaterial3D_klcxr")
+amount = 64
+speed_scale = 0.5
+emission_box_extents = Vector3(4, 2, 15)
+color = Color(0.5103667, 0.61, 0.4392, 0.9411765)
+_max_particle = 64
+
+[node name="eye_watcher" parent="." unique_id=1151685988 instance=ExtResource("42_klcxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.634145, 0.40225124, -58.01366)
+
+[node name="eye_watcher2" parent="." unique_id=1889624478 instance=ExtResource("42_klcxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3252, 9.441343, -44.28935)
+
+[node name="water_droplets" parent="." unique_id=30284964 instance=ExtResource("43_jnspr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6233344, -16.320587)
+visibility_aabb = AABB(-1.026808, -16.77519, -17.96896, 2.0467958, 16.77519, 35.95719)
+emission_box_extents = Vector3(1, 0, 18)
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("44_xn26x")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.67714, 0.24939704, -13.573144)
+
+[editable path="warehouse"]

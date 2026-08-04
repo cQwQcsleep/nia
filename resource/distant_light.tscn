@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://b5pp7ol3bdpcw"]
+
+[ext_resource type="Texture2D" uid="uid://dsixjp1j4vcge" path="res://texture/light_1.png" id="1_syr4o"]
+[ext_resource type="Script" uid="uid://ds2u1dncjdmgd" path="res://gdscript/distant_light.gd" id="2_gh3ng"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7r0ck"]
+render_priority = 1
+transparency = 1
+blend_mode = 1
+shading_mode = 0
+disable_ambient_light = true
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("1_syr4o")
+billboard_mode = 1
+billboard_keep_scale = true
+fixed_size = true
+distance_fade_mode = 2
+distance_fade_min_distance = 12.0
+distance_fade_max_distance = 20.0
+
+[node name="distant_light" type="Sprite3D" unique_id=676569392]
+material_override = SubResource("StandardMaterial3D_7r0ck")
+extra_cull_margin = 2.0
+pixel_size = 0.005
+texture = ExtResource("1_syr4o")
+script = ExtResource("2_gh3ng")

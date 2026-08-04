@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="wallpaper" format=3 uid="uid://duk5kxr171wdx"]
+
+[ext_resource type="Script" uid="uid://dsscn3wwhq45r" path="res://gdscript/resource_wallpaper.gd" id="1_qanm2"]
+[ext_resource type="Texture2D" uid="uid://bafww6i50ocui" path="res://texture/wallpaper/wallpaper_32.png" id="2_nkgr2"]
+
+[resource]
+script = ExtResource("1_qanm2")
+name = "wallpaper_powerline"
+texture = ExtResource("2_nkgr2")
+accent_colour = Color(0.4, 0.5, 0.47833332, 1)
+metadata/_custom_type_script = "uid://dsscn3wwhq45r"

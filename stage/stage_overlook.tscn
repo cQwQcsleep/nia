@@ -1,0 +1,713 @@
+[gd_scene format=3 uid="uid://dlpvqgg0uxlni"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_r76f7"]
+[ext_resource type="AudioStream" uid="uid://bivwbt4ab6887" path="res://audio/music/se_hachi.ogg" id="2_3hqlf"]
+[ext_resource type="PackedScene" uid="uid://bvvhdd1bsbvst" path="res://stage/mesh/overlook.blend" id="2_pv535"]
+[ext_resource type="LightmapGIData" uid="uid://bf68dnmtobx40" path="res://stage/lightmap/stage_overlook.lmbake" id="3_gig2s"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="3_h5bmp"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_t32qj"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="4_67fcv"]
+[ext_resource type="Texture2D" uid="uid://233eyyt4ji8a" path="res://texture/road_marking.png" id="4_ghkrq"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_jgn5v"]
+[ext_resource type="Texture2D" uid="uid://c4y8ov6kemc83" path="res://texture/leaves_01.png" id="5_8heiv"]
+[ext_resource type="Texture2D" uid="uid://cdpc0ku3vtjx2" path="res://texture/hedge_02.png" id="5_71p4n"]
+[ext_resource type="Texture2D" uid="uid://dcsy0mewh346n" path="res://texture/ivy.png" id="8_lw2e8"]
+[ext_resource type="Texture2D" uid="uid://d0jgqbsy5cnxi" path="res://texture/flowers.png" id="8_yv84f"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="9_5ikog"]
+[ext_resource type="Texture2D" uid="uid://c7nxnf08bg7qq" path="res://texture/centella.png" id="10_q5fef"]
+[ext_resource type="Texture2D" uid="uid://bs1ah2sw7e2dj" path="res://texture/wire_03.png" id="11_q5fef"]
+[ext_resource type="Texture2D" uid="uid://isbbciwrrr27" path="res://texture/tree_11.png" id="13_hsee0"]
+[ext_resource type="Texture2D" uid="uid://cl14htj1xfure" path="res://texture/tree_12.png" id="14_mfiwv"]
+[ext_resource type="Texture2D" uid="uid://c4f4ordgocjy1" path="res://texture/tree_13.png" id="15_cf4jg"]
+[ext_resource type="Texture2D" uid="uid://bxwcoqw21rdii" path="res://texture/treeline_07.png" id="15_tyk7d"]
+[ext_resource type="Texture2D" uid="uid://3l15v7cp0jmc" path="res://texture/fence_04.png" id="17_hlici"]
+[ext_resource type="Texture2D" uid="uid://dncekmcehhwv6" path="res://texture/sign_02.png" id="18_dckxl"]
+[ext_resource type="Texture2D" uid="uid://b5kqb2u7oeqhm" path="res://texture/tree_14.png" id="19_wsrqa"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="20_78ccu"]
+[ext_resource type="Texture2D" uid="uid://cv5hrf1inexia" path="res://texture/treeline_03.png" id="20_cwu8n"]
+[ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="21_con5m"]
+[ext_resource type="Texture2D" uid="uid://bxyp6cutwpqb4" path="res://texture/manhole.png" id="22_3hqlf"]
+[ext_resource type="Texture2D" uid="uid://dypexiehk1x24" path="res://texture/water_03.png" id="22_kf2o1"]
+[ext_resource type="Texture2D" uid="uid://bjpsvp0nw8ijy" path="res://texture/foliage_00.png" id="24_k7ecp"]
+[ext_resource type="Texture2D" uid="uid://dcaqsci72i4gd" path="res://texture/radio_tower_01.png" id="26_wyncv"]
+[ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="27_6hg4v"]
+[ext_resource type="Texture2D" uid="uid://bp7h2srt8hsib" path="res://texture/umbrella.png" id="27_qrecq"]
+[ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="28_lmdqb"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="31_gxekc"]
+[ext_resource type="AudioStream" uid="uid://b4lupbk6o4ktc" path="res://audio/amb/rainy_overlook.ogg" id="32_yakqg"]
+[ext_resource type="Shader" uid="uid://b608t0d4owqs1" path="res://gdshader/clouds_blocks.gdshader" id="33_3hqlf"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="37_yv84f"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="38_3hqlf"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="39_qrecq"]
+
+[sub_resource type="Gradient" id="Gradient_ghkrq"]
+offsets = PackedFloat32Array(0.040123455, 0.29320988, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.18750003, 0.3, 0.165, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jgn5v"]
+gradient = SubResource("Gradient_ghkrq")
+width = 64
+
+[sub_resource type="Environment" id="Environment_t32qj"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+tonemap_exposure = 0.3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.46750003, 0.85, 0.53124994, 1)
+fog_density = 0.95
+fog_height = -2.0
+fog_height_density = 0.03
+fog_depth_begin = 48.0
+fog_depth_end = 200.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+adjustment_contrast = 0.95
+adjustment_saturation = 0.7
+adjustment_color_correction = SubResource("GradientTexture1D_jgn5v")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n4ars"]
+noise_type = 2
+fractal_gain = 1.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f6uy2"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_n4ars")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_foea1"]
+render_priority = 1
+shader = ExtResource("4_jgn5v")
+shader_parameter/texture_albedo = ExtResource("5_8heiv")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_f6uy2")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.3
+shader_parameter/mask_scale = 0.01
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_88wcl"]
+fractal_lacunarity = 1.455
+fractal_gain = 0.645
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_71p4n"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_88wcl")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8heiv"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_foea1")
+shader = ExtResource("4_jgn5v")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_71p4n")
+shader_parameter/alpha = 0.4
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.05
+shader_parameter/mask_scale = 0.05
+shader_parameter/noise_threshold = 0.6000000285
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2h63b"]
+render_priority = 0
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 1, 0)
+shader_parameter/emissive = 0.1
+shader_parameter/tex = ExtResource("5_71p4n")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_71p4n"]
+fractal_gain = 1.2
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_8heiv"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_71p4n")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jgn5v"]
+render_priority = 1
+shader = ExtResource("4_jgn5v")
+shader_parameter/texture_albedo = ExtResource("8_yv84f")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_8heiv")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.2
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hsee0"]
+noise_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_533ta"]
+width = 256
+height = 256
+noise = SubResource("FastNoiseLite_hsee0")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mfiwv"]
+render_priority = 0
+shader = ExtResource("4_jgn5v")
+shader_parameter/texture_albedo = ExtResource("8_lw2e8")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_533ta")
+shader_parameter/alpha = 0.7
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jgn5v"]
+resource_name = "yellow_marking"
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 0.81299996, 0.49, 1)
+albedo_texture = ExtResource("4_ghkrq")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qrecq"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_mfiwv")
+shader = ExtResource("4_jgn5v")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_71p4n")
+shader_parameter/alpha = 0.2
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.05
+shader_parameter/mask_scale = 0.05
+shader_parameter/noise_threshold = 0.800000038
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lw2e8"]
+render_priority = 1
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.030000001425
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(-1, 0, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("10_q5fef")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsee0"]
+render_priority = -1
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 1, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("11_q5fef")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_533ta"]
+render_priority = -1
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("13_hsee0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tyk7d"]
+render_priority = -2
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("14_mfiwv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_78ccu"]
+render_priority = 0
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, -1, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("15_cf4jg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cf4jg"]
+resource_name = "treeline"
+render_priority = -5
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("15_tyk7d")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dckxl"]
+resource_name = "fence_trans"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("17_hlici")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wsrqa"]
+resource_name = "sign.001"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("18_dckxl")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwu8n"]
+render_priority = -3
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 1, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("19_wsrqa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_con5m"]
+render_priority = -4
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("20_cwu8n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyncv"]
+render_priority = -5
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("20_cwu8n")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kf2o1"]
+render_priority = -5
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("13_hsee0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hg4v"]
+render_priority = -6
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("14_mfiwv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmdqb"]
+render_priority = -7
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("15_cf4jg")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h5bmp"]
+render_priority = -8
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("19_wsrqa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k7ecp"]
+render_priority = -4
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.10000000475
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 1, 0)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("11_q5fef")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qrecq"]
+resource_name = "manhole"
+render_priority = 1
+transparency = 4
+albedo_texture = ExtResource("22_3hqlf")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gxekc"]
+render_priority = 2
+shader = ExtResource("21_con5m")
+shader_parameter/albedo = Color(0.8125, 1, 0.75, 1)
+shader_parameter/water_emission_strength = 0.3
+shader_parameter/water_texture1 = ExtResource("22_kf2o1")
+shader_parameter/water_texture2 = ExtResource("22_kf2o1")
+shader_parameter/scroll_speed1 = Vector2(0.05, 0)
+shader_parameter/scroll_speed2 = Vector2(-0.03, 0)
+shader_parameter/blend_factor = 0.5
+shader_parameter/wave_strength = 0.1
+shader_parameter/wave_scale = 0.02
+shader_parameter/WaterOpacity = 0.3
+shader_parameter/use_edge_fade = false
+shader_parameter/edge_fade_amount = 0.01
+shader_parameter/triplanar_scale = 0.1
+shader_parameter/triplanar_emission_scale = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hg4v"]
+resource_name = "wire"
+render_priority = -10
+transparency = 4
+cull_mode = 2
+albedo_color = Color(1, 1, 1, 0.78431374)
+albedo_texture = ExtResource("11_q5fef")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yakqg"]
+render_priority = 0
+shader = ExtResource("9_5ikog")
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("24_k7ecp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yu03h"]
+resource_name = "radio_tower"
+render_priority = -5
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("26_wyncv")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nuqps"]
+resource_name = "umbrella_trans"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("27_qrecq")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_mfiwv"]
+size = Vector2(5000, 5000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_tyk7d"]
+offset = Vector3(0, 130, 0)
+fractal_lacunarity = 1.305
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tmnk"]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_tyk7d")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf4jg"]
+render_priority = -10
+shader = ExtResource("33_3hqlf")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.008
+shader_parameter/alpha_threshold = 0.110000005225
+shader_parameter/alpha_strength = 1.0
+shader_parameter/cloud_color = Color(1, 0.9866667, 0.6, 1)
+shader_parameter/cloud_scale = 10.0
+shader_parameter/fade_radius = 0.2
+shader_parameter/fade_color = Color(0, 0, 0, 0)
+shader_parameter/fade_power = 2.0
+
+[sub_resource type="Gradient" id="Gradient_dckxl"]
+offsets = PackedFloat32Array(0, 0.2, 0.3, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.9191463, 0.94449115, 0.89842236, 1, 0.496219, 0.654137, 0.367093, 1, 0.49, 0.473667, 0.245, 1, 0.280025, 0.33776, 0.133307, 1)
+
+[node name="stage_overlook" type="Node3D" unique_id=1440825876 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_r76f7")
+stage_name = "world_overlook"
+_bloom = 0.6
+_extra_snd_bank = 1
+bgm = ExtResource("2_3hqlf")
+bgm_pitch = 0.8
+bgm_volume = 0.1
+_entrance = [NodePath("entrance")]
+weather = 1
+_stage_light = Color(0.77, 0.75049335, 0.4774, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1906867297]
+environment = SubResource("Environment_t32qj")
+
+[node name="overlook" parent="." unique_id=1349428302 instance=ExtResource("2_pv535")]
+
+[node name="door" parent="overlook" index="0" unique_id=1074845122 groups=["loop_only"]]
+
+[node name="interactable" parent="overlook/door" index="0" unique_id=1197237717 instance=ExtResource("3_h5bmp")]
+
+[node name="road" parent="overlook" index="1" unique_id=1910197568]
+material_overlay = SubResource("ShaderMaterial_8heiv")
+
+[node name="hedge" parent="overlook" index="2" unique_id=699664191]
+surface_material_override/0 = SubResource("ShaderMaterial_2h63b")
+surface_material_override/1 = SubResource("ShaderMaterial_jgn5v")
+
+[node name="hedge_concrete" parent="overlook/hedge" index="0" unique_id=1892849511]
+material_overlay = SubResource("ShaderMaterial_8heiv")
+
+[node name="restrain_wall" parent="overlook" index="3" unique_id=521857233]
+material_overlay = SubResource("ShaderMaterial_mfiwv")
+
+[node name="marking" parent="overlook" index="4" unique_id=549993094]
+surface_material_override/1 = SubResource("StandardMaterial3D_jgn5v")
+
+[node name="StaticBody3D" parent="overlook/pole" parent_id_path=PackedInt32Array(1349428302, 327145536) index="0" unique_id=121697682]
+collision_layer = 512
+
+[node name="pole_001" parent="overlook" index="6" unique_id=1820193302]
+material_overlay = SubResource("ShaderMaterial_qrecq")
+
+[node name="StaticBody3D" parent="overlook/pole_001" index="0" unique_id=485853849]
+collision_layer = 512
+
+[node name="centella" parent="overlook" index="9" unique_id=387361296]
+surface_material_override/0 = SubResource("ShaderMaterial_lw2e8")
+
+[node name="powerline_wire" parent="overlook" index="11" unique_id=2113426917]
+surface_material_override/0 = SubResource("ShaderMaterial_hsee0")
+
+[node name="tree" parent="overlook" index="12" unique_id=1529919738]
+surface_material_override/1 = SubResource("ShaderMaterial_533ta")
+surface_material_override/3 = SubResource("ShaderMaterial_tyk7d")
+surface_material_override/5 = SubResource("ShaderMaterial_78ccu")
+
+[node name="treeline" parent="overlook" index="13" unique_id=79528652]
+surface_material_override/0 = SubResource("StandardMaterial3D_cf4jg")
+
+[node name="tile_wall" parent="overlook" index="14" unique_id=1780968926]
+material_overlay = SubResource("ShaderMaterial_qrecq")
+
+[node name="fence" parent="overlook" index="15" unique_id=1445409542]
+surface_material_override/1 = SubResource("StandardMaterial3D_dckxl")
+
+[node name="sign" parent="overlook" index="16" unique_id=544568088]
+surface_material_override/1 = SubResource("StandardMaterial3D_wsrqa")
+
+[node name="overlook_tree" parent="overlook" index="20" unique_id=1434573124]
+surface_material_override/1 = SubResource("ShaderMaterial_533ta")
+surface_material_override/3 = SubResource("ShaderMaterial_tyk7d")
+surface_material_override/5 = SubResource("ShaderMaterial_78ccu")
+surface_material_override/7 = SubResource("ShaderMaterial_cwu8n")
+
+[node name="overlook_treeline" parent="overlook" index="21" unique_id=1901363054]
+surface_material_override/0 = SubResource("ShaderMaterial_con5m")
+surface_material_override/1 = SubResource("ShaderMaterial_wyncv")
+
+[node name="geo_trees" parent="overlook" index="23" unique_id=539074067]
+surface_material_override/1 = SubResource("ShaderMaterial_kf2o1")
+surface_material_override/3 = SubResource("ShaderMaterial_6hg4v")
+surface_material_override/5 = SubResource("ShaderMaterial_lmdqb")
+surface_material_override/7 = SubResource("ShaderMaterial_h5bmp")
+
+[node name="powerline_wire_001" parent="overlook" index="25" unique_id=2068866731]
+surface_material_override/0 = SubResource("ShaderMaterial_k7ecp")
+
+[node name="manhole" parent="overlook" index="26" unique_id=266436665]
+surface_material_override/0 = SubResource("StandardMaterial3D_qrecq")
+
+[node name="StaticBody3D" parent="overlook/water" parent_id_path=PackedInt32Array(1349428302, 1951540001) index="0" unique_id=1836877413]
+collision_layer = 16
+
+[node name="water_surface" parent="overlook" index="28" unique_id=1856789041]
+material_override = SubResource("ShaderMaterial_gxekc")
+
+[node name="overlook_bridge" parent="overlook" index="29" unique_id=458678319]
+surface_material_override/1 = SubResource("StandardMaterial3D_6hg4v")
+
+[node name="butterfly_foliage" parent="overlook" index="30" unique_id=787441244]
+surface_material_override/0 = SubResource("ShaderMaterial_yakqg")
+
+[node name="bus_stop" parent="overlook" index="31" unique_id=1277696017]
+material_overlay = SubResource("ShaderMaterial_mfiwv")
+
+[node name="bus_stop_bench" parent="overlook/bus_stop" index="0" unique_id=213427953]
+material_overlay = SubResource("ShaderMaterial_8heiv")
+
+[node name="bus_foliage" parent="overlook" index="32" unique_id=1593238337]
+material_override = SubResource("ShaderMaterial_yakqg")
+
+[node name="radio_tower" parent="overlook" index="33" unique_id=1240437719]
+surface_material_override/0 = SubResource("StandardMaterial3D_yu03h")
+
+[node name="umbrella" parent="overlook" index="34" unique_id=328966423]
+surface_material_override/1 = SubResource("StandardMaterial3D_nuqps")
+
+[node name="lightmap_gi" type="LightmapGI" parent="overlook" unique_id=2099783065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.69552, 0.96, 0.41279998, 1)
+environment_custom_energy = 0.5
+generate_probes_subdiv = 0
+light_data = ExtResource("3_gig2s")
+
+[node name="shading" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1366883216]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28, 7.510544, -9.914534)
+light_color = Color(1, 0.36, 0.36, 1)
+light_energy = 1.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 26.0
+
+[node name="shading2" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1776605967]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -93, 7.510544, -9.914534)
+light_color = Color(0.8826667, 1, 0.36, 1)
+light_energy = 1.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 26.0
+
+[node name="shading3" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1324833267]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -147.00002, 7.510544, -9.914534)
+light_color = Color(0.47733337, 1, 0.36, 1)
+light_energy = 1.2
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 26.0
+
+[node name="bus_light" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1260885357]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -168.00002, 2, -13.27256)
+light_color = Color(0.8668333, 1, 0.53, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="bus_light2" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1891006775]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -162.00002, 2, -13.27256)
+light_color = Color(1, 0.53, 0.69449997, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+
+[node name="door_light" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1408732055]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.803925, 2, -18)
+light_color = Color(1, 0.74, 0.74, 1)
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="overlook/lightmap_gi" unique_id=288781039]
+transform = Transform3D(0.93994576, -0.122499794, -0.31858385, 0.34006953, 0.41604388, 0.8433625, 0.029233098, -0.9010557, 0.43271708, 0, 4, -5)
+light_color = Color(0.63899994, 0.9, 0.35999995, 1)
+light_energy = 0.1
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="umbrella_light" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=1330492050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.34231, 1.5385085, -10.461354)
+light_color = Color(0.9, 0, 0.15000029, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 7.0
+omni_attenuation = 0.5
+
+[node name="umbrella_light2" type="OmniLight3D" parent="overlook/lightmap_gi" unique_id=762935586]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -161.68935, 1.1662523, -17.092724)
+light_color = Color(0.9, 0, 0.15000029, 1)
+light_energy = 0.5
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 7.0
+omni_attenuation = 0.5
+
+[node name="water_droplet_bus_stop" parent="overlook" unique_id=83161154 instance=ExtResource("27_6hg4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -166.21251, 3.724008, -16.566866)
+amount = 12
+emission_box_extents = Vector3(3.2, 0, 0.2)
+_max_particle = 12
+
+[node name="eye_watcher" parent="overlook" unique_id=1889624478 instance=ExtResource("37_yv84f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 16.81065, 11)
+
+[node name="entrance" type="Node3D" parent="." unique_id=1759237288]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -72.023285, 0, -15.535924)
+script = ExtResource("3_t32qj")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=337517429 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("4_67fcv")
+_bounds = NodePath("../overlook/road")
+_all_axis = false
+_world = NodePath("../overlook")
+_door_probability = 0
+_fade_on_loop = true
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="cloud_dome" type="MeshInstance3D" parent="." unique_id=248633472]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+mesh = SubResource("PlaneMesh_mfiwv")
+surface_material_override/0 = SubResource("ShaderMaterial_cf4jg")
+
+[node name="particle_leaf" parent="." unique_id=649054483 instance=ExtResource("20_78ccu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.468895, 18, 7)
+amount = 128
+lifetime = 7.0
+emission_box_extents = Vector3(101, 2, 4)
+gravity = Vector3(0, -1, -1)
+color_initial_ramp = SubResource("Gradient_dckxl")
+_max_particle = 128
+
+[node name="particle_leaf2" parent="." unique_id=1491156273 instance=ExtResource("20_78ccu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -98.468895, 2, -30)
+amount = 64
+lifetime = 7.0
+emission_box_extents = Vector3(101, 2, 4)
+gravity = Vector3(0, -0.2, 1)
+color_initial_ramp = SubResource("Gradient_dckxl")
+_max_particle = 64
+
+[node name="water_droplets" parent="." unique_id=1568367174 instance=ExtResource("27_6hg4v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.211784, 2.3471565, -15.5269575)
+amount = 4
+visibility_aabb = AABB(0.0021245396, -16.958841, -0.43881512, 0.09243866, 16.958841, 0.32300082)
+emission_box_extents = Vector3(0.1, 0, 0.5)
+_max_particle = 4
+
+[node name="particle_butterfly" parent="." unique_id=1722221787 instance=ExtResource("28_lmdqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.82118, 1.8183471, -19)
+
+[node name="particle_butterfly2" parent="." unique_id=124225546 instance=ExtResource("28_lmdqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -171.38043, 1.2973963, -17.964643)
+
+[node name="particle_wind" parent="." unique_id=714981494 instance=ExtResource("31_gxekc")]
+
+[node name="wind" parent="particle_wind" index="1"]
+color = Color(1, 1, 1, 0.78431374)
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1351559759]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -95, 26, -9)
+stream = ExtResource("32_yakqg")
+unit_size = 42.0
+autoplay = true
+panning_strength = 0.3
+bus = &"amb"
+
+[node name="particle_bird" parent="." unique_id=883892658 instance=ExtResource("38_3hqlf")]
+
+[node name="amelia" parent="." unique_id=1037867904 instance=ExtResource("39_qrecq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -167.31013, -0.2933185, -18.169964)
+
+[editable path="overlook"]
+[editable path="particle_wind"]

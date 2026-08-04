@@ -1,0 +1,12 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bhm85c6o2ixeu"]
+
+[ext_resource type="Texture2D" uid="uid://dgtc8tq2aydyt" path="res://texture/wire.png" id="1_33wwc"]
+
+[resource]
+resource_name = "cable"
+cull_mode = 2
+albedo_texture = ExtResource("1_33wwc")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}

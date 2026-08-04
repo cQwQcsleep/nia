@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://3ut6yfjcajrj"]
+
+[ext_resource type="Texture2D" uid="uid://ceb6256es2w5x" path="res://texture/pinwheel_01.png" id="1_7qvlh"]
+
+[sub_resource type="Shader" id="Shader_ioalf"]
+code = "shader_type spatial;
+render_mode cull_disabled;
+uniform float rotation_speed = 1.0;
+uniform vec3 rotation_axis = vec3(0.0, 0.0, 1.0); // Z-axis default
+uniform sampler2D tex : filter_linear_mipmap_anisotropic;
+void vertex() {
+    float angle = (TIME + NODE_POSITION_WORLD.x) * rotation_speed  + NODE_POSITION_WORLD.x;
+
+    vec3 axis = normalize(rotation_axis);
+    vec3 pos = VERTEX;
+
+    // Rodrigues' rotation formula
+    VERTEX = pos * cos(angle)
+           + cross(axis, pos) * sin(angle)
+           + axis * dot(axis, pos) * (1.0 - cos(angle));
+
+}
+void fragment() {
+	vec4 color = texture(tex, UV);
+	ALBEDO = color.rgb;
+	ALPHA = color.a;
+}"
+
+[resource]
+render_priority = 3
+shader = SubResource("Shader_ioalf")
+shader_parameter/rotation_speed = 2.5
+shader_parameter/rotation_axis = Vector3(0, 0, 1)
+shader_parameter/tex = ExtResource("1_7qvlh")

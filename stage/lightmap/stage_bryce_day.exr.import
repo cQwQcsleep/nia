@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://cs5lx6vr2b52r"
+path.bptc="res://.godot/imported/stage_bryce_day.exr-c8b7f6f45b08171ff927bac783a6b542.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://stage/lightmap/stage_bryce_day.exr"
+dest_files=["res://.godot/imported/stage_bryce_day.exr-c8b7f6f45b08171ff927bac783a6b542.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=true
+compress/lossy_quality=1.0
+compress/uastc_level=2
+compress/rdo_quality_loss=0
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=1

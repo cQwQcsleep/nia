@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bu45m1gimtj0s"]
+
+[ext_resource type="Texture2D" uid="uid://cb5k0l6g5l7hq" path="res://texture/snow_03.png" id="1_q0kce"]
+
+[resource]
+albedo_texture = ExtResource("1_q0kce")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+texture_filter = 5

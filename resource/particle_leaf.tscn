@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cmmockcl17c15"]
+
+[ext_resource type="Texture2D" uid="uid://cmltuyir4ovgv" path="res://texture/leaf.png" id="1_qjmef"]
+[ext_resource type="Script" uid="uid://btb0euhusfxqp" path="res://gdscript/particle_limiter.gd" id="2_7pag6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iim3q"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_qjmef")
+texture_filter = 5
+texture_repeat = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 4.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_xrekp"]
+
+[sub_resource type="Curve" id="Curve_kcb53"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(0.1, 360), 0.0, 0.0, 0, 0, Vector2(0.2, 0), 0.0, 0.0, 0, 0, Vector2(0.3, 360), 0.0, 0.0, 0, 0, Vector2(0.4, -360), 0.0, 0.0, 0, 0, Vector2(0.5, 360), 0.0, 0.0, 0, 0, Vector2(0.6, -360), 0.0, 0.0, 0, 0, Vector2(0.7, -144), 0.0, 0.0, 0, 0, Vector2(0.8, -360), 0.0, 0.0, 0, 0, Vector2(0.90001, 360), 0.0, 0.0, 0, 0, Vector2(1, -360), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_iim3q"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -200), 0.0, 0.0, 0, 0, Vector2(0.1, 200), 0.0, 0.0, 0, 0, Vector2(0.2, -200), 0.0, 0.0, 0, 0, Vector2(0.3, 200), 0.0, 0.0, 0, 0, Vector2(0.4, -200), 0.0, 0.0, 0, 0, Vector2(0.5, 200), 0.0, 0.0, 0, 0, Vector2(0.6, -200), 0.0, 0.0, 0, 0, Vector2(0.7, 200), 0.0, 0.0, 0, 0, Vector2(0.8, -200), 0.0, 0.0, 0, 0, Vector2(0.9, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Curve" id="Curve_xrekp"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, -200), 0.0, 0.0, 0, 0, Vector2(0.1, 200), 0.0, 0.0, 0, 0, Vector2(0.2, 0), 0.0, 0.0, 0, 0, Vector2(0.3, 200), 0.0, 0.0, 0, 0, Vector2(0.4, -200), 0.0, 0.0, 0, 0, Vector2(0.5, 0), 0.0, 0.0, 0, 0, Vector2(0.6, -200), 0.0, 0.0, 0, 0, Vector2(0.7, 200), 0.0, 0.0, 0, 0, Vector2(0.8, -200), 0.0, 0.0, 0, 0, Vector2(0.9, 0), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 11
+
+[sub_resource type="Gradient" id="Gradient_xrekp"]
+offsets = PackedFloat32Array(0, 0.1, 0.7, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_iim3q"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.496219, 0.654137, 0.367093, 1, 0.49, 0.473667, 0.245, 1, 0.280025, 0.33776, 0.133307, 1)
+
+[node name="particle_leaf" type="CPUParticles3D" unique_id=749303828 groups=["loop_particle_restart"]]
+material_override = SubResource("StandardMaterial3D_iim3q")
+amount = 20
+lifetime = 5.0
+preprocess = 6.0
+speed_scale = 0.7
+mesh = SubResource("QuadMesh_xrekp")
+emission_shape = 3
+emission_box_extents = Vector3(4, 2, 4)
+particle_flag_rotate_y = true
+gravity = Vector3(-1, -1, 0)
+angular_velocity_min = -0.1
+angular_velocity_max = 0.1
+angular_velocity_curve = SubResource("Curve_kcb53")
+radial_accel_min = -0.1
+radial_accel_max = 0.1
+radial_accel_curve = SubResource("Curve_iim3q")
+tangential_accel_min = -0.04
+tangential_accel_max = 0.04
+tangential_accel_curve = SubResource("Curve_xrekp")
+angle_min = -720.0
+angle_max = 90.0
+scale_amount_min = 0.1
+scale_amount_max = 0.6
+color = Color(1, 1, 1, 0.941176)
+color_ramp = SubResource("Gradient_xrekp")
+color_initial_ramp = SubResource("Gradient_iim3q")
+script = ExtResource("2_7pag6")
+_max_particle = 20

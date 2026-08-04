@@ -1,0 +1,307 @@
+[gd_scene format=3 uid="uid://dcaf4cbvwasij"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_fvks3"]
+[ext_resource type="PackedScene" uid="uid://bb7fv452ld68s" path="res://stage/mesh/here.blend" id="2_06aoh"]
+[ext_resource type="LightmapGIData" uid="uid://bi1mh11arpt1u" path="res://stage/lightmap/stage_here.lmbake" id="2_hmrx5"]
+[ext_resource type="AudioStream" uid="uid://bogf3x1lqionj" path="res://audio/music/se_seasons_end.ogg" id="2_ku100"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="3_i0rok"]
+[ext_resource type="Texture2D" uid="uid://cjb14fmpmn7i1" path="res://texture/sky_night_trees.png" id="4_clvxx"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="4_ex2ts"]
+[ext_resource type="Texture2D" uid="uid://dfojnvx7w4k3c" path="res://texture/daisy_0.png" id="4_u0hyi"]
+[ext_resource type="Texture2D" uid="uid://cht2ybrlx7tc1" path="res://texture/grass_4_layer.png" id="5_i0rok"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="5_mnowh"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="7_2w5q5"]
+[ext_resource type="Texture2D" uid="uid://8gfe4qkd5qfv" path="res://texture/treeline_1.png" id="10_4j8k1"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="10_ugwwq"]
+[ext_resource type="Texture2D" uid="uid://bmqs5k32axpbu" path="res://texture/radio_tower.png" id="11_2w5q5"]
+[ext_resource type="Texture2D" uid="uid://bfffgqyroal36" path="res://texture/moon_crest.png" id="12_1ofki"]
+[ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="12_wati8"]
+[ext_resource type="AudioStream" uid="uid://m12n14y86uq3" path="res://audio/amb/night_forest.ogg" id="15_wati8"]
+[ext_resource type="PackedScene" uid="uid://bs0w8cag876q" path="res://stage/mesh/extra/death_cube.blend" id="16_o8h1a"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="17_7r0ck"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="18_ke3c8"]
+[ext_resource type="Texture2D" uid="uid://c5p6tc86cc3g4" path="res://texture/grass_blade.png" id="19_ugwwq"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="20_ku100"]
+
+[sub_resource type="Gradient" id="Gradient_ke3c8"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.3, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.312, 0.31849998, 0.39, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ugwwq"]
+gradient = SubResource("Gradient_ke3c8")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dik0h"]
+shader = ExtResource("3_i0rok")
+shader_parameter/source_panorama = ExtResource("4_clvxx")
+shader_parameter/exposure = 0.5
+shader_parameter/uv_offset = Vector2(0, 0.4)
+shader_parameter/uv_scale = 0.5
+
+[sub_resource type="Sky" id="Sky_mnowh"]
+sky_material = SubResource("ShaderMaterial_dik0h")
+
+[sub_resource type="Environment" id="Environment_06aoh"]
+background_mode = 2
+background_color = Color(0.0784314, 0.160784, 0.305882, 1)
+sky = SubResource("Sky_mnowh")
+tonemap_mode = 4
+tonemap_exposure = 2.0
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 1.0
+fog_height_density = 1.0
+fog_depth_curve = 1.6817931
+fog_depth_begin = 2.0
+fog_depth_end = 64.0
+adjustment_enabled = true
+adjustment_brightness = 1.2
+adjustment_contrast = 0.86
+adjustment_saturation = 1.2
+adjustment_color_correction = SubResource("GradientTexture1D_ugwwq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_clvxx"]
+resource_name = "daisy_top"
+render_priority = 1
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = ExtResource("4_u0hyi")
+emission_enabled = true
+emission = Color(0.14902, 0.215686, 0.368627, 1)
+emission_energy_multiplier = 0.5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ofki"]
+resource_name = "grass_layer"
+render_priority = -1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_i0rok")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ke3c8"]
+resource_name = "grass_layer"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("5_i0rok")
+texture_filter = 5
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ku100"]
+render_priority = 0
+shader = ExtResource("10_ugwwq")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(-1, 1, 1)
+shader_parameter/emissive = 0.4
+shader_parameter/tex = ExtResource("10_4j8k1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w5q5"]
+resource_name = "treeline"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("10_4j8k1")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.33
+emission_operator = 1
+emission_texture = ExtResource("10_4j8k1")
+texture_filter = 5
+texture_repeat = false
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8hmdv"]
+resource_name = "treeline"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.588235)
+albedo_texture = ExtResource("10_4j8k1")
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.3
+emission_operator = 1
+emission_texture = ExtResource("10_4j8k1")
+texture_repeat = false
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o8h1a"]
+resource_name = "radio_tower"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("11_2w5q5")
+billboard_mode = 2
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wati8"]
+render_priority = -5
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("12_1ofki")
+texture_repeat = false
+billboard_mode = 2
+billboard_keep_scale = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bu1n2"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("19_ugwwq")
+texture_repeat = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 4.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_egjhu"]
+size = Vector2(2.7, 0.3)
+
+[node name="stage_here" type="Node3D" unique_id=1234263121 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_fvks3")
+stage_name = "world_lavender"
+_bloom = 1.0
+bgm = ExtResource("2_ku100")
+bgm_pitch = 0.3
+bgm_volume = 0.2
+_entrance = [NodePath("entrance")]
+weather = 3
+_stage_light = Color(0.161, 0.18400002, 0.23, 1)
+_special = 2
+
+[node name="lightmap_gi" type="LightmapGI" parent="." unique_id=1251499065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000684738, 2.01388, -0.000366718)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_custom_color = Color(0.0784314, 0.160784, 0.305882, 1)
+environment_custom_energy = 0.2
+generate_probes_subdiv = 0
+light_data = ExtResource("2_hmrx5")
+
+[node name="omni_light_3d" type="OmniLight3D" parent="lightmap_gi" unique_id=1202076927]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8835156, 0)
+light_color = Color(0.0627451, 0.14509805, 0.33333334, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 12.0
+omni_attenuation = 1.4
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=2104586454]
+environment = SubResource("Environment_06aoh")
+script = ExtResource("5_mnowh")
+_speed = 0.004
+
+[node name="here" parent="." unique_id=808721976 instance=ExtResource("2_06aoh")]
+
+[node name="interactable" parent="here/rock" parent_id_path=PackedInt32Array(808721976, 1624749718) index="0" unique_id=540710788 instance=ExtResource("7_2w5q5")]
+_to_stage = "uid://cwbfwux0p5ib5"
+
+[node name="daisy_top" parent="here" index="2" unique_id=1117273331]
+surface_material_override/0 = SubResource("StandardMaterial3D_clvxx")
+
+[node name="grass_layer" parent="here" index="4" unique_id=1622527820]
+material_override = SubResource("StandardMaterial3D_1ofki")
+surface_material_override/0 = SubResource("StandardMaterial3D_ke3c8")
+
+[node name="treeline" parent="here" index="5" unique_id=343318535]
+surface_material_override/0 = SubResource("ShaderMaterial_ku100")
+
+[node name="treeline_001" parent="here" index="6" unique_id=1277820804]
+surface_material_override/0 = SubResource("StandardMaterial3D_2w5q5")
+
+[node name="treeline_002" parent="here" index="7" unique_id=175643721]
+surface_material_override/0 = SubResource("StandardMaterial3D_8hmdv")
+
+[node name="radio_tower" parent="here" index="8" unique_id=365832989]
+surface_material_override/0 = SubResource("StandardMaterial3D_o8h1a")
+
+[node name="distant_light" parent="here/radio_tower" index="0" unique_id=659140914 instance=ExtResource("12_wati8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 46.1417, -2.40463)
+
+[node name="radio_tower_001" parent="here" index="9" unique_id=42954975]
+surface_material_override/0 = SubResource("StandardMaterial3D_o8h1a")
+
+[node name="radio_tower_002" parent="here" index="10" unique_id=1031796646]
+surface_material_override/0 = SubResource("StandardMaterial3D_o8h1a")
+
+[node name="entrance" type="Node3D" parent="." unique_id=2129838638]
+transform = Transform3D(-0.693319, -0.138954, -0.707107, -0.196511, 0.980502, -3.85671e-09, 0.693319, 0.138954, -0.707107, -14, 5.42133, -41)
+script = ExtResource("4_ex2ts")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="moon_crest_attach" type="Node3D" parent="." unique_id=1158430355]
+
+[node name="moon_crest" type="Sprite3D" parent="moon_crest_attach" unique_id=2083403391]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.7099, 148.60919, 367.03894)
+material_override = SubResource("StandardMaterial3D_wati8")
+flip_v = true
+pixel_size = 2.0
+texture = ExtResource("12_1ofki")
+
+[node name="attach_player" type="Node3D" parent="moon_crest_attach" unique_id=313266506]
+script = ExtResource("20_ku100")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="audio_stream_player_3d" type="AudioStreamPlayer3D" parent="." unique_id=1371465952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18, 30)
+stream = ExtResource("15_wati8")
+attenuation_model = 2
+unit_size = 90.0
+pitch_scale = 0.9
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="death_cube" parent="." unique_id=1208594968 instance=ExtResource("16_o8h1a")]
+transform = Transform3D(1, 0, 0, 0, 0.9978257, -0.06590818, 0, 0.06590818, 0.9978257, 4, 0.4994623, -3)
+
+[node name="particle_bird" parent="." unique_id=403378630 instance=ExtResource("17_7r0ck")]
+
+[node name="attach_particle_leaf" type="Node3D" parent="." unique_id=1682165787]
+
+[node name="particle_leaf" parent="attach_particle_leaf" unique_id=182021267 groups=["stage_lit_particle_color"] instance=ExtResource("18_ke3c8")]
+material_override = SubResource("StandardMaterial3D_bu1n2")
+amount = 128
+lifetime = 3.0
+speed_scale = 0.3
+mesh = SubResource("QuadMesh_egjhu")
+emission_box_extents = Vector3(8, 2, 8)
+particle_flag_align_y = true
+particle_flag_rotate_y = false
+gravity = Vector3(-1, 1, 0)
+scale_amount_max = 0.2
+color = Color(0.112100005, 0.13417165, 0.19, 0.9411765)
+_max_particle = 128
+
+[node name="attach_player" type="Node3D" parent="attach_particle_leaf" unique_id=1265182394]
+script = ExtResource("20_ku100")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[editable path="here"]

@@ -1,0 +1,270 @@
+[gd_scene format=3 uid="uid://8kdybyba2g0u"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_6h1ph"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_181ly"]
+[ext_resource type="PackedScene" uid="uid://dxa4q5avwhi6p" path="res://stage/mesh/tvs.blend" id="2_f45w2"]
+[ext_resource type="Texture2D" uid="uid://dkcp3gegut4jo" path="res://texture/sky_helpme.png" id="2_fasbk"]
+[ext_resource type="AudioStream" uid="uid://dy6tio01b6bok" path="res://audio/music/se_woozy_glass.ogg" id="2_whcub"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="3_2lh6h"]
+[ext_resource type="LightmapGIData" uid="uid://csgwvehedxjjx" path="res://stage/lightmap/stage_tvs.lmbake" id="4_7xmni"]
+[ext_resource type="Material" uid="uid://bwoguueau765i" path="res://gdshader/material/mat_caustics_blood.tres" id="4_47xrf"]
+[ext_resource type="Texture2D" uid="uid://b8lx75011q3av" path="res://texture/meat.png" id="5_qonyi"]
+[ext_resource type="Texture2D" uid="uid://ebjixgwgfsp" path="res://texture/puddle.png" id="5_tj5ds"]
+[ext_resource type="Material" uid="uid://b182x87sgd83r" path="res://gdshader/material/mat_tv_clouds.tres" id="6_0y2it"]
+[ext_resource type="Texture2D" uid="uid://d1q5m6ysq7vcd" path="res://texture/meat_fat.png" id="6_p6qml"]
+[ext_resource type="AudioStream" uid="uid://bn6faixdewlqg" path="res://audio/amb/heartbeat.ogg" id="7_rh4vw"]
+[ext_resource type="Texture2D" uid="uid://chewiklmenhev" path="res://texture/chain.png" id="8_0ut36"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="9_rh4vw"]
+[ext_resource type="Shader" uid="uid://2mi7oo3shei6" path="res://gdshader/scroll.gdshader" id="9_wv8gj"]
+[ext_resource type="Texture2D" uid="uid://2mvs5fr2tipa" path="res://texture/oscillator_sine.png" id="10_fasbk"]
+[ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="11_0tu5t"]
+[ext_resource type="AudioStream" uid="uid://cmkncl1ohjy1p" path="res://audio/amb/tv_static.ogg" id="11_47xrf"]
+[ext_resource type="AudioStream" uid="uid://c34mdu5j82skg" path="res://audio/amb/tv_static_nature.ogg" id="12_kstrw"]
+[ext_resource type="PackedScene" uid="uid://06ujuma48lj8" path="res://resource/pupil_watcher.tscn" id="12_xy64d"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="13_47xrf"]
+[ext_resource type="AudioStream" uid="uid://q4w5qf72ha8q" path="res://audio/amb/osc_01.ogg" id="23_scis0"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tj5ds"]
+panorama = ExtResource("2_fasbk")
+
+[sub_resource type="Sky" id="Sky_2lh6h"]
+sky_material = SubResource("PanoramaSkyMaterial_tj5ds")
+
+[sub_resource type="Environment" id="Environment_f45w2"]
+background_mode = 2
+background_color = Color(1, 1, 1, 1)
+sky = SubResource("Sky_2lh6h")
+ambient_light_sky_contribution = 0.2
+glow_enabled = true
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.992
+fog_sky_affect = 0.0
+fog_height = 2.0
+fog_height_density = 0.1
+fog_depth_curve = 0.51763254
+fog_depth_begin = 2.0
+fog_depth_end = 48.0
+adjustment_enabled = true
+adjustment_saturation = 1.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0y2it"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2lh6h"]
+resource_name = "puddle"
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("5_tj5ds")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6qml"]
+resource_name = "heart"
+cull_mode = 2
+shading_mode = 2
+albedo_texture = ExtResource("5_qonyi")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rh4vw"]
+resource_name = "heart_fat"
+cull_mode = 2
+shading_mode = 2
+albedo_texture = ExtResource("6_p6qml")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0tu5t"]
+resource_name = "swing_chain"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("8_0ut36")
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tj5ds"]
+render_priority = 0
+shader = ExtResource("9_wv8gj")
+shader_parameter/scroll_texture = ExtResource("10_fasbk")
+shader_parameter/scroll_speed = 1.0
+shader_parameter/scroll_speed_y = 0.0
+shader_parameter/emission_texture = ExtResource("10_fasbk")
+shader_parameter/emission_strength = 0.8
+
+[node name="stage_tvs" type="Node3D" unique_id=1059718820 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_6h1ph")
+stage_name = "world_nurture"
+stage_name_alt = "world_nurture_alt"
+_bloom = 0.7
+bgm = ExtResource("2_whcub")
+bgm_pitch = 0.2
+bgm_volume = 0.2
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.24, 0.168, 0.168, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=91416896]
+environment = SubResource("Environment_f45w2")
+script = ExtResource("3_2lh6h")
+_speed = 0.01
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=1094258365 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("2_181ly")
+_bounds = NodePath("../tvs/floor")
+_world = NodePath("../tvs")
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="tvs" parent="." unique_id=52521046 instance=ExtResource("2_f45w2")]
+
+[node name="tv_stack" parent="tvs" index="0" unique_id=641533733]
+surface_material_override/1 = ExtResource("6_0y2it")
+
+[node name="floor" parent="tvs" index="1" unique_id=1359870870]
+surface_material_override/0 = SubResource("StandardMaterial3D_0y2it")
+surface_material_override/1 = SubResource("StandardMaterial3D_2lh6h")
+
+[node name="life" parent="tvs" index="2" unique_id=1355399200]
+material_overlay = ExtResource("4_47xrf")
+surface_material_override/0 = SubResource("StandardMaterial3D_p6qml")
+surface_material_override/1 = SubResource("StandardMaterial3D_rh4vw")
+
+[node name="life_tv" parent="tvs/life" index="0" unique_id=418628529]
+material_overlay = ExtResource("4_47xrf")
+
+[node name="chain" parent="tvs" index="3" unique_id=1989797828]
+material_overlay = ExtResource("4_47xrf")
+surface_material_override/0 = SubResource("StandardMaterial3D_0tu5t")
+
+[node name="oscillator" parent="tvs" index="7" unique_id=1116327831]
+surface_material_override/1 = SubResource("ShaderMaterial_tj5ds")
+
+[node name="oscillator_001" parent="tvs" index="8" unique_id=737702597]
+material_overlay = ExtResource("4_47xrf")
+surface_material_override/1 = SubResource("ShaderMaterial_tj5ds")
+
+[node name="hand" parent="tvs" index="9" unique_id=1573083875]
+material_overlay = ExtResource("4_47xrf")
+
+[node name="interactable" parent="tvs/hand" index="1" unique_id=1577549733 instance=ExtResource("13_47xrf")]
+
+[node name="AnimationPlayer" parent="tvs" index="12" unique_id=1929245192]
+autoplay = &"KeyAction_001"
+
+[node name="lightmap_gi" type="LightmapGI" parent="tvs" unique_id=1588804733]
+visible = false
+supersampling = true
+bounces = 16
+directional = true
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.37, 0.051799994, 0.07301331, 1)
+environment_custom_energy = 0.1
+generate_probes_subdiv = 0
+light_data = ExtResource("4_7xmni")
+
+[node name="spot_light_3d" type="SpotLight3D" parent="tvs/lightmap_gi" unique_id=1781774643]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.599285, 3.74059, -0.0149873)
+light_color = Color(0.999999, 0.606277, 0.612986, 1)
+light_energy = 0.5
+light_specular = 0.0
+light_bake_mode = 1
+spot_range = 20.0
+spot_attenuation = 1.2
+spot_angle = 70.0
+
+[node name="spot_light_3d2" type="SpotLight3D" parent="tvs/lightmap_gi" unique_id=1252518306]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0.0326433, 2.03531, 7.87575)
+light_color = Color(1, 0.75, 0.75, 1)
+light_energy = 0.1
+light_specular = 0.0
+light_bake_mode = 1
+spot_range = 17.4243
+spot_angle = 51.9718
+
+[node name="hand_light" type="SpotLight3D" parent="tvs/lightmap_gi" unique_id=468808851]
+transform = Transform3D(-0.257782, -0.627041, 0.735098, -0.078307, 0.771867, 0.630944, -0.963025, 0.105082, -0.248075, -18.654, 5.10683, 23.8758)
+light_color = Color(1, 0.44, 0.44, 1)
+light_energy = 0.1
+light_specular = 0.0
+light_bake_mode = 1
+spot_angle = 35.1526
+
+[node name="amb_life" type="AudioStreamPlayer3D" parent="." unique_id=239459226]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.113366, 2.67898, 0.214117)
+stream = ExtResource("7_rh4vw")
+attenuation_model = 2
+unit_size = 12.0
+autoplay = true
+max_distance = 128.0
+panning_strength = 0.8
+bus = &"amb"
+
+[node name="amb_tv_static" type="AudioStreamPlayer3D" parent="." unique_id=715595138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.812274, 2.67898, 1.21708)
+stream = ExtResource("11_47xrf")
+volume_db = -4.0
+max_db = 0.0
+autoplay = true
+panning_strength = 1.5
+bus = &"amb"
+
+[node name="pupil_watcher" parent="." unique_id=1334726501 instance=ExtResource("12_xy64d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6, 0)
+
+[node name="amb_tv_nature" type="AudioStreamPlayer3D" parent="." unique_id=1528775458]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.18773, 1.67898, 13.2171)
+stream = ExtResource("12_kstrw")
+volume_db = -4.0
+max_db = 0.0
+autoplay = true
+max_distance = 12.0
+panning_strength = 1.5
+bus = &"amb"
+
+[node name="amb_tv_nature2" type="AudioStreamPlayer3D" parent="." unique_id=931846095]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1877, 1.67898, -11.7829)
+stream = ExtResource("12_kstrw")
+volume_db = -4.0
+max_db = 0.0
+autoplay = true
+max_distance = 12.0
+panning_strength = 1.5
+bus = &"amb"
+
+[node name="entrance" type="Node3D" parent="." unique_id=1319922882]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 46)
+script = ExtResource("9_rh4vw")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="particle_butterfly" parent="." unique_id=896502392 instance=ExtResource("11_0tu5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.7216, 0.85664, 8.40441)
+
+[node name="particle_butterfly2" parent="." unique_id=204135001 instance=ExtResource("11_0tu5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7216, 0.85664, -12.5956)
+
+[node name="particle_butterfly3" parent="." unique_id=753189458 instance=ExtResource("11_0tu5t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.2784, 0.85664, 18.4044)
+
+[node name="amb_osc" type="AudioStreamPlayer3D" parent="." unique_id=1185779419]
+transform = Transform3D(-0.36704308, 0.07471111, -0.9271988, -0.9190527, -0.18300442, 0.34907234, -0.1436019, 0.9802692, 0.13583393, -11.201277, 0.39699888, 22.241844)
+stream = ExtResource("23_scis0")
+attenuation_model = 2
+unit_size = 6.0
+max_db = 0.0
+autoplay = true
+max_distance = 88.0
+panning_strength = 2.0
+bus = &"amb"
+
+[editable path="tvs"]

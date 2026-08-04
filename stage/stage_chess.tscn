@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://c7brg5h08lq80"]
+
+[ext_resource type="PackedScene" uid="uid://in50krfvubef" path="res://stage/mesh/chess.blend" id="1_g3th2"]
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_k7u0l"]
+[ext_resource type="LightmapGIData" uid="uid://dk52f1awk26vt" path="res://stage/lightmap/stage_chess.lmbake" id="2_cuhsk"]
+[ext_resource type="AudioStream" uid="uid://ckw0e6jxsufan" path="res://audio/music/se_club_4_wormz.ogg" id="2_sirwm"]
+[ext_resource type="Texture2D" uid="uid://ct4ryx0cww4vj" path="res://texture/sky_blue.png" id="2_ut5mq"]
+[ext_resource type="Texture2D" uid="uid://dwr6gvj1475mc" path="res://texture/chess_figures.png" id="3_l8683"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="4_fvyqy"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_msooo"]
+[ext_resource type="Texture2D" uid="uid://dn0eexe8sr7it" path="res://texture/akaifusen.png" id="6_7bnel"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="7_n74ua"]
+[ext_resource type="AudioStream" uid="uid://b6pjnhvpn5bw3" path="res://audio/amb/room_noise_a.ogg" id="10_78iqx"]
+[ext_resource type="PackedScene" uid="uid://cs20jg06xcndg" path="res://resource/void_noise.tscn" id="12_wu5qp"]
+[ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="13_aom8t"]
+
+[sub_resource type="Gradient" id="Gradient_ut5mq"]
+offsets = PackedFloat32Array(0, 0.6, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.6504167, 0.525, 0.7, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sirwm"]
+gradient = SubResource("Gradient_ut5mq")
+width = 64
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_sirwm"]
+panorama = ExtResource("2_ut5mq")
+
+[sub_resource type="Sky" id="Sky_78iqx"]
+sky_material = SubResource("PanoramaSkyMaterial_sirwm")
+
+[sub_resource type="Environment" id="Environment_k7u0l"]
+background_mode = 2
+sky = SubResource("Sky_78iqx")
+tonemap_exposure = 1.5
+glow_bloom = 0.2
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 0.97
+fog_sky_affect = 0.0
+fog_height_density = 0.5
+fog_depth_curve = 1.5691684
+fog_depth_begin = 1.0
+fog_depth_end = 32.0
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_color_correction = SubResource("GradientTexture1D_sirwm")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fvyqy"]
+resource_name = "figures"
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = ExtResource("3_l8683")
+texture_filter = 5
+distance_fade_mode = 2
+distance_fade_min_distance = 1.0
+distance_fade_max_distance = 3.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ut5mq"]
+resource_name = "balloon"
+render_priority = 1
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("6_7bnel")
+billboard_mode = 2
+distance_fade_mode = 2
+distance_fade_min_distance = 16.0
+distance_fade_max_distance = 12.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[node name="stage_chess" type="Node3D" unique_id=2037742007 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_k7u0l")
+stage_name = "world_chess"
+_bloom = 0.7
+bgm = ExtResource("2_sirwm")
+bgm_pitch = 0.8
+bgm_volume = 0.1
+_has_reverb = true
+_entrance = [NodePath("entrance")]
+respawn_y = -20
+_stage_light = Color(0.18, 0.20399998, 0.36, 1)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=59179882]
+environment = SubResource("Environment_k7u0l")
+
+[node name="dream_loop" type="Node3D" parent="." unique_id=1074458193 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("4_fvyqy")
+_bounds = NodePath("../chess/checkerboard")
+_world = NodePath("../chess")
+
+[node name="chess" parent="." unique_id=703918599 instance=ExtResource("1_g3th2")]
+
+[node name="reference_player" parent="chess" index="0" unique_id=1069260388]
+visible = false
+
+[node name="chess_pieces" parent="chess" index="2" unique_id=215378993]
+material_override = SubResource("StandardMaterial3D_fvyqy")
+
+[node name="balloon" parent="chess" index="3" unique_id=1938340073]
+surface_material_override/0 = SubResource("StandardMaterial3D_ut5mq")
+
+[node name="interactable" parent="chess/chess_piece_001" parent_id_path=PackedInt32Array(703918599, 115596105) index="1" unique_id=731676892 instance=ExtResource("7_n74ua")]
+
+[node name="lightmap_gi" type="LightmapGI" parent="chess" unique_id=2121310787]
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.5
+environment_custom_color = Color(0.78, 0.802, 1, 1)
+environment_custom_energy = 0.4
+generate_probes_subdiv = 0
+light_data = ExtResource("2_cuhsk")
+
+[node name="balloon_light" type="OmniLight3D" parent="chess/lightmap_gi" unique_id=608623537]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.20921, 3.78155, 3.86619)
+light_color = Color(0.34902, 0, 0, 1)
+light_energy = 1.8
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 16.0
+
+[node name="chess_piece_light" type="OmniLight3D" parent="chess/lightmap_gi" unique_id=1043856259]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.378174, 5.78155, -3.884655)
+light_color = Color(0, 0.60666656, 0.91, 1)
+light_specular = 0.0
+light_bake_mode = 1
+omni_range = 10.0
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="chess" unique_id=1018981690]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22634244, 11, 0)
+stream = ExtResource("10_78iqx")
+unit_size = 32.0
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="entrance" type="Node3D" parent="." unique_id=174435935]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -26.0661, 0, 30.551)
+script = ExtResource("5_msooo")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="void_noise" parent="." unique_id=962599694 instance=ExtResource("12_wu5qp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.997341, -4, -1.3765668)
+
+[node name="nebel" parent="." unique_id=1037867904 instance=ExtResource("13_aom8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.224058, 0, 28.952066)
+
+[editable path="chess"]

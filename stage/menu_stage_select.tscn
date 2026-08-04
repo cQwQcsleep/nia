@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://dy0xdg1l5731"]
+
+[ext_resource type="Script" uid="uid://ba68rit5wxwej" path="res://gdscript/debug_stage_select.gd" id="1_i2slt"]
+
+[node name="node_2d" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_i2slt")
+
+[node name="button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 424.0
+offset_top = 176.0
+offset_right = 488.0
+offset_bottom = 208.0
+text = "go ther!"
+
+[node name="text_edit" type="TextEdit" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 208.0
+offset_top = 168.0
+offset_right = 412.0
+offset_bottom = 212.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "upwards_metro"
+
+[node name="label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 240.0
+offset_right = 496.0
+offset_bottom = 328.0
+autowrap_mode = 3
+
+[node name="timer" type="Timer" parent="."]
+wait_time = 12.0
+one_shot = true
+autostart = true
+
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

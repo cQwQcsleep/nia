@@ -1,0 +1,550 @@
+[gd_scene format=3 uid="uid://cwyncixxmoj4t"]
+
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_wk234"]
+[ext_resource type="PackedScene" uid="uid://diq74n8utn81v" path="res://stage/mesh/sunflower.blend" id="2_6wbnr"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_07bgw"]
+[ext_resource type="AudioStream" uid="uid://dga4l1gsvapww" path="res://audio/music/se_cartridge.ogg" id="2_pgi6p"]
+[ext_resource type="LightmapGIData" uid="uid://b5jhoo2wmiuxr" path="res://stage/lightmap/stage_sunflower.lmbake" id="2_qmgup"]
+[ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_tm15r"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_1nhbj"]
+[ext_resource type="Texture2D" uid="uid://ddgmxax0h6usw" path="res://texture/sky_sunflower.png" id="3_2giei"]
+[ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_mpjw6"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="5_aqehw"]
+[ext_resource type="Shader" uid="uid://602kb6xwyhln" path="res://gdshader/clouds.gdshader" id="7_1vmwg"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="7_n0qjl"]
+[ext_resource type="Texture2D" uid="uid://blkfxtlhhr8gj" path="res://texture/sunflower_02.png" id="8_b24o0"]
+[ext_resource type="Shader" uid="uid://pksvd42w4isk" path="res://gdshader/blend.gdshader" id="8_sktgp"]
+[ext_resource type="Texture2D" uid="uid://dvway2nyyp34n" path="res://texture/sunflower_new.png" id="9_4gv8l"]
+[ext_resource type="Texture2D" uid="uid://eo5fsj1je5fo" path="res://texture/dirt_02.png" id="9_sktgp"]
+[ext_resource type="Texture2D" uid="uid://qri2ns5tpf8s" path="res://texture/transmission_01.png" id="10_2giei"]
+[ext_resource type="Texture2D" uid="uid://dgtc8tq2aydyt" path="res://texture/wire.png" id="10_f6m38"]
+[ext_resource type="Texture2D" uid="uid://f38u1qe05hhf" path="res://texture/grass_16.png" id="10_sktgp"]
+[ext_resource type="Script" uid="uid://b31px2lpjuwur" path="res://gdscript/anomaly.gd" id="11_y4bk5"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="12_chbff"]
+[ext_resource type="AudioStream" uid="uid://cuy6ksjtpyhmw" path="res://audio/amb/metro_pass_01.ogg" id="12_quowj"]
+[ext_resource type="Texture2D" uid="uid://dhi11pmpwtouu" path="res://texture/particle_leaf.png" id="13_f6m38"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="13_jpe70"]
+[ext_resource type="Texture2D" uid="uid://bewc820u84uxn" path="res://texture/light_02.png" id="13_sa11k"]
+[ext_resource type="ArrayOccluder3D" uid="uid://driunebrldkbw" path="res://stage/occlusion/stage_sunflower.occ" id="15_rekxn"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="16_2f20m"]
+[ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="17_4gv8l"]
+[ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="18_f7t02"]
+[ext_resource type="Texture2D" uid="uid://bqp7i00ox055s" path="res://texture/sunflower_03.png" id="18_h5slu"]
+[ext_resource type="Texture2D" uid="uid://b42sbb1awjemk" path="res://texture/treeline_06.png" id="19_vwnh7"]
+[ext_resource type="AudioStream" uid="uid://cjdwksqx72yhe" path="res://audio/amb/windy_wheats.ogg" id="20_i0c51"]
+[ext_resource type="AudioStream" uid="uid://yqqnc3ogp85w" path="res://audio/amb/humming.ogg" id="21_viseq"]
+[ext_resource type="PackedScene" uid="uid://bylivxnait8i4" path="res://resource/eye_watcher.tscn" id="23_rekxn"]
+[ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="30_b24o0"]
+
+[sub_resource type="Gradient" id="Gradient_n0qjl"]
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0, 0.79556125, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.78, 0.65, 0.624, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_b24o0"]
+gradient = SubResource("Gradient_n0qjl")
+width = 64
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yndqb"]
+shader = ExtResource("2_tm15r")
+shader_parameter/source_panorama = ExtResource("3_2giei")
+shader_parameter/exposure = 1.0
+shader_parameter/uv_offset = Vector2(0, 0)
+shader_parameter/uv_scale = 0.6
+
+[sub_resource type="Sky" id="Sky_chbff"]
+sky_material = SubResource("ShaderMaterial_yndqb")
+
+[sub_resource type="Environment" id="Environment_u27ly"]
+background_mode = 2
+background_energy_multiplier = 1.1
+sky = SubResource("Sky_chbff")
+reflected_light_source = 1
+tonemap_exposure = 1.3
+glow_enabled = true
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.75, 0.523125, 0.50249994, 1)
+fog_density = 1.0
+fog_sky_affect = 0.0
+fog_height = 0.1
+fog_height_density = 0.1
+fog_depth_begin = 64.0
+fog_depth_end = 200.0
+adjustment_enabled = true
+adjustment_brightness = 1.1
+adjustment_contrast = 0.77
+adjustment_saturation = 1.1
+adjustment_color_correction = SubResource("GradientTexture1D_b24o0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xh4n7"]
+render_priority = 0
+shader = ExtResource("8_sktgp")
+shader_parameter/texture_a = ExtResource("9_sktgp")
+shader_parameter/texture_b = ExtResource("10_sktgp")
+shader_parameter/uv_a_scale = Vector2(1, 1)
+shader_parameter/uv_b_scale = Vector2(1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n0qjl"]
+fractal_lacunarity = 3.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b24o0"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_n0qjl")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pgi6p"]
+render_priority = -3
+shader = ExtResource("7_n0qjl")
+shader_parameter/texture_albedo = ExtResource("8_b24o0")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_b24o0")
+shader_parameter/alpha = 0.3
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.5
+shader_parameter/mask_scale = 0.02
+shader_parameter/noise_threshold = 0.800000038
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4gv8l"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_f7t02"]
+width = 128
+height = 128
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_4gv8l")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vwnh7"]
+render_priority = -2
+next_pass = SubResource("ShaderMaterial_pgi6p")
+shader = ExtResource("7_1vmwg")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_f7t02")
+shader_parameter/scroll_speed = 0.1
+shader_parameter/alpha_threshold = 0.3
+shader_parameter/alpha_strength = 0.400000019
+shader_parameter/cloud_color = Color(0.44, 0.11439999, 0.11439999, 1)
+shader_parameter/cloud_scale = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yndqb"]
+resource_name = "transmission_tower"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(0.906332, 0.906332, 0.906332, 1)
+albedo_texture = ExtResource("10_2giei")
+distance_fade_mode = 1
+distance_fade_min_distance = 240.0
+distance_fade_max_distance = 128.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_chbff"]
+resource_name = "transmission_tower_trans"
+render_priority = -1
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_texture = ExtResource("10_2giei")
+distance_fade_mode = 1
+distance_fade_min_distance = 240.0
+distance_fade_max_distance = 128.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y4bk5"]
+resource_name = "wire"
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("10_f6m38")
+distance_fade_mode = 1
+distance_fade_min_distance = 180.0
+distance_fade_max_distance = 128.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0c51"]
+transparency = 4
+shading_mode = 0
+disable_fog = true
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("13_sa11k")
+billboard_mode = 2
+billboard_keep_scale = true
+distance_fade_mode = 2
+distance_fade_min_distance = 256.0
+distance_fade_max_distance = 128.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vmwg"]
+render_priority = 1
+shader = ExtResource("5_aqehw")
+shader_parameter/wind_strength = 0.02000000095
+shader_parameter/wind_speed = 2.000000095
+shader_parameter/wind_direction = Vector3(1, 0.5, -1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("9_4gv8l")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gold"]
+render_priority = -1
+shader = ExtResource("5_aqehw")
+shader_parameter/wind_strength = 0.2
+shader_parameter/wind_speed = 1.0
+shader_parameter/wind_direction = Vector3(0.5, 0.3, 0.5)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("18_h5slu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vwnh7"]
+resource_name = "treeline"
+transparency = 4
+cull_mode = 2
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.5882353)
+albedo_texture = ExtResource("19_vwnh7")
+distance_fade_mode = 1
+distance_fade_min_distance = 220.0
+distance_fade_max_distance = 120.0
+metadata/extras = {
+"mmd_material": {}
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2f20m"]
+render_priority = 2
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("13_f6m38")
+texture_repeat = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 4.0
+
+[sub_resource type="Gradient" id="Gradient_jpe70"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(0.901961, 0.690196, 0.0156863, 1, 0.701961, 0.360784, 0.00392157, 1, 0.909804, 0.576471, 0.027451, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sktgp"]
+size = Vector2(5000, 5000)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2y4eq"]
+offset = Vector3(0, 130, 0)
+fractal_lacunarity = 1.305
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4tmnk"]
+width = 256
+height = 256
+generate_mipmaps = false
+noise = SubResource("FastNoiseLite_2y4eq")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_geu2d"]
+render_priority = -10
+shader = ExtResource("7_1vmwg")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_4tmnk")
+shader_parameter/scroll_speed = 0.008
+shader_parameter/alpha_threshold = 0.3
+shader_parameter/alpha_strength = 0.30000001425
+shader_parameter/cloud_color = Color(1, 0.13000005, 0.100000024, 1)
+shader_parameter/cloud_scale = 10.0
+
+[node name="stage_sunflower" type="Node3D" unique_id=1316952432 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("1_wk234")
+stage_name = "world_sunflower"
+_bloom = 0.9
+bgm = ExtResource("2_pgi6p")
+bgm_pitch = 0.9
+bgm_volume = 0.4
+_entrance = [NodePath("entrance")]
+_stage_light = Color(0.85, 0.629, 0.595, 1)
+_special = 2
+
+[node name="particle_butterfly" parent="." unique_id=641166837 instance=ExtResource("18_f7t02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.906597, 2.1365745, -5.471178)
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1369845860]
+environment = SubResource("Environment_u27ly")
+script = ExtResource("4_mpjw6")
+_speed = 0.003
+
+[node name="entrance" type="Node3D" parent="." unique_id=1554904779]
+transform = Transform3D(2.98023e-08, 0, -1, 0, 1, 0, 1, 0, 2.98023e-08, -71.6658, 0, 0.438632)
+script = ExtResource("3_1nhbj")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="sunflower" parent="." unique_id=1999953948 instance=ExtResource("2_6wbnr")]
+
+[node name="path" parent="sunflower" index="1" unique_id=1216581903]
+material_override = SubResource("ShaderMaterial_xh4n7")
+material_overlay = SubResource("ShaderMaterial_vwnh7")
+
+[node name="sunflower_dist" parent="sunflower" index="2" unique_id=96405604]
+visible = false
+
+[node name="trans_tower" parent="sunflower" index="4" unique_id=443610344]
+surface_material_override/0 = SubResource("StandardMaterial3D_yndqb")
+surface_material_override/1 = SubResource("StandardMaterial3D_chbff")
+surface_material_override/2 = SubResource("StandardMaterial3D_y4bk5")
+
+[node name="powerpole" parent="sunflower" index="5" unique_id=546746927]
+surface_material_override/2 = SubResource("StandardMaterial3D_y4bk5")
+
+[node name="train" parent="sunflower" index="6" unique_id=1221587788 node_paths=PackedStringArray("_anim") groups=["skip"]]
+script = ExtResource("11_y4bk5")
+_anim = NodePath("../AnimationPlayer")
+_anim_name = &"trainAction"
+
+[node name="train_engine" type="AudioStreamPlayer3D" parent="sunflower/train" index="0" unique_id=979139397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74, 0, 0)
+stream = ExtResource("12_quowj")
+unit_size = 16.0
+max_db = 0.0
+pitch_scale = 1.5
+autoplay = true
+max_distance = 400.0
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="train_engine2" type="AudioStreamPlayer3D" parent="sunflower/train" index="1" unique_id=946257414]
+stream = ExtResource("12_quowj")
+unit_size = 16.0
+max_db = 0.0
+pitch_scale = 1.5
+autoplay = true
+max_distance = 400.0
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="train_engine3" type="AudioStreamPlayer3D" parent="sunflower/train" index="2" unique_id=1184254695]
+transform = Transform3D(-0.228076, -0.330389, 0.915874, -0.330389, -0.858591, -0.392, 0.915874, -0.392, 0.0866671, -74, 0, 0)
+stream = ExtResource("12_quowj")
+unit_size = 16.0
+max_db = 0.0
+pitch_scale = 1.5
+autoplay = true
+max_distance = 400.0
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="light" type="Sprite3D" parent="sunflower/train" index="3" unique_id=1887320233]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.9357, 1.39587, 0.744343)
+material_override = SubResource("StandardMaterial3D_i0c51")
+modulate = Color(1, 0.52, 0.52, 0.392157)
+pixel_size = 0.1
+texture = ExtResource("13_sa11k")
+
+[node name="light2" type="Sprite3D" parent="sunflower/train" index="4" unique_id=614303484]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.9357, 1.39587, -1.68243)
+material_override = SubResource("StandardMaterial3D_i0c51")
+modulate = Color(1, 0.52, 0.52, 0.392157)
+pixel_size = 0.1
+texture = ExtResource("13_sa11k")
+
+[node name="light3" type="Sprite3D" parent="sunflower/train" index="5" unique_id=377419713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.8462, 1.39587, 0.744343)
+material_override = SubResource("StandardMaterial3D_i0c51")
+modulate = Color(1, 0.52, 0.52, 0.392157)
+pixel_size = 0.1
+texture = ExtResource("13_sa11k")
+
+[node name="light4" type="Sprite3D" parent="sunflower/train" index="6" unique_id=1930455497]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -74.8462, 1.39587, -1.68243)
+material_override = SubResource("StandardMaterial3D_i0c51")
+modulate = Color(1, 0.52, 0.52, 0.392157)
+pixel_size = 0.1
+texture = ExtResource("13_sa11k")
+
+[node name="sunflower_path" parent="sunflower" index="8" unique_id=1964226677]
+lod_bias = 0.2
+
+[node name="sunflower_path_001" parent="sunflower" index="9" unique_id=50802045]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_002" parent="sunflower" index="10" unique_id=1601346239]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_003" parent="sunflower" index="11" unique_id=1211549568]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_004" parent="sunflower" index="12" unique_id=151005158]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_005" parent="sunflower" index="13" unique_id=1840074188]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_006" parent="sunflower" index="14" unique_id=1539707697]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_007" parent="sunflower" index="15" unique_id=1967161488]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_008" parent="sunflower" index="16" unique_id=53711210]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_009" parent="sunflower" index="17" unique_id=116802640]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_010" parent="sunflower" index="18" unique_id=610234791]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_011" parent="sunflower" index="19" unique_id=896159971]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_012" parent="sunflower" index="20" unique_id=941389152]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_013" parent="sunflower" index="21" unique_id=215255720]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_014" parent="sunflower" index="22" unique_id=75130435]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_015" parent="sunflower" index="23" unique_id=169062604]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_016" parent="sunflower" index="24" unique_id=283951403]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_017" parent="sunflower" index="25" unique_id=75461005]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_018" parent="sunflower" index="26" unique_id=1330978875]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_019" parent="sunflower" index="27" unique_id=1569257644]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_020" parent="sunflower" index="28" unique_id=1785855132]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="sunflower_path_021" parent="sunflower" index="29" unique_id=1815694398]
+lod_bias = 0.2
+surface_material_override/1 = SubResource("ShaderMaterial_1vmwg")
+
+[node name="distant_sunflower" parent="sunflower" index="30" unique_id=41160498]
+surface_material_override/0 = SubResource("ShaderMaterial_7gold")
+
+[node name="distant_sunflower_001" parent="sunflower" index="31" unique_id=735602444]
+surface_material_override/0 = SubResource("ShaderMaterial_7gold")
+
+[node name="treeline" parent="sunflower" index="32" unique_id=1094811120]
+visible = false
+surface_material_override/0 = SubResource("StandardMaterial3D_vwnh7")
+
+[node name="rock" parent="sunflower" index="33" unique_id=551009767]
+material_overlay = SubResource("ShaderMaterial_vwnh7")
+
+[node name="interactable" parent="sunflower/rock" index="1" unique_id=731676892 instance=ExtResource("17_4gv8l")]
+_to_stage = "uid://dikb65wkfyuun"
+
+[node name="lightmap_gi" type="LightmapGI" parent="sunflower" unique_id=1654126631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(0.94, 0.5326667, 0.47, 1)
+environment_custom_energy = 1.4
+generate_probes_subdiv = 0
+light_data = ExtResource("2_qmgup")
+
+[node name="omni_light_3d" type="OmniLight3D" parent="sunflower/lightmap_gi" unique_id=1758904704]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27, 13, 18)
+light_color = Color(1, 0, 0, 1)
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 64.0
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="sunflower/lightmap_gi" unique_id=1608485209]
+transform = Transform3D(0.84529567, -0.37780657, 0.3778065, 0.049157683, 0.75909984, 0.6491157, -0.532033, -0.53012246, 0.66023576, 0, 0, 0)
+light_color = Color(1, 0.9, 0.9, 1)
+light_energy = 0.4
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="occluder_instance_3d" type="OccluderInstance3D" parent="sunflower" unique_id=428958182]
+occluder = ExtResource("15_rekxn")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=88286098 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("2_07bgw")
+_bounds = NodePath("../sunflower/path")
+_all_axis = false
+_world = NodePath("../sunflower")
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="leaves" type="Node3D" parent="." unique_id=183792682]
+
+[node name="particle_leaf" parent="leaves" unique_id=659287881 instance=ExtResource("12_chbff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+material_override = SubResource("StandardMaterial3D_2f20m")
+amount = 78
+emission_box_extents = Vector3(10, 2, 10)
+particle_flag_align_y = true
+particle_flag_rotate_y = false
+gravity = Vector3(-1, 1, 0)
+scale_amount_max = 0.4
+color = Color(1, 1, 1, 0.588235)
+color_initial_ramp = SubResource("Gradient_jpe70")
+_max_particle = 78
+
+[node name="attach_player" type="Node3D" parent="leaves" unique_id=1110798482]
+script = ExtResource("13_jpe70")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="particle_wind" parent="." unique_id=359738720 instance=ExtResource("16_2f20m")]
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1382583856]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -37, 14, -57)
+stream = ExtResource("20_i0c51")
+unit_size = 78.0
+max_db = 0.0
+autoplay = true
+panning_strength = 0.2
+bus = &"amb"
+
+[node name="hum" type="AudioStreamPlayer3D" parent="." unique_id=621682274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.7942, 13.0639, 94.1608)
+stream = ExtResource("21_viseq")
+unit_size = 32.0
+pitch_scale = 1.1
+autoplay = true
+max_distance = 200.0
+panning_strength = 2.0
+bus = &"amb"
+
+[node name="eye_watcher" parent="." unique_id=476276722 instance=ExtResource("23_rekxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 4, 12)
+
+[node name="particle_bird" parent="." unique_id=941696062 instance=ExtResource("30_b24o0")]
+
+[node name="cloud_dome" type="MeshInstance3D" parent="." unique_id=419249225]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 120, 0)
+mesh = SubResource("PlaneMesh_sktgp")
+surface_material_override/0 = SubResource("ShaderMaterial_geu2d")
+
+[editable path="sunflower"]

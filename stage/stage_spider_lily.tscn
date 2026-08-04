@@ -1,0 +1,408 @@
+[gd_scene format=3 uid="uid://cjrisygqo51on"]
+
+[ext_resource type="LightmapGIData" uid="uid://bmp27ch60obgk" path="res://stage/lightmap/stage_spider_lily.lmbake" id="1_lh0cx"]
+[ext_resource type="PackedScene" uid="uid://cppj40xixrsc3" path="res://stage/mesh/spider_lily.blend" id="1_qekwm"]
+[ext_resource type="AudioStream" uid="uid://ct6swcigdc4kn" path="res://audio/music/piano_00.ogg" id="2_hscid"]
+[ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="2_qndwf"]
+[ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="3_auaxt"]
+[ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_ywdnf"]
+[ext_resource type="Texture2D" uid="uid://d2y18jwm45tx2" path="res://texture/red_spider_lily_00.png" id="4_lh0cx"]
+[ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="4_lohny"]
+[ext_resource type="Script" uid="uid://cfwgjn7avkkn2" path="res://gdscript/attach_player.gd" id="4_regha"]
+[ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="6_12jk0"]
+[ext_resource type="Texture2D" uid="uid://cxduqqvx3hgbm" path="res://texture/red_spider_lily_02.png" id="7_pex5j"]
+[ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="7_v62sa"]
+[ext_resource type="Texture2D" uid="uid://bwavtraukajao" path="res://texture/red_spider_lily_01.png" id="8_kuhey"]
+[ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="10_qirb8"]
+[ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="12_5i0i1"]
+[ext_resource type="ArrayOccluder3D" uid="uid://pjouxo4ikpsy" path="res://stage/occlusion/stage_spider_lily.occ" id="14_5p6s8"]
+[ext_resource type="AudioStream" uid="uid://cjdwksqx72yhe" path="res://audio/amb/windy_wheats.ogg" id="15_l7f46"]
+[ext_resource type="Texture2D" uid="uid://bb1l36oxolmv" path="res://texture/moon_bloomy.png" id="16_nsuxd"]
+
+[sub_resource type="Gradient" id="Gradient_12jk0"]
+offsets = PackedFloat32Array(0.015432099, 0.3, 0.9)
+colors = PackedColorArray(0, 0, 0, 1, 0.32760003, 0.252, 0.36, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_ywdnf"]
+gradient = SubResource("Gradient_12jk0")
+width = 64
+
+[sub_resource type="Environment" id="Environment_auaxt"]
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0, 0, 0, 1)
+fog_density = 1.0
+fog_height = 0.5
+fog_height_density = 1.0
+fog_depth_curve = 0.48296815
+fog_depth_begin = 6.0
+fog_depth_end = 38.0
+adjustment_enabled = true
+adjustment_brightness = 0.9
+adjustment_contrast = 0.95
+adjustment_saturation = 0.8
+adjustment_color_correction = SubResource("GradientTexture1D_ywdnf")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5p6s8"]
+render_priority = 1
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("7_pex5j")
+texture_filter = 5
+texture_repeat = false
+distance_fade_mode = 2
+distance_fade_min_distance = 2.0
+distance_fade_max_distance = 4.0
+
+[sub_resource type="Gradient" id="Gradient_pex5j"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.6, 0.6, 1, 1, 0.43, 0.7055001, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_kuhey"]
+noise_type = 3
+fractal_lacunarity = 1.7
+fractal_gain = 1.0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lohny"]
+width = 128
+height = 128
+noise = SubResource("FastNoiseLite_kuhey")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kuhey"]
+render_priority = -1
+shader = ExtResource("3_auaxt")
+shader_parameter/texture_albedo = ExtResource("4_lh0cx")
+shader_parameter/texture_mask = SubResource("NoiseTexture2D_lohny")
+shader_parameter/alpha = 0.2
+shader_parameter/uv1_blend_sharpness = 1.0
+shader_parameter/texture_scale = 0.1
+shader_parameter/mask_scale = 0.1
+shader_parameter/noise_threshold = 0.5
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12jk0"]
+render_priority = 1
+shader = ExtResource("7_v62sa")
+shader_parameter/wind_strength = 0.0400000019
+shader_parameter/wind_speed = 1.4000000665
+shader_parameter/wind_direction = Vector3(1, 0.6, 1)
+shader_parameter/emissive = 0.0
+shader_parameter/tex = ExtResource("8_kuhey")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hscid"]
+render_priority = -5
+transparency = 1
+shading_mode = 0
+disable_fog = true
+albedo_color = Color(1, 1, 1, 0.392157)
+albedo_texture = ExtResource("16_nsuxd")
+texture_repeat = false
+billboard_mode = 2
+billboard_keep_scale = true
+fixed_size = true
+
+[node name="stage_spider_lily" type="Node3D" unique_id=1974218556 node_paths=PackedStringArray("_entrance")]
+script = ExtResource("2_qndwf")
+stage_name = "world_spider_lily"
+_bloom = 1.3
+bgm = ExtResource("2_hscid")
+bgm_pitch = 0.5
+_entrance = [NodePath("entrance")]
+_stage_light = Color(1, 0.53, 0.6553332, 1)
+_special = 2
+
+[node name="world_environment" type="WorldEnvironment" parent="." unique_id=1266124289]
+environment = SubResource("Environment_auaxt")
+
+[node name="dream_looper" type="Node3D" parent="." unique_id=101201407 node_paths=PackedStringArray("_bounds", "_world")]
+script = ExtResource("6_12jk0")
+_bounds = NodePath("../spider_lily/floor")
+_world = NodePath("../spider_lily")
+metadata/_custom_type_script = "uid://ch5tw01hrwcej"
+
+[node name="entrance" type="Node3D" parent="." unique_id=2068775534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6839913, 0)
+script = ExtResource("3_ywdnf")
+metadata/_custom_type_script = "uid://vc0rdta8u0ko"
+
+[node name="particle_wind" parent="." unique_id=1574766783 instance=ExtResource("12_5i0i1")]
+
+[node name="wind" parent="particle_wind" index="1"]
+color = Color(1, 1, 1, 0.19607843)
+
+[node name="pedals" type="Node3D" parent="." unique_id=1639045839]
+
+[node name="attach_player" type="Node3D" parent="pedals" unique_id=1986952809]
+script = ExtResource("4_regha")
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[node name="particle_leaf" parent="pedals" unique_id=271539902 instance=ExtResource("4_lohny")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+material_override = SubResource("StandardMaterial3D_5p6s8")
+amount = 128
+lifetime = 2.0
+speed_scale = 0.2
+emission_box_extents = Vector3(8, 2, 8)
+particle_flag_align_y = true
+particle_flag_rotate_y = false
+gravity = Vector3(3, 1, 0)
+scale_amount_max = 0.3
+color = Color(1, 1, 1, 0.39215687)
+color_initial_ramp = SubResource("Gradient_pex5j")
+_max_particle = 128
+
+[node name="spider_lily" parent="." unique_id=1591129361 instance=ExtResource("1_qekwm")]
+
+[node name="floor" parent="spider_lily" index="0" unique_id=1809283047]
+material_overlay = SubResource("ShaderMaterial_kuhey")
+
+[node name="floor_flowers" parent="spider_lily" index="1" unique_id=138461538]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="bounds" parent="spider_lily" index="2" unique_id=156360088]
+collision_layer = 16
+
+[node name="floor_flowers_002" parent="spider_lily" index="3" unique_id=1740509397]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_003" parent="spider_lily" index="4" unique_id=241616113]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_004" parent="spider_lily" index="5" unique_id=1732309011]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_005" parent="spider_lily" index="6" unique_id=1193310141]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_006" parent="spider_lily" index="7" unique_id=499125638]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_007" parent="spider_lily" index="8" unique_id=967419375]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_008" parent="spider_lily" index="9" unique_id=131079620]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_009" parent="spider_lily" index="10" unique_id=1473311648]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_010" parent="spider_lily" index="11" unique_id=920633191]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_011" parent="spider_lily" index="12" unique_id=1592468854]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_012" parent="spider_lily" index="13" unique_id=944297491]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_013" parent="spider_lily" index="14" unique_id=1209754626]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_014" parent="spider_lily" index="15" unique_id=751591949]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_015" parent="spider_lily" index="16" unique_id=560770579]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_016" parent="spider_lily" index="17" unique_id=681460585]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_017" parent="spider_lily" index="18" unique_id=266537998]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_018" parent="spider_lily" index="19" unique_id=726579177]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_019" parent="spider_lily" index="20" unique_id=1377813179]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_020" parent="spider_lily" index="21" unique_id=887077253]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_021" parent="spider_lily" index="22" unique_id=804697349]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_022" parent="spider_lily" index="23" unique_id=1123225152]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_023" parent="spider_lily" index="24" unique_id=1940085855]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_024" parent="spider_lily" index="25" unique_id=109089442]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_025" parent="spider_lily" index="26" unique_id=233956473]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_026" parent="spider_lily" index="27" unique_id=956110395]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_027" parent="spider_lily" index="28" unique_id=437555989]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_028" parent="spider_lily" index="29" unique_id=1382077163]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_029" parent="spider_lily" index="30" unique_id=1044605176]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_030" parent="spider_lily" index="31" unique_id=27050118]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_031" parent="spider_lily" index="32" unique_id=92577655]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_032" parent="spider_lily" index="33" unique_id=753223862]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_033" parent="spider_lily" index="34" unique_id=952864799]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_034" parent="spider_lily" index="35" unique_id=1542768127]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_035" parent="spider_lily" index="36" unique_id=672470540]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_036" parent="spider_lily" index="37" unique_id=1916309315]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_037" parent="spider_lily" index="38" unique_id=2114798765]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_038" parent="spider_lily" index="39" unique_id=1839940320]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_039" parent="spider_lily" index="40" unique_id=640605974]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_040" parent="spider_lily" index="41" unique_id=2094991794]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_041" parent="spider_lily" index="42" unique_id=303094830]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_042" parent="spider_lily" index="43" unique_id=1610237194]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_043" parent="spider_lily" index="44" unique_id=1873861625]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_044" parent="spider_lily" index="45" unique_id=1802020445]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_045" parent="spider_lily" index="46" unique_id=1754436855]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_046" parent="spider_lily" index="47" unique_id=228028934]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_047" parent="spider_lily" index="48" unique_id=904385900]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_048" parent="spider_lily" index="49" unique_id=1337702904]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_049" parent="spider_lily" index="50" unique_id=557583758]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_050" parent="spider_lily" index="51" unique_id=1786948520]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_051" parent="spider_lily" index="52" unique_id=814370634]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_052" parent="spider_lily" index="53" unique_id=815594269]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_053" parent="spider_lily" index="54" unique_id=1899990584]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_054" parent="spider_lily" index="55" unique_id=350023915]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_055" parent="spider_lily" index="56" unique_id=3297090]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_056" parent="spider_lily" index="57" unique_id=1739572875]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_057" parent="spider_lily" index="58" unique_id=1217604205]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_058" parent="spider_lily" index="59" unique_id=2024390732]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_059" parent="spider_lily" index="60" unique_id=575015401]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_060" parent="spider_lily" index="61" unique_id=1764275388]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_061" parent="spider_lily" index="62" unique_id=91105050]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_062" parent="spider_lily" index="63" unique_id=377275503]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_063" parent="spider_lily" index="64" unique_id=789592698]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="floor_flowers_064" parent="spider_lily" index="65" unique_id=676484197]
+material_override = SubResource("ShaderMaterial_12jk0")
+
+[node name="generic_door" parent="spider_lily" unique_id=1341957503 groups=["loop_only"] instance=ExtResource("10_qirb8")]
+transform = Transform3D(0.99951476, 0.03114909, 0, -0.031141806, 0.99928105, 0.021622945, 0.00067353505, -0.021612452, 0.9997662, 17, 0.8628646, -16.029009)
+
+[node name="occluder_instance_3d" type="OccluderInstance3D" parent="spider_lily" unique_id=957211518]
+occluder = ExtResource("14_5p6s8")
+bake_simplification_distance = 0.01
+
+[node name="lightmap_gi" type="LightmapGI" parent="spider_lily" unique_id=754461415]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00288963, -0.00699162, -0.00671387)
+visible = false
+supersampling = true
+bounces = 16
+denoiser_strength = 0.04
+bias = 0.0003
+texel_scale = 0.4
+environment_mode = 3
+environment_custom_color = Color(1, 0.25, 0.25, 1)
+environment_custom_energy = 2.0
+generate_probes_subdiv = 0
+light_data = ExtResource("1_lh0cx")
+
+[node name="directional_light_3d" type="DirectionalLight3D" parent="spider_lily/lightmap_gi" unique_id=773462155]
+light_bake_mode = 1
+shadow_enabled = true
+
+[node name="ambience" type="AudioStreamPlayer3D" parent="." unique_id=1996015634]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11, 0)
+stream = ExtResource("15_l7f46")
+max_db = -2.0
+autoplay = true
+panning_strength = 0.4
+bus = &"amb"
+
+[node name="attach_moon" type="Node3D" parent="." unique_id=1375289917]
+
+[node name="moon" type="Sprite3D" parent="attach_moon" unique_id=40891251]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -337.7099, 344.6092, 1052.688)
+material_override = SubResource("StandardMaterial3D_hscid")
+extra_cull_margin = 48.0
+flip_v = true
+pixel_size = 0.007
+texture = ExtResource("16_nsuxd")
+
+[node name="attach_player" type="Node3D" parent="attach_moon" unique_id=1792065093]
+script = ExtResource("4_regha")
+_ignore_freecam = true
+metadata/_custom_type_script = "uid://cfwgjn7avkkn2"
+
+[editable path="particle_wind"]
+[editable path="spider_lily"]
