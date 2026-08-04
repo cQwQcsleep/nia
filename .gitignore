@@ -10,6 +10,10 @@ nop_src/
 nop.zip
 *.log
 
+# CI 诊断日志
+ci_logs*/
+ci_logs*.zip
+
 # 构建产物
 build/
 *.apk
