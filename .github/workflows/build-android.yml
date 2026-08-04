@@ -70,12 +70,19 @@ jobs:
             cd "$TEMPLATE_DIR" && unzip -o /tmp/templates.tpz
             if [ -d templates ]; then mv templates/* . && rmdir templates; fi
           fi
-          ls -la "$TEMPLATE_DIR/" | head -25
           test -f "$TEMPLATE_DIR/android_source.zip" && echo "=== android_source.zip found in templates ==="
+          # 解压 Android 构建模板到项目 android/ 目录
           mkdir -p android
-          cd android && unzip -o "$TEMPLATE_DIR/android_source.zip"
+          cd android && unzip -o "$TEMPLATE_DIR/android_source.zip" >/dev/null
+          cd "$GITHUB_WORKSPACE"
+          # 显式指定 gradle 构建目录为绝对路径（headless 导出无法走 Project 菜单）
+          sed -i 's|gradle_build/gradle_build_directory=""|gradle_build/gradle_build_directory="'"$GITHUB_WORKSPACE"'/android"|' export_presets.cfg
+          # 写入模板版本标识（gradle 导出校验必需）
+          printf "4.7.stable\n" > .build_version
           echo "=== android build template installed ==="
-          ls -la | head -15
+          ls -la android/build.gradle
+          grep -E "gradle_build_directory" export_presets.cfg
+          cat .build_version
 
       - name: Import project resources
         run: godot --headless --path . --import
