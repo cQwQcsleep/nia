@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cd6aeo82vnkbr" path="res://audio/music/se_seq.ogg" id="2_1bhfl"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_e2jml"]
 [ext_resource type="Texture2D" uid="uid://cnnb6l25ejmyj" path="res://texture/sky_3d_day.png" id="2_ohgpj"]
-[ext_resource type="PackedScene" uid="uid://bx4aprv7b6hmq" path="res://stage/mesh/bryce_day.blend" id="3_oy5wb"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/bryce_day.glb" id="3_oy5wb"]
 [ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="4_axrm5"]
 [ext_resource type="Shader" uid="uid://b6lbdj8eax77p" path="res://gdshader/caustics.gdshader" id="6_8soy3"]
 [ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="6_t2s26"]

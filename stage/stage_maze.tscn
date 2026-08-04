@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_4kyxe"]
 [ext_resource type="AudioStream" uid="uid://vvrq3d4ivnur" path="res://audio/music/se_static.ogg" id="2_1x2rv"]
 [ext_resource type="LightmapGIData" uid="uid://beobwl70kinl" path="res://stage/lightmap/stage_maze.lmbake" id="2_fh5g8"]
-[ext_resource type="PackedScene" uid="uid://guxv88sxdyal" path="res://stage/mesh/maze.blend" id="2_fix7r"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/maze.glb" id="2_fix7r"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_163bp"]
 [ext_resource type="Script" uid="uid://buyftmllcvaq5" path="res://gdscript/capybara.gd" id="3_an5n2"]
 [ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="3_fh5g8"]

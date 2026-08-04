@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://coq2y3r7byjk2"]
 
 [ext_resource type="Script" uid="uid://ydwux7g6g0l4" path="res://gdscript/player_sequence.gd" id="1_r81fk"]
-[ext_resource type="PackedScene" uid="uid://dy1wdencb05p4" path="res://stage/mesh/player.fbx" id="1_yu4co"]
+[ext_resource type="PackedScene" path="res://stage/mesh/player.glb" id="1_yu4co"]
 [ext_resource type="Material" uid="uid://ux58bmhyupdw" path="res://gdshader/material/mat_player.tres" id="3_m6gee"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r81fk"]

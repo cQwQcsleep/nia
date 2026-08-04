@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_pm3aa"]
 [ext_resource type="LightmapGIData" uid="uid://dum32oe6wrjat" path="res://stage/lightmap/stage_rooftop_day.lmbake" id="2_24tfk"]
-[ext_resource type="PackedScene" uid="uid://dx43h36jqg8em" path="res://stage/mesh/rooftop_day.blend" id="2_rsv4g"]
-[ext_resource type="PackedScene" uid="uid://cg6mpbp56ax17" path="res://stage/mesh/apartment_hills.blend" id="3_qk6q4"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/rooftop_day.glb" id="2_rsv4g"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/apartment_hills.glb" id="3_qk6q4"]
 
 [sub_resource type="Environment" id="Environment_30khd"]
 background_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq1woe70nvr7q"]
 
-[ext_resource type="PackedScene" uid="uid://g8pe38j3cuyi" path="res://stage/mesh/extra/door.blend" id="1_cx3yg"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/door.glb" id="1_cx3yg"]
 [ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="2_ql7cr"]
 [ext_resource type="PackedScene" uid="uid://gwfpgrfuob5m" path="res://resource/particle_butterfly.tscn" id="3_ql7cr"]
 [ext_resource type="Texture2D" uid="uid://chewiklmenhev" path="res://texture/chain.png" id="3_sf0ba"]

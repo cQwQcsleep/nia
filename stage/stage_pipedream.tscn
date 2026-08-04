@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_ua6ls"]
 [ext_resource type="LightmapGIData" uid="uid://duixddwexh2vt" path="res://stage/lightmap/stage_pipedream.lmbake" id="2_2dmb7"]
-[ext_resource type="PackedScene" uid="uid://b2oibjqik2a17" path="res://stage/mesh/pipedream.blend" id="2_blr77"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/pipedream.glb" id="2_blr77"]
 [ext_resource type="AudioStream" uid="uid://copbdtaguywmc" path="res://audio/music/se_bubbles.ogg" id="2_yq43f"]
 [ext_resource type="Shader" uid="uid://q72gari1ibe6" path="res://gdshader/3d.gdshader" id="3_3bqyq"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_blr77"]

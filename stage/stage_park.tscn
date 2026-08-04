@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_stnr7"]
 [ext_resource type="AudioStream" uid="uid://ba7txguri8kre" path="res://audio/music/se_petal.ogg" id="2_3hxtq"]
-[ext_resource type="PackedScene" uid="uid://bky21g5em7dpg" path="res://stage/mesh/park.blend" id="2_e2075"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/park.glb" id="2_e2075"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_jrtcr"]
 [ext_resource type="LightmapGIData" uid="uid://7cgh5c4os0ku" path="res://stage/lightmap/stage_park.lmbake" id="2_x53b6"]
 [ext_resource type="Texture2D" uid="uid://b5rqflcvj33lv" path="res://texture/sky_rain.png" id="3_tvnrk"]

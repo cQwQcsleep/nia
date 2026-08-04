@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_fwkw6"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_j0ig6"]
 [ext_resource type="LightmapGIData" uid="uid://dgvq7mugj2lww" path="res://stage/lightmap/stage_underwater.lmbake" id="2_r63t6"]
-[ext_resource type="PackedScene" uid="uid://bdw7v2d4cvn02" path="res://stage/mesh/underwater.blend" id="2_u1y1q"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/underwater.glb" id="2_u1y1q"]
 [ext_resource type="AudioStream" uid="uid://boiwdw31a0doo" path="res://audio/music/se_coral.ogg" id="2_ywiod"]
 [ext_resource type="Texture2D" uid="uid://b0et88udna2eb" path="res://texture/sky_underwater.png" id="3_kwbwx"]
 [ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="3_r63t6"]

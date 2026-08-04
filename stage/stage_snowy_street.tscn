@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_88ee7"]
 [ext_resource type="AudioStream" uid="uid://dnypp27ouqs5n" path="res://audio/music/se_roku.ogg" id="2_kvbrv"]
-[ext_resource type="PackedScene" uid="uid://87kumjgakbq3" path="res://stage/mesh/snowy_street.blend" id="2_uhehn"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/snowy_street.glb" id="2_uhehn"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_wclpr"]
 [ext_resource type="LightmapGIData" uid="uid://clfd0n7adh4mw" path="res://stage/lightmap/stage_snowy_street.lmbake" id="4_0ha4u"]
 [ext_resource type="Texture2D" uid="uid://crwxxhekpana1" path="res://texture/dead_tree_3.png" id="4_ix4pm"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://cia3gxuj7wlsm" path="res://texture/wire_04.png" id="20_13w3h"]
 [ext_resource type="Texture2D" uid="uid://c44ws5c262p6g" path="res://texture/snow_bush.png" id="20_kvbrv"]
 [ext_resource type="Texture2D" uid="uid://bsk525q2xkibx" path="res://texture/fence_07.png" id="21_7mp8x"]
-[ext_resource type="PackedScene" uid="uid://bs0w8cag876q" path="res://stage/mesh/extra/death_cube.blend" id="24_ibali"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/death_cube.glb" id="24_ibali"]
 [ext_resource type="AudioStream" uid="uid://bfntsndbdpy3j" path="res://audio/amb/residence.ogg" id="25_yibqj"]
 [ext_resource type="PackedScene" uid="uid://b67v28osrd7uq" path="res://resource/particle_wind.tscn" id="26_x4vgi"]
 [ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="27_xh6mr"]

@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://cy0apdfuaq10s"]
 
-[ext_resource type="PackedScene" uid="uid://ebbk5wy1btx6" path="res://stage/mesh/end.blend" id="1_d2d5j"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/end.glb" id="1_d2d5j"]
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_x8g5w"]
 [ext_resource type="AudioStream" uid="uid://ba7txguri8kre" path="res://audio/music/se_petal.ogg" id="2_m2n8y"]
 [ext_resource type="Script" uid="uid://bl4xjspqsq7p6" path="res://end_handler.gd" id="2_tw8mw"]
@@ -26,7 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://chth8vanfsxu6" path="res://texture/epilogue/white_flower.png" id="16_g6qdf"]
 [ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="16_noitf"]
 [ext_resource type="Texture2D" uid="uid://caqj1680ft5f1" path="res://texture/epilogue/floor.png" id="17_k1i2u"]
-[ext_resource type="PackedScene" uid="uid://bpoxldojy7iyl" path="res://stage/mesh/end_outside.blend" id="18_lyd65"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/end_outside.glb" id="18_lyd65"]
 [ext_resource type="Shader" uid="uid://bp6sw1dxh0phf" path="res://gdshader/curtain_sway.gdshader" id="18_wh1r7"]
 [ext_resource type="Texture2D" uid="uid://bstj6y7hx386q" path="res://texture/epilogue/floor_trim.png" id="19_rxo08"]
 [ext_resource type="Texture2D" uid="uid://k6klnkoenvnm" path="res://texture/epilogue/window_blind.png" id="19_unbll"]

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_7qdkg"]
 [ext_resource type="LightmapGIData" uid="uid://c3infa5tqcydh" path="res://stage/lightmap/stage_flowerfield.lmbake" id="2_niwgl"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_qnsr0"]
-[ext_resource type="PackedScene" uid="uid://btjt7lmjq3ahr" path="res://stage/mesh/flowerfield.blend" id="2_yfjra"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/flowerfield.glb" id="2_yfjra"]
 [ext_resource type="Texture2D" uid="uid://bopidubh4dw0f" path="res://texture/flower_gallery.png" id="3_f4gya"]
 [ext_resource type="Texture2D" uid="uid://dr452tb7sup7t" path="res://texture/sky_red.png" id="3_qfotf"]
 [ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_4hkph"]

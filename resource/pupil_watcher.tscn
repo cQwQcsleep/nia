@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://06ujuma48lj8"]
 
-[ext_resource type="PackedScene" uid="uid://lqir23ra1c8r" path="res://stage/mesh/pupil_watcher.blend" id="1_1cjcm"]
+[ext_resource type="PackedScene" path="res://.assets/stage/mesh/pupil_watcher.glb" id="1_1cjcm"]
 [ext_resource type="Script" uid="uid://b0pd1iwmjx64q" path="res://gdscript/pupil_watcher.gd" id="1_63wh8"]
 [ext_resource type="AudioStream" uid="uid://qduo5pyqs7aw" path="res://audio/sfx/fleshy_0.ogg" id="2_plegw"]
 [ext_resource type="AudioStream" uid="uid://bmh8dl8ljdkbc" path="res://audio/sfx/fleshy_1.ogg" id="3_pnxos"]
