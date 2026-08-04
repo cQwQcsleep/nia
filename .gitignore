@@ -14,6 +14,9 @@ nop.zip
 ci_logs*/
 ci_logs*.zip
 
+# Android 构建模板（CI 中从导出模板解压生成）
+android/
+
 # 构建产物
 build/
 *.apk

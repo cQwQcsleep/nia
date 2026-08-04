@@ -60,6 +60,23 @@ jobs:
           echo "--- presets after configure ---"
           grep -E "keystore/" export_presets.cfg
 
+      - name: Install Android build template into project
+        run: |
+          TEMPLATE_DIR="$HOME/.local/share/godot/export_templates/4.7.stable"
+          if [ ! -f "$TEMPLATE_DIR/android_source.zip" ]; then
+            echo "Export templates missing, downloading..."
+            mkdir -p "$TEMPLATE_DIR"
+            curl -sL https://github.com/godotengine/godot-builds/releases/download/4.7-stable/Godot_v4.7-stable_export_templates.tpz -o /tmp/templates.tpz
+            cd "$TEMPLATE_DIR" && unzip -o /tmp/templates.tpz
+            if [ -d templates ]; then mv templates/* . && rmdir templates; fi
+          fi
+          ls -la "$TEMPLATE_DIR/" | head -25
+          test -f "$TEMPLATE_DIR/android_source.zip" && echo "=== android_source.zip found in templates ==="
+          mkdir -p android
+          cd android && unzip -o "$TEMPLATE_DIR/android_source.zip"
+          echo "=== android build template installed ==="
+          ls -la | head -15
+
       - name: Import project resources
         run: godot --headless --path . --import
 
