@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dcaf4cbvwasij"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_fvks3"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/here.glb" id="2_06aoh"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/here.glb" id="2_06aoh"]
 [ext_resource type="LightmapGIData" uid="uid://bi1mh11arpt1u" path="res://stage/lightmap/stage_here.lmbake" id="2_hmrx5"]
 [ext_resource type="AudioStream" uid="uid://bogf3x1lqionj" path="res://audio/music/se_seasons_end.ogg" id="2_ku100"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="3_i0rok"]
@@ -17,7 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bfffgqyroal36" path="res://texture/moon_crest.png" id="12_1ofki"]
 [ext_resource type="PackedScene" uid="uid://b5pp7ol3bdpcw" path="res://resource/distant_light.tscn" id="12_wati8"]
 [ext_resource type="AudioStream" uid="uid://m12n14y86uq3" path="res://audio/amb/night_forest.ogg" id="15_wati8"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/death_cube.glb" id="16_o8h1a"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/death_cube.glb" id="16_o8h1a"]
 [ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="17_7r0ck"]
 [ext_resource type="PackedScene" uid="uid://cmmockcl17c15" path="res://resource/particle_leaf.tscn" id="18_ke3c8"]
 [ext_resource type="Texture2D" uid="uid://c5p6tc86cc3g4" path="res://texture/grass_blade.png" id="19_ugwwq"]

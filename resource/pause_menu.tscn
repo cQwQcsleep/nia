@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://e6huo3e1b52k"]
 
 [ext_resource type="Script" uid="uid://cywlsnafxwkxw" path="res://gdscript/ui/pause_menu.gd" id="1_cfb5i"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/phone.glb" id="2_sm03j"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/phone.glb" id="2_sm03j"]
 [ext_resource type="Texture2D" uid="uid://df3ewni2cu1cx" path="res://icon.svg" id="2_v1fpy"]
 [ext_resource type="Material" uid="uid://yf5drv77kuna" path="res://gdshader/material/mat_phone.tres" id="3_v1fpy"]
 [ext_resource type="Script" uid="uid://bneelvmn45klm" path="res://gdscript/ui/scroll_arrow.gd" id="3_w2ken"]
@@ -12,7 +12,7 @@
 [ext_resource type="Shader" uid="uid://cwl71jfhkvigs" path="res://gdshader/ui_invert.gdshader" id="7_q7e4j"]
 [ext_resource type="Texture2D" uid="uid://c74y3ytm6mcbm" path="res://texture/splash_mel_00.png" id="7_w2ken"]
 [ext_resource type="Texture2D" uid="uid://bcojsb158bmcv" path="res://texture/screen_shatter.png" id="8_o3720"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/camera.glb" id="11_o3720"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/camera.glb" id="11_o3720"]
 [ext_resource type="Texture2D" uid="uid://dy7gqbfb83hcm" path="res://texture/phone_keychain.png" id="11_q7e4j"]
 [ext_resource type="Texture2D" uid="uid://cfuaajvyveelr" path="res://texture/camera_02.png" id="12_2fgp4"]
 [ext_resource type="Shader" uid="uid://b6jotpwgjdc2g" path="res://gdshader/flocking_manual.gdshader" id="16_2nsqc"]

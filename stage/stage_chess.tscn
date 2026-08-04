@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c7brg5h08lq80"]
 
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/chess.glb" id="1_g3th2"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/chess.glb" id="1_g3th2"]
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_k7u0l"]
 [ext_resource type="LightmapGIData" uid="uid://dk52f1awk26vt" path="res://stage/lightmap/stage_chess.lmbake" id="2_cuhsk"]
 [ext_resource type="AudioStream" uid="uid://ckw0e6jxsufan" path="res://audio/music/se_club_4_wormz.ogg" id="2_sirwm"]

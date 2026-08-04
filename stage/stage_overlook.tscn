@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_r76f7"]
 [ext_resource type="AudioStream" uid="uid://bivwbt4ab6887" path="res://audio/music/se_hachi.ogg" id="2_3hqlf"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/overlook.glb" id="2_pv535"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/overlook.glb" id="2_pv535"]
 [ext_resource type="LightmapGIData" uid="uid://bf68dnmtobx40" path="res://stage/lightmap/stage_overlook.lmbake" id="3_gig2s"]
 [ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="3_h5bmp"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="3_t32qj"]

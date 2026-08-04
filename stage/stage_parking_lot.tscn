@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_hbjkr"]
 [ext_resource type="LightmapGIData" uid="uid://d03bsaqn5nhm0" path="res://stage/lightmap/stage_parking_lot.lmbake" id="2_aciau"]
 [ext_resource type="AudioStream" uid="uid://dsvqn4tfa0b5i" path="res://audio/music/se_scuttling.ogg" id="2_kv5dx"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/parking_lot.glb" id="2_nvkq5"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/parking_lot.glb" id="2_nvkq5"]
 [ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="2_xsub5"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="3_5hbwo"]
 [ext_resource type="LightmapGIData" uid="uid://crxenjy1st1nt" path="res://stage/lightmap/stage_parking_lot_roof.lmbake" id="4_1o3ai"]

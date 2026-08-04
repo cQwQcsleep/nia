@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_msrgk"]
 [ext_resource type="LightmapGIData" uid="uid://bwr615cip8wtc" path="res://stage/lightmap/stage_constructs.lmbake" id="2_g5s16"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/constructs.glb" id="2_gr2ti"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/constructs.glb" id="2_gr2ti"]
 [ext_resource type="Texture2D" uid="uid://dl3oi3ebsiw86" path="res://texture/sky_night.png" id="2_m74od"]
 [ext_resource type="Texture2D" uid="uid://3af0pc6fx1ox" path="res://texture/plaster.png" id="4_tatil"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_niqut"]

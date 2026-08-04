@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_xj3wl"]
 [ext_resource type="Texture2D" uid="uid://dr452tb7sup7t" path="res://texture/sky_red.png" id="3_3ucy6"]
 [ext_resource type="LightmapGIData" uid="uid://cjnyjg0exhmqs" path="res://stage/lightmap/stage_sewer.lmbake" id="3_41m1q"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/sewer.glb" id="3_jwf5l"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/sewer.glb" id="3_jwf5l"]
 [ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_y1m4g"]
 [ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="10_3ucy6"]
 [ext_resource type="Texture2D" uid="uid://icwxfl70lk1" path="res://texture/mossy.png" id="10_eouy6"]

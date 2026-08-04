@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://68hpmm6s5stw"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_wmyni"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/visionblend.glb" id="2_0ovb8"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/visionblend.glb" id="2_0ovb8"]
 [ext_resource type="Texture2D" uid="uid://b6welecjw1xlr" path="res://texture/sky_vision.png" id="2_35o5q"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_ngq34"]
 [ext_resource type="LightmapGIData" uid="uid://ck64typ0bmg2p" path="res://stage/lightmap/stage_vision.lmbake" id="2_noisv"]

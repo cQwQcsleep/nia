@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_tl60h"]
 [ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_t7w4x"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/tethered.glb" id="2_wlviv"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/tethered.glb" id="2_wlviv"]
 [ext_resource type="Shader" uid="uid://g6d5qkyrra3u" path="res://gdshader/water.gdshader" id="3_pvk7o"]
 [ext_resource type="Texture2D" uid="uid://b6odo11n16hqk" path="res://texture/water_0.png" id="4_7nbm5"]
 [ext_resource type="Texture2D" uid="uid://byfgraxfx2tqg" path="res://texture/water_1.png" id="5_t7w4x"]

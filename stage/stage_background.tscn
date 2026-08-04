@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwbqkb6x0oinf"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_ah63a"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/background.glb" id="2_76jee"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/background.glb" id="2_76jee"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_aq77d"]
 [ext_resource type="AudioStream" uid="uid://c7dt5dqvjara1" path="res://audio/music/se_nap.ogg" id="2_n35hg"]
 [ext_resource type="LightmapGIData" uid="uid://cdixufpl1w0v2" path="res://stage/lightmap/stage_background.lmbake" id="2_s4hyt"]
@@ -40,7 +40,7 @@
 [ext_resource type="AudioStream" uid="uid://cwyrjbv6b7vhf" path="res://audio/amb/tug_engine.ogg" id="29_3kjf7"]
 [ext_resource type="Texture2D" uid="uid://dnn4466gbr7rq" path="res://texture/water_splash_01.png" id="30_e43q8"]
 [ext_resource type="Texture2D" uid="uid://b08le1ieckcn6" path="res://texture/red_planet.png" id="36_3kjf7"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/death_cube.glb" id="38_e13t6"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/death_cube.glb" id="38_e13t6"]
 [ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="39_4xrpy"]
 [ext_resource type="PackedScene" uid="uid://cm3g5f30aayqq" path="res://resource/particle_bird.tscn" id="40_sxenl"]
 [ext_resource type="PackedScene" uid="uid://cq1woe70nvr7q" path="res://stage/mesh/extra/generic_door.tscn" id="42_0xubr"]

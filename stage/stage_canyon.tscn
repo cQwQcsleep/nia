@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_txxgj"]
 [ext_resource type="Texture2D" uid="uid://ctfec1ou3gqai" path="res://texture/sky_canyon.png" id="3_aqng3"]
 [ext_resource type="LightmapGIData" uid="uid://cdx2krt65jvp0" path="res://stage/lightmap/stage_canyon.lmbake" id="3_cgc30"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/canyon.glb" id="3_wonh7"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/canyon.glb" id="3_wonh7"]
 [ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_aqng3"]
 [ext_resource type="Texture2D" uid="uid://bf4o73gjdksxq" path="res://texture/canyon_caution.png" id="4_pqj8n"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="5_pqj8n"]

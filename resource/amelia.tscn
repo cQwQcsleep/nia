@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cuxdhg6mk4yrp"]
 
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/amelia.glb" id="1_8dl2p"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/amelia.glb" id="1_8dl2p"]
 [ext_resource type="Script" uid="uid://cdh0vfuj326x6" path="res://gdscript/amelia.gd" id="1_ec86c"]
 [ext_resource type="PackedScene" uid="uid://bls8cw6cpi437" path="res://resource/water_droplets.tscn" id="3_pk8bh"]
 [ext_resource type="Shader" uid="uid://foqf6idimvb0" path="res://addons/decal_compatibility/decal.gdshader" id="4_5twsn"]

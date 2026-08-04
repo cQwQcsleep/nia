@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_rlg4e"]
 [ext_resource type="LightmapGIData" uid="uid://dkvve5yf6w2hn" path="res://stage/lightmap/stage_pools.lmbake" id="2_b68mb"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/pools.glb" id="2_dejtc"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/pools.glb" id="2_dejtc"]
 [ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="3_mylc4"]
 [ext_resource type="Shader" uid="uid://b6lbdj8eax77p" path="res://gdshader/caustics.gdshader" id="4_o85xl"]
 [ext_resource type="Texture2D" uid="uid://bxxncgit7yygk" path="res://texture/bwr_caustic_01.png" id="5_drvph"]

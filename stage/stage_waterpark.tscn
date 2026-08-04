@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dk58shnyb21fa"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_0vr0s"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/waterpark.glb" id="1_3nemv"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/waterpark.glb" id="1_3nemv"]
 [ext_resource type="AudioStream" uid="uid://cm4pwxyogrix1" path="res://audio/music/se_delay.ogg" id="2_j50h0"]
 [ext_resource type="LightmapGIData" uid="uid://bxhvv2msahohi" path="res://stage/lightmap/stage_waterpark.lmbake" id="2_xh44i"]
 [ext_resource type="Script" uid="uid://vc0rdta8u0ko" path="res://gdscript/entrance.gd" id="4_wv5li"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://c5nngcq7m48xw" path="res://texture/exit_sign.png" id="28_4vn6x"]
 [ext_resource type="Texture2D" uid="uid://ca3iqtppk730s" path="res://texture/exit_sign_em.png" id="29_qyx2t"]
 [ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="31_w2mrs"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/void.glb" id="37_e1u6n"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/void.glb" id="37_e1u6n"]
 [ext_resource type="PackedScene" uid="uid://cs20jg06xcndg" path="res://resource/void_noise.tscn" id="37_j50h0"]
 [ext_resource type="PackedScene" uid="uid://cuxdhg6mk4yrp" path="res://resource/amelia.tscn" id="39_j50h0"]
 [ext_resource type="PackedScene" uid="uid://06ujuma48lj8" path="res://resource/pupil_watcher.tscn" id="40_p60mp"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dc4ymebicrwwa"]
 
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/quarters.glb" id="1_70r7d"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/quarters.glb" id="1_70r7d"]
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_m6s1l"]
 [ext_resource type="AudioStream" uid="uid://bopbky5uehx8n" path="res://audio/music/se_burnt.ogg" id="2_36oaq"]
 [ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="2_m6s1l"]
@@ -27,7 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://djx3cjh4a2bnt" path="res://texture/clouds_00.png" id="17_i4bfv"]
 [ext_resource type="Texture2D" uid="uid://dpgxhca1rbtjl" path="res://texture/waterfall.png" id="18_k6hd4"]
 [ext_resource type="Texture2D" uid="uid://u60qen6wvfdk" path="res://texture/concrete_22.png" id="18_q1i7f"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/extra/void.glb" id="19_282rp"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/extra/void.glb" id="19_282rp"]
 [ext_resource type="Texture2D" uid="uid://ch74gme27odr7" path="res://texture/concrete_20.png" id="19_cpfkb"]
 [ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="19_hsre2"]
 [ext_resource type="Texture2D" uid="uid://bijsyfqa87muf" path="res://texture/grass_17.png" id="20_xmhft"]

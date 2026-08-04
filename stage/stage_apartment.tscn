@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dikb65wkfyuun"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_ev5ce"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/apartment.glb" id="1_qy62q"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/apartment.glb" id="1_qy62q"]
 [ext_resource type="AudioStream" uid="uid://bogf3x1lqionj" path="res://audio/music/se_seasons_end.ogg" id="2_axcem"]
 [ext_resource type="LightmapGIData" uid="uid://bwpkbv4nmo34f" path="res://stage/lightmap/stage_apartment.lmbake" id="2_b5gfh"]
 [ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="4_hvb6y"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://col62rfhsro8a"]
 
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/snowy_quarters.glb" id="1_14abp"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/snowy_quarters.glb" id="1_14abp"]
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_oojsw"]
 [ext_resource type="AudioStream" uid="uid://t65o8x55m7ca" path="res://audio/music/se_snow.ogg" id="2_bsxm6"]
 [ext_resource type="LightmapGIData" uid="uid://b1uy5xs4qynn8" path="res://stage/lightmap/stage_snowy_quarters.lmbake" id="2_dyofw"]

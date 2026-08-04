@@ -1,0 +1,23 @@
+﻿2026-08-04T10:12:47.3639329Z ##[group]Run sed -i 's|keystore/debug=""|keystore/debug="'"$HOME"'/.android/debug.keystore"|' export_presets.cfg
+2026-08-04T10:12:47.3640265Z [36;1msed -i 's|keystore/debug=""|keystore/debug="'"$HOME"'/.android/debug.keystore"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3640879Z [36;1msed -i 's|keystore/debug_user=""|keystore/debug_user="androiddebugkey"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3641585Z [36;1msed -i 's|keystore/debug_password=""|keystore/debug_password="android"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3642190Z [36;1msed -i 's|keystore/release=""|keystore/release="'"$HOME"'/.android/release.keystore"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3642824Z [36;1msed -i 's|keystore/release_user=""|keystore/release_user="androiddebugkey"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3643435Z [36;1msed -i 's|keystore/release_password=""|keystore/release_password="android"|' export_presets.cfg[0m
+2026-08-04T10:12:47.3643910Z [36;1mecho "--- presets after configure ---"[0m
+2026-08-04T10:12:47.3644270Z [36;1mgrep -E "keystore/" export_presets.cfg[0m
+2026-08-04T10:12:47.3671605Z shell: /usr/bin/bash -e {0}
+2026-08-04T10:12:47.3671881Z env:
+2026-08-04T10:12:47.3672095Z   GODOT: /home/runner/bin/godot
+2026-08-04T10:12:47.3672370Z   GODOT4: /home/runner/bin/godot
+2026-08-04T10:12:47.3672650Z   ANDROID_HOME: /usr/local/lib/android/sdk
+2026-08-04T10:12:47.3672946Z   ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
+2026-08-04T10:12:47.3673221Z ##[endgroup]
+2026-08-04T10:12:47.3792100Z --- presets after configure ---
+2026-08-04T10:12:47.3801018Z keystore/debug="/home/runner/.android/debug.keystore"
+2026-08-04T10:12:47.3801532Z keystore/debug_user="androiddebugkey"
+2026-08-04T10:12:47.3801981Z keystore/debug_password="android"
+2026-08-04T10:12:47.3802512Z keystore/release="/home/runner/.android/release.keystore"
+2026-08-04T10:12:47.3803117Z keystore/release_user="androiddebugkey"
+2026-08-04T10:12:47.3803561Z keystore/release_password="android"

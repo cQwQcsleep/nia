@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_duhdd"]
 [ext_resource type="LightmapGIData" uid="uid://dua6ku2pkxrba" path="res://stage/lightmap/stage_carousel.lmbake" id="2_83cbj"]
 [ext_resource type="Shader" uid="uid://bhxlwunea7rnw" path="res://gdshader/weird_sky.gdshader" id="2_bgxyk"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/carousel.glb" id="2_trssn"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/carousel.glb" id="2_trssn"]
 [ext_resource type="Texture2D" uid="uid://cnjmg18utleid" path="res://texture/carousel.png" id="3_wp8g0"]
 [ext_resource type="Script" uid="uid://uew7vyq2lb02" path="res://gdscript/get_rotated.gd" id="4_v0b10"]
 [ext_resource type="Script" uid="uid://dfcdio1i8lh8v" path="res://gdscript/rotate_sky.gd" id="4_wp8g0"]

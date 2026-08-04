@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://cm4pwxyogrix1" path="res://audio/music/se_delay.ogg" id="2_fqnce"]
 [ext_resource type="LightmapGIData" uid="uid://d2l46mo43vj4w" path="res://stage/lightmap/stage_normal.lmbake" id="2_j2eec"]
 [ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_rooec"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/normal.glb" id="2_umg7q"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/normal.glb" id="2_umg7q"]
 [ext_resource type="Shader" uid="uid://dnb8lw7wdhpxl" path="res://gdshader/sway.gdshader" id="4_5bgqf"]
 [ext_resource type="PackedScene" uid="uid://b74aymkxe5w2h" path="res://resource/interactable.tscn" id="5_dtkbs"]
 [ext_resource type="Script" uid="uid://b1b2nl5yye34a" path="res://gdscript/water.gd" id="5_qv2pi"]

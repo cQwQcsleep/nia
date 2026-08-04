@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjrisygqo51on"]
 
 [ext_resource type="LightmapGIData" uid="uid://bmp27ch60obgk" path="res://stage/lightmap/stage_spider_lily.lmbake" id="1_lh0cx"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/spider_lily.glb" id="1_qekwm"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/spider_lily.glb" id="1_qekwm"]
 [ext_resource type="AudioStream" uid="uid://ct6swcigdc4kn" path="res://audio/music/piano_00.ogg" id="2_hscid"]
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="2_qndwf"]
 [ext_resource type="Shader" uid="uid://dxb5d4td3ci2e" path="res://gdshader/grime.gdshader" id="3_auaxt"]

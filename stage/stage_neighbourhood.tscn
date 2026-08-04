@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://bnd2abm6dio63"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_s5atl"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/neighbourhood.glb" id="2_c1iuw"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/neighbourhood.glb" id="2_c1iuw"]
 [ext_resource type="LightmapGIData" uid="uid://yuly3gkmivav" path="res://stage/lightmap/stage_neighbourhood.lmbake" id="3_c1iuw"]
 [ext_resource type="Texture2D" uid="uid://42pkouje8v6j" path="res://texture/sky_clouds.png" id="3_tkp1d"]
 [ext_resource type="Texture2D" uid="uid://c2eqf0tdm1t7n" path="res://texture/sun.png" id="4_tuc8h"]

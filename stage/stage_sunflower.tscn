@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwyncixxmoj4t"]
 
 [ext_resource type="Script" uid="uid://xkfelnvh5g7h" path="res://gdscript/stage.gd" id="1_wk234"]
-[ext_resource type="PackedScene" path="res://.assets/stage/mesh/sunflower.glb" id="2_6wbnr"]
+[ext_resource type="PackedScene" path="res://assets/stage/mesh/sunflower.glb" id="2_6wbnr"]
 [ext_resource type="Script" uid="uid://ch5tw01hrwcej" path="res://stage/loop_stage.gd" id="2_07bgw"]
 [ext_resource type="AudioStream" uid="uid://dga4l1gsvapww" path="res://audio/music/se_cartridge.ogg" id="2_pgi6p"]
 [ext_resource type="LightmapGIData" uid="uid://b5jhoo2wmiuxr" path="res://stage/lightmap/stage_sunflower.lmbake" id="2_qmgup"]
